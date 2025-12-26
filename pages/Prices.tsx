@@ -10,9 +10,7 @@ const categoryLabels: Record<ServiceCategory, string> = {
   cabinet: 'Activități Cabinet',
   anestezie: 'Anestezie',
   terapie: 'Terapie Dentară',
-  chirurgie: 'Chirurgie Orală',
-  protetica: 'Protetică',
-  ortodontie: 'Ortodonție',
+  chirurgie: 'Chirurgie Dento-Alveolară',
   imagistica: 'Imagistică',
   cnam: 'Servicii CNAM',
 };
@@ -110,7 +108,7 @@ export const Prices = () => {
             <h3 className="font-heading font-bold text-lg text-slate-900 mb-2">Servicii Decontate de CNAM</h3>
             <p className="text-slate-700 mb-4">
               Serviciile marcate cu badge-ul verde sunt eligibile pentru decontare prin Compania Națională de Asigurări în Medicină.
-              Pacienții asigurați pot beneficia de aceste servicii gratuit în baza poliței de asigurare valabile.
+              Serviciile CNAM sunt disponibile pentru copiii până la 18 ani, femeile gravide și urgențele medicale pentru pacienții care dețin polițe de asigurare CNAM.
             </p>
             <Link to="/informatii-utile#cnam" className="text-trust-green font-medium hover:underline">
               Află mai multe despre CNAM →

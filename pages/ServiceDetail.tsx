@@ -18,28 +18,18 @@ const categoryInfo: Record<string, { title: string; description: string; image: 
   },
   anestezie: {
     title: 'Anestezie Stomatologică',
-    description: 'Servicii complete de anestezie locală și generală pentru tratamente fără durere. Siguranța și confortul pacienților sunt prioritatea noastră.',
+    description: 'Servicii de anestezie locală pentru tratamente fără durere. Siguranța și confortul pacienților sunt prioritatea noastră.',
     image: 'https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&q=80&w=800'
   },
   terapie: {
-    title: 'Terapie Dentară',
-    description: 'Tratamente endodontice, coronare și de profilaxie pentru menținerea sănătății dinților. De la tratarea cariilor până la proceduri de canal radicular.',
+    title: 'Stomatologie Terapeutică',
+    description: 'Tratamentul gingivitelor, parodontitelor marginale, igienizarea profesională a cavității bucale, tratamentul cariilor, pulpitelor, periodontitelor, restaurări dentare și restabilirea esteticii dentare prin albire a dinților.',
     image: 'https://images.unsplash.com/photo-1606811841689-23dfddce3e95?auto=format&fit=crop&q=80&w=800'
   },
   chirurgie: {
-    title: 'Chirurgie Orală',
-    description: 'Intervenții chirurgicale de la extracții simple până la implanturi complexe. Echipa noastră de chirurgi orali are experiență vastă în toate tipurile de proceduri.',
+    title: 'Chirurgie Dento-Alveolară',
+    description: 'Extracții dentare tipice și atipice, chirurgie de urgență a traumatismelor, tratamentul chirurgical al complicațiilor în urma evoluției avansate a proceselor inflamatorii odontogene.',
     image: 'https://images.unsplash.com/photo-1551601651-2a8555f1a136?auto=format&fit=crop&q=80&w=800'
-  },
-  protetica: {
-    title: 'Protetică Dentară',
-    description: 'Soluții complete de protezare, de la proteze mobile la coroane fixe și restaurări pe implanturi. Redăm funcționalitatea și estetica zâmbetului.',
-    image: 'https://images.unsplash.com/photo-1629909615184-74f495363b67?auto=format&fit=crop&q=80&w=800'
-  },
-  ortodontie: {
-    title: 'Ortodonție',
-    description: 'Tratamente ortodontice pentru copii și adulți. Brackets metalici, ceramici și aparate funcționale pentru un zâmbet perfect aliniat.',
-    image: 'https://images.unsplash.com/photo-1606265752439-1f18756aa5fc?auto=format&fit=crop&q=80&w=800'
   },
   imagistica: {
     title: 'Imagistică Dentară',
@@ -140,9 +130,9 @@ export const ServiceDetail = () => {
                 <Calendar className="w-5 h-5 mr-2" /> Programează Consultație
               </Button>
             </Link>
-            <a href="tel:079044016">
+            <a href="tel:079772488">
               <Button variant="outline" size="lg" as="div" className="border-white/40 hover:bg-white/10">
-                <Phone className="w-5 h-5 mr-2" /> 079 044 016
+                <Phone className="w-5 h-5 mr-2" /> 079 772 488
               </Button>
             </a>
           </div>

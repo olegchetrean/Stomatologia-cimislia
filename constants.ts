@@ -10,35 +10,48 @@ export const TEAM: TeamMember[] = [
     role: 'Administrator Interimar',
     specialty: 'Management Medical',
     image: 'https://picsum.photos/400/500?random=1',
-    bio: 'Cu o experiență vastă în managementul instituțiilor medicale, asigură buna funcționare a centrului.'
+    bio: 'Cu o experiență vastă în managementul instituțiilor medicale, asigură buna funcționare a centrului.',
+    phone: '079772488'
   },
   {
     id: 'dr-galina-godoroja',
     name: 'Dr. Galina Godoroja',
     role: 'Medic Stomatolog',
     specialty: 'Stomatologie Generală',
-    image: 'https://picsum.photos/400/500?random=2'
+    image: 'https://picsum.photos/400/500?random=2',
+    phone: '069363366'
   },
   {
     id: 'dr-petru-godoroja',
     name: 'Dr. Petru Godoroja',
     role: 'Medic Stomatolog',
     specialty: 'Stomatologie Generală',
-    image: 'https://picsum.photos/400/500?random=3'
+    image: 'https://picsum.photos/400/500?random=3',
+    phone: '069271212'
   },
   {
     id: 'dr-veaceslav-cosmariuc',
     name: 'Dr. Veaceslav Coșmariuc',
     role: 'Medic Stomatolog',
     specialty: 'Stomatologie Generală',
-    image: 'https://picsum.photos/400/500?random=4'
+    image: 'https://picsum.photos/400/500?random=4',
+    phone: '069003408'
   },
   {
     id: 'dr-ion-teaca',
     name: 'Dr. Ion Teaca',
     role: 'Medic Stomatolog',
     specialty: 'Stomatologie Generală',
-    image: 'https://picsum.photos/400/500?random=5'
+    image: 'https://picsum.photos/400/500?random=5',
+    phone: '069596089'
+  },
+  {
+    id: 'dr-nina-olarescu',
+    name: 'Dr. Nina Olărescu',
+    role: 'Medic Stomatolog Generalist',
+    specialty: 'Stomatologie Generală, Categorie Superioară',
+    image: 'https://picsum.photos/400/500?random=9',
+    phone: '079772488'
   },
   {
     id: 'angela-covadji',
@@ -74,9 +87,9 @@ export const TESTIMONIALS: Testimonial[] = [
   {
     id: '2',
     name: 'Ion Rusu',
-    content: 'Servicii de calitate la prețuri corecte. Apreciez transparența și faptul că acceptă asigurarea CNAM.',
+    content: 'Am făcut tratamentul cariilor și restaurări dentare. Servicii de calitate la prețuri corecte. Apreciez transparența și faptul că acceptă asigurarea CNAM.',
     rating: 5,
-    service: 'Protezare'
+    service: 'Stomatologie Terapeutică'
   },
   {
     id: '3',
@@ -95,9 +108,9 @@ export const TESTIMONIALS: Testimonial[] = [
   {
     id: '5',
     name: 'Ana Sîrbu',
-    content: 'Recomand cu încredere pentru implanturi. Totul a decurs perfect și recuperarea a fost rapidă.',
+    content: 'Am făcut tratamentul pulpitei și periodontitei. Recomand cu încredere pentru tratamente terapeutice. Totul a decurs perfect și recuperarea a fost rapidă.',
     rating: 5,
-    service: 'Implantologie'
+    service: 'Stomatologie Terapeutică'
   }
 ];
 
@@ -107,7 +120,7 @@ export const TESTIMONIALS: Testimonial[] = [
 export const FAQS: FAQ[] = [
   {
     question: 'Acceptați asigurări medicale CNAM?',
-    answer: 'Da, acceptăm asigurarea obligatorie de asistență medicală (CNAM) pentru serviciile incluse în Programul Unic. Vă rugăm să prezentați buletinul și polița la recepție.'
+    answer: 'Da, acceptăm asigurarea obligatorie de asistență medicală (CNAM). Serviciile CNAM sunt disponibile pentru: copiii până la 18 ani, femeile gravide și urgențele medicale pentru pacienții care dețin polițe de asigurare CNAM. Vă rugăm să prezentați buletinul de identitate (sau adeverința de naștere pentru minori) la recepție.'
   },
   {
     question: 'Care este programul clinicii?',
@@ -115,11 +128,11 @@ export const FAQS: FAQ[] = [
   },
   {
     question: 'Cum pot face o programare?',
-    answer: 'Puteți face o programare telefonic la 079044016, prin email la victoras1984@mail.ru, sau completând formularul de pe acest site.'
+    answer: 'Puteți face o programare telefonic la 079772488, prin email la nolaresu@bk.ru sau centrustomcim@gmail.com, sau completând formularul de pe acest site.'
   },
   {
     question: 'Oferiți servicii pentru copii?',
-    answer: 'Da, oferim servicii complete de stomatologie pediatrică, inclusiv în baza asigurării CNAM pentru copii.'
+    answer: 'Da, oferim servicii complete de stomatologie pediatrică. Copiii până la 18 ani pot beneficia de servicii decontate de CNAM.'
   },
   {
     question: 'Cât durează o consultație?',
@@ -127,7 +140,7 @@ export const FAQS: FAQ[] = [
   },
   {
     question: 'Ce documente sunt necesare pentru servicii CNAM?',
-    answer: 'Pentru servicii decontate CNAM aveți nevoie de: buletin de identitate în original, poliță de asigurare CNAM validă, și eventual trimitere de la medicul de familie.'
+    answer: 'Pentru servicii decontate CNAM aveți nevoie doar de: buletin de identitate în original (sau adeverința de naștere pentru minori). Nu este obligatorie prezentarea poliței de asigurare.'
   }
 ];
 
@@ -161,21 +174,6 @@ export const SERVICES: Service[] = [
   { id: '3.1', category: 'anestezie', subcategory: 'Locală', name: 'Anestezie locală (infiltrație plexală)', price: 184, unit: 'anestezie' },
   { id: '3.2', category: 'anestezie', subcategory: 'Locală', name: 'Anestezie locală/loco-regională cu carpule', price: 196, unit: 'anestezie' },
   { id: '3.3', category: 'anestezie', subcategory: 'Locală', name: 'Anestezie topică', price: 135, unit: 'anestezie' },
-
-  // 2. Anestezie generală
-  { id: '3.4', category: 'anestezie', subcategory: 'Generală', name: 'Consultația medicului anesteziolog', price: 205, unit: 'consultație' },
-  { id: '3.5', category: 'anestezie', subcategory: 'Generală', name: 'Consultația medicului anesteziolog, conferențiar-doctor în științe medicale', price: 243, unit: 'consultație' },
-  { id: '3.6', category: 'anestezie', subcategory: 'Generală', name: 'Consultația medicului anesteziolog, profesor-doctor habilitat', price: 301, unit: 'consultație' },
-  { id: '3.7', category: 'anestezie', subcategory: 'Generală', name: 'Anestezie generală inhalatorie de scurtă durată cu Sevofluran', price: 1044, unit: 'procedură' },
-  { id: '3.8', category: 'anestezie', subcategory: 'Generală', name: 'Anestezie generală de scurtă durată cu Propofol', price: 905, unit: 'procedură' },
-  { id: '3.9', category: 'anestezie', subcategory: 'Generală', name: 'Anestezie generală combinată de scurtă durată cu Sevofluran și Propofol', price: 1073, unit: 'procedură' },
-  { id: '3.10', category: 'anestezie', subcategory: 'Generală', name: 'Anestezie generală combinată de scurtă durată cu Sevofluran și Kalipsol', price: 2061, unit: 'procedură' },
-  { id: '3.11', category: 'anestezie', subcategory: 'Generală', name: 'Anestezie generală de lungă durată cu Propofol', price: 1644, unit: 'procedură' },
-  { id: '3.12', category: 'anestezie', subcategory: 'Generală', name: 'Anestezie generală combinată de lungă durată cu Propofol și Kalipsol', price: 2687, unit: 'procedură' },
-  { id: '3.13', category: 'anestezie', subcategory: 'Generală', name: 'Anestezie generală de lungă durată cu Kalipsol', price: 1451, unit: 'procedură' },
-  { id: '3.14', category: 'anestezie', subcategory: 'Generală', name: 'Anestezie generală combinată de lungă durată cu Sevofluran și Propofol', price: 3058, unit: 'procedură' },
-  { id: '3.15', category: 'anestezie', subcategory: 'Generală', name: 'Anestezie generală combinată de lungă durată cu Sevofluran și Kalipsol', price: 3075, unit: 'procedură' },
-  { id: '3.16', category: 'anestezie', subcategory: 'Generală', name: 'Premedicație', price: 433, unit: 'procedură' },
 
   // ============================================
   // IV. TRATAMENTUL DINȚILOR
@@ -277,161 +275,25 @@ export const SERVICES: Service[] = [
   { id: '5.40', category: 'chirurgie', subcategory: 'ATM', name: 'Repoziționarea luxației acute a articulației temporo-mandibulare', price: 337, unit: 'procedură' },
   { id: '5.41', category: 'chirurgie', subcategory: 'Traumatologie', name: 'Imobilizarea fracturilor', price: 3003, unit: 'șinare' },
   { id: '5.42', category: 'chirurgie', subcategory: 'Intervenții', name: 'Pansament', price: 258, unit: 'procedură' },
-
-  // 2. Implantologie dentară
-  { id: '5.43', category: 'chirurgie', subcategory: 'Implantologie', name: 'Inserarea implantului de stadiul I (monolit)', price: 3837, unit: 'intervenție' },
-  { id: '5.44', category: 'chirurgie', subcategory: 'Implantologie', name: 'Inserarea implantului de stadiul II într-o etapă chirurgicală', price: 5137, unit: 'intervenție' },
-  { id: '5.45', category: 'chirurgie', subcategory: 'Implantologie', name: 'Inserarea implantului de stadiul II în două etape chirurgicale', price: 5577, unit: 'intervenție' },
-  { id: '5.46', category: 'chirurgie', subcategory: 'Implantologie', name: 'Sinus Lifting lateral cu utilizarea materialelor sintetice de augmentare și a membranei rezorbabile', price: 7103, unit: 'intervenție' },
-  { id: '5.47', category: 'chirurgie', subcategory: 'Implantologie', name: 'Sinus Lifting crestal', price: 1827, unit: 'intervenție' },
-  { id: '5.48', category: 'chirurgie', subcategory: 'Implantologie', name: 'Transpoziția nervului alveolar inferior cu inserarea simultană a implanturilor', price: 7765, unit: 'intervenție' },
-  { id: '5.49', category: 'chirurgie', subcategory: 'Implantologie', name: 'Sinus lifting lateral cu utilizarea materialelor xenogene de augmentare și a membranei rezorbabile, cu inserarea simultană a implanturilor', price: 8532, unit: 'intervenție' },
-  { id: '5.50', category: 'chirurgie', subcategory: 'Implantologie', name: 'Sinus lifting crestal cu utilizarea materialelor xenogene de augmentare și inserarea simultană a implantului', price: 5183, unit: 'intervenție' },
-  { id: '5.51', category: 'chirurgie', subcategory: 'Implantologie', name: 'Osteoplastia defectelor osoase în zona crestei alveolare cu grefă liberă de țesut osos autogen', price: 4495, unit: 'intervenție' },
-  { id: '5.52', category: 'chirurgie', subcategory: 'Implantologie', name: 'Osteoplastia defectelor osoase în zona crestei alveolare cu plasă din titan și material de augmentare sintetic', price: 4812, unit: 'intervenție' },
-  { id: '5.53', category: 'chirurgie', subcategory: 'Implantologie', name: 'Sinus Lifting lateral cu utilizarea materialelor sintetice de augmentare și a membranei rezorbabile fără inserarea simultană a implanturilor', price: 2381, unit: 'intervenție' },
-  { id: '5.54', category: 'chirurgie', subcategory: 'Implantologie', name: 'Crearea ofertei osoase prin metoda regenerării osoase ghidate (GBR)', price: 4864, unit: 'intervenție' },
-  { id: '5.55', category: 'chirurgie', subcategory: 'Implantologie', name: 'Plastia defectelor osoase în zona apofizei alveolare prin metoda Splitting', price: 4562, unit: 'intervenție' },
-  { id: '5.56', category: 'chirurgie', subcategory: 'Implantologie', name: 'Crearea ofertei osoase prin metoda de osteodistracție', price: 4864, unit: 'intervenție' },
-  { id: '5.57', category: 'chirurgie', subcategory: 'Implantologie', name: 'Augmentarea defectelor cavitare cu utilizarea materialelor sintetice', price: 4070, unit: 'intervenție' },
-  { id: '5.58', category: 'chirurgie', subcategory: 'Implantologie', name: 'Augmentarea defectelor cavitare cu utilizarea materialelor xenogene', price: 3440, unit: 'intervenție' },
-  { id: '5.59', category: 'chirurgie', subcategory: 'Implantologie', name: 'Osteoplastia defectelor osoase în zona crestei alveolare cu plasă din titan și material de augmentare xenogen', price: 6025, unit: 'intervenție' },
-  { id: '5.60', category: 'chirurgie', subcategory: 'Implantologie', name: 'Sinus lifting lateral cu utilizarea materialelor xenogene de augmentare și a membranei rezorbabile, fără inserarea simultană a implanturilor', price: 8056, unit: 'intervenție' },
-  { id: '5.61', category: 'chirurgie', subcategory: 'Implantologie', name: 'Vestibuloplastie', price: 1579, unit: 'intervenție' },
-  { id: '5.62', category: 'chirurgie', subcategory: 'Implantologie', name: 'Gingivoplastia cu grefă liberă epitelială (1-3 dinți)', price: 2631, unit: 'intervenție' },
-  { id: '5.63', category: 'chirurgie', subcategory: 'Implantologie', name: 'Gingivoplastia cu grefă liberă epitelială (4-6 dinți)', price: 3117, unit: 'intervenție' },
-  { id: '5.64', category: 'chirurgie', subcategory: 'Implantologie', name: 'Plastia comunicării orosinusale', price: 1114, unit: 'intervenție' },
-  { id: '5.65', category: 'chirurgie', subcategory: 'Implantologie', name: 'Utilizarea PRF-ului în calitate de material autogen de regenerare', price: 4469, unit: 'intervenție' },
-  { id: '5.66', category: 'chirurgie', subcategory: 'Implantologie', name: 'Utilizarea PRP-ului în calitate de material autogen de regenerare', price: 2789, unit: 'intervenție' },
-  { id: '5.67', category: 'chirurgie', subcategory: 'Traumatologie', name: 'Înlăturarea atelei la un maxilar după consolidarea fracturii posttraumatice', price: 532, unit: 'intervenție' },
+  { id: '5.43', category: 'chirurgie', subcategory: 'Traumatologie', name: 'Înlăturarea atelei la un maxilar după consolidarea fracturii posttraumatice', price: 532, unit: 'intervenție' },
 
   // ============================================
-  // VI. TRATAMENTE PROTETICE DENTARE
+  // VI. IMAGISTICĂ
   // ============================================
-  // 1. Proteze mobilizabile acrilice cu dinți din acrilat
-  { id: '6.1', category: 'protetica', subcategory: 'Proteze mobilizabile', name: 'Microproteză (până la 3 dinți)', price: 1165, unit: 'proteză' },
-  { id: '6.2', category: 'protetica', subcategory: 'Proteze mobilizabile', name: 'Proteză parțială (4-10 dinți)', price: 2053, unit: 'proteză' },
-  { id: '6.3', category: 'protetica', subcategory: 'Proteze mobilizabile', name: 'Proteză totală', price: 2333, unit: 'proteză' },
-  { id: '6.4', category: 'protetica', subcategory: 'Proteze mobilizabile', name: 'Proteză parțială cu bază elastică', price: 4496, unit: 'proteză' },
-  { id: '6.5', category: 'protetica', subcategory: 'Proteze mobilizabile', name: 'Proteză totală cu bază elastică', price: 4755, unit: 'proteză' },
-  { id: '6.6', category: 'protetica', subcategory: 'Proteze mobilizabile', name: 'Confecționarea șinei pentru pugiliști', price: 3321, unit: 'proteză' },
-  { id: '6.7', category: 'protetica', subcategory: 'Proteze mobilizabile', name: 'Confecționarea protezei parțiale sau totale cu bază metalică turnată', price: 4687, unit: 'proteză' },
-  { id: '6.8', category: 'protetica', subcategory: 'Proteze mobilizabile', name: 'Confecționarea protezelor scheletate din biodentoplast', price: 5487, unit: 'proteză' },
-  { id: '6.9', category: 'protetica', subcategory: 'Proteze mobilizabile', name: 'Confecționarea lingurii individuale', price: 352, unit: 'lingură' },
-
-  // 2. Lucrări suplimentare la protezele mobilizabile
-  { id: '6.10', category: 'protetica', subcategory: 'Lucrări suplimentare', name: 'Izolarea torusului', price: 138, unit: 'torus' },
-  { id: '6.11', category: 'protetica', subcategory: 'Lucrări suplimentare', name: 'Armarea bazei cu rețea metalică', price: 409, unit: 'bază' },
-  { id: '6.12', category: 'protetica', subcategory: 'Lucrări suplimentare', name: 'Ajustarea și aplicarea mezostructurii pe implant (proteză mobilizabilă)', price: 420, unit: 'unitate' },
-  { id: '6.13', category: 'protetica', subcategory: 'Lucrări suplimentare', name: 'Aprecierea și fixarea RIM în ocluzie stabilă cu blocuri ocluzale', price: 283, unit: 'vizită' },
-  { id: '6.14', category: 'protetica', subcategory: 'Lucrări suplimentare', name: 'Aprecierea și fixarea RIM în ocluzie instabilă (cu blocuri ocluzale sau borduri de ocluzie)', price: 309, unit: 'vizită' },
-  { id: '6.15', category: 'protetica', subcategory: 'Lucrări suplimentare', name: 'Aprecierea și fixarea RC la dentat în lipsa ocluziei (cu borduri de ocluzie)', price: 593, unit: 'vizită' },
-  { id: '6.16', category: 'protetica', subcategory: 'Lucrări suplimentare', name: 'Aprecierea și fixarea RC la edentatul total (cu borduri de ocluzie)', price: 722, unit: 'vizită' },
-  { id: '6.17', category: 'protetica', subcategory: 'Lucrări suplimentare', name: 'Rebazarea protezei mobilizabile', price: 417, unit: 'proteză' },
-  { id: '6.18', category: 'protetica', subcategory: 'Lucrări suplimentare', name: 'Reparația protezei mobilizabile', price: 494, unit: 'proteză' },
-  { id: '6.19', category: 'protetica', subcategory: 'Lucrări suplimentare', name: 'Alipirea unei croșete', price: 411, unit: 'croșetă' },
-  { id: '6.20', category: 'protetica', subcategory: 'Lucrări suplimentare', name: 'Vizită secundară la fiecare etapă de confecționare și ajustare a protezelor dentare', price: 137, unit: 'vizită' },
-
-  // 3. Proteze fixe
-  { id: '6.21', category: 'protetica', subcategory: 'Proteze fixe', name: 'Vinir din ceramică prin tehnica de laborator', price: 4028, unit: 'unitate' },
-  { id: '6.22', category: 'protetica', subcategory: 'Proteze fixe', name: 'Coroană cu înveliș din metal inoxidabil', price: 802, unit: 'coroană' },
-  { id: '6.23', category: 'protetica', subcategory: 'Proteze fixe', name: 'Coroană cu înveliș din acril', price: 1095, unit: 'coroană' },
-  { id: '6.24', category: 'protetica', subcategory: 'Proteze fixe', name: 'Coroană/Dinte mixt cu înveliș din acril', price: 1139, unit: 'coroană' },
-  { id: '6.25', category: 'protetica', subcategory: 'Proteze fixe', name: 'Coroană de porțelan', price: 2985, unit: 'coroană' },
-  { id: '6.26', category: 'protetica', subcategory: 'Proteze fixe', name: 'Incrustație cu pivot din oțel', price: 474, unit: 'incrustație' },
-  { id: '6.27', category: 'protetica', subcategory: 'Proteze fixe', name: 'Dinte turnat din oțel', price: 687, unit: 'dinte' },
-  { id: '6.28', category: 'protetica', subcategory: 'Proteze fixe', name: 'Reparația fațetei', price: 260, unit: 'fațetă' },
-  { id: '6.29', category: 'protetica', subcategory: 'Proteze fixe', name: 'Fixarea coroanei', price: 203, unit: 'coroană' },
-  { id: '6.30', category: 'protetica', subcategory: 'Proteze fixe', name: 'Ablațiunea coroanei turnate (descimentare)', price: 210, unit: 'unitate' },
-  { id: '6.31', category: 'protetica', subcategory: 'Proteze fixe', name: 'Fixarea provizorie a unei coroane', price: 144, unit: 'coroană' },
-
-  // 4. Proteze scheletate turnate din cobalt–crom
-  { id: '6.32', category: 'protetica', subcategory: 'Proteze scheletate', name: 'Proteze scheletate', price: 4815, unit: 'proteză' },
-  { id: '6.33', category: 'protetica', subcategory: 'Proteze scheletate', name: 'Proteze scheletate pe culise', price: 6470, unit: 'proteză' },
-
-  // 5. Confecționarea protezelor turnate
-  { id: '6.34', category: 'protetica', subcategory: 'Proteze turnate', name: 'Coroană/Dinte metalic turnat', price: 737, unit: 'coroană/dinte' },
-  { id: '6.35', category: 'protetica', subcategory: 'Proteze turnate', name: 'Coroană/Dinte metalo-acrilic', price: 1077, unit: 'coroană/dinte' },
-  { id: '6.36', category: 'protetica', subcategory: 'Proteze turnate', name: 'Coroană/Dinte metalo-ceramic', price: 1437, unit: 'coroană/dinte' },
-  { id: '6.37', category: 'protetica', subcategory: 'Proteze turnate', name: 'Coroană/Dinte metalic turnat (Cr.Ni/Cr.Co.)', price: 791, unit: 'coroană/dinte' },
-  { id: '6.38', category: 'protetica', subcategory: 'Proteze turnate', name: 'Coroană/Dinte metalo-acrilic din (Cr.Ni/Cr.Co.)', price: 1084, unit: 'coroană/dinte' },
-  { id: '6.39', category: 'protetica', subcategory: 'Proteze turnate', name: 'Coroană/Dinte metalo-ceramic din (Cr.Ni/Cr.Co.)', price: 1444, unit: 'coroană/dinte' },
-  { id: '6.40', category: 'protetica', subcategory: 'Proteze turnate', name: 'Coroană/Dinte frezat din titan', price: 2088, unit: 'coroană' },
-  { id: '6.41', category: 'protetica', subcategory: 'Proteze turnate', name: 'Coroană/Dinte din titan acoperit cu ceramică', price: 2428, unit: 'coroană/dinte' },
-  { id: '6.42', category: 'protetica', subcategory: 'Proteze turnate', name: 'Coroană/Dinte frezat din oxid de zirconiu', price: 3195, unit: 'coroană/dinte' },
-  { id: '6.43', category: 'protetica', subcategory: 'Proteze turnate', name: 'Coroană/Dinte din oxid de zirconiu acoperit cu ceramică', price: 4113, unit: 'coroană/dinte' },
-  { id: '6.44', category: 'protetica', subcategory: 'Proteze turnate', name: 'Coroană/Dinte din ceramică presată', price: 3101, unit: 'coroană/dinte' },
-
-  // 6. Confecționarea protezelor turnate fixate pe implant
-  { id: '6.45', category: 'protetica', subcategory: 'Proteze pe implant', name: 'Coroană metalică turnată (oțel/Cr.Ni/Cr.Co) fixată pe implant', price: 1915, unit: 'coroană' },
-  { id: '6.46', category: 'protetica', subcategory: 'Proteze pe implant', name: 'Coroană metalo-ceramică turnată (oțel/Cr.Ni/Cr.Co) fixată pe implant', price: 2899, unit: 'coroană' },
-  { id: '6.47', category: 'protetica', subcategory: 'Proteze pe implant', name: 'Coroană metalo-ceramică turnată din titan fixată pe implant', price: 3415, unit: 'coroană' },
-  { id: '6.48', category: 'protetica', subcategory: 'Proteze pe implant', name: 'Coroană metalo-ceramică din zirconiu fixată pe implant', price: 3996, unit: 'coroană' },
-  { id: '6.49', category: 'protetica', subcategory: 'Proteze pe implant', name: 'Coroană ceramică presată fixată pe implant', price: 3224, unit: 'coroană' },
-
-  // 7. Proteze fixe suflate Ti-N (nitrit-titan)
-  { id: '6.50', category: 'protetica', subcategory: 'Proteze Ti-N', name: 'Coroană/dinte mixt cu înveliș din acril (Ti-N)', price: 1149, unit: 'unitate' },
-  { id: '6.51', category: 'protetica', subcategory: 'Proteze Ti-N', name: 'Coroană/dinte de înveliș din oțel inoxidabil (Ti-N)', price: 850, unit: 'coroană/dinte' },
-  { id: '6.52', category: 'protetica', subcategory: 'Proteze Ti-N', name: 'Coroană/Dinte metalic turnat (Ti-N)', price: 833, unit: 'coroană/dinte' },
-
-  // 8. Servicii de turnătorie
-  { id: '6.53', category: 'protetica', subcategory: 'Turnătorie', name: 'Turnare corpuri de punte simple', price: 97, unit: 'corp de punte' },
-  { id: '6.54', category: 'protetica', subcategory: 'Turnătorie', name: 'Pivoți', price: 97, unit: 'pivot' },
-  { id: '6.55', category: 'protetica', subcategory: 'Turnătorie', name: 'Turnare corpuri de punte pentru protezele MC, MA și coroane turnate', price: 194, unit: 'corp de punte/coroană' },
-  { id: '6.56', category: 'protetica', subcategory: 'Turnătorie', name: 'Turnare proteze arcate simple din Cr/Co', price: 971, unit: 'proteză' },
-  { id: '6.57', category: 'protetica', subcategory: 'Turnătorie', name: 'Turnare proteze arcate dublate Co/Cr', price: 1942, unit: 'proteză' },
+  { id: '6.1', category: 'imagistica', name: 'Ortopantomografie', price: 177, unit: 'film' },
+  { id: '6.2', category: 'imagistica', name: 'Ortopantomografie sectorială', price: 106, unit: 'film' },
+  { id: '6.3', category: 'imagistica', name: 'Viziografie dentară', price: 82, unit: 'investigație' },
+  { id: '6.4', category: 'imagistica', name: 'Radiografia dinților (3x4cm)', price: 25, unit: 'film' },
+  { id: '6.5', category: 'imagistica', name: 'Teleradiografia maxilarelor', price: 200, unit: 'film' },
 
   // ============================================
-  // VII. TRATAMENTE ORTODONTICE
+  // VII. SERVICII CNAM (Selectie)
   // ============================================
-  // 1. Activități efectuate în cabinetul ortodontic
-  { id: '7.1', category: 'ortodontie', subcategory: 'Cabinet', name: 'Amprentă cu masa termoplastică Stens pentru obturator la nou-născuți', price: 291, unit: 'amprentă' },
-  { id: '7.2', category: 'ortodontie', subcategory: 'Cabinet', name: 'Soclarea unui model în ghips pentru o arcadă dentară în soclu de plastic sau elastic', price: 253, unit: 'model' },
-  { id: '7.3', category: 'ortodontie', subcategory: 'Cabinet', name: 'Studierea biometrică a modelelor de diagnostic', price: 309, unit: 'model' },
-  { id: '7.4', category: 'ortodontie', subcategory: 'Cabinet', name: 'Analiză fotostatică', price: 317, unit: 'investigație' },
-  { id: '7.5', category: 'ortodontie', subcategory: 'Cabinet', name: 'Alcătuirea planului de tratament și construirea aparatului ortodontic', price: 950, unit: 'model' },
-  { id: '7.6', category: 'ortodontie', subcategory: 'Cabinet', name: 'Analiză cefalometrică', price: 317, unit: 'investigație' },
-  { id: '7.7', category: 'ortodontie', subcategory: 'Cabinet', name: 'Stabilirea ocluziei corectate', price: 325, unit: 'investigație' },
-  { id: '7.8', category: 'ortodontie', subcategory: 'Cabinet', name: 'Exerciții de miogimnastică și corectarea viciilor', price: 158, unit: 'exercițiu' },
-  { id: '7.9', category: 'ortodontie', subcategory: 'Cabinet', name: 'Reeducarea funcțională pentru înlăturarea obiceiurilor vicioase', price: 475, unit: 'ședință' },
-  { id: '7.10', category: 'ortodontie', subcategory: 'Cabinet', name: 'Șlefuirea unui dinte', price: 277, unit: 'dinte' },
-  { id: '7.11', category: 'ortodontie', subcategory: 'Cabinet', name: 'Aderarea arcului facial la aparatul dentar (fix, mobil)', price: 382, unit: 'arc' },
-  { id: '7.12', category: 'ortodontie', subcategory: 'Cabinet', name: 'Activarea elementelor active (resorturilor) a arcurilor principale și secundare, a șuruburilor', price: 343, unit: 'arc' },
-  { id: '7.13', category: 'ortodontie', subcategory: 'Cabinet', name: 'Activarea unui arc de expansiune Coffin', price: 237, unit: 'arc' },
-  { id: '7.14', category: 'ortodontie', subcategory: 'Cabinet', name: 'Aplicarea unui inel elastic pentru separarea fiziologică', price: 183, unit: 'inel' },
-  { id: '7.15', category: 'ortodontie', subcategory: 'Cabinet', name: 'Aplicarea unui inel ortodontic', price: 353, unit: 'cimentare' },
-  { id: '7.16', category: 'ortodontie', subcategory: 'Cabinet', name: 'Aplicarea rășinilor ocluzale', price: 209, unit: 'dinte' },
-  { id: '7.17', category: 'ortodontie', subcategory: 'Cabinet', name: 'Aplicarea pintenilor linguali', price: 759, unit: 'arcadă' },
-  { id: '7.18', category: 'ortodontie', subcategory: 'Cabinet', name: 'Sudarea unui element', price: 144, unit: 'sudare' },
-
-  // 2. Confecționarea și instalarea aparatelor ortodontice (vor fi adăugate când se continuă catalogul)
-  { id: '7.19', category: 'ortodontie', subcategory: 'Brackets', name: 'Brackets metalici ligaturabili (o arcadă)', price: 5440, unit: 'arcadă' },
-  { id: '7.20', category: 'ortodontie', subcategory: 'Brackets', name: 'Brackets ceramică ligaturabili (o arcadă)', price: 8332, unit: 'arcadă' },
-  { id: '7.21', category: 'ortodontie', subcategory: 'Brackets', name: 'Brackets metalici autoligaturabili (o arcadă)', price: 7922, unit: 'arcadă' },
-  { id: '7.22', category: 'ortodontie', subcategory: 'Brackets', name: 'Brackets ceramică autoligaturabili (o arcadă)', price: 11171, unit: 'arcadă' },
-  { id: '7.23', category: 'ortodontie', subcategory: 'Aparate mobilizabile', name: 'Placă palatinală/linguală', price: 786, unit: 'aparat' },
-  { id: '7.24', category: 'ortodontie', subcategory: 'Aparate mobilizabile', name: 'Aparat Hawley', price: 862, unit: 'aparat' },
-  { id: '7.25', category: 'ortodontie', subcategory: 'Aparate mobilizabile', name: 'Trainer funcțional', price: 1605, unit: 'aparat' },
-  { id: '7.26', category: 'ortodontie', subcategory: 'Aparate mobilizabile', name: 'Twin-block', price: 1956, unit: 'aparat' },
-  { id: '7.27', category: 'ortodontie', subcategory: 'Aparate mobilizabile', name: 'Disjunctor', price: 2792, unit: 'aparat' },
-
-  // ============================================
-  // VIII. IMAGISTICĂ
-  // ============================================
-  { id: '8.1', category: 'imagistica', name: 'Ortopantomografie', price: 177, unit: 'film' },
-  { id: '8.2', category: 'imagistica', name: 'Ortopantomografie sectorială', price: 106, unit: 'film' },
-  { id: '8.3', category: 'imagistica', name: 'Viziografie dentară', price: 82, unit: 'investigație' },
-  { id: '8.4', category: 'imagistica', name: 'Radiografia dinților (3x4cm)', price: 25, unit: 'film' },
-  { id: '8.5', category: 'imagistica', name: 'Teleradiografia maxilarelor', price: 200, unit: 'film' },
-
-  // ============================================
-  // IX. SERVICII CNAM (Selectie)
-  // ============================================
-  { id: '9.1', category: 'cnam', name: 'Consultație medic stomatolog (CNAM)', price: 368, unit: 'vizită', cnamEligible: true },
-  { id: '9.2', category: 'cnam', name: 'Obturarea defectelor coronariene (CNAM)', price: '378-386', unit: 'dinte', cnamEligible: true },
-  { id: '9.3', category: 'cnam', name: 'Tratament pulpită acută (CNAM)', price: '734-1012', unit: 'dinte', cnamEligible: true },
-  { id: '9.4', category: 'cnam', name: 'Extracție dentară (CNAM)', price: '452-1593', unit: 'dinte', cnamEligible: true },
-  { id: '9.5', category: 'cnam', name: 'Detartraj ultrasunet (CNAM)', price: 632, unit: 'ședință', cnamEligible: true },
-  { id: '9.6', category: 'cnam', name: 'Tratament parodontită (CNAM)', price: 322, unit: 'ședință', cnamEligible: true },
-  { id: '9.7', category: 'cnam', name: 'Tratament urgențe stomatologice (CNAM)', price: 275, unit: 'vizită', cnamEligible: true },
+  { id: '7.1', category: 'cnam', name: 'Consultație medic stomatolog (CNAM)', price: 368, unit: 'vizită', cnamEligible: true },
+  { id: '7.2', category: 'cnam', name: 'Obturarea defectelor coronariene (CNAM)', price: '378-386', unit: 'dinte', cnamEligible: true },
+  { id: '7.3', category: 'cnam', name: 'Tratament pulpită acută (CNAM)', price: '734-1012', unit: 'dinte', cnamEligible: true },
+  { id: '7.4', category: 'cnam', name: 'Extracție dentară (CNAM)', price: '452-1593', unit: 'dinte', cnamEligible: true },
+  { id: '7.5', category: 'cnam', name: 'Detartraj ultrasunet (CNAM)', price: 632, unit: 'ședință', cnamEligible: true },
+  { id: '7.6', category: 'cnam', name: 'Tratament parodontită (CNAM)', price: 322, unit: 'ședință', cnamEligible: true },
+  { id: '7.7', category: 'cnam', name: 'Tratament urgențe stomatologice (CNAM)', price: 275, unit: 'vizită', cnamEligible: true },
 ];

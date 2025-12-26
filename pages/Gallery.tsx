@@ -2,18 +2,19 @@ import React, { useState } from 'react';
 import { X, ChevronLeft, ChevronRight, Camera } from 'lucide-react';
 
 const galleryImages = [
-  { id: 1, src: 'https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&q=80&w=800', category: 'clinic', title: 'Sala de Așteptare' },
+  { id: 1, src: 'https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&q=80&w=800', category: 'clinic', title: 'Sala de Tratament' },
   { id: 2, src: 'https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?auto=format&fit=crop&q=80&w=800', category: 'treatment', title: 'Cabinet de Tratament' },
   { id: 3, src: 'https://images.unsplash.com/photo-1606811841689-23dfddce3e95?auto=format&fit=crop&q=80&w=800', category: 'equipment', title: 'Echipament Modern' },
   { id: 4, src: 'https://images.unsplash.com/photo-1609840114035-3c981b782dfe?auto=format&fit=crop&q=80&w=800', category: 'clinic', title: 'Recepția Clinicii' },
   { id: 5, src: 'https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&q=80&w=800', category: 'treatment', title: 'Tratament Stomatologic' },
-  { id: 6, src: 'https://images.unsplash.com/photo-1606265752439-1f18756aa5fc?auto=format&fit=crop&q=80&w=800', category: 'equipment', title: 'Unitate Dentară' },
-  { id: 7, src: 'https://images.unsplash.com/photo-1629909615184-74f495363b67?auto=format&fit=crop&q=80&w=800', category: 'results', title: 'Rezultate Tratament' },
-  { id: 8, src: 'https://images.unsplash.com/photo-1551601651-2a8555f1a136?auto=format&fit=crop&q=80&w=800', category: 'clinic', title: 'Zona de Sterilizare' },
-  { id: 9, src: 'https://images.unsplash.com/photo-1516549655169-df83a0774514?auto=format&fit=crop&q=80&w=800', category: 'equipment', title: 'Radiologie Digitală' },
+  { id: 6, src: 'images/gallery/unit_dentar.jpg', category: 'equipment', title: 'Unit Dentar' },
+  { id: 7, src: 'https://images.unsplash.com/photo-1606265752439-1f18756aa5fc?auto=format&fit=crop&q=80&w=800', category: 'treatment', title: 'Tratament Stomatologic' },
+  { id: 8, src: 'https://images.unsplash.com/photo-1629909615184-74f495363b67?auto=format&fit=crop&q=80&w=800', category: 'results', title: 'Cabinet Stomatologic' },
+  // { id: 9, src: 'https://images.unsplash.com/photo-1551601651-2a8555f1a136?auto=format&fit=crop&q=80&w=800', category: 'clinic', title: 'Zona de Sterilizare' },
+  { id: 9, src: 'images/gallery/radiologic.jpg', category: 'equipment', title: 'Cabinet Radiologic' },
   { id: 10, src: 'https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&q=80&w=800', category: 'team', title: 'Echipa Medicală' },
-  { id: 11, src: 'https://images.unsplash.com/photo-1588776813186-6f4667a12a9e?auto=format&fit=crop&q=80&w=800', category: 'treatment', title: 'Consultație' },
-  { id: 12, src: 'https://images.unsplash.com/photo-1598256989800-fe5f95da9787?auto=format&fit=crop&q=80&w=800', category: 'results', title: 'Zâmbet Perfect' },
+  { id: 11, src: 'images/gallery/consult.jpg', category: 'treatment', title: 'Consultație' },
+  { id: 12, src: 'https://images.unsplash.com/photo-1598256989800-fe5f95da9787?auto=format&fit=crop&q=80&w=800', category: 'results', title: 'Unit Dentar' },
 ];
 
 const categories = [

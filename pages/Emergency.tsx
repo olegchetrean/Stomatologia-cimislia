@@ -1,7 +1,8 @@
 import React from 'react';
-import { AlertTriangle, Phone, Clock, MapPin, CheckCircle, ArrowRight } from 'lucide-react';
+import { AlertTriangle, Phone, Clock, MapPin, CheckCircle, ArrowRight, User } from 'lucide-react';
 import { Button } from '../components/ui/Button';
 import { Link } from 'react-router-dom';
+import { TEAM } from '../constants';
 
 const emergencyTypes = [
   {
@@ -51,6 +52,20 @@ const firstAidTips = [
   'Contactați medicul stomatolog cât mai curând',
 ];
 
+const formatPhone = (phone: string | undefined): string => {
+  if (!phone) return '';
+  const cleaned = phone.replace(/\s/g, '');
+  // Formatare pentru numere moldovenești
+  if (cleaned.startsWith('0690')) {
+    return cleaned.replace(/(\d{4})(\d{2})(\d{3})/, '$1 $2 $3');
+  } else if (cleaned.startsWith('0692')) {
+    return cleaned.replace(/(\d{4})(\d{2})(\d{3})/, '$1 $2 $3');
+  } else if (cleaned.length === 9) {
+    return cleaned.replace(/(\d{3})(\d{3})(\d{3})/, '$1 $2 $3');
+  }
+  return phone;
+};
+
 export const Emergency = () => {
   return (
     <div className="min-h-screen bg-slate-50 pt-20">
@@ -65,9 +80,9 @@ export const Emergency = () => {
                 <p className="text-red-100">Sunați acum pentru asistență imediată</p>
               </div>
             </div>
-            <a href="tel:079044016">
+            <a href="tel:079772488">
               <Button as="div" className="bg-white text-red-600 hover:bg-red-50 font-bold text-lg">
-                <Phone className="w-5 h-5 mr-2" /> 079 044 016
+                <Phone className="w-5 h-5 mr-2" /> 079 772 488
               </Button>
             </a>
           </div>
@@ -93,8 +108,8 @@ export const Emergency = () => {
               <Phone className="w-6 h-6" />
             </div>
             <h3 className="font-heading font-bold text-lg mb-2">Telefon Urgențe</h3>
-            <a href="tel:079044016" className="text-2xl font-bold text-red-600 hover:text-red-700">
-              079 044 016
+            <a href="tel:079772488" className="text-2xl font-bold text-red-600 hover:text-red-700">
+              079 772 488
             </a>
             <p className="text-slate-600 text-sm mt-2">Disponibil în orele de program</p>
           </div>
@@ -115,6 +130,38 @@ export const Emergency = () => {
             <h3 className="font-heading font-bold text-lg mb-2">Adresa Clinicii</h3>
             <p className="text-slate-900 font-medium">Str. Alexandru cel Bun 135</p>
             <p className="text-slate-600">Cimișlia, Moldova</p>
+          </div>
+        </div>
+
+        {/* Doctors Contact */}
+        <div className="mb-16">
+          <h2 className="font-heading text-3xl font-bold text-slate-900 mb-8">Contactați Medicul Dvs.</h2>
+          <p className="text-slate-600 mb-6 max-w-3xl">
+            În caz de urgență, puteți contacta direct medicul dvs. pentru a evita întârzierile. Dacă medicul dvs. nu este disponibil, contactați alt medic din echipă.
+          </p>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {TEAM.filter(member => member.role === 'Medic Stomatolog' || member.role === 'Medic Stomatolog Generalist' || (member.role === 'Administrator Interimar' && member.phone)).map(member => (
+              <div key={member.id} className="bg-white rounded-2xl p-6 shadow-sm border border-slate-100 hover:shadow-lg transition-shadow">
+                <div className="flex items-start gap-4">
+                  <div className="w-12 h-12 bg-medical-blue/10 rounded-xl flex items-center justify-center text-medical-blue shrink-0">
+                    <User className="w-6 h-6" />
+                  </div>
+                  <div className="flex-1">
+                    <h3 className="font-heading font-bold text-lg text-slate-900 mb-1">{member.name}</h3>
+                    <p className="text-sm text-slate-500 mb-3">{member.role}</p>
+                    {member.phone && (
+                      <a 
+                        href={`tel:${member.phone.replace(/\s/g, '')}`} 
+                        className="flex items-center gap-2 text-medical-blue font-bold hover:text-medical-blue-lighter transition-colors"
+                      >
+                        <Phone className="w-4 h-4" />
+                        {formatPhone(member.phone)}
+                      </a>
+                    )}
+                  </div>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
 
@@ -194,9 +241,9 @@ export const Emergency = () => {
             În caz de urgență stomatologică, timpul contează. Contactați-ne imediat pentru a primi ajutorul de care aveți nevoie.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a href="tel:079044016">
+            <a href="tel:079772488">
               <Button size="lg" as="div" className="bg-white text-red-600 hover:bg-red-50">
-                <Phone className="w-5 h-5 mr-2" /> Sună Acum: 079 044 016
+                <Phone className="w-5 h-5 mr-2" /> Sună: 079 772 488
               </Button>
             </a>
             <Link to="/programare">

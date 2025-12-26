@@ -5,40 +5,28 @@ import { Link } from 'react-router-dom';
 
 const services = [
   {
-    title: 'Prima Vizită',
-    description: 'Consultație de acomodare pentru copiii care vin prima dată la dentist.',
-    age: '2-3 ani',
-    icon: Smile
-  },
-  {
-    title: 'Sigilări Dentare',
-    description: 'Protejarea dinților de carii prin sigilarea fisurilor molari.',
-    age: '6-12 ani',
+    title: 'Igienizarea Cavității Bucale',
+    description: 'Igienizarea profesională a cavității bucale a copiilor pentru menținerea sănătății dentare.',
+    age: 'Toate vârstele',
     icon: Shield
   },
   {
-    title: 'Tratament Carii',
-    description: 'Tratarea cariilor la dinții de lapte și permanenți cu materiale speciale.',
-    age: 'Orice vârstă',
+    title: 'Tratarea Cariilor și Complicațiilor',
+    description: 'Tratarea cariilor și complicațiilor ei a dinților temporari cu tehnici adaptate copiilor.',
+    age: 'Dinți temporari',
     icon: Heart
   },
   {
-    title: 'Fluorurare',
-    description: 'Aplicarea de fluoruri pentru întărirea smalțului dentar.',
-    age: '3+ ani',
-    icon: Star
+    title: 'Tratamentul Afecțiunilor Dinților Permanenți',
+    description: 'Tratamentul tuturor afecțiunilor dinților permanenți, inclusiv carii, pulpite și periodontite.',
+    age: 'Dinți permanenți',
+    icon: Smile
   },
   {
-    title: 'Extracții',
-    description: 'Extracții de dinți de lapte când este necesar.',
+    title: 'Extracții Dentare',
+    description: 'Extracția dinților temporari și a dinților permanenți care au indicații la extracții dentare.',
     age: 'Conform indicațiilor',
     icon: Baby
-  },
-  {
-    title: 'Ortodonție Preventivă',
-    description: 'Evaluare și tratament precoce al problemelor de aliniere.',
-    age: '7+ ani',
-    icon: Smile
   },
 ];
 
@@ -101,7 +89,7 @@ export const Pediatrics = () => {
               {[
                 'Medici cu experiență în stomatologie pediatrică',
                 'Atmosferă prietenoasă și relaxantă pentru copii',
-                'Tehnici de sedare pentru copiii anxioși',
+                'Tehnici de anestezie locală adaptate vârstei',
                 'Tratamente fără durere cu anestezie adaptată vârstei',
                 'Explicații pe înțelesul copiilor',
                 'Recompense și certificate pentru cei curajoși'
@@ -229,9 +217,9 @@ export const Pediatrics = () => {
                 <Calendar className="w-5 h-5 mr-2" /> Programează Acum
               </Button>
             </Link>
-            <a href="tel:079044016">
+            <a href="tel:079772488">
               <Button variant="outline" size="lg" as="div" className="border-white/40 hover:bg-white/10">
-                <Phone className="w-5 h-5 mr-2" /> 079 044 016
+                <Phone className="w-5 h-5 mr-2" /> 079 772 488
               </Button>
             </a>
           </div>

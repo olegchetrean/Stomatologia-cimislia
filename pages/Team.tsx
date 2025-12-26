@@ -22,24 +22,29 @@ export const Team = () => {
         <div className="mb-20">
           <h2 className="font-heading text-2xl font-bold text-slate-900 mb-8 border-l-4 border-medical-blue pl-4">Administrație</h2>
           <div className="max-w-4xl mx-auto">
-             <div className="bg-white rounded-3xl p-8 shadow-xl flex flex-col md:flex-row gap-8 items-center">
-               <div className="w-48 h-48 shrink-0 rounded-2xl overflow-hidden shadow-lg">
-                 <img src={TEAM[0].image} alt={TEAM[0].name} className="w-full h-full object-cover" />
-               </div>
-               <div>
-                 <h3 className="font-heading text-2xl font-bold text-slate-900">{TEAM[0].name}</h3>
-                 <p className="text-medical-blue-lighter font-medium mb-4">{TEAM[0].role}</p>
-                 <p className="text-slate-600 leading-relaxed italic">"{TEAM[0].bio}"</p>
-                 <div className="mt-6 flex gap-4">
-                   <div className="flex items-center gap-2 text-sm text-slate-500">
-                     <Award className="w-4 h-4 text-trust-green" /> 15+ Ani Experiență
-                   </div>
-                   <div className="flex items-center gap-2 text-sm text-slate-500">
-                     <BookOpen className="w-4 h-4 text-medical-blue" /> Master în Sănătate Publică
-                   </div>
-                 </div>
-               </div>
-             </div>
+              <div className="bg-white rounded-3xl p-8 shadow-xl">
+                <div>
+                  <h3 className="font-heading text-2xl font-bold text-slate-900 mb-2">{TEAM[0].name}</h3>
+                  <p className="text-medical-blue-lighter font-medium mb-4">{TEAM[0].role}</p>
+                  <p className="text-slate-600 leading-relaxed italic mb-4">"{TEAM[0].bio}"</p>
+                  {TEAM[0].phone && (
+                    <a 
+                      href={`tel:${TEAM[0].phone.replace(/\s/g, '')}`} 
+                      className="text-medical-blue font-bold text-lg hover:text-medical-blue-lighter transition-colors"
+                    >
+                      {TEAM[0].phone.match(/.{1,3}/g)?.join(' ') || TEAM[0].phone}
+                    </a>
+                  )}
+                  <div className="mt-6 flex gap-4">
+                    <div className="flex items-center gap-2 text-sm text-slate-500">
+                      <Award className="w-4 h-4 text-trust-green" /> 15+ Ani Experiență
+                    </div>
+                    <div className="flex items-center gap-2 text-sm text-slate-500">
+                      <BookOpen className="w-4 h-4 text-medical-blue" /> Master în Sănătate Publică
+                    </div>
+                  </div>
+                </div>
+              </div>
           </div>
         </div>
 
@@ -47,7 +52,7 @@ export const Team = () => {
         <div className="mb-20">
           <h2 className="font-heading text-2xl font-bold text-slate-900 mb-8 border-l-4 border-medical-blue pl-4">Medici Stomatologi</h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {TEAM.slice(1, 5).map(member => (
+            {TEAM.filter(member => member.role === 'Medic Stomatolog' || member.role === 'Medic Stomatolog Generalist').map(member => (
               <TeamCard3D key={member.id} member={member} />
             ))}
           </div>
@@ -57,13 +62,10 @@ export const Team = () => {
         <div>
           <h2 className="font-heading text-2xl font-bold text-slate-900 mb-8 border-l-4 border-medical-blue pl-4">Asistenți Medicali</h2>
           <div className="grid md:grid-cols-3 gap-8">
-            {TEAM.slice(5).map(member => (
+            {TEAM.filter(member => member.role === 'Asistent Superior' || member.role === 'Asistent Medical').map(member => (
               <div key={member.id} className="bg-white p-6 rounded-2xl shadow-md border border-slate-100 hover:shadow-xl transition-all">
-                <div className="w-24 h-24 rounded-full overflow-hidden mx-auto mb-4 border-4 border-slate-50">
-                  <img src={member.image} alt={member.name} className="w-full h-full object-cover" />
-                </div>
                 <div className="text-center">
-                  <h3 className="font-heading font-bold text-lg">{member.name}</h3>
+                  <h3 className="font-heading font-bold text-lg mb-2">{member.name}</h3>
                   <p className="text-slate-500 text-sm">{member.role}</p>
                 </div>
               </div>

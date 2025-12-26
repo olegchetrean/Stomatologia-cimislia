@@ -20,8 +20,6 @@ const navItems: NavItem[] = [
     children: [
       { name: 'Toate Serviciile', path: '/servicii', description: 'Lista completă de servicii' },
       { name: 'Lista de Prețuri', path: '/preturi', description: 'Tarife și costuri' },
-      { name: 'Implantologie', path: '/implantologie', description: 'Implanturi dentare' },
-      { name: 'Ortodonție', path: '/ortodontie', description: 'Aparate dentare' },
       { name: 'Pediatrie', path: '/pediatrie', description: 'Pentru copii' },
     ]
   },
@@ -33,8 +31,6 @@ const navItems: NavItem[] = [
 const footerLinks = {
   servicii: [
     { name: 'Toate Serviciile', path: '/servicii' },
-    { name: 'Implantologie', path: '/implantologie' },
-    { name: 'Ortodonție', path: '/ortodontie' },
     { name: 'Pediatrie', path: '/pediatrie' },
     { name: 'Lista de Prețuri', path: '/preturi' },
   ],
@@ -86,7 +82,7 @@ export const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) =>
             <AlertTriangle className="w-4 h-4 animate-pulse" />
             <span className="font-medium">Urgențe Stomatologice:</span>
           </div>
-          <a href="tel:079044016" className="font-bold hover:underline">079 044 016</a>
+          <a href="tel:079772488" className="font-bold hover:underline">079 772 488</a>
           <Link to="/urgente" className="text-red-200 hover:text-white text-xs">Mai multe info →</Link>
         </div>
       </div>
@@ -95,8 +91,8 @@ export const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) =>
       <div className="bg-medical-blue text-white py-2 text-xs md:text-sm z-sticky relative">
         <div className="container mx-auto px-4 flex justify-between items-center">
           <div className="flex items-center gap-4">
-            <a href="tel:079044016" className="flex items-center gap-1 hover:text-medical-blue-lighter transition-colors">
-              <Phone className="w-3 h-3" /> 079 044 016
+            <a href="tel:079772488" className="flex items-center gap-1 hover:text-medical-blue-lighter transition-colors">
+              <Phone className="w-3 h-3" /> 079 772 488
             </a>
             <span className="hidden md:flex items-center gap-1">
               <MapPin className="w-3 h-3" /> Cimișlia, str. Alexandru cel Bun 135
@@ -349,11 +345,15 @@ export const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) =>
                 </li>
                 <li className="flex gap-3">
                   <Phone className="w-5 h-5 text-medical-blue-lighter shrink-0" />
-                  <a href="tel:079044016" className="hover:text-white font-bold">079 044 016</a>
+                  <a href="tel:079772488" className="hover:text-white font-bold">079 772 488</a>
                 </li>
                 <li className="flex gap-3">
                   <Mail className="w-5 h-5 text-medical-blue-lighter shrink-0" />
-                  <a href="mailto:victoras1984@mail.ru" className="hover:text-white">victoras1984@mail.ru</a>
+                  <a href="mailto:nolaresu@bk.ru" className="hover:text-white">nolaresu@bk.ru</a>
+                </li>
+                <li className="flex gap-3">
+                  <Mail className="w-5 h-5 text-medical-blue-lighter shrink-0" />
+                  <a href="mailto:centrustomcim@gmail.com" className="hover:text-white">centrustomcim@gmail.com</a>
                 </li>
               </ul>
 

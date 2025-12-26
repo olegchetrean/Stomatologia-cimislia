@@ -10,10 +10,8 @@ const categoryInfo: Record<ServiceCategory, { label: string; description: string
   consultatii: { label: 'Consultații', description: 'Evaluare și diagnostic profesional', color: 'bg-blue-500' },
   cabinet: { label: 'Activități Cabinet', description: 'Proceduri și preparare', color: 'bg-indigo-500' },
   anestezie: { label: 'Anestezie', description: 'Tratamente fără durere', color: 'bg-purple-500' },
-  terapie: { label: 'Terapie Dentară', description: 'Tratamente și restaurări', color: 'bg-pink-500' },
-  chirurgie: { label: 'Chirurgie Orală', description: 'Intervenții și implanturi', color: 'bg-red-500' },
-  protetica: { label: 'Protetică', description: 'Proteze și coroane', color: 'bg-orange-500' },
-  ortodontie: { label: 'Ortodonție', description: 'Aparate și aliniere', color: 'bg-teal-500' },
+  terapie: { label: 'Stomatologie Terapeutică', description: 'Tratamentul gingivitelor, parodontitelor, cariilor, pulpitelor, restaurări dentare și albire', color: 'bg-pink-500' },
+  chirurgie: { label: 'Chirurgie Dento-Alveolară', description: 'Extracții și intervenții', color: 'bg-red-500' },
   imagistica: { label: 'Imagistică', description: 'Radiografii și diagnostic', color: 'bg-cyan-500' },
   cnam: { label: 'Program CNAM', description: 'Servicii decontate', color: 'bg-green-500' },
 };
@@ -29,10 +27,8 @@ export const Services = () => {
     { id: 'all', label: 'Toate' },
     { id: 'consultatii', label: 'Consultații' },
     { id: 'cabinet', label: 'Cabinet' },
-    { id: 'terapie', label: 'Terapie' },
-    { id: 'chirurgie', label: 'Chirurgie' },
-    { id: 'protetica', label: 'Protetică' },
-    { id: 'ortodontie', label: 'Ortodonție' },
+    { id: 'terapie', label: 'Stomatologie Terapeutică' },
+    { id: 'chirurgie', label: 'Chirurgie Dento-Alveolară' },
     { id: 'imagistica', label: 'Imagistică' },
     { id: 'anestezie', label: 'Anestezie' },
     { id: 'cnam', label: 'CNAM' },
@@ -112,7 +108,7 @@ export const Services = () => {
             <div>
               <h3 className="font-heading font-bold text-lg text-slate-900">Acceptăm Asigurări CNAM</h3>
               <p className="text-slate-700">
-                {cnamCount} servicii eligibile pentru decontare. Prezentați polița de asigurare la recepție.
+                Servicii CNAM disponibile pentru copiii până la 18 ani, femeile gravide și urgențele medicale. Prezentați buletinul de identitate (sau adeverința de naștere pentru minori) la recepție.
               </p>
             </div>
           </div>
@@ -334,9 +330,9 @@ export const Services = () => {
                 <Calendar className="w-5 h-5 mr-2" /> Programează Consultație
               </Button>
             </Link>
-            <a href="tel:079044016">
+            <a href="tel:079772488">
               <Button variant="outline" size="lg" as="div" className="border-white/40 hover:bg-white/10">
-                <Phone className="w-5 h-5 mr-2" /> 079 044 016
+                <Phone className="w-5 h-5 mr-2" /> 079 772 488
               </Button>
             </a>
           </div>

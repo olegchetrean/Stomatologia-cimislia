@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Calendar, Clock, User, Phone, Mail, FileText, Check, AlertCircle } from 'lucide-react';
 import { Button } from '../components/ui/Button';
 import { Link } from 'react-router-dom';
+import { TEAM } from '../constants';
 
 const services = [
   'Consultație Generală',
@@ -23,6 +24,20 @@ const timeSlots = [
   '11:00', '11:30', '12:00', '13:00', '13:30', '14:00',
   '14:30', '15:00', '15:30', '16:00', '16:30'
 ];
+
+const formatPhone = (phone: string | undefined): string => {
+  if (!phone) return '';
+  const cleaned = phone.replace(/\s/g, '');
+  // Formatare pentru numere moldovenești
+  if (cleaned.startsWith('0690')) {
+    return cleaned.replace(/(\d{4})(\d{2})(\d{3})/, '$1 $2 $3');
+  } else if (cleaned.startsWith('0692')) {
+    return cleaned.replace(/(\d{4})(\d{2})(\d{3})/, '$1 $2 $3');
+  } else if (cleaned.length === 9) {
+    return cleaned.replace(/(\d{3})(\d{3})(\d{3})/, '$1 $2 $3');
+  }
+  return phone;
+};
 
 export const Appointments = () => {
   const [formData, setFormData] = useState({
@@ -294,12 +309,28 @@ export const Appointments = () => {
             <div className="bg-white rounded-2xl p-6 shadow-sm border border-slate-100">
               <h3 className="font-heading font-bold text-lg mb-4">Contact Direct</h3>
               <p className="text-slate-600 text-sm mb-4">
-                Preferi să ne suni? Contactează-ne direct pentru programări:
+                Preferi să ne suni? Contactează direct medicul tău pentru programări:
               </p>
-              <a href="tel:079044016" className="flex items-center gap-3 text-medical-blue font-bold text-lg hover:text-medical-blue-lighter">
-                <Phone className="w-5 h-5" />
-                079 044 016
-              </a>
+              <div className="space-y-3">
+                {TEAM.filter(member => member.role === 'Medic Stomatolog' || member.role === 'Medic Stomatolog Generalist' || (member.role === 'Administrator Interimar' && member.phone)).map(member => (
+                  <a 
+                    key={member.id}
+                    href={`tel:${member.phone?.replace(/\s/g, '') || ''}`} 
+                    className="flex items-center justify-between p-3 rounded-xl bg-slate-50 hover:bg-medical-blue/5 transition-colors group"
+                  >
+                    <div className="flex items-center gap-3">
+                      <Phone className="w-4 h-4 text-slate-400 group-hover:text-medical-blue" />
+                      <div>
+                        <p className="font-medium text-slate-900 text-sm">{member.name}</p>
+                        <p className="text-xs text-slate-500">{member.role}</p>
+                      </div>
+                    </div>
+                    <span className="text-medical-blue font-bold text-sm group-hover:text-medical-blue-lighter">
+                      {formatPhone(member.phone)}
+                    </span>
+                  </a>
+                ))}
+              </div>
             </div>
 
             <div className="bg-amber-50 rounded-2xl p-6 border border-amber-200">

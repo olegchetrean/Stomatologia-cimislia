@@ -9,16 +9,16 @@ const allTestimonials = [
   {
     id: '6',
     name: 'Andrei Moldovan',
-    content: 'Foarte profesionisti! Am facut un implant si totul a decurs perfect. Recomand cu incredere aceasta clinica.',
+    content: 'Foarte profesionisti! Am făcut o extracție dentară atipică și totul a decurs perfect. Recomand cu încredere această clinică.',
     rating: 5,
-    service: 'Implantologie'
+    service: 'Chirurgie Dento-Alveolară'
   },
   {
     id: '7',
     name: 'Natalia Cebotari',
-    content: 'Aparatul dentar al fiicei mele a fost montat aici. Medicul ortodont este foarte atent si explica totul clar.',
+    content: 'Am adus fiica mea pentru tratarea cariilor la dinții temporari. Medicii sunt foarte atenți și explică totul clar. Copilul s-a simțit confortabil.',
     rating: 5,
-    service: 'Ortodonție'
+    service: 'Stomatologie Pediatrică'
   },
   {
     id: '8',
@@ -37,9 +37,9 @@ const allTestimonials = [
   {
     id: '10',
     name: 'Dumitru Cazacu',
-    content: 'Proteza pe care am primit-o este foarte confortabila. Nu ma asteptam la o calitate atat de buna.',
+    content: 'Am făcut restaurări dentare și tratamentul parodontitei. Rezultatele sunt excelente și nu mă așteptam la o calitate atât de bună.',
     rating: 5,
-    service: 'Protetică'
+    service: 'Stomatologie Terapeutică'
   },
   {
     id: '11',

@@ -22,8 +22,6 @@ import { Prices } from './pages/Prices';
 import { FAQ } from './pages/FAQ';
 import { Emergency } from './pages/Emergency';
 import { Pediatrics } from './pages/Pediatrics';
-import { Implants } from './pages/Implants';
-import { Orthodontics } from './pages/Orthodontics';
 import { Testimonials } from './pages/Testimonials';
 
 function App() {
@@ -51,8 +49,6 @@ function App() {
           <Route path="/intrebari-frecvente" element={<FAQ />} />
           <Route path="/urgente" element={<Emergency />} />
           <Route path="/pediatrie" element={<Pediatrics />} />
-          <Route path="/implantologie" element={<Implants />} />
-          <Route path="/ortodontie" element={<Orthodontics />} />
           <Route path="/testimoniale" element={<Testimonials />} />
         </Routes>
       </Layout>

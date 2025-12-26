@@ -128,11 +128,15 @@ export const PrivacyPolicy = () => {
                       </p>
                       <p className="flex items-center gap-2">
                         <Phone className="w-4 h-4 text-medical-blue" />
-                        <a href="tel:079044016" className="hover:text-medical-blue">079 044 016</a>
+                        <a href="tel:079772488" className="hover:text-medical-blue">079 772 488</a>
                       </p>
                       <p className="flex items-center gap-2">
                         <Mail className="w-4 h-4 text-medical-blue" />
-                        <a href="mailto:victoras1984@mail.ru" className="hover:text-medical-blue">victoras1984@mail.ru</a>
+                        <a href="mailto:nolaresu@bk.ru" className="hover:text-medical-blue">nolaresu@bk.ru</a>
+                      </p>
+                      <p className="flex items-center gap-2">
+                        <Mail className="w-4 h-4 text-medical-blue" />
+                        <a href="mailto:centrustomcim@gmail.com" className="hover:text-medical-blue">centrustomcim@gmail.com</a>
                       </p>
                     </div>
                   </div>
@@ -497,11 +501,15 @@ export const PrivacyPolicy = () => {
                       </p>
                       <p className="flex items-center gap-2">
                         <Phone className="w-4 h-4 text-medical-blue" />
-                        <a href="tel:079044016" className="hover:text-medical-blue font-medium">079 044 016</a>
+                        <a href="tel:079772488" className="hover:text-medical-blue font-medium">079 772 488</a>
                       </p>
                       <p className="flex items-center gap-2">
                         <Mail className="w-4 h-4 text-medical-blue" />
-                        <a href="mailto:victoras1984@mail.ru" className="hover:text-medical-blue">victoras1984@mail.ru</a>
+                        <a href="mailto:nolaresu@bk.ru" className="hover:text-medical-blue">nolaresu@bk.ru</a>
+                      </p>
+                      <p className="flex items-center gap-2">
+                        <Mail className="w-4 h-4 text-medical-blue" />
+                        <a href="mailto:centrustomcim@gmail.com" className="hover:text-medical-blue">centrustomcim@gmail.com</a>
                       </p>
                     </div>
                   </div>

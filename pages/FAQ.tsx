@@ -13,7 +13,7 @@ const faqData = [
       },
       {
         q: 'Cum pot face o programare?',
-        a: 'Puteți face o programare în mai multe moduri: telefonic la numărul 079 044 016, prin formularul de programare online de pe site, sau prezentându-vă direct la clinică.'
+        a: 'Puteți face o programare în mai multe moduri: telefonic la numărul 079 772 488, prin formularul de programare online de pe site, sau prezentându-vă direct la clinică.'
       },
       {
         q: 'Unde este situată clinica?',
@@ -30,15 +30,15 @@ const faqData = [
     questions: [
       {
         q: 'Acceptați asigurări medicale CNAM?',
-        a: 'Da, IM CSR Cimișlia are contract cu Compania Națională de Asigurări în Medicină. Pacienții asigurați beneficiază de servicii gratuite conform Programului Unic, pe baza poliței de asigurare valabile.'
+        a: 'Da, IM CSR Cimișlia are contract cu Compania Națională de Asigurări în Medicină. Serviciile CNAM sunt disponibile pentru: copiii până la 18 ani, femeile gravide și urgențele medicale pentru pacienții care dețin polițe de asigurare CNAM.'
       },
       {
         q: 'Ce documente am nevoie pentru servicii CNAM?',
-        a: 'Pentru a beneficia de servicii CNAM, aveți nevoie de buletinul de identitate (original) și polița de asigurare medicală validă. În unele cazuri poate fi necesară și o trimitere de la medicul de familie.'
+        a: 'Pentru a beneficia de servicii CNAM, aveți nevoie doar de buletinul de identitate în original (sau adeverința de naștere pentru minori). Nu este obligatorie prezentarea poliței de asigurare.'
       },
       {
         q: 'Ce metode de plată acceptați?',
-        a: 'Acceptăm plată în numerar (MDL), card bancar (Visa/Mastercard), și transfer bancar. Pentru tratamente costisitoare, discutați cu noi despre posibilitatea eșalonării plății.'
+        a: 'Acceptăm doar plată în numerar (MDL). Nu deținem terminal pentru plata cu cardul.'
       },
       {
         q: 'Pot plăti în rate?',
@@ -51,7 +51,7 @@ const faqData = [
     questions: [
       {
         q: 'Este dureros tratamentul stomatologic?',
-        a: 'Folosim tehnici moderne de anestezie care fac tratamentele practic nedureroase. Avem inclusiv opțiuni de sedare pentru pacienții anxioși. Confortul dumneavoastră este prioritatea noastră.'
+        a: 'Folosim tehnici moderne de anestezie locală care fac tratamentele practic nedureroase. Confortul dumneavoastră este prioritatea noastră.'
       },
       {
         q: 'Cât durează un tratament de canal?',
@@ -63,7 +63,7 @@ const faqData = [
       },
       {
         q: 'Ce fac în caz de urgență stomatologică?',
-        a: 'Pentru urgențe stomatologice (durere acută, traumatisme, sângerări), contactați-ne imediat la 079 044 016. Vom face tot posibilul să vă programăm în aceeași zi.'
+        a: 'Pentru urgențe stomatologice (durere acută, traumatisme, sângerări), contactați-ne imediat la 079 772 488. Vom face tot posibilul să vă programăm în aceeași zi.'
       },
       {
         q: 'Cât de des trebuie să merg la dentist?',
@@ -93,7 +93,7 @@ const faqData = [
     questions: [
       {
         q: 'Cum mă pregătesc pentru vizită?',
-        a: 'Vă rugăm să aveți la dumneavoastră buletinul de identitate și polița CNAM (dacă este cazul). Este recomandat să periați dinții înainte de vizită și să mâncați ușor.'
+        a: 'Vă rugăm să aveți la dumneavoastră buletinul de identitate (sau adeverința de naștere pentru minori). Este recomandat să periați dinții înainte de vizită și să mâncați ușor.'
       },
       {
         q: 'Pot mânca după o extracție?',
@@ -244,9 +244,9 @@ export const FAQ = () => {
             Echipa noastră este pregătită să răspundă la orice întrebare. Contactează-ne direct!
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a href="tel:079044016">
+            <a href="tel:079772488">
               <Button size="lg" as="div" className="bg-white text-medical-blue hover:bg-slate-100">
-                <Phone className="w-5 h-5 mr-2" /> 079 044 016
+                <Phone className="w-5 h-5 mr-2" /> 079 772 488
               </Button>
             </a>
             <Link to="/contact">

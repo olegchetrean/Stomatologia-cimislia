@@ -16,11 +16,11 @@ export const Home = () => {
 
   const featuredServices = [
     SERVICES.find(s => s.id === '1.1'),
-    SERVICES.find(s => s.id === '5.20'),
-    SERVICES.find(s => s.id === '7.5'),
-    SERVICES.find(s => s.id === '6.12'),
+    SERVICES.find(s => s.id === '4.23'),
+    SERVICES.find(s => s.id === '4.13'),
+    SERVICES.find(s => s.id === '5.2'),
     SERVICES.find(s => s.id === '4.21'),
-    SERVICES.find(s => s.id === '3.5')
+    SERVICES.find(s => s.id === '3.2')
   ].filter(Boolean);
 
   const stats = [
@@ -31,12 +31,9 @@ export const Home = () => {
   ];
 
   const specialties = [
-    { icon: Smile, title: 'Stomatologie Generală', desc: 'Tratamente complete pentru întreaga familie', color: 'bg-blue-500' },
-    { icon: Sparkles, title: 'Estetică Dentară', desc: 'Albire, fațete și restaurări estetice', color: 'bg-purple-500' },
-    { icon: Heart, title: 'Implantologie', desc: 'Implanturi de ultimă generație', color: 'bg-red-500' },
-    { icon: Baby, title: 'Pediatrie', desc: 'Tratamente speciale pentru copii', color: 'bg-green-500' },
-    { icon: Shield, title: 'Chirurgie Orală', desc: 'Extracții și intervenții complexe', color: 'bg-orange-500' },
-    { icon: Zap, title: 'Ortodonție', desc: 'Aparate dentare și aliniere', color: 'bg-teal-500' },
+    { icon: Smile, title: 'Stomatologie Terapeutică', desc: 'Tratamentul gingivitelor, parodontitelor, cariilor, pulpitelor, periodontitelor, restaurări dentare și albire a dinților', color: 'bg-blue-500' },
+    { icon: Baby, title: 'Stomatologie Pediatrică', desc: 'Igienizarea cavității bucale, tratarea cariilor și complicațiilor dinților temporari și permanenți, extracții', color: 'bg-green-500' },
+    { icon: Shield, title: 'Chirurgie Dento-Alveolară', desc: 'Extracții dentare tipice și atipice, chirurgie de urgență a traumatismelor, tratamentul complicațiilor proceselor inflamatorii', color: 'bg-orange-500' },
   ];
 
   const processSteps = [
@@ -302,12 +299,12 @@ export const Home = () => {
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {TEAM.slice(1, 5).map(member => (
+            {TEAM.filter(member => member.role === 'Medic Stomatolog' || member.role === 'Medic Stomatolog Generalist').map(member => (
               <TeamCard3D key={member.id} member={member} />
             ))}
           </div>
 
-           <div className="mt-12 text-center">
+          <div className="mt-12 text-center">
             <Link to="/echipa">
               <Button variant="outline" as="div">Vezi Întreaga Echipă</Button>
             </Link>
@@ -372,9 +369,9 @@ export const Home = () => {
                 <h3 className="font-heading font-bold text-xl mb-4">Nu ai găsit răspunsul?</h3>
                 <p className="text-slate-200 mb-6">Echipa noastră este gata să te ajute cu orice întrebare.</p>
                 <div className="flex flex-col sm:flex-row gap-4">
-                  <a href="tel:079044016" className="flex items-center gap-2 bg-white/10 hover:bg-white/20 px-4 py-3 rounded-xl transition-colors">
+                  <a href="tel:079772488" className="flex items-center gap-2 bg-white/10 hover:bg-white/20 px-4 py-3 rounded-xl transition-colors">
                     <Phone className="w-5 h-5" />
-                    <span>079 044 016</span>
+                    <span>079 772 488</span>
                   </a>
                   <Link to="/contact" className="flex items-center gap-2 bg-white/10 hover:bg-white/20 px-4 py-3 rounded-xl transition-colors">
                     <MessageCircle className="w-5 h-5" />
@@ -419,17 +416,14 @@ export const Home = () => {
               </div>
               <h2 className="font-heading text-4xl font-bold text-slate-900 mb-6">Acceptăm Asigurări Medicale CNAM</h2>
               <p className="text-slate-600 text-lg mb-8">
-                IM CSR Cimișlia are contract cu Compania Națională de Asigurări în Medicină. Pacienții asigurați beneficiază de servicii gratuite în baza Programului Unic.
+                IM CSR Cimișlia are contract cu Compania Națională de Asigurări în Medicină. Serviciile CNAM sunt disponibile pentru copiii până la 18 ani, femeile gravide și urgențele medicale pentru pacienții care dețin polițe de asigurare CNAM.
               </p>
 
               <div className="grid sm:grid-cols-2 gap-4 mb-8">
                 {[
-                  'Consultații profilactice',
-                  'Tratament carii',
-                  'Extracții dentare',
-                  'Detartraj medical',
-                  'Urgențe stomatologice',
-                  'Stomatologie pediatrică'
+                  'Copiii până la 18 ani',
+                  'Femeile gravide',
+                  'Urgențe medicale (pacienți cu poliță CNAM)'
                 ].map((item, i) => (
                   <div key={i} className="flex items-center gap-3">
                     <Check className="w-5 h-5 text-trust-green shrink-0" />
@@ -459,8 +453,7 @@ export const Home = () => {
                 <ul className="space-y-4">
                   {[
                     'Buletin de identitate (original)',
-                    'Poliță de asigurare CNAM validă',
-                    'Trimitere de la medicul de familie (dacă este cazul)'
+                    'Adeverință de naștere (pentru minori)'
                   ].map((item, i) => (
                     <li key={i} className="flex items-start gap-3">
                       <div className="w-6 h-6 rounded-full bg-trust-green/10 flex items-center justify-center shrink-0 mt-0.5">
@@ -523,7 +516,7 @@ export const Home = () => {
                   </div>
                   <div>
                     <h3 className="font-heading font-bold text-lg mb-2">Contact</h3>
-                    <a href="tel:079044016" className="text-medical-blue font-bold text-lg hover:text-medical-blue-lighter">079 044 016</a>
+                    <a href="tel:079772488" className="text-medical-blue font-bold text-lg hover:text-medical-blue-lighter">079 772 488</a>
                   </div>
                 </div>
               </div>
@@ -563,10 +556,10 @@ export const Home = () => {
                   Programează Acum
                 </Button>
               </Link>
-              <a href="tel:079044016">
+              <a href="tel:079772488">
                 <Button variant="outline" size="lg" as="div" className="w-full sm:w-auto border-white/40 hover:bg-white/10">
                   <Phone className="w-5 h-5 mr-2" />
-                  Sună: 079 044 016
+                  Sună: 079 772 488
                 </Button>
               </a>
             </div>

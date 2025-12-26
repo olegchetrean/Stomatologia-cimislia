@@ -271,9 +271,9 @@ export const Implants = () => {
                 <Calendar className="w-5 h-5 mr-2" /> Programează Consultație
               </Button>
             </Link>
-            <a href="tel:079044016">
+            <a href="tel:079772488">
               <Button variant="outline" size="lg" as="div" className="border-white/40 hover:bg-white/10">
-                <Phone className="w-5 h-5 mr-2" /> 079 044 016
+                <Phone className="w-5 h-5 mr-2" /> 079 772 488
               </Button>
             </a>
           </div>

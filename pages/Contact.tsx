@@ -23,7 +23,7 @@ export const Contact = () => {
                 </div>
                 <h3 className="font-bold text-lg mb-2">Telefon</h3>
                 <p className="text-slate-600 mb-2">Pentru programări rapide:</p>
-                <a href="tel:079044016" className="text-xl font-bold text-medical-blue hover:text-medical-blue-lighter">079 044 016</a>
+                <a href="tel:079772488" className="text-xl font-bold text-medical-blue hover:text-medical-blue-lighter">079 772 488</a>
               </div>
               
               <div className="bg-white p-6 rounded-2xl shadow-sm border border-slate-100">
@@ -32,7 +32,16 @@ export const Contact = () => {
                 </div>
                 <h3 className="font-bold text-lg mb-2">Email</h3>
                 <p className="text-slate-600 mb-2">Pentru informații:</p>
-                <a href="mailto:victoras1984@mail.ru" className="text-lg font-bold text-medical-blue hover:text-medical-blue-lighter break-all">victoras1984@mail.ru</a>
+                <a href="mailto:nolaresu@bk.ru" className="text-lg font-bold text-medical-blue hover:text-medical-blue-lighter break-all">nolaresu@bk.ru</a>
+              </div>
+              
+              <div className="bg-white p-6 rounded-2xl shadow-sm border border-slate-100">
+                <div className="w-10 h-10 bg-medical-blue/10 rounded-lg flex items-center justify-center text-medical-blue mb-4">
+                  <Mail className="w-5 h-5" />
+                </div>
+                <h3 className="font-bold text-lg mb-2">Email (alternativ)</h3>
+                <p className="text-slate-600 mb-2">Pentru informații:</p>
+                <a href="mailto:centrustomcim@gmail.com" className="text-lg font-bold text-medical-blue hover:text-medical-blue-lighter break-all">centrustomcim@gmail.com</a>
               </div>
             </div>
 

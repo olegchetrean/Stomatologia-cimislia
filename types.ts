@@ -4,8 +4,6 @@ export type ServiceCategory =
   | 'anestezie' 
   | 'terapie' 
   | 'chirurgie' 
-  | 'protetica' 
-  | 'ortodontie' 
   | 'imagistica'
   | 'cnam';
 
@@ -26,6 +24,7 @@ export interface TeamMember {
   specialty?: string;
   image: string;
   bio?: string;
+  phone?: string;
 }
 
 export interface Testimonial {
