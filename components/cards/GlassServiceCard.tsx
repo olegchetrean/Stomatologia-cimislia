@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { Service } from '../../types';
 import { ArrowRight, Stethoscope, Scissors, HeartPulse, Sparkles, Smile, ShieldCheck, Microscope, BriefcaseMedical } from 'lucide-react';
 import { formatPrice } from '../../lib/utils';
@@ -50,9 +51,12 @@ export const GlassServiceCard: React.FC<{ service: Service }> = ({ service }) =>
                 {formatPrice(service.price)}
               </p>
             </div>
-            <button className="p-2 rounded-full bg-slate-100 group-hover:bg-medical-blue-lighter group-hover:text-white transition-all">
+            <Link 
+              to="/programare" 
+              className="p-2 rounded-full bg-slate-100 group-hover:bg-medical-blue-lighter group-hover:text-white transition-all"
+            >
               <ArrowRight className="w-4 h-4" />
-            </button>
+            </Link>
           </div>
         </div>
       </div>
