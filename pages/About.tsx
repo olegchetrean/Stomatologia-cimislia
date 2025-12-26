@@ -9,7 +9,7 @@ export const About = () => {
         <div className="container mx-auto px-4 relative z-10 text-center">
           <h1 className="font-heading text-4xl md:text-5xl font-bold mb-6">Despre Noi</h1>
           <p className="text-xl text-slate-300 max-w-3xl mx-auto">
-            Întreprinderea Municipală "Centrul Stomatologic Raional Cimișlia" este pilonul sănătății orale în regiune, combinând tradiția cu inovația.
+            Întreprinderea Municipală "Centrul Stomatologic Raional Cimișlia" este pilonul sănătătii orale în regiune, combinând traditia cu inovatia.
           </p>
         </div>
       </div>
@@ -20,7 +20,7 @@ export const About = () => {
           <div className="bg-white rounded-3xl p-8 md:p-12 shadow-xl border border-slate-100">
             <h2 className="font-heading text-3xl font-bold text-slate-900 mb-6 text-center">Misiunea Noastră</h2>
             <p className="text-lg text-slate-600 leading-relaxed text-center max-w-4xl mx-auto">
-              Menținerea și ameliorarea continuă a stării sănătății orale a populației deservite din Cimișlia și sectoarele adiacente prin oferirea serviciilor stomatologice de înaltă calitate, centrate pe pacient, într-un mediu sigur, confortabil și modern. Ne dedicăm promovării sănătății orale prin prevenție, educație și tratamente personalizate.
+              Mentinerea și ameliorarea continuă a stării sănătătii orale a populatiei deservite din Cimișlia și sectoarele adiacente prin oferirea serviciilor stomatologice de înaltă calitate, centrate pe pacient, într-un mediu sigur, confortabil și modern. Ne dedicăm promovării sănătătii orale prin preventie, educatie și tratamente personalizate.
             </p>
           </div>
         </div>
@@ -28,9 +28,9 @@ export const About = () => {
         {/* Values */}
         <div className="grid md:grid-cols-3 gap-8 mb-20">
           {[
-            { icon: Shield, title: 'Siguranță', text: 'Respectăm cele mai riguroase standarde de sterilizare și igienă.' },
-            { icon: Heart, title: 'Empatie', text: 'Tratăm fiecare pacient cu grijă, respect și înțelegere.' },
-            { icon: Award, title: 'Profesionalism', text: 'Echipă medicală calificată și în continuă perfecționare.' }
+            { icon: Shield, title: 'Sigurantă', text: 'Respectăm cele mai riguroase standarde de sterilizare și igienă.' },
+            { icon: Heart, title: 'Empatie', text: 'Tratăm fiecare pacient cu grijă, respect și întelegere.' },
+            { icon: Award, title: 'Profesionalism', text: 'Echipă medicală calificată și în continuă perfectionare.' }
           ].map((item, i) => (
             <div key={i} className="bg-white p-8 rounded-2xl shadow-sm hover:shadow-lg transition-all border border-slate-100">
               <div className="w-12 h-12 bg-medical-blue/10 rounded-xl flex items-center justify-center text-medical-blue mb-6">
@@ -51,8 +51,8 @@ export const About = () => {
                 'Furnizarea serviciilor stomatologice de calitate superioară',
                 'Asigurarea unui act medical sigur și eficient',
                 'Utilizarea tehnologiilor moderne și materialelor calitative',
-                'Creșterea gradului de satisfacție a pacienților',
-                'Promovarea sănătății orale în comunitate',
+                'Creșterea gradului de satisfactie a pacientilor',
+                'Promovarea sănătătii orale în comunitate',
                 'Dezvoltarea profesională continuă a echipei'
               ].map((obj, i) => (
                 <div key={i} className="flex items-start gap-3">
@@ -71,7 +71,7 @@ export const About = () => {
              <div className="absolute inset-0 bg-gradient-to-t from-medical-blue/80 to-transparent flex items-end p-8">
                <div className="text-white">
                  <p className="font-bold text-2xl mb-1">Tehnologie Modernă</p>
-                 <p className="text-white/80">Investim constant în dotări de ultimă generație.</p>
+                 <p className="text-white/80">Investim constant în dotări de ultimă generatie.</p>
                </div>
              </div>
           </div>

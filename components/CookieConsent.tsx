@@ -84,11 +84,11 @@ export const CookieConsent: React.FC = () => {
                 </div>
                 <div>
                   <h3 className="font-heading font-bold text-xl text-slate-900 mb-2">
-                    Respectăm confidențialitatea datelor tale
+                    Respectăm confidentialitatea datelor tale
                   </h3>
                   <p className="text-slate-600 text-sm leading-relaxed">
-                    Folosim cookie-uri pentru a îmbunătăți experiența pe site, a analiza traficul și a personaliza conținutul.
-                    Poți alege ce tipuri de cookie-uri accepți. Cookie-urile necesare sunt obligatorii pentru funcționarea site-ului.
+                    Folosim cookie-uri pentru a îmbunătăti experienta pe site, a analiza traficul și a personaliza continutul.
+                    Poti alege ce tipuri de cookie-uri accepti. Cookie-urile necesare sunt obligatorii pentru functionarea site-ului.
                     <Link to="/confidentialitate" className="text-medical-blue-lighter hover:underline ml-1">
                       Află mai multe
                     </Link>
@@ -102,7 +102,7 @@ export const CookieConsent: React.FC = () => {
                   className="text-sm text-slate-500 hover:text-medical-blue flex items-center gap-2 transition-colors"
                 >
                   <Settings className="w-4 h-4" />
-                  Personalizează preferințele
+                  Personalizează preferintele
                 </button>
 
                 <div className="flex flex-col sm:flex-row gap-3 w-full sm:w-auto">
@@ -131,7 +131,7 @@ export const CookieConsent: React.FC = () => {
                 <div className="flex items-center gap-3">
                   <Shield className="w-6 h-6 text-medical-blue" />
                   <h3 className="font-heading font-bold text-xl text-slate-900">
-                    Preferințe Cookie-uri
+                    Preferinte Cookie-uri
                   </h3>
                 </div>
                 <button
@@ -160,7 +160,7 @@ export const CookieConsent: React.FC = () => {
                     </div>
                   </div>
                   <p className="text-sm text-slate-600 mt-2">
-                    Sunt esențiale pentru funcționarea site-ului. Includ preferințe de sesiune,
+                    Sunt esentiale pentru functionarea site-ului. Includ preferinte de sesiune,
                     autentificare și securitate. Nu pot fi dezactivate.
                   </p>
                 </div>
@@ -176,7 +176,7 @@ export const CookieConsent: React.FC = () => {
                       </div>
                       <div>
                         <h4 className="font-bold text-slate-900">Cookie-uri de analiză</h4>
-                        <p className="text-xs text-slate-500">Opțional</p>
+                        <p className="text-xs text-slate-500">Optional</p>
                       </div>
                     </div>
                     <button
@@ -191,8 +191,8 @@ export const CookieConsent: React.FC = () => {
                     </button>
                   </div>
                   <p className="text-sm text-slate-600 mt-2">
-                    Ne ajută să înțelegem cum utilizatorii interacționează cu site-ul pentru a îmbunătăți
-                    experiența generală. Datele sunt anonimizate.
+                    Ne ajută să întelegem cum utilizatorii interactionează cu site-ul pentru a îmbunătăti
+                    experienta generală. Datele sunt anonimizate.
                   </p>
                 </div>
 
@@ -207,7 +207,7 @@ export const CookieConsent: React.FC = () => {
                       </div>
                       <div>
                         <h4 className="font-bold text-slate-900">Cookie-uri de marketing</h4>
-                        <p className="text-xs text-slate-500">Opțional</p>
+                        <p className="text-xs text-slate-500">Optional</p>
                       </div>
                     </div>
                     <button
@@ -223,7 +223,7 @@ export const CookieConsent: React.FC = () => {
                   </div>
                   <p className="text-sm text-slate-600 mt-2">
                     Permit afișarea de reclame relevante pe alte platforme. Nu sunt utilizate pentru
-                    vânzarea datelor personale către terți.
+                    vânzarea datelor personale către terti.
                   </p>
                 </div>
               </div>
@@ -234,20 +234,20 @@ export const CookieConsent: React.FC = () => {
                   size="sm"
                   onClick={handleRejectAll}
                 >
-                  Refuză opționale
+                  Refuză optionale
                 </Button>
                 <Button
                   size="sm"
                   onClick={handleAcceptSelected}
                 >
-                  Salvează preferințele
+                  Salvează preferintele
                 </Button>
               </div>
 
               <p className="text-xs text-slate-400 text-center mt-4">
-                Poți modifica oricând preferințele din{' '}
+                Poti modifica oricând preferintele din{' '}
                 <Link to="/confidentialitate" className="text-medical-blue-lighter hover:underline">
-                  Politica de Confidențialitate
+                  Politica de Confidentialitate
                 </Link>
               </p>
             </div>

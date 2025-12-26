@@ -19,7 +19,7 @@ const navItems: NavItem[] = [
     path: '/servicii',
     children: [
       { name: 'Toate Serviciile', path: '/servicii', description: 'Lista completă de servicii' },
-      { name: 'Lista de Prețuri', path: '/preturi', description: 'Tarife și costuri' },
+      { name: 'Lista de Preturi', path: '/preturi', description: 'Tarife și costuri' },
       { name: 'Pediatrie', path: '/pediatrie', description: 'Pentru copii' },
     ]
   },
@@ -32,7 +32,7 @@ const footerLinks = {
   servicii: [
     { name: 'Toate Serviciile', path: '/servicii' },
     { name: 'Pediatrie', path: '/pediatrie' },
-    { name: 'Lista de Prețuri', path: '/preturi' },
+    { name: 'Lista de Preturi', path: '/preturi' },
   ],
   informatii: [
     { name: 'Despre Noi', path: '/despre' },
@@ -40,13 +40,13 @@ const footerLinks = {
     { name: 'Galerie Foto', path: '/galerie' },
     { name: 'Testimoniale', path: '/testimoniale' },
     { name: 'Întrebări Frecvente', path: '/intrebari-frecvente' },
-    { name: 'Informații Utile', path: '/informatii-utile' },
+    { name: 'Informatii Utile', path: '/informatii-utile' },
   ],
   legal: [
-    { name: 'Transparență', path: '/transparenta' },
-    { name: 'Termeni și Condiții', path: '/termeni' },
-    { name: 'Politica de Confidențialitate', path: '/confidentialitate' },
-    { name: 'Sugestii și Reclamații', path: '/sugestii' },
+    { name: 'Transparentă', path: '/transparenta' },
+    { name: 'Termeni și Conditii', path: '/termeni' },
+    { name: 'Politica de Confidentialitate', path: '/confidentialitate' },
+    { name: 'Sugestii și Reclamatii', path: '/sugestii' },
   ]
 };
 
@@ -80,7 +80,7 @@ export const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) =>
         <div className="container mx-auto px-4 flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-4">
           <div className="flex items-center gap-2">
             <AlertTriangle className="w-4 h-4 animate-pulse" />
-            <span className="font-medium">Urgențe Stomatologice:</span>
+            <span className="font-medium">Urgente Stomatologice:</span>
           </div>
           <a href="tel:079772488" className="font-bold hover:underline">079 772 488</a>
           <Link to="/urgente" className="text-red-200 hover:text-white text-xs">Mai multe info →</Link>
@@ -260,7 +260,7 @@ export const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) =>
 
             <div className="border-t border-slate-200 pt-4 mt-4">
               <Link to="/urgente" onClick={() => setMobileMenuOpen(false)} className="text-red-600 font-bold flex items-center gap-2 py-2">
-                <AlertTriangle className="w-5 h-5" /> Urgențe
+                <AlertTriangle className="w-5 h-5" /> Urgente
               </Link>
               <Link to="/intrebari-frecvente" onClick={() => setMobileMenuOpen(false)} className="text-slate-600 py-2 block">
                 Întrebări Frecvente
@@ -297,8 +297,8 @@ export const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) =>
                 <span className="font-heading font-bold text-xl">CSR Cimișlia</span>
               </div>
               <p className="text-slate-400 text-sm leading-relaxed mb-6">
-                Excelență în stomatologie pentru comunitatea din Cimișlia și împrejurimi.
-                Servicii complete, tehnologie modernă și o echipă dedicată sănătății dumneavoastră orale.
+                Excelentă în stomatologie pentru comunitatea din Cimișlia și împrejurimi.
+                Servicii complete, tehnologie modernă și o echipă dedicată sănătătii dumneavoastră orale.
               </p>
               <div className="flex gap-4 mb-6">
                 <a href="#" className="p-2 bg-white/5 rounded-full hover:bg-medical-blue-lighter transition-colors"><Facebook className="w-5 h-5" /></a>
@@ -325,7 +325,7 @@ export const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) =>
 
             {/* Info */}
             <div>
-              <h4 className="font-heading font-bold text-lg mb-6">Informații</h4>
+              <h4 className="font-heading font-bold text-lg mb-6">Informatii</h4>
               <ul className="space-y-3 text-slate-400 text-sm">
                 {footerLinks.informatii.map(link => (
                   <li key={link.path}>

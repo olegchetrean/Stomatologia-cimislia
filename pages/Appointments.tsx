@@ -5,17 +5,17 @@ import { Link } from 'react-router-dom';
 import { TEAM } from '../constants';
 
 const services = [
-  'Consultație Generală',
+  'Consultatie Generală',
   'Tratament Carie',
   'Detartraj și Igienizare',
-  'Extracție Dentară',
+  'Extractie Dentară',
   'Tratament de Canal',
   'Proteză Dentară',
   'Implant Dentar',
-  'Ortodonție',
+  'Ortodontie',
   'Albire Dentară',
-  'Urgență Stomatologică',
-  'Consultație Copii',
+  'Urgentă Stomatologică',
+  'Consultatie Copii',
   'Altele',
 ];
 
@@ -69,7 +69,7 @@ export const Appointments = () => {
           </div>
           <h1 className="font-heading text-3xl font-bold text-slate-900 mb-4">Cerere Trimisă!</h1>
           <p className="text-slate-600 mb-8">
-            Mulțumim pentru cererea de programare! Vă vom contacta în cel mai scurt timp pentru confirmare.
+            Multumim pentru cererea de programare! Vă vom contacta în cel mai scurt timp pentru confirmare.
           </p>
           <div className="bg-slate-50 rounded-xl p-4 text-left mb-8">
             <p className="text-sm text-slate-500 mb-2">Detalii programare:</p>
@@ -95,7 +95,7 @@ export const Appointments = () => {
             <Calendar className="w-4 h-4" />
             <span className="text-sm font-medium">Programare Online</span>
           </div>
-          <h1 className="font-heading text-4xl md:text-5xl font-bold mb-4">Programează o Consultație</h1>
+          <h1 className="font-heading text-4xl md:text-5xl font-bold mb-4">Programează o Consultatie</h1>
           <p className="text-xl text-slate-200 max-w-2xl mx-auto">
             Completează formularul de mai jos și te vom contacta pentru confirmare.
           </p>
@@ -239,7 +239,7 @@ export const Appointments = () => {
                   </div>
                 </div>
                 <div>
-                  <label className="block text-sm font-medium text-slate-700 mb-2">Aveți asigurare CNAM?</label>
+                  <label className="block text-sm font-medium text-slate-700 mb-2">Aveti asigurare CNAM?</label>
                   <div className="flex gap-4">
                     <label className="flex items-center gap-2 cursor-pointer">
                       <input
@@ -269,13 +269,13 @@ export const Appointments = () => {
 
               {/* Message */}
               <div className="mb-8">
-                <label className="block text-sm font-medium text-slate-700 mb-2">Mesaj Adițional</label>
+                <label className="block text-sm font-medium text-slate-700 mb-2">Mesaj Aditional</label>
                 <textarea
                   rows={4}
                   value={formData.message}
                   onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                   className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-medical-blue-lighter/50"
-                  placeholder="Descrieți pe scurt motivul vizitei sau orice informații relevante..."
+                  placeholder="Descrieti pe scurt motivul vizitei sau orice informatii relevante..."
                 />
               </div>
 

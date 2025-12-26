@@ -9,40 +9,40 @@ const faqData = [
     questions: [
       {
         q: 'Care este programul clinicii?',
-        a: 'Clinica este deschisă de Luni până Vineri, între orele 08:00 și 17:00. În weekend, clinica este închisă, dar pentru urgențe ne puteți contacta telefonic.'
+        a: 'Clinica este deschisă de Luni până Vineri, între orele 08:00 și 17:00. În weekend, clinica este închisă, dar pentru urgente ne puteti contacta telefonic.'
       },
       {
         q: 'Cum pot face o programare?',
-        a: 'Puteți face o programare în mai multe moduri: telefonic la numărul 079 772 488, prin formularul de programare online de pe site, sau prezentându-vă direct la clinică.'
+        a: 'Puteti face o programare în mai multe moduri: telefonic la numărul 079 772 488, prin formularul de programare online de pe site, sau prezentându-vă direct la clinică.'
       },
       {
         q: 'Unde este situată clinica?',
         a: 'Clinica se află pe strada Alexandru cel Bun 135, în orașul Cimișlia, Republica Moldova. Suntem ușor de găsit în centrul orașului.'
       },
       {
-        q: 'Cât timp durează o consultație?',
-        a: 'O consultație standard durează aproximativ 30 de minute. În funcție de complexitatea cazului, poate dura mai mult sau mai puțin.'
+        q: 'Cât timp durează o consultatie?',
+        a: 'O consultatie standard durează aproximativ 30 de minute. În functie de complexitatea cazului, poate dura mai mult sau mai putin.'
       }
     ]
   },
   {
-    category: 'Asigurări și Plăți',
+    category: 'Asigurări și Plăti',
     questions: [
       {
-        q: 'Acceptați asigurări medicale CNAM?',
-        a: 'Da, IM CSR Cimișlia are contract cu Compania Națională de Asigurări în Medicină. Serviciile CNAM sunt disponibile pentru: copiii până la 18 ani, femeile gravide și urgențele medicale pentru pacienții care dețin polițe de asigurare CNAM.'
+        q: 'Acceptati asigurări medicale CNAM?',
+        a: 'Da, IM CSR Cimișlia are contract cu Compania Natională de Asigurări în Medicină. Serviciile CNAM sunt disponibile pentru: copiii până la 18 ani, femeile gravide și urgentele medicale pentru pacientii care detin polite de asigurare CNAM.'
       },
       {
         q: 'Ce documente am nevoie pentru servicii CNAM?',
-        a: 'Pentru a beneficia de servicii CNAM, aveți nevoie doar de buletinul de identitate în original (sau adeverința de naștere pentru minori). Nu este obligatorie prezentarea poliței de asigurare.'
+        a: 'Pentru a beneficia de servicii CNAM, aveti nevoie doar de buletinul de identitate în original (sau adeverinta de naștere pentru minori). Nu este obligatorie prezentarea politei de asigurare.'
       },
       {
-        q: 'Ce metode de plată acceptați?',
-        a: 'Acceptăm doar plată în numerar (MDL). Nu deținem terminal pentru plata cu cardul.'
+        q: 'Ce metode de plată acceptati?',
+        a: 'Acceptăm doar plată în numerar (MDL). Nu detinem terminal pentru plata cu cardul.'
       },
       {
         q: 'Pot plăti în rate?',
-        a: 'Pentru tratamente complexe și costisitoare, oferim posibilitatea de a eșalona plata în mai multe tranșe. Discutați cu recepția pentru detalii.'
+        a: 'Pentru tratamente complexe și costisitoare, oferim posibilitatea de a eșalona plata în mai multe tranșe. Discutati cu receptia pentru detalii.'
       }
     ]
   },
@@ -55,36 +55,36 @@ const faqData = [
       },
       {
         q: 'Cât durează un tratament de canal?',
-        a: 'Un tratament de canal durează de obicei între 1-2 ședințe, în funcție de complexitatea cazului. Fiecare ședință durează aproximativ 45-90 de minute.'
+        a: 'Un tratament de canal durează de obicei între 1-2 ședinte, în functie de complexitatea cazului. Fiecare ședintă durează aproximativ 45-90 de minute.'
       },
       {
-        q: 'Oferiți servicii pentru copii?',
-        a: 'Da, oferim servicii complete de stomatologie pediatrică. Medicii noștri sunt experimentați în lucrul cu copiii și creează o atmosferă prietenoasă pentru micii pacienți.'
+        q: 'Oferiti servicii pentru copii?',
+        a: 'Da, oferim servicii complete de stomatologie pediatrică. Medicii noștri sunt experimentati în lucrul cu copiii și creează o atmosferă prietenoasă pentru micii pacienti.'
       },
       {
-        q: 'Ce fac în caz de urgență stomatologică?',
-        a: 'Pentru urgențe stomatologice (durere acută, traumatisme, sângerări), contactați-ne imediat la 079 772 488. Vom face tot posibilul să vă programăm în aceeași zi.'
+        q: 'Ce fac în caz de urgentă stomatologică?',
+        a: 'Pentru urgente stomatologice (durere acută, traumatisme, sângerări), contactati-ne imediat la 079 772 488. Vom face tot posibilul să vă programăm în aceeași zi.'
       },
       {
         q: 'Cât de des trebuie să merg la dentist?',
-        a: 'Recomandăm controale profilactice la fiecare 6 luni. Acest lucru permite detectarea timpurie a problemelor și menținerea sănătății orale optime.'
+        a: 'Recomandăm controale profilactice la fiecare 6 luni. Acest lucru permite detectarea timpurie a problemelor și mentinerea sănătătii orale optime.'
       }
     ]
   },
   {
-    category: 'Prețuri și Servicii',
+    category: 'Preturi și Servicii',
     questions: [
       {
-        q: 'De unde aflu prețurile serviciilor?',
-        a: 'Lista completă de prețuri este disponibilă pe pagina noastră de Servicii și Prețuri. Toate tarifele sunt conforme cu Catalogul Tarifelor Unice aprobat de Guvernul RM.'
+        q: 'De unde aflu preturile serviciilor?',
+        a: 'Lista completă de preturi este disponibilă pe pagina noastră de Servicii și Preturi. Toate tarifele sunt conforme cu Catalogul Tarifelor Unice aprobat de Guvernul RM.'
       },
       {
-        q: 'Sunt incluse materialele în preț?',
-        a: 'Da, prețurile afișate includ de obicei materialele standard. Pentru materiale premium sau importate, poate exista un cost suplimentar care va fi comunicat înainte de tratament.'
+        q: 'Sunt incluse materialele în pret?',
+        a: 'Da, preturile afișate includ de obicei materialele standard. Pentru materiale premium sau importate, poate exista un cost suplimentar care va fi comunicat înainte de tratament.'
       },
       {
-        q: 'Oferiți garanție pentru lucrări?',
-        a: 'Da, oferim garanție pentru lucrările protetice și tratamentele efectuate. Perioada de garanție variază în funcție de tipul lucrării.'
+        q: 'Oferiti garantie pentru lucrări?',
+        a: 'Da, oferim garantie pentru lucrările protetice și tratamentele efectuate. Perioada de garantie variază în functie de tipul lucrării.'
       }
     ]
   },
@@ -93,15 +93,15 @@ const faqData = [
     questions: [
       {
         q: 'Cum mă pregătesc pentru vizită?',
-        a: 'Vă rugăm să aveți la dumneavoastră buletinul de identitate (sau adeverința de naștere pentru minori). Este recomandat să periați dinții înainte de vizită și să mâncați ușor.'
+        a: 'Vă rugăm să aveti la dumneavoastră buletinul de identitate (sau adeverinta de naștere pentru minori). Este recomandat să periati dintii înainte de vizită și să mâncati ușor.'
       },
       {
-        q: 'Pot mânca după o extracție?',
-        a: 'După o extracție, evitați să mâncați în primele 2-3 ore. Apoi, consumați alimente moi și evitați zona extracției. Evitați alimentele fierbinți în prima zi.'
+        q: 'Pot mânca după o extractie?',
+        a: 'După o extractie, evitati să mâncati în primele 2-3 ore. Apoi, consumati alimente moi și evitati zona extractiei. Evitati alimentele fierbinti în prima zi.'
       },
       {
         q: 'Ce trebuie să fac după un tratament de canal?',
-        a: 'Evitați să mestecați pe partea tratată până la dispariția anesteziei. Un disconfort ușor este normal și poate fi tratat cu analgezice recomandate de medic.'
+        a: 'Evitati să mestecati pe partea tratată până la disparitia anesteziei. Un disconfort ușor este normal și poate fi tratat cu analgezice recomandate de medic.'
       }
     ]
   }
@@ -231,7 +231,7 @@ export const FAQ = () => {
               <div className="text-center py-12">
                 <HelpCircle className="w-16 h-16 text-slate-300 mx-auto mb-4" />
                 <h3 className="font-heading text-xl font-bold text-slate-900 mb-2">Nu am găsit rezultate</h3>
-                <p className="text-slate-600">Încercați alte cuvinte cheie sau contactați-ne direct.</p>
+                <p className="text-slate-600">Încercati alte cuvinte cheie sau contactati-ne direct.</p>
               </div>
             )}
           </div>

@@ -5,47 +5,47 @@ import { Link } from 'react-router-dom';
 
 const services = [
   {
-    title: 'Igienizarea Cavității Bucale',
-    description: 'Igienizarea profesională a cavității bucale a copiilor pentru menținerea sănătății dentare.',
+    title: 'Igienizarea Cavitătii Bucale',
+    description: 'Igienizarea profesională a cavitătii bucale a copiilor pentru mentinerea sănătătii dentare.',
     age: 'Toate vârstele',
     icon: Shield
   },
   {
-    title: 'Tratarea Cariilor și Complicațiilor',
-    description: 'Tratarea cariilor și complicațiilor ei a dinților temporari cu tehnici adaptate copiilor.',
-    age: 'Dinți temporari',
+    title: 'Tratarea Cariilor și Complicatiilor',
+    description: 'Tratarea cariilor și complicatiilor ei a dintilor temporari cu tehnici adaptate copiilor.',
+    age: 'Dinti temporari',
     icon: Heart
   },
   {
-    title: 'Tratamentul Afecțiunilor Dinților Permanenți',
-    description: 'Tratamentul tuturor afecțiunilor dinților permanenți, inclusiv carii, pulpite și periodontite.',
-    age: 'Dinți permanenți',
+    title: 'Tratamentul Afectiunilor Dintilor Permanenti',
+    description: 'Tratamentul tuturor afectiunilor dintilor permanenti, inclusiv carii, pulpite și periodontite.',
+    age: 'Dinti permanenti',
     icon: Smile
   },
   {
-    title: 'Extracții Dentare',
-    description: 'Extracția dinților temporari și a dinților permanenți care au indicații la extracții dentare.',
-    age: 'Conform indicațiilor',
+    title: 'Extractii Dentare',
+    description: 'Extractia dintilor temporari și a dintilor permanenti care au indicatii la extractii dentare.',
+    age: 'Conform indicatiilor',
     icon: Baby
   },
 ];
 
 const tips = [
   {
-    title: 'Începeți devreme',
-    desc: 'Prima vizită la dentist trebuie făcută până la vârsta de 1 an sau la apariția primului dinte.'
+    title: 'Începeti devreme',
+    desc: 'Prima vizită la dentist trebuie făcută până la vârsta de 1 an sau la aparitia primului dinte.'
   },
   {
     title: 'Periaj corect',
-    desc: 'Copiii trebuie supravegheați la periaj până la vârsta de 7-8 ani.'
+    desc: 'Copiii trebuie supravegheati la periaj până la vârsta de 7-8 ani.'
   },
   {
-    title: 'Alimentație sănătoasă',
-    desc: 'Limitați dulciurile și băuturile acidulate care atacă smalțul.'
+    title: 'Alimentatie sănătoasă',
+    desc: 'Limitati dulciurile și băuturile acidulate care atacă smaltul.'
   },
   {
     title: 'Vizite regulate',
-    desc: 'Control la dentist la fiecare 6 luni pentru prevenție.'
+    desc: 'Control la dentist la fiecare 6 luni pentru preventie.'
   },
 ];
 
@@ -73,7 +73,7 @@ export const Pediatrics = () => {
             Îngrijire Dentară pentru Cei Mici
           </h1>
           <p className="text-xl text-white/90 max-w-2xl mx-auto">
-            O experiență prietenoasă și fără teamă pentru copilul tău. Medicii noștri sunt specializați în lucrul cu copiii.
+            O experientă prietenoasă și fără teamă pentru copilul tău. Medicii noștri sunt specializati în lucrul cu copiii.
           </p>
         </div>
       </div>
@@ -87,11 +87,11 @@ export const Pediatrics = () => {
             </h2>
             <div className="space-y-4">
               {[
-                'Medici cu experiență în stomatologie pediatrică',
+                'Medici cu experientă în stomatologie pediatrică',
                 'Atmosferă prietenoasă și relaxantă pentru copii',
                 'Tehnici de anestezie locală adaptate vârstei',
                 'Tratamente fără durere cu anestezie adaptată vârstei',
-                'Explicații pe înțelesul copiilor',
+                'Explicatii pe întelesul copiilor',
                 'Recompense și certificate pentru cei curajoși'
               ].map((item, i) => (
                 <div key={i} className="flex items-center gap-3">
@@ -115,7 +115,7 @@ export const Pediatrics = () => {
                   <Heart className="w-6 h-6 text-pink-500" />
                 </div>
                 <div>
-                  <p className="font-bold text-slate-900">Experiență Pozitivă</p>
+                  <p className="font-bold text-slate-900">Experientă Pozitivă</p>
                   <p className="text-sm text-slate-500">Pentru fiecare copil</p>
                 </div>
               </div>
@@ -151,8 +151,8 @@ export const Pediatrics = () => {
         {/* Tips for Parents */}
         <div className="bg-gradient-to-r from-blue-50 to-purple-50 rounded-3xl p-8 md:p-12 mb-20">
           <div className="text-center mb-12">
-            <h2 className="font-heading text-3xl font-bold text-slate-900 mb-4">Sfaturi pentru Părinți</h2>
-            <p className="text-slate-600">Cum să păstrați sănătatea dentară a copilului</p>
+            <h2 className="font-heading text-3xl font-bold text-slate-900 mb-4">Sfaturi pentru Părinti</h2>
+            <p className="text-slate-600">Cum să păstrati sănătatea dentară a copilului</p>
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -178,8 +178,8 @@ export const Pediatrics = () => {
               <h3 className="font-heading font-bold text-xl mb-4">0-3 ani</h3>
               <ul className="space-y-3 text-slate-600">
                 <li>• Prima vizită la 1 an</li>
-                <li>• Curățarea gingiilor cu tifon umed</li>
-                <li>• Periuța de dinți moale de la primul dinte</li>
+                <li>• Curătarea gingiilor cu tifon umed</li>
+                <li>• Periuta de dinti moale de la primul dinte</li>
                 <li>• Evitarea biberonului cu suc noaptea</li>
               </ul>
             </div>
@@ -187,7 +187,7 @@ export const Pediatrics = () => {
               <h3 className="font-heading font-bold text-xl mb-4">3-6 ani</h3>
               <ul className="space-y-3 text-slate-600">
                 <li>• Vizite regulate la 6 luni</li>
-                <li>• Învățarea periajului corect</li>
+                <li>• Învătarea periajului corect</li>
                 <li>• Aplicare de fluoruri</li>
                 <li>• Prima evaluare ortodontică</li>
               </ul>
@@ -195,10 +195,10 @@ export const Pediatrics = () => {
             <div className="bg-white rounded-2xl p-8 border-t-4 border-blue-400">
               <h3 className="font-heading font-bold text-xl mb-4">6-12 ani</h3>
               <ul className="space-y-3 text-slate-600">
-                <li>• Sigilarea molarilor permanenți</li>
-                <li>• Monitorizarea erupției dinților</li>
+                <li>• Sigilarea molarilor permanenti</li>
+                <li>• Monitorizarea eruptiei dintilor</li>
                 <li>• Tratament ortodontic dacă e necesar</li>
-                <li>• Protecție la sport (gutiere)</li>
+                <li>• Protectie la sport (gutiere)</li>
               </ul>
             </div>
           </div>
@@ -209,7 +209,7 @@ export const Pediatrics = () => {
           <Baby className="w-16 h-16 mx-auto mb-6 opacity-80" />
           <h2 className="font-heading text-3xl font-bold mb-4">Programează o Vizită pentru Copilul Tău</h2>
           <p className="text-white/90 mb-8 max-w-2xl mx-auto">
-            Echipa noastră prietenoasă va face din vizita la dentist o experiență plăcută pentru copilul tău.
+            Echipa noastră prietenoasă va face din vizita la dentist o experientă plăcută pentru copilul tău.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link to="/programare">

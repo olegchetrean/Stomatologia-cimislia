@@ -31,7 +31,7 @@ export const Contact = () => {
                   <Mail className="w-5 h-5" />
                 </div>
                 <h3 className="font-bold text-lg mb-2">Email</h3>
-                <p className="text-slate-600 mb-2">Pentru informații:</p>
+                <p className="text-slate-600 mb-2">Pentru informatii:</p>
                 <a href="mailto:nolaresu@bk.ru" className="text-lg font-bold text-medical-blue hover:text-medical-blue-lighter break-all">nolaresu@bk.ru</a>
               </div>
               
@@ -40,7 +40,7 @@ export const Contact = () => {
                   <Mail className="w-5 h-5" />
                 </div>
                 <h3 className="font-bold text-lg mb-2">Email (alternativ)</h3>
-                <p className="text-slate-600 mb-2">Pentru informații:</p>
+                <p className="text-slate-600 mb-2">Pentru informatii:</p>
                 <a href="mailto:centrustomcim@gmail.com" className="text-lg font-bold text-medical-blue hover:text-medical-blue-lighter break-all">centrustomcim@gmail.com</a>
               </div>
             </div>
@@ -49,7 +49,7 @@ export const Contact = () => {
               <div className="flex items-start gap-4 mb-6">
                 <MapPin className="w-6 h-6 text-medical-blue shrink-0 mt-1" />
                 <div>
-                  <h3 className="font-bold text-lg mb-2">Locație</h3>
+                  <h3 className="font-bold text-lg mb-2">Locatie</h3>
                   <p className="text-slate-600">Strada Alexandru cel Bun 135,<br/>Cimișlia, Republica Moldova</p>
                 </div>
               </div>
@@ -103,8 +103,8 @@ export const Contact = () => {
               <div>
                 <label className="block text-sm font-medium text-slate-700 mb-2">Subiect</label>
                 <select className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:border-medical-blue bg-white">
-                  <option>Programare Consultație</option>
-                  <option>Informații Prețuri</option>
+                  <option>Programare Consultatie</option>
+                  <option>Informatii Preturi</option>
                   <option>Servicii CNAM</option>
                   <option>Altele</option>
                 </select>
@@ -112,12 +112,12 @@ export const Contact = () => {
 
               <div>
                 <label className="block text-sm font-medium text-slate-700 mb-2">Mesaj</label>
-                <textarea rows={4} className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:border-medical-blue" placeholder="Descrieți cu ce vă putem ajuta..."></textarea>
+                <textarea rows={4} className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:border-medical-blue" placeholder="Descrieti cu ce vă putem ajuta..."></textarea>
               </div>
 
               <div className="flex items-start gap-3">
                 <input type="checkbox" className="mt-1" />
-                <span className="text-sm text-slate-500">Sunt de acord cu prelucrarea datelor cu caracter personal conform Politicii de Confidențialitate.</span>
+                <span className="text-sm text-slate-500">Sunt de acord cu prelucrarea datelor cu caracter personal conform Politicii de Confidentialitate.</span>
               </div>
 
               <Button size="lg" className="w-full">Trimite Mesajul</Button>

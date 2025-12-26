@@ -7,11 +7,11 @@ import { ServiceCategory } from '../types';
 import { Link } from 'react-router-dom';
 
 const categoryInfo: Record<ServiceCategory, { label: string; description: string; color: string }> = {
-  consultatii: { label: 'Consultații', description: 'Evaluare și diagnostic profesional', color: 'bg-blue-500' },
-  cabinet: { label: 'Activități Cabinet', description: 'Proceduri și preparare', color: 'bg-indigo-500' },
+  consultatii: { label: 'Consultatii', description: 'Evaluare și diagnostic profesional', color: 'bg-blue-500' },
+  cabinet: { label: 'Activităti Cabinet', description: 'Proceduri și preparare', color: 'bg-indigo-500' },
   anestezie: { label: 'Anestezie', description: 'Tratamente fără durere', color: 'bg-purple-500' },
   terapie: { label: 'Stomatologie Terapeutică', description: 'Tratamentul gingivitelor, parodontitelor, cariilor, pulpitelor, restaurări dentare și albire', color: 'bg-pink-500' },
-  chirurgie: { label: 'Chirurgie Dento-Alveolară', description: 'Extracții și intervenții', color: 'bg-red-500' },
+  chirurgie: { label: 'Chirurgie Dento-Alveolară', description: 'Extractii și interventii', color: 'bg-red-500' },
   imagistica: { label: 'Imagistică', description: 'Radiografii și diagnostic', color: 'bg-cyan-500' },
   cnam: { label: 'Program CNAM', description: 'Servicii decontate', color: 'bg-green-500' },
 };
@@ -25,7 +25,7 @@ export const Services = () => {
 
   const categories: { id: ServiceCategory | 'all', label: string }[] = [
     { id: 'all', label: 'Toate' },
-    { id: 'consultatii', label: 'Consultații' },
+    { id: 'consultatii', label: 'Consultatii' },
     { id: 'cabinet', label: 'Cabinet' },
     { id: 'terapie', label: 'Stomatologie Terapeutică' },
     { id: 'chirurgie', label: 'Chirurgie Dento-Alveolară' },
@@ -34,10 +34,26 @@ export const Services = () => {
     { id: 'cnam', label: 'CNAM' },
   ];
 
+  // Функция для нормализации румынских символов для поиска
+  const normalizeForSearch = (text: string): string => {
+    return text
+      .toLowerCase()
+      .normalize('NFD')
+      .replace(/[\u0300-\u036f]/g, '') // Удаляем диакритические знаки
+      .replace(/ă/g, 'a')
+      .replace(/â/g, 'a')
+      .replace(/î/g, 'i')
+      .replace(/ș/g, 's')
+      .replace(/t/g, 't');
+  };
+
   const filteredServices = useMemo(() => {
+    const normalizedSearchTerm = normalizeForSearch(searchTerm);
+    
     return SERVICES.filter(service => {
       const matchesCategory = activeCategory === 'all' || service.category === activeCategory;
-      const matchesSearch = service.name.toLowerCase().includes(searchTerm.toLowerCase());
+      const normalizedServiceName = normalizeForSearch(service.name);
+      const matchesSearch = normalizedServiceName.includes(normalizedSearchTerm);
       const matchesCnam = !showCnamOnly || service.cnamEligible;
 
       let matchesPrice = true;
@@ -81,7 +97,7 @@ export const Services = () => {
           <div className="text-center mb-8">
             <h1 className="font-heading text-4xl md:text-5xl font-bold mb-4">Servicii și Tarife</h1>
             <p className="text-xl text-slate-200 max-w-2xl mx-auto mb-6">
-              Prețuri transparente conform Catalogului Tarifelor Unice aprobat de Guvernul RM.
+              Preturi transparente conform Catalogului Tarifelor Unice aprobat de Guvernul RM.
               Peste {SERVICES.length} de servicii disponibile.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -90,7 +106,7 @@ export const Services = () => {
               </Button>
               <Link to="/preturi">
                 <Button as="div" className="gap-2 bg-white text-medical-blue hover:bg-slate-100">
-                  <List className="w-4 h-4" /> Vezi Tabelul de Prețuri
+                  <List className="w-4 h-4" /> Vezi Tabelul de Preturi
                 </Button>
               </Link>
             </div>
@@ -108,7 +124,7 @@ export const Services = () => {
             <div>
               <h3 className="font-heading font-bold text-lg text-slate-900">Acceptăm Asigurări CNAM</h3>
               <p className="text-slate-700">
-                Servicii CNAM disponibile pentru copiii până la 18 ani, femeile gravide și urgențele medicale. Prezentați buletinul de identitate (sau adeverința de naștere pentru minori) la recepție.
+                Servicii CNAM disponibile pentru copiii până la 18 ani, femeile gravide și urgentele medicale. Prezentati buletinul de identitate (sau adeverinta de naștere pentru minori) la receptie.
               </p>
             </div>
           </div>
@@ -159,7 +175,7 @@ export const Services = () => {
               onChange={(e) => setPriceRange(e.target.value as any)}
               className="px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-medical-blue-lighter/50 bg-white"
             >
-              <option value="all">Toate Prețurile</option>
+              <option value="all">Toate Preturile</option>
               <option value="low">Sub 500 MDL</option>
               <option value="medium">500 - 2000 MDL</option>
               <option value="high">Peste 2000 MDL</option>
@@ -269,7 +285,7 @@ export const Services = () => {
                 <div className="col-span-full text-center py-20 text-slate-500">
                   <Filter className="w-16 h-16 mx-auto mb-4 text-slate-300" />
                   <h3 className="font-heading text-xl font-bold text-slate-900 mb-2">Nu am găsit servicii</h3>
-                  <p>Încercați să modificați criteriile de căutare.</p>
+                  <p>Încercati să modificati criteriile de căutare.</p>
                 </div>
               )}
             </div>
@@ -283,7 +299,7 @@ export const Services = () => {
                   <th className="px-6 py-4 text-left text-sm font-bold text-slate-700">Serviciu</th>
                   <th className="px-6 py-4 text-left text-sm font-bold text-slate-700 hidden md:table-cell">Categorie</th>
                   <th className="px-6 py-4 text-left text-sm font-bold text-slate-700 hidden lg:table-cell">Unitate</th>
-                  <th className="px-6 py-4 text-right text-sm font-bold text-slate-700">Preț</th>
+                  <th className="px-6 py-4 text-right text-sm font-bold text-slate-700">Pret</th>
                 </tr>
               </thead>
               <tbody>
@@ -322,12 +338,12 @@ export const Services = () => {
         <div className="mt-16 bg-gradient-to-r from-medical-blue to-medical-blue-light rounded-3xl p-8 md:p-12 text-white text-center">
           <h2 className="font-heading text-3xl font-bold mb-4">Ai nevoie de ajutor?</h2>
           <p className="text-slate-200 mb-8 max-w-2xl mx-auto">
-            Nu ești sigur ce serviciu ai nevoie? Programează o consultație și medicul nostru te va ghida.
+            Nu ești sigur ce serviciu ai nevoie? Programează o consultatie și medicul nostru te va ghida.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link to="/programare">
               <Button size="lg" as="div" className="bg-white text-medical-blue hover:bg-slate-100">
-                <Calendar className="w-5 h-5 mr-2" /> Programează Consultație
+                <Calendar className="w-5 h-5 mr-2" /> Programează Consultatie
               </Button>
             </Link>
             <a href="tel:079772488">

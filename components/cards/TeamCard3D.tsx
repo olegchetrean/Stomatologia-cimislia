@@ -63,7 +63,7 @@ export const TeamCard3D: React.FC<{ member: TeamMember }> = ({ member }) => {
                   <p className="text-medical-blue font-semibold text-sm mb-3">{member.specialty}</p>
                 )}
                 <p className="text-slate-600 text-sm line-clamp-3 leading-relaxed">
-                  {member.bio || 'Specialist dedicat cu experiență vastă în domeniu, orientat către confortul pacientului.'}
+                  {member.bio || 'Specialist dedicat cu experientă vastă în domeniu, orientat către confortul pacientului.'}
                 </p>
               </div>
               {member.phone && (

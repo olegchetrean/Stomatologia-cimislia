@@ -7,18 +7,18 @@ import { SERVICES } from '../constants';
 const benefits = [
   {
     title: 'Aspect Natural',
-    description: 'Implanturile arată și funcționează exact ca dinții naturali.'
+    description: 'Implanturile arată și functionează exact ca dintii naturali.'
   },
   {
     title: 'Durabilitate',
-    description: 'Cu îngrijire corespunzătoare, implanturile pot dura toată viața.'
+    description: 'Cu îngrijire corespunzătoare, implanturile pot dura toată viata.'
   },
   {
     title: 'Protejare Osoasă',
-    description: 'Previn atrofia osului maxilar care apare la lipsa dinților.'
+    description: 'Previn atrofia osului maxilar care apare la lipsa dintilor.'
   },
   {
-    title: 'Funcționalitate',
+    title: 'Functionalitate',
     description: 'Permitem mestecarea normală a tuturor alimentelor.'
   },
   {
@@ -34,7 +34,7 @@ const benefits = [
 const process = [
   {
     step: 1,
-    title: 'Consultație și Planificare',
+    title: 'Consultatie și Planificare',
     description: 'Evaluare completă, radiografii și CT pentru planificarea implantului.',
     duration: '1-2 vizite'
   },
@@ -61,19 +61,19 @@ const process = [
 const faqs = [
   {
     q: 'Este dureroasă procedura de implant?',
-    a: 'Nu. Procedura se efectuează sub anestezie locală și nu veți simți durere. După intervenție, un disconfort ușor este normal și se tratează cu analgezice.'
+    a: 'Nu. Procedura se efectuează sub anestezie locală și nu veti simti durere. După interventie, un disconfort ușor este normal și se tratează cu analgezice.'
   },
   {
     q: 'Cât durează întreaga procedură?',
-    a: 'De la prima consultație până la coroana definitivă, procesul durează în medie 4-6 luni, în funcție de caz.'
+    a: 'De la prima consultatie până la coroana definitivă, procesul durează în medie 4-6 luni, în functie de caz.'
   },
   {
     q: 'Cât costă un implant dentar?',
-    a: 'Prețul variază în funcție de tipul implantului și complexitatea cazului. Consultați lista noastră de prețuri sau programați o consultație pentru o evaluare personalizată.'
+    a: 'Pretul variază în functie de tipul implantului și complexitatea cazului. Consultati lista noastră de preturi sau programati o consultatie pentru o evaluare personalizată.'
   },
   {
     q: 'Cât durează un implant?',
-    a: 'Cu îngrijire corespunzătoare, un implant dentar poate dura toată viața. Rata de succes pe termen lung este de peste 95%.'
+    a: 'Cu îngrijire corespunzătoare, un implant dentar poate dura toată viata. Rata de succes pe termen lung este de peste 95%.'
   },
 ];
 
@@ -95,23 +95,23 @@ export const Implants = () => {
             <div className="max-w-2xl text-white">
               <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 backdrop-blur-md mb-6">
                 <Award className="w-4 h-4" />
-                <span className="text-sm font-medium">Tehnologie de Ultimă Generație</span>
+                <span className="text-sm font-medium">Tehnologie de Ultimă Generatie</span>
               </div>
               <h1 className="font-heading text-4xl md:text-5xl font-bold mb-4">
                 Implantologie Dentară
               </h1>
               <p className="text-xl text-slate-200 mb-8">
-                Soluția permanentă pentru înlocuirea dinților lipsă. Redescoperă plăcerea de a zâmbi și mesteca fără restricții.
+                Solutia permanentă pentru înlocuirea dintilor lipsă. Redescoperă plăcerea de a zâmbi și mesteca fără restrictii.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <Link to="/programare">
                   <Button size="lg" as="div" className="bg-white text-medical-blue hover:bg-slate-100">
-                    Consultație Gratuită
+                    Consultatie Gratuită
                   </Button>
                 </Link>
                 <Link to="/preturi">
                   <Button variant="outline" size="lg" as="div" className="border-white/40 hover:bg-white/10">
-                    Vezi Prețurile
+                    Vezi Preturile
                   </Button>
                 </Link>
               </div>
@@ -128,10 +128,10 @@ export const Implants = () => {
               Ce Este un Implant Dentar?
             </h2>
             <p className="text-slate-600 mb-6 leading-relaxed">
-              Un implant dentar este o rădăcină artificială din titan care se inserează în osul maxilar pentru a susține o coroană dentară, o punte sau o proteză. Este cea mai avansată metodă de înlocuire a dinților pierduți, oferind rezultate care arată, se simt și funcționează ca dinții naturali.
+              Un implant dentar este o rădăcină artificială din titan care se inserează în osul maxilar pentru a sustine o coroană dentară, o punte sau o proteză. Este cea mai avansată metodă de înlocuire a dintilor pierduti, oferind rezultate care arată, se simt și functionează ca dintii naturali.
             </p>
             <p className="text-slate-600 mb-6 leading-relaxed">
-              Titanul utilizat este biocompatibil și se integrează natural cu osul într-un proces numit osteointegrare, creând o fundație solidă și durabilă pentru restaurarea protetică.
+              Titanul utilizat este biocompatibil și se integrează natural cu osul într-un proces numit osteointegrare, creând o fundatie solidă și durabilă pentru restaurarea protetică.
             </p>
             <div className="bg-trust-green/10 rounded-xl p-6 border border-trust-green/20">
               <div className="flex items-center gap-3 mb-2">
@@ -159,7 +159,7 @@ export const Implants = () => {
               Avantajele Implanturilor Dentare
             </h2>
             <p className="text-slate-600 max-w-2xl mx-auto">
-              De ce tot mai mulți pacienți aleg implanturile ca soluție pentru dinții lipsă.
+              De ce tot mai multi pacienti aleg implanturile ca solutie pentru dintii lipsă.
             </p>
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -213,7 +213,7 @@ export const Implants = () => {
         <div className="mb-20">
           <div className="text-center mb-12">
             <h2 className="font-heading text-3xl font-bold text-slate-900 mb-4">
-              Prețuri Implantologie
+              Preturi Implantologie
             </h2>
             <p className="text-slate-600">Tarife conform Catalogului Tarifelor Unice</p>
           </div>
@@ -222,7 +222,7 @@ export const Implants = () => {
               <thead className="bg-slate-50">
                 <tr>
                   <th className="px-6 py-4 text-left font-bold text-slate-700">Serviciu</th>
-                  <th className="px-6 py-4 text-right font-bold text-slate-700">Preț (MDL)</th>
+                  <th className="px-6 py-4 text-right font-bold text-slate-700">Pret (MDL)</th>
                 </tr>
               </thead>
               <tbody>
@@ -238,7 +238,7 @@ export const Implants = () => {
             </table>
           </div>
           <p className="text-slate-500 text-sm mt-4 text-center">
-            * Prețul final poate varia în funcție de complexitatea cazului. Programați o consultație pentru o evaluare personalizată.
+            * Pretul final poate varia în functie de complexitatea cazului. Programati o consultatie pentru o evaluare personalizată.
           </p>
         </div>
 
@@ -260,15 +260,15 @@ export const Implants = () => {
         {/* CTA */}
         <div className="bg-gradient-to-r from-medical-blue to-medical-blue-light rounded-3xl p-8 md:p-12 text-white text-center">
           <h2 className="font-heading text-3xl font-bold mb-4">
-            Pregătit să Îți Recuperezi Zâmbetul?
+            Pregătit să Îti Recuperezi Zâmbetul?
           </h2>
           <p className="text-slate-200 mb-8 max-w-2xl mx-auto">
-            Programează o consultație pentru a discuta despre opțiunile de tratament și a primi un plan personalizat.
+            Programează o consultatie pentru a discuta despre optiunile de tratament și a primi un plan personalizat.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link to="/programare">
               <Button size="lg" as="div" className="bg-white text-medical-blue hover:bg-slate-100">
-                <Calendar className="w-5 h-5 mr-2" /> Programează Consultație
+                <Calendar className="w-5 h-5 mr-2" /> Programează Consultatie
               </Button>
             </Link>
             <a href="tel:079772488">

@@ -33,13 +33,13 @@ export const PrivacyPolicy = () => {
               <Shield className="w-6 h-6 text-medical-blue-lighter" />
             </div>
             <div>
-              <h1 className="font-heading text-3xl md:text-4xl font-bold">Politica de Confidențialitate</h1>
+              <h1 className="font-heading text-3xl md:text-4xl font-bold">Politica de Confidentialitate</h1>
               <p className="text-slate-400">Ultima actualizare: 01.01.2025</p>
             </div>
           </div>
           <p className="text-slate-300 max-w-2xl">
-            Confidențialitatea datelor tale este importantă pentru noi. Această politică explică cum colectăm,
-            utilizăm și protejăm informațiile personale, în conformitate cu legislația Republicii Moldova și
+            Confidentialitatea datelor tale este importantă pentru noi. Această politică explică cum colectăm,
+            utilizăm și protejăm informatiile personale, în conformitate cu legislatia Republicii Moldova și
             principiile GDPR.
           </p>
         </div>
@@ -81,7 +81,7 @@ export const PrivacyPolicy = () => {
                   </li>
                   <li className="flex items-start gap-2">
                     <Check className="w-4 h-4 text-trust-green mt-1 shrink-0" />
-                    <span>Nu vindem niciodată datele tale terților</span>
+                    <span>Nu vindem niciodată datele tale tertilor</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <Check className="w-4 h-4 text-trust-green mt-1 shrink-0" />
@@ -89,7 +89,7 @@ export const PrivacyPolicy = () => {
                   </li>
                   <li className="flex items-start gap-2">
                     <Check className="w-4 h-4 text-trust-green mt-1 shrink-0" />
-                    <span>Datele medicale sunt stocate conform legislației în vigoare</span>
+                    <span>Datele medicale sunt stocate conform legislatiei în vigoare</span>
                   </li>
                 </ul>
               </div>
@@ -99,19 +99,19 @@ export const PrivacyPolicy = () => {
                 <section id="introducere">
                   <h2>1. Introducere</h2>
                   <p>
-                    Instituția Medico-Sanitară Publică "Centrul Stomatologic Raional Cimișlia" (denumit în continuare
-                    "CSR Cimișlia", "noi", "clinica") respectă confidențialitatea datelor dumneavoastră cu caracter
+                    Institutia Medico-Sanitară Publică "Centrul Stomatologic Raional Cimișlia" (denumit în continuare
+                    "CSR Cimișlia", "noi", "clinica") respectă confidentialitatea datelor dumneavoastră cu caracter
                     personal și se angajează să le protejeze în conformitate cu:
                   </p>
                   <ul>
-                    <li>Legea nr. 133 din 08.07.2011 privind protecția datelor cu caracter personal a Republicii Moldova</li>
-                    <li>Regulamentul General privind Protecția Datelor (GDPR) - principii aplicabile</li>
-                    <li>Legea nr. 263 din 27.10.2005 cu privire la drepturile și responsabilitățile pacientului</li>
+                    <li>Legea nr. 133 din 08.07.2011 privind protectia datelor cu caracter personal a Republicii Moldova</li>
+                    <li>Regulamentul General privind Protectia Datelor (GDPR) - principii aplicabile</li>
+                    <li>Legea nr. 263 din 27.10.2005 cu privire la drepturile și responsabilitătile pacientului</li>
                     <li>Codul deontologic al lucrătorului medical și farmacistului</li>
                   </ul>
                   <p>
-                    Această politică descrie modul în care colectăm, utilizăm, stocăm și protejăm informațiile
-                    dumneavoastră personale când utilizați serviciile noastre medicale sau site-ul web.
+                    Această politică descrie modul în care colectăm, utilizăm, stocăm și protejăm informatiile
+                    dumneavoastră personale când utilizati serviciile noastre medicale sau site-ul web.
                   </p>
                 </section>
 
@@ -157,7 +157,7 @@ export const PrivacyPolicy = () => {
 
                   <h4>3.2 Date de contact</h4>
                   <ul>
-                    <li>Adresa de domiciliu/reședință</li>
+                    <li>Adresa de domiciliu/reședintă</li>
                     <li>Număr de telefon</li>
                     <li>Adresă de email</li>
                   </ul>
@@ -167,14 +167,14 @@ export const PrivacyPolicy = () => {
                     <li>Istoricul medical stomatologic</li>
                     <li>Radiografii și imagini medicale</li>
                     <li>Planuri de tratament</li>
-                    <li>Alergii și contraindicații</li>
-                    <li>Medicație curentă</li>
+                    <li>Alergii și contraindicatii</li>
+                    <li>Medicatie curentă</li>
                     <li>Rezultate ale examinărilor</li>
                   </ul>
 
                   <h4>3.4 Date privind asigurarea</h4>
                   <ul>
-                    <li>Numărul poliței CNAM</li>
+                    <li>Numărul politei CNAM</li>
                     <li>Statutul de asigurat</li>
                   </ul>
 
@@ -183,7 +183,7 @@ export const PrivacyPolicy = () => {
                     <li>Adresa IP</li>
                     <li>Tipul browserului și dispozitivului</li>
                     <li>Paginile vizitate și durata vizitei</li>
-                    <li>Cookie-uri (vezi secțiunea dedicată)</li>
+                    <li>Cookie-uri (vezi sectiunea dedicată)</li>
                   </ul>
                 </section>
 
@@ -217,11 +217,11 @@ export const PrivacyPolicy = () => {
                         <td className="p-3">Contact</td>
                       </tr>
                       <tr className="border-b">
-                        <td className="p-3">Îndeplinirea obligațiilor legale</td>
+                        <td className="p-3">Îndeplinirea obligatiilor legale</td>
                         <td className="p-3">Toate categoriile relevante</td>
                       </tr>
                       <tr className="border-b">
-                        <td className="p-3">Îmbunătățirea serviciilor și site-ului</td>
+                        <td className="p-3">Îmbunătătirea serviciilor și site-ului</td>
                         <td className="p-3">Date tehnice (anonimizate)</td>
                       </tr>
                     </tbody>
@@ -237,18 +237,18 @@ export const PrivacyPolicy = () => {
                       <strong>Executarea contractului</strong> - pentru prestarea serviciilor medicale solicitate
                     </li>
                     <li>
-                      <strong>Obligație legală</strong> - pentru păstrarea dosarelor medicale conform legii, raportări
-                      către autorități
+                      <strong>Obligatie legală</strong> - pentru păstrarea dosarelor medicale conform legii, raportări
+                      către autorităti
                     </li>
                     <li>
-                      <strong>Interese vitale</strong> - în situații de urgență medicală
+                      <strong>Interese vitale</strong> - în situatii de urgentă medicală
                     </li>
                     <li>
-                      <strong>Consimțământ</strong> - pentru comunicări de marketing (dacă este cazul), cookie-uri
-                      opționale
+                      <strong>Consimtământ</strong> - pentru comunicări de marketing (dacă este cazul), cookie-uri
+                      optionale
                     </li>
                     <li>
-                      <strong>Interes legitim</strong> - pentru îmbunătățirea serviciilor, securitate
+                      <strong>Interes legitim</strong> - pentru îmbunătătirea serviciilor, securitate
                     </li>
                   </ul>
                 </section>
@@ -259,7 +259,7 @@ export const PrivacyPolicy = () => {
                   <p>Datele dumneavoastră pot fi partajate cu:</p>
                   <ul>
                     <li>
-                      <strong>Personalul medical</strong> - medicii și asistenții implicați direct în tratamentul
+                      <strong>Personalul medical</strong> - medicii și asistentii implicati direct în tratamentul
                       dumneavoastră
                     </li>
                     <li>
@@ -269,12 +269,12 @@ export const PrivacyPolicy = () => {
                       <strong>Laboratoare partenere</strong> - pentru analize și lucrări protetice (doar datele necesare)
                     </li>
                     <li>
-                      <strong>Autorități</strong> - când legea o impune (Ministerul Sănătății, organe de control)
+                      <strong>Autorităti</strong> - când legea o impune (Ministerul Sănătătii, organe de control)
                     </li>
                   </ul>
                   <p className="font-bold text-medical-blue">
-                    Nu vindem și nu partajăm datele dumneavoastră cu terți în scopuri comerciale sau de marketing
-                    fără consimțământul dumneavoastră explicit.
+                    Nu vindem și nu partajăm datele dumneavoastră cu terti în scopuri comerciale sau de marketing
+                    fără consimtământul dumneavoastră explicit.
                   </p>
                 </section>
 
@@ -283,39 +283,39 @@ export const PrivacyPolicy = () => {
                   <h2>7. Transferul Datelor</h2>
                   <p>
                     Datele dumneavoastră sunt stocate și prelucrate pe teritoriul Republicii Moldova. Nu transferăm
-                    date cu caracter personal în afara țării, cu excepția cazurilor în care:
+                    date cu caracter personal în afara tării, cu exceptia cazurilor în care:
                   </p>
                   <ul>
-                    <li>Este necesar pentru tratamentul dumneavoastră (de ex. consultații cu specialiști din străinătate)</li>
-                    <li>Ați solicitat explicit acest lucru</li>
-                    <li>Sunt aplicate garanții adecvate conform legislației</li>
+                    <li>Este necesar pentru tratamentul dumneavoastră (de ex. consultatii cu specialiști din străinătate)</li>
+                    <li>Ati solicitat explicit acest lucru</li>
+                    <li>Sunt aplicate garantii adecvate conform legislatiei</li>
                   </ul>
                 </section>
 
                 {/* Section 8 */}
                 <section id="durata">
                   <h2>8. Durata Stocării</h2>
-                  <p>Păstrăm datele dumneavoastră pentru perioade diferite, în funcție de tipul datelor:</p>
+                  <p>Păstrăm datele dumneavoastră pentru perioade diferite, în functie de tipul datelor:</p>
                   <ul>
                     <li>
-                      <strong>Dosare medicale</strong> - minimum 10 ani de la ultima vizită (conform legislației
+                      <strong>Dosare medicale</strong> - minimum 10 ani de la ultima vizită (conform legislatiei
                       medicale)
                     </li>
                     <li>
                       <strong>Radiografii și imagini</strong> - 10 ani
                     </li>
                     <li>
-                      <strong>Date financiare/facturi</strong> - 5 ani (obligații fiscale)
+                      <strong>Date financiare/facturi</strong> - 5 ani (obligatii fiscale)
                     </li>
                     <li>
                       <strong>Solicitări de programare</strong> - 1 an după încheierea tratamentului
                     </li>
                     <li>
-                      <strong>Cookie-uri</strong> - variază (vezi secțiunea Cookie-uri)
+                      <strong>Cookie-uri</strong> - variază (vezi sectiunea Cookie-uri)
                     </li>
                   </ul>
                   <p>
-                    După expirarea termenelor legale, datele sunt șterse în siguranță sau anonimizate pentru
+                    După expirarea termenelor legale, datele sunt șterse în sigurantă sau anonimizate pentru
                     scopuri statistice.
                   </p>
                 </section>
@@ -324,42 +324,42 @@ export const PrivacyPolicy = () => {
                 <section id="drepturi">
                   <h2>9. Drepturile Dumneavoastră</h2>
                   <p>
-                    În conformitate cu legislația privind protecția datelor, aveți următoarele drepturi:
+                    În conformitate cu legislatia privind protectia datelor, aveti următoarele drepturi:
                   </p>
 
                   <div className="grid md:grid-cols-2 gap-4 not-prose my-6">
                     {[
                       {
                         title: 'Dreptul de acces',
-                        desc: 'Puteți solicita o copie a datelor pe care le deținem despre dumneavoastră',
+                        desc: 'Puteti solicita o copie a datelor pe care le detinem despre dumneavoastră',
                       },
                       {
                         title: 'Dreptul la rectificare',
-                        desc: 'Puteți solicita corectarea datelor inexacte sau incomplete',
+                        desc: 'Puteti solicita corectarea datelor inexacte sau incomplete',
                       },
                       {
                         title: 'Dreptul la ștergere',
-                        desc: 'Puteți solicita ștergerea datelor (în limitele obligațiilor legale)',
+                        desc: 'Puteti solicita ștergerea datelor (în limitele obligatiilor legale)',
                       },
                       {
-                        title: 'Dreptul la restricționare',
-                        desc: 'Puteți solicita limitarea prelucrării în anumite situații',
+                        title: 'Dreptul la restrictionare',
+                        desc: 'Puteti solicita limitarea prelucrării în anumite situatii',
                       },
                       {
                         title: 'Dreptul la portabilitate',
-                        desc: 'Puteți primi datele într-un format structurat, utilizat frecvent',
+                        desc: 'Puteti primi datele într-un format structurat, utilizat frecvent',
                       },
                       {
-                        title: 'Dreptul de opoziție',
-                        desc: 'Vă puteți opune prelucrării bazate pe interesul nostru legitim',
+                        title: 'Dreptul de opozitie',
+                        desc: 'Vă puteti opune prelucrării bazate pe interesul nostru legitim',
                       },
                       {
-                        title: 'Retragerea consimțământului',
-                        desc: 'Puteți retrage oricând consimțământul (fără a afecta legalitatea prelucrării anterioare)',
+                        title: 'Retragerea consimtământului',
+                        desc: 'Puteti retrage oricând consimtământul (fără a afecta legalitatea prelucrării anterioare)',
                       },
                       {
                         title: 'Dreptul de a depune plângere',
-                        desc: 'Puteți depune plângere la Centrul Național pentru Protecția Datelor cu Caracter Personal',
+                        desc: 'Puteti depune plângere la Centrul National pentru Protectia Datelor cu Caracter Personal',
                       },
                     ].map((right, i) => (
                       <div key={i} className="bg-slate-50 p-4 rounded-xl">
@@ -370,7 +370,7 @@ export const PrivacyPolicy = () => {
                   </div>
 
                   <p>
-                    Pentru a vă exercita drepturile, ne puteți contacta la adresa de email sau fizic la recepția
+                    Pentru a vă exercita drepturile, ne puteti contacta la adresa de email sau fizic la receptia
                     clinicii. Vom răspunde în termen de 30 de zile de la primirea solicitării.
                   </p>
 
@@ -386,7 +386,7 @@ export const PrivacyPolicy = () => {
                 <section id="cookies">
                   <h2>10. Cookie-uri</h2>
                   <p>
-                    Site-ul nostru utilizează cookie-uri pentru a îmbunătăți experiența dumneavoastră. Cookie-urile
+                    Site-ul nostru utilizează cookie-uri pentru a îmbunătăti experienta dumneavoastră. Cookie-urile
                     sunt fișiere mici de text stocate pe dispozitivul dumneavoastră.
                   </p>
 
@@ -403,12 +403,12 @@ export const PrivacyPolicy = () => {
                     <tbody>
                       <tr className="border-b">
                         <td className="p-3 font-medium">Necesare</td>
-                        <td className="p-3">Funcționarea site-ului, preferințe de sesiune</td>
+                        <td className="p-3">Functionarea site-ului, preferinte de sesiune</td>
                         <td className="p-3">Sesiune</td>
                       </tr>
                       <tr className="border-b">
                         <td className="p-3 font-medium">Analitice</td>
-                        <td className="p-3">Înțelegerea modului de utilizare a site-ului</td>
+                        <td className="p-3">Întelegerea modului de utilizare a site-ului</td>
                         <td className="p-3">1 an</td>
                       </tr>
                       <tr className="border-b">
@@ -426,7 +426,7 @@ export const PrivacyPolicy = () => {
                       className="gap-2"
                     >
                       <FileText className="w-4 h-4" />
-                      Modifică Preferințele Cookie
+                      Modifică Preferintele Cookie
                     </Button>
                   </div>
                 </section>
@@ -438,16 +438,16 @@ export const PrivacyPolicy = () => {
                     Implementăm măsuri tehnice și organizatorice adecvate pentru a proteja datele dumneavoastră:
                   </p>
                   <ul>
-                    <li>Acces restricționat la datele medicale (doar personal autorizat)</li>
+                    <li>Acces restrictionat la datele medicale (doar personal autorizat)</li>
                     <li>Sisteme informatice protejate cu parolă și firewall</li>
-                    <li>Instruirea periodică a personalului privind confidențialitatea</li>
-                    <li>Dosare fizice păstrate în spații securizate</li>
+                    <li>Instruirea periodică a personalului privind confidentialitatea</li>
+                    <li>Dosare fizice păstrate în spatii securizate</li>
                     <li>Proceduri de backup și recuperare a datelor</li>
-                    <li>Criptarea comunicațiilor sensibile</li>
+                    <li>Criptarea comunicatiilor sensibile</li>
                   </ul>
                   <p>
                     În cazul unei breșe de securitate care vă poate afecta, vă vom notifica în conformitate cu
-                    cerințele legale.
+                    cerintele legale.
                   </p>
                 </section>
 
@@ -455,12 +455,12 @@ export const PrivacyPolicy = () => {
                 <section id="minori">
                   <h2>12. Datele Minorilor</h2>
                   <p>
-                    Pentru pacienții minori (sub 18 ani), datele sunt prelucrate cu consimțământul părintelui sau
+                    Pentru pacientii minori (sub 18 ani), datele sunt prelucrate cu consimtământul părintelui sau
                     tutorelui legal. Părintele/tutorele poate exercita toate drepturile în numele minorului.
                   </p>
                   <p>
-                    Minorii cu vârsta peste 16 ani pot consimți singuri la anumite tratamente conform legii,
-                    însă datele de contact ale părintelui sunt păstrate pentru situații de urgență.
+                    Minorii cu vârsta peste 16 ani pot consimti singuri la anumite tratamente conform legii,
+                    însă datele de contact ale părintelui sunt păstrate pentru situatii de urgentă.
                   </p>
                 </section>
 
@@ -468,16 +468,16 @@ export const PrivacyPolicy = () => {
                 <section id="modificari">
                   <h2>13. Modificări ale Politicii</h2>
                   <p>
-                    Ne rezervăm dreptul de a actualiza această politică de confidențialitate pentru a reflecta
-                    modificări ale practicilor noastre sau cerințe legale noi.
+                    Ne rezervăm dreptul de a actualiza această politică de confidentialitate pentru a reflecta
+                    modificări ale practicilor noastre sau cerinte legale noi.
                   </p>
                   <p>
                     În cazul unor modificări semnificative, vă vom informa prin:
                   </p>
                   <ul>
                     <li>Afișarea unei notificări pe site</li>
-                    <li>Email (dacă avem adresa dumneavoastră și ați consimțit la comunicări)</li>
-                    <li>Notificare la recepție în cadrul următoarei vizite</li>
+                    <li>Email (dacă avem adresa dumneavoastră și ati consimtit la comunicări)</li>
+                    <li>Notificare la receptie în cadrul următoarei vizite</li>
                   </ul>
                   <p>
                     Data ultimei actualizări este afișată în partea de sus a acestei pagini.
@@ -489,7 +489,7 @@ export const PrivacyPolicy = () => {
                   <h2>14. Contact</h2>
                   <p>
                     Pentru orice întrebări legate de prelucrarea datelor dumneavoastră personale sau pentru a vă
-                    exercita drepturile, ne puteți contacta:
+                    exercita drepturile, ne puteti contacta:
                   </p>
 
                   <div className="bg-slate-50 p-6 rounded-xl not-prose my-4">
@@ -515,12 +515,12 @@ export const PrivacyPolicy = () => {
                   </div>
 
                   <p>
-                    De asemenea, puteți depune o plângere la autoritatea de supraveghere:
+                    De asemenea, puteti depune o plângere la autoritatea de supraveghere:
                   </p>
 
                   <div className="bg-slate-50 p-6 rounded-xl not-prose my-4">
                     <h4 className="font-bold text-slate-900 mb-2">
-                      Centrul Național pentru Protecția Datelor cu Caracter Personal (CNPDCP)
+                      Centrul National pentru Protectia Datelor cu Caracter Personal (CNPDCP)
                     </h4>
                     <a
                       href="https://datepersonale.md"
@@ -539,7 +539,7 @@ export const PrivacyPolicy = () => {
             {/* Bottom CTA */}
             <div className="mt-8 bg-medical-blue/5 border border-medical-blue/10 rounded-2xl p-6 text-center">
               <p className="text-slate-700 mb-4">
-                Ai întrebări despre datele tale personale sau vrei să soliciți informații?
+                Ai întrebări despre datele tale personale sau vrei să soliciti informatii?
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Link to="/contact">

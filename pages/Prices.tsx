@@ -6,8 +6,8 @@ import { ServiceCategory } from '../types';
 import { Link } from 'react-router-dom';
 
 const categoryLabels: Record<ServiceCategory, string> = {
-  consultatii: 'Consultații',
-  cabinet: 'Activități Cabinet',
+  consultatii: 'Consultatii',
+  cabinet: 'Activităti Cabinet',
   anestezie: 'Anestezie',
   terapie: 'Terapie Dentară',
   chirurgie: 'Chirurgie Dento-Alveolară',
@@ -20,8 +20,25 @@ export const Prices = () => {
   const [selectedCategory, setSelectedCategory] = useState<ServiceCategory | 'all'>('all');
   const [showCnamOnly, setShowCnamOnly] = useState(false);
 
+  // Функция для нормализации румынских символов для поиска
+  const normalizeForSearch = (text: string): string => {
+    return text
+      .toLowerCase()
+      // Заменяем все румынские символы на базовые латинские
+      .replace(/ă/g, 'a')
+      .replace(/â/g, 'a')
+      .replace(/î/g, 'i')
+      .replace(/ș/g, 's')
+      .replace(/ț/g, 't')
+      // Нормализуем остальные диакритические знаки
+      .normalize('NFD')
+      .replace(/[\u0300-\u036f]/g, ''); // Удаляем диакритические знаки
+  };
+
   const filteredServices = SERVICES.filter(service => {
-    const matchesSearch = service.name.toLowerCase().includes(searchTerm.toLowerCase());
+    const normalizedSearchTerm = normalizeForSearch(searchTerm);
+    const normalizedServiceName = normalizeForSearch(service.name);
+    const matchesSearch = normalizedServiceName.includes(normalizedSearchTerm);
     const matchesCategory = selectedCategory === 'all' || service.category === selectedCategory;
     const matchesCnam = !showCnamOnly || service.cnamEligible;
     return matchesSearch && matchesCategory && matchesCnam;
@@ -49,9 +66,9 @@ export const Prices = () => {
         <div className="absolute inset-0 noise-overlay" />
         <div className="container mx-auto px-4 relative z-10">
           <div className="text-center mb-8">
-            <h1 className="font-heading text-4xl md:text-5xl font-bold mb-4">Lista de Prețuri</h1>
+            <h1 className="font-heading text-4xl md:text-5xl font-bold mb-4">Lista de Preturi</h1>
             <p className="text-xl text-slate-200 max-w-2xl mx-auto">
-              Prețuri transparente conform Catalogului Tarifelor Unice aprobat de Guvernul Republicii Moldova.
+              Preturi transparente conform Catalogului Tarifelor Unice aprobat de Guvernul Republicii Moldova.
             </p>
           </div>
 
@@ -107,8 +124,8 @@ export const Prices = () => {
           <div>
             <h3 className="font-heading font-bold text-lg text-slate-900 mb-2">Servicii Decontate de CNAM</h3>
             <p className="text-slate-700 mb-4">
-              Serviciile marcate cu badge-ul verde sunt eligibile pentru decontare prin Compania Națională de Asigurări în Medicină.
-              Serviciile CNAM sunt disponibile pentru copiii până la 18 ani, femeile gravide și urgențele medicale pentru pacienții care dețin polițe de asigurare CNAM.
+              Serviciile marcate cu badge-ul verde sunt eligibile pentru decontare prin Compania Natională de Asigurări în Medicină.
+              Serviciile CNAM sunt disponibile pentru copiii până la 18 ani, femeile gravide și urgentele medicale pentru pacientii care detin polite de asigurare CNAM.
             </p>
             <Link to="/informatii-utile#cnam" className="text-trust-green font-medium hover:underline">
               Află mai multe despre CNAM →
@@ -137,7 +154,7 @@ export const Prices = () => {
                   <tr>
                     <th className="px-6 py-4 text-left text-sm font-bold text-slate-700">Serviciu</th>
                     <th className="px-6 py-4 text-left text-sm font-bold text-slate-700 hidden md:table-cell">Unitate</th>
-                    <th className="px-6 py-4 text-right text-sm font-bold text-slate-700">Preț</th>
+                    <th className="px-6 py-4 text-right text-sm font-bold text-slate-700">Pret</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -172,7 +189,7 @@ export const Prices = () => {
           <div className="text-center py-20">
             <Info className="w-16 h-16 text-slate-300 mx-auto mb-4" />
             <h3 className="font-heading text-xl font-bold text-slate-900 mb-2">Niciun serviciu găsit</h3>
-            <p className="text-slate-600">Încercați să modificați criteriile de căutare.</p>
+            <p className="text-slate-600">Încercati să modificati criteriile de căutare.</p>
           </div>
         )}
 
@@ -180,8 +197,8 @@ export const Prices = () => {
         <div className="mt-12 bg-slate-100 rounded-2xl p-6">
           <h3 className="font-heading font-bold text-slate-900 mb-2">Notă Importantă</h3>
           <p className="text-slate-600 text-sm">
-            Prețurile afișate sunt orientative și pot varia în funcție de complexitatea cazului.
-            Pentru un cost exact, vă recomandăm o consultație cu medicul specialist.
+            Preturile afișate sunt orientative și pot varia în functie de complexitatea cazului.
+            Pentru un cost exact, vă recomandăm o consultatie cu medicul specialist.
             Tarifele sunt conforme cu Catalogul Tarifelor Unice aprobat de Guvernul Republicii Moldova.
           </p>
         </div>

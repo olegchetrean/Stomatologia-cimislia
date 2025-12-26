@@ -24,38 +24,38 @@ export const Home = () => {
   ].filter(Boolean);
 
   const stats = [
-    { number: '15+', label: 'Ani Experiență', icon: Award },
-    { number: '5000+', label: 'Pacienți Fericiți', icon: Users },
+    { number: '15+', label: 'Ani Experientă', icon: Award },
+    { number: '5000+', label: 'Pacienti Fericiti', icon: Users },
     { number: '270+', label: 'Servicii Disponibile', icon: Stethoscope },
-    { number: '98%', label: 'Rata de Satisfacție', icon: ThumbsUp },
+    { number: '98%', label: 'Rata de Satisfactie', icon: ThumbsUp },
   ];
 
   const specialties = [
-    { icon: Smile, title: 'Stomatologie Terapeutică', desc: 'Tratamentul gingivitelor, parodontitelor, cariilor, pulpitelor, periodontitelor, restaurări dentare și albire a dinților', color: 'bg-blue-500' },
-    { icon: Baby, title: 'Stomatologie Pediatrică', desc: 'Igienizarea cavității bucale, tratarea cariilor și complicațiilor dinților temporari și permanenți, extracții', color: 'bg-green-500' },
-    { icon: Shield, title: 'Chirurgie Dento-Alveolară', desc: 'Extracții dentare tipice și atipice, chirurgie de urgență a traumatismelor, tratamentul complicațiilor proceselor inflamatorii', color: 'bg-orange-500' },
+    { icon: Smile, title: 'Stomatologie Terapeutică', desc: 'Tratamentul gingivitelor, parodontitelor, cariilor, pulpitelor, periodontitelor, restaurări dentare și albire a dintilor', color: 'bg-blue-500' },
+    { icon: Baby, title: 'Stomatologie Pediatrică', desc: 'Igienizarea cavitătii bucale, tratarea cariilor și complicatiilor dintilor temporari și permanenti, extractii', color: 'bg-green-500' },
+    { icon: Shield, title: 'Chirurgie Dento-Alveolară', desc: 'Extractii dentare tipice și atipice, chirurgie de urgentă a traumatismelor, tratamentul complicatiilor proceselor inflamatorii', color: 'bg-orange-500' },
   ];
 
   const processSteps = [
     { step: '01', title: 'Programare', desc: 'Contactează-ne telefonic sau online pentru o programare la ora dorită.' },
-    { step: '02', title: 'Consultație', desc: 'Medicul evaluează starea de sănătate orală și stabilește planul de tratament.' },
+    { step: '02', title: 'Consultatie', desc: 'Medicul evaluează starea de sănătate orală și stabilește planul de tratament.' },
     { step: '03', title: 'Tratament', desc: 'Efectuăm tratamentele necesare cu cele mai moderne tehnici și materiale.' },
-    { step: '04', title: 'Urmărire', desc: 'Monitorizăm evoluția și oferim sfaturi pentru menținerea sănătății orale.' },
+    { step: '04', title: 'Urmărire', desc: 'Monitorizăm evolutia și oferim sfaturi pentru mentinerea sănătătii orale.' },
   ];
 
   const benefits = [
     { icon: Clock, title: 'Program Flexibil', desc: 'Luni-Vineri 08:00-17:00' },
     { icon: Shield, title: 'Sterilizare Totală', desc: 'Standarde europene de igienă' },
-    { icon: Award, title: 'Medici Certificați', desc: 'Echipă cu experiență vastă' },
+    { icon: Award, title: 'Medici Certificati', desc: 'Echipă cu experientă vastă' },
     { icon: FileText, title: 'CNAM Acceptat', desc: 'Servicii decontate de stat' },
-    { icon: Zap, title: 'Tehnologie Modernă', desc: 'Echipamente de ultimă generație' },
+    { icon: Zap, title: 'Tehnologie Modernă', desc: 'Echipamente de ultimă generatie' },
     { icon: Heart, title: 'Fără Durere', desc: 'Tratamente atraumatice' },
   ];
 
   return (
     <div className="overflow-hidden bg-slate-50">
       {/* ============================================ */}
-      {/* SECȚIUNEA 1: HERO SECTION */}
+      {/* SECTIUNEA 1: HERO SECTION */}
       {/* ============================================ */}
       <section className="relative min-h-screen flex items-center pt-24 pb-16 overflow-hidden">
         <div className="absolute inset-0 bg-medical-blue z-0">
@@ -67,7 +67,7 @@ export const Home = () => {
           <div className="text-white space-y-8 animate-fade-in-up">
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 border border-white/20 backdrop-blur-md">
               <Shield className="w-4 h-4 text-trust-green" />
-              <span className="text-sm font-medium tracking-wide">Acreditat CNEAS & Ministerul Sănătății</span>
+              <span className="text-sm font-medium tracking-wide">Acreditat CNEAS & Ministerul Sănătătii</span>
             </div>
 
             <h1 className="font-heading font-bold text-5xl md:text-7xl leading-[1.1] drop-shadow-sm">
@@ -77,12 +77,12 @@ export const Home = () => {
             </h1>
 
             <p className="text-lg text-slate-200 max-w-xl leading-relaxed">
-              Cea mai modernă clinică stomatologică din Cimișlia. Echipă de elită, tehnologie de ultimă generație și o abordare empatică pentru întreaga familie.
+              Cea mai modernă clinică stomatologică din Cimișlia. Echipă de elită, tehnologie de ultimă generatie și o abordare empatică pentru întreaga familie.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 pt-4">
               <Link to="/contact" className="w-full sm:w-auto">
-                <Button size="lg" as="div" className="w-full sm:w-auto">Programează Consultație</Button>
+                <Button size="lg" as="div" className="w-full sm:w-auto">Programează Consultatie</Button>
               </Link>
               <Link to="/servicii" className="w-full sm:w-auto">
                 <Button variant="outline" size="lg" as="div" className="w-full sm:w-auto">Vezi Tarifele</Button>
@@ -142,7 +142,7 @@ export const Home = () => {
       </section>
 
       {/* ============================================ */}
-      {/* SECȚIUNEA 2: STATISTICI & NUMERE */}
+      {/* SECTIUNEA 2: STATISTICI & NUMERE */}
       {/* ============================================ */}
       <section className="py-20 bg-white relative z-10 border-b border-slate-100">
         <div className="container mx-auto px-4">
@@ -161,7 +161,7 @@ export const Home = () => {
       </section>
 
       {/* ============================================ */}
-      {/* SECȚIUNEA 3: DE CE SĂ NE ALEGI */}
+      {/* SECTIUNEA 3: DE CE SĂ NE ALEGI */}
       {/* ============================================ */}
       <section className="py-20 bg-slate-50 relative z-10">
         <div className="container mx-auto px-4">
@@ -186,13 +186,13 @@ export const Home = () => {
       </section>
 
       {/* ============================================ */}
-      {/* SECȚIUNEA 4: SPECIALITĂȚILE NOASTRE */}
+      {/* SECTIUNEA 4: SPECIALITĂTILE NOASTRE */}
       {/* ============================================ */}
       <section className="py-20 bg-white relative z-10">
         <div className="container mx-auto px-4">
           <div className="text-center max-w-2xl mx-auto mb-16">
             <span className="text-medical-blue-lighter font-bold tracking-wider uppercase text-sm">Domeniile Noastre</span>
-            <h2 className="font-heading text-4xl font-bold text-slate-900 mt-2 mb-4">Specialități Medicale</h2>
+            <h2 className="font-heading text-4xl font-bold text-slate-900 mt-2 mb-4">Specialităti Medicale</h2>
             <p className="text-slate-600 text-lg">Oferim o gamă completă de servicii stomatologice pentru toate vârstele și nevoile.</p>
           </div>
 
@@ -216,7 +216,7 @@ export const Home = () => {
       </section>
 
       {/* ============================================ */}
-      {/* SECȚIUNEA 5: SERVICII POPULARE */}
+      {/* SECTIUNEA 5: SERVICII POPULARE */}
       {/* ============================================ */}
       <section className="py-20 bg-slate-50 relative z-10">
         <div className="container mx-auto px-4">
@@ -245,14 +245,14 @@ export const Home = () => {
       </section>
 
       {/* ============================================ */}
-      {/* SECȚIUNEA 6: PROCESUL DE TRATAMENT */}
+      {/* SECTIUNEA 6: PROCESUL DE TRATAMENT */}
       {/* ============================================ */}
       <section className="py-20 bg-medical-blue text-white relative overflow-hidden">
         <div className="absolute inset-0 mesh-gradient opacity-30" />
         <div className="absolute inset-0 noise-overlay" />
         <div className="container mx-auto px-4 relative z-10">
           <div className="text-center max-w-2xl mx-auto mb-16">
-            <span className="text-medical-blue-lighter font-bold tracking-wider uppercase text-sm">Cum Funcționează</span>
+            <span className="text-medical-blue-lighter font-bold tracking-wider uppercase text-sm">Cum Functionează</span>
             <h2 className="font-heading text-4xl font-bold mt-2 mb-4">Procesul de Tratament</h2>
             <p className="text-slate-300 text-lg">Patru pași simpli către un zâmbet sănătos și frumos.</p>
           </div>
@@ -278,7 +278,7 @@ export const Home = () => {
           <div className="mt-16 text-center">
             <Link to="/contact">
               <Button size="lg" as="div" className="bg-white text-medical-blue hover:bg-slate-100">
-                Programează Prima Consultație
+                Programează Prima Consultatie
               </Button>
             </Link>
           </div>
@@ -286,16 +286,16 @@ export const Home = () => {
       </section>
 
       {/* ============================================ */}
-      {/* SECȚIUNEA 7: ECHIPA MEDICALĂ */}
+      {/* SECTIUNEA 7: ECHIPA MEDICALĂ */}
       {/* ============================================ */}
       <section className="py-20 bg-slate-900 text-white relative overflow-hidden">
         <div className="absolute inset-0 mesh-gradient opacity-20" />
         <div className="absolute inset-0 noise-overlay" />
         <div className="container mx-auto px-4 relative z-10">
           <div className="text-center mb-16">
-            <span className="text-medical-blue-lighter font-bold tracking-wider uppercase text-sm">Profesioniști Dedicați</span>
+            <span className="text-medical-blue-lighter font-bold tracking-wider uppercase text-sm">Profesioniști Dedicati</span>
             <h2 className="font-heading text-4xl font-bold mt-2 mb-4">Cunoaște Echipa</h2>
-            <p className="text-slate-300 text-lg max-w-2xl mx-auto">Medici cu experiență vastă și pasiune pentru excelență în stomatologie.</p>
+            <p className="text-slate-300 text-lg max-w-2xl mx-auto">Medici cu experientă vastă și pasiune pentru excelentă în stomatologie.</p>
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -313,14 +313,14 @@ export const Home = () => {
       </section>
 
       {/* ============================================ */}
-      {/* SECȚIUNEA 8: TESTIMONIALE */}
+      {/* SECTIUNEA 8: TESTIMONIALE */}
       {/* ============================================ */}
       <section className="py-20 bg-white relative z-10">
         <div className="container mx-auto px-4">
           <div className="text-center max-w-2xl mx-auto mb-16">
             <span className="text-medical-blue-lighter font-bold tracking-wider uppercase text-sm">Feedback</span>
-            <h2 className="font-heading text-4xl font-bold text-slate-900 mt-2 mb-4">Ce Spun Pacienții</h2>
-            <p className="text-slate-600 text-lg">Părerea pacienților noștri contează cel mai mult pentru noi.</p>
+            <h2 className="font-heading text-4xl font-bold text-slate-900 mt-2 mb-4">Ce Spun Pacientii</h2>
+            <p className="text-slate-600 text-lg">Părerea pacientilor noștri contează cel mai mult pentru noi.</p>
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -355,7 +355,7 @@ export const Home = () => {
       </section>
 
       {/* ============================================ */}
-      {/* SECȚIUNEA 9: FAQ - ÎNTREBĂRI FRECVENTE */}
+      {/* SECTIUNEA 9: FAQ - ÎNTREBĂRI FRECVENTE */}
       {/* ============================================ */}
       <section className="py-20 bg-slate-50 relative z-10">
         <div className="container mx-auto px-4">
@@ -404,7 +404,7 @@ export const Home = () => {
       </section>
 
       {/* ============================================ */}
-      {/* SECȚIUNEA 10: CNAM & ASIGURĂRI */}
+      {/* SECTIUNEA 10: CNAM & ASIGURĂRI */}
       {/* ============================================ */}
       <section className="py-20 bg-trust-green/5 relative z-10">
         <div className="container mx-auto px-4">
@@ -416,14 +416,14 @@ export const Home = () => {
               </div>
               <h2 className="font-heading text-4xl font-bold text-slate-900 mb-6">Acceptăm Asigurări Medicale CNAM</h2>
               <p className="text-slate-600 text-lg mb-8">
-                IM CSR Cimișlia are contract cu Compania Națională de Asigurări în Medicină. Serviciile CNAM sunt disponibile pentru copiii până la 18 ani, femeile gravide și urgențele medicale pentru pacienții care dețin polițe de asigurare CNAM.
+                IM CSR Cimișlia are contract cu Compania Natională de Asigurări în Medicină. Serviciile CNAM sunt disponibile pentru copiii până la 18 ani, femeile gravide și urgentele medicale pentru pacientii care detin polite de asigurare CNAM.
               </p>
 
               <div className="grid sm:grid-cols-2 gap-4 mb-8">
                 {[
                   'Copiii până la 18 ani',
                   'Femeile gravide',
-                  'Urgențe medicale (pacienți cu poliță CNAM)'
+                  'Urgente medicale (pacienti cu polită CNAM)'
                 ].map((item, i) => (
                   <div key={i} className="flex items-center gap-3">
                     <Check className="w-5 h-5 text-trust-green shrink-0" />
@@ -453,7 +453,7 @@ export const Home = () => {
                 <ul className="space-y-4">
                   {[
                     'Buletin de identitate (original)',
-                    'Adeverință de naștere (pentru minori)'
+                    'Adeverintă de naștere (pentru minori)'
                   ].map((item, i) => (
                     <li key={i} className="flex items-start gap-3">
                       <div className="w-6 h-6 rounded-full bg-trust-green/10 flex items-center justify-center shrink-0 mt-0.5">
@@ -473,13 +473,13 @@ export const Home = () => {
       </section>
 
       {/* ============================================ */}
-      {/* SECȚIUNEA 11: LOCAȚIE & HARTĂ */}
+      {/* SECTIUNEA 11: LOCATIE & HARTĂ */}
       {/* ============================================ */}
       <section className="py-20 bg-white relative z-10">
         <div className="container mx-auto px-4">
           <div className="text-center max-w-2xl mx-auto mb-16">
             <span className="text-medical-blue-lighter font-bold tracking-wider uppercase text-sm">Vizitează-ne</span>
-            <h2 className="font-heading text-4xl font-bold text-slate-900 mt-2 mb-4">Locația Noastră</h2>
+            <h2 className="font-heading text-4xl font-bold text-slate-900 mt-2 mb-4">Locatia Noastră</h2>
             <p className="text-slate-600 text-lg">Suntem ușor de găsit în centrul orașului Cimișlia.</p>
           </div>
 
@@ -530,7 +530,7 @@ export const Home = () => {
                 style={{border:0}}
                 allowFullScreen={true}
                 loading="lazy"
-                title="Locația CSR Cimișlia"
+                title="Locatia CSR Cimișlia"
               />
             </div>
           </div>
@@ -538,7 +538,7 @@ export const Home = () => {
       </section>
 
       {/* ============================================ */}
-      {/* SECȚIUNEA 12: CTA FINAL */}
+      {/* SECTIUNEA 12: CTA FINAL */}
       {/* ============================================ */}
       <section className="py-20 relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-r from-medical-blue to-medical-blue-light" />
@@ -547,7 +547,7 @@ export const Home = () => {
           <div className="max-w-3xl mx-auto">
             <h2 className="font-heading text-4xl md:text-5xl font-bold mb-6">Pregătit pentru un zâmbet sănătos?</h2>
             <p className="text-xl text-slate-200 mb-10 max-w-2xl mx-auto">
-              Programează o consultație astăzi și beneficiază de tratamente la standarde europene, într-un mediu modern și prietenos.
+              Programează o consultatie astăzi și beneficiază de tratamente la standarde europene, într-un mediu modern și prietenos.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link to="/contact">

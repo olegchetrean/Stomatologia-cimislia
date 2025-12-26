@@ -9,47 +9,47 @@ const emergencyTypes = [
     title: 'Durere Dentară Acută',
     description: 'Durere puternică, pulsatilă care nu cedează la analgezice obișnuite.',
     urgency: 'high',
-    advice: 'Contactați-ne imediat. Între timp, puteți lua un analgezic și aplicați comprese reci pe obraz.'
+    advice: 'Contactati-ne imediat. Între timp, puteti lua un analgezic și aplicati comprese reci pe obraz.'
   },
   {
     title: 'Dinte Scos/Avulsionat',
     description: 'Un dinte permanent a fost complet scos din alveolă în urma unui traumatism.',
     urgency: 'critical',
-    advice: 'Timp esențial! Păstrați dintele în lapte sau salivă și prezentați-vă în max 30 minute pentru reimplantare.'
+    advice: 'Timp esential! Păstrati dintele în lapte sau salivă și prezentati-vă în max 30 minute pentru reimplantare.'
   },
   {
     title: 'Dinte Fracturat',
     description: 'Dinte rupt sau fisurat în urma unui accident sau mușcării de ceva dur.',
     urgency: 'high',
-    advice: 'Clătiți ușor gura. Păstrați fragmentele dacă le găsiți. Prezentați-vă cât mai curând.'
+    advice: 'Clătiti ușor gura. Păstrati fragmentele dacă le găsiti. Prezentati-vă cât mai curând.'
   },
   {
     title: 'Sângerare Abundentă',
-    description: 'Sângerare care nu se oprește după extracție sau traumatism.',
+    description: 'Sângerare care nu se oprește după extractie sau traumatism.',
     urgency: 'critical',
-    advice: 'Aplicați presiune cu o compresă sterilă. Dacă nu se oprește în 20 de minute, prezentați-vă urgent.'
+    advice: 'Aplicati presiune cu o compresă sterilă. Dacă nu se oprește în 20 de minute, prezentati-vă urgent.'
   },
   {
     title: 'Abces Dentar',
-    description: 'Umflătură dureroasă la gingii sau față, posibil cu febră.',
+    description: 'Umflătură dureroasă la gingii sau fată, posibil cu febră.',
     urgency: 'high',
-    advice: 'Necesită tratament urgent pentru a preveni răspândirea infecției. Nu încercați să spargeți abcesul!'
+    advice: 'Necesită tratament urgent pentru a preveni răspândirea infectiei. Nu încercati să spargeti abcesul!'
   },
   {
-    title: 'Coroană/Obturație Căzută',
+    title: 'Coroană/Obturatie Căzută',
     description: 'Lucrare protetică sau plomba s-a desprins de dinte.',
     urgency: 'medium',
-    advice: 'Păstrați lucrarea și programați-vă în următoarele zile. Evitați să mestecați pe acea parte.'
+    advice: 'Păstrati lucrarea și programati-vă în următoarele zile. Evitati să mestecati pe acea parte.'
   },
 ];
 
 const firstAidTips = [
-  'Rămâneți calm și evaluați situația',
-  'Opriți sângerarea aplicând presiune cu o compresă curată',
-  'Aplicați gheață pe față pentru a reduce umflătura',
-  'Nu luați aspirină în caz de sângerare (subțiază sângele)',
-  'Păstrați orice fragment dentar în lapte sau salivă',
-  'Contactați medicul stomatolog cât mai curând',
+  'Rămâneti calm și evaluati situatia',
+  'Opriti sângerarea aplicând presiune cu o compresă curată',
+  'Aplicati gheată pe fată pentru a reduce umflătura',
+  'Nu luati aspirină în caz de sângerare (subtiază sângele)',
+  'Păstrati orice fragment dentar în lapte sau salivă',
+  'Contactati medicul stomatolog cât mai curând',
 ];
 
 const formatPhone = (phone: string | undefined): string => {
@@ -76,8 +76,8 @@ export const Emergency = () => {
             <div className="flex items-center gap-4">
               <AlertTriangle className="w-8 h-8 animate-pulse" />
               <div>
-                <h2 className="font-heading font-bold text-xl">Urgență Stomatologică?</h2>
-                <p className="text-red-100">Sunați acum pentru asistență imediată</p>
+                <h2 className="font-heading font-bold text-xl">Urgentă Stomatologică?</h2>
+                <p className="text-red-100">Sunati acum pentru asistentă imediată</p>
               </div>
             </div>
             <a href="tel:079772488">
@@ -93,9 +93,9 @@ export const Emergency = () => {
       <div className="bg-slate-900 text-white py-16 relative overflow-hidden">
         <div className="absolute inset-0 mesh-gradient opacity-20" />
         <div className="container mx-auto px-4 relative z-10 text-center">
-          <h1 className="font-heading text-4xl md:text-5xl font-bold mb-4">Urgențe Stomatologice</h1>
+          <h1 className="font-heading text-4xl md:text-5xl font-bold mb-4">Urgente Stomatologice</h1>
           <p className="text-xl text-slate-300 max-w-2xl mx-auto">
-            În caz de urgență dentară, contactați-ne imediat. Vă vom acorda prioritate și vă vom programa în cel mai scurt timp posibil.
+            În caz de urgentă dentară, contactati-ne imediat. Vă vom acorda prioritate și vă vom programa în cel mai scurt timp posibil.
           </p>
         </div>
       </div>
@@ -107,7 +107,7 @@ export const Emergency = () => {
             <div className="w-12 h-12 bg-red-100 rounded-xl flex items-center justify-center text-red-600 mb-4">
               <Phone className="w-6 h-6" />
             </div>
-            <h3 className="font-heading font-bold text-lg mb-2">Telefon Urgențe</h3>
+            <h3 className="font-heading font-bold text-lg mb-2">Telefon Urgente</h3>
             <a href="tel:079772488" className="text-2xl font-bold text-red-600 hover:text-red-700">
               079 772 488
             </a>
@@ -118,7 +118,7 @@ export const Emergency = () => {
             <div className="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center text-blue-600 mb-4">
               <Clock className="w-6 h-6" />
             </div>
-            <h3 className="font-heading font-bold text-lg mb-2">Program Urgențe</h3>
+            <h3 className="font-heading font-bold text-lg mb-2">Program Urgente</h3>
             <p className="text-xl font-bold text-slate-900">Luni - Vineri</p>
             <p className="text-slate-600">08:00 - 17:00</p>
           </div>
@@ -135,9 +135,9 @@ export const Emergency = () => {
 
         {/* Doctors Contact */}
         <div className="mb-16">
-          <h2 className="font-heading text-3xl font-bold text-slate-900 mb-8">Contactați Medicul Dvs.</h2>
+          <h2 className="font-heading text-3xl font-bold text-slate-900 mb-8">Contactati Medicul Dvs.</h2>
           <p className="text-slate-600 mb-6 max-w-3xl">
-            În caz de urgență, puteți contacta direct medicul dvs. pentru a evita întârzierile. Dacă medicul dvs. nu este disponibil, contactați alt medic din echipă.
+            În caz de urgentă, puteti contacta direct medicul dvs. pentru a evita întârzierile. Dacă medicul dvs. nu este disponibil, contactati alt medic din echipă.
           </p>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {TEAM.filter(member => member.role === 'Medic Stomatolog' || member.role === 'Medic Stomatolog Generalist' || (member.role === 'Administrator Interimar' && member.phone)).map(member => (
@@ -167,7 +167,7 @@ export const Emergency = () => {
 
         {/* Emergency Types */}
         <div className="mb-16">
-          <h2 className="font-heading text-3xl font-bold text-slate-900 mb-8">Tipuri de Urgențe</h2>
+          <h2 className="font-heading text-3xl font-bold text-slate-900 mb-8">Tipuri de Urgente</h2>
           <div className="grid md:grid-cols-2 gap-6">
             {emergencyTypes.map((emergency, index) => (
               <div key={index} className={`bg-white rounded-2xl p-6 border-l-4 ${
@@ -212,16 +212,16 @@ export const Emergency = () => {
           </div>
 
           <div>
-            <h2 className="font-heading text-3xl font-bold text-slate-900 mb-8">Ce Să NU Faceți</h2>
+            <h2 className="font-heading text-3xl font-bold text-slate-900 mb-8">Ce Să NU Faceti</h2>
             <div className="bg-red-50 rounded-2xl p-6 border border-red-100">
               <ul className="space-y-4">
                 {[
-                  'Nu ignorați durerea severă - poate indica o infecție gravă',
-                  'Nu aplicați aspirină direct pe dinte sau gingii',
-                  'Nu încercați să extrageți singur un dinte mobil',
-                  'Nu folosiți obiecte ascuțite pentru a îndepărta resturi alimentare',
-                  'Nu amânați vizita la medic dacă aveți febră asociată cu durere dentară',
-                  'Nu consumați alimente sau băuturi foarte fierbinți/reci pe zona afectată',
+                  'Nu ignorati durerea severă - poate indica o infectie gravă',
+                  'Nu aplicati aspirină direct pe dinte sau gingii',
+                  'Nu încercati să extrageti singur un dinte mobil',
+                  'Nu folositi obiecte ascutite pentru a îndepărta resturi alimentare',
+                  'Nu amânati vizita la medic dacă aveti febră asociată cu durere dentară',
+                  'Nu consumati alimente sau băuturi foarte fierbinti/reci pe zona afectată',
                 ].map((item, index) => (
                   <li key={index} className="flex items-start gap-3 text-red-800">
                     <span className="text-red-500 font-bold">✕</span>
@@ -236,9 +236,9 @@ export const Emergency = () => {
         {/* CTA */}
         <div className="bg-gradient-to-r from-red-600 to-red-700 rounded-3xl p-8 md:p-12 text-white text-center">
           <AlertTriangle className="w-16 h-16 mx-auto mb-6 opacity-50" />
-          <h2 className="font-heading text-3xl font-bold mb-4">Nu Așteptați!</h2>
+          <h2 className="font-heading text-3xl font-bold mb-4">Nu Așteptati!</h2>
           <p className="text-red-100 mb-8 max-w-2xl mx-auto text-lg">
-            În caz de urgență stomatologică, timpul contează. Contactați-ne imediat pentru a primi ajutorul de care aveți nevoie.
+            În caz de urgentă stomatologică, timpul contează. Contactati-ne imediat pentru a primi ajutorul de care aveti nevoie.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a href="tel:079772488">

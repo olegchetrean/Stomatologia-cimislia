@@ -9,14 +9,14 @@ const allTestimonials = [
   {
     id: '6',
     name: 'Andrei Moldovan',
-    content: 'Foarte profesionisti! Am făcut o extracție dentară atipică și totul a decurs perfect. Recomand cu încredere această clinică.',
+    content: 'Foarte profesionisti! Am făcut o extractie dentară atipică și totul a decurs perfect. Recomand cu încredere această clinică.',
     rating: 5,
     service: 'Chirurgie Dento-Alveolară'
   },
   {
     id: '7',
     name: 'Natalia Cebotari',
-    content: 'Am adus fiica mea pentru tratarea cariilor la dinții temporari. Medicii sunt foarte atenți și explică totul clar. Copilul s-a simțit confortabil.',
+    content: 'Am adus fiica mea pentru tratarea cariilor la dintii temporari. Medicii sunt foarte atenti și explică totul clar. Copilul s-a simtit confortabil.',
     rating: 5,
     service: 'Stomatologie Pediatrică'
   },
@@ -25,7 +25,7 @@ const allTestimonials = [
     name: 'Gheorghe Lungu',
     content: 'Urgenta stomatologica rezolvata rapid si profesional. Am sunat si in cateva ore problema era rezolvata.',
     rating: 5,
-    service: 'Urgență'
+    service: 'Urgentă'
   },
   {
     id: '9',
@@ -46,7 +46,7 @@ const allTestimonials = [
     name: 'Valentina Grosu',
     content: 'Personalul este foarte amabil, iar clinica este foarte curata. Ma simt intotdeauna in siguranta aici.',
     rating: 5,
-    service: 'Consultație'
+    service: 'Consultatie'
   },
   {
     id: '12',
@@ -58,10 +58,10 @@ const allTestimonials = [
 ];
 
 const stats = [
-  { number: '98%', label: 'Rata de Satisfacție' },
+  { number: '98%', label: 'Rata de Satisfactie' },
   { number: '5.0', label: 'Rating Mediu' },
-  { number: '5000+', label: 'Pacienți Fericiți' },
-  { number: '15+', label: 'Ani de Experiență' },
+  { number: '5000+', label: 'Pacienti Fericiti' },
+  { number: '15+', label: 'Ani de Experientă' },
 ];
 
 export const Testimonials = () => {
@@ -81,11 +81,11 @@ export const Testimonials = () => {
         <div className="container mx-auto px-4 relative z-10 text-center">
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 border border-white/20 backdrop-blur-md mb-6">
             <ThumbsUp className="w-4 h-4" />
-            <span className="text-sm font-medium">Feedback de la Pacienți</span>
+            <span className="text-sm font-medium">Feedback de la Pacienti</span>
           </div>
-          <h1 className="font-heading text-4xl md:text-5xl font-bold mb-4">Ce Spun Pacienții Noștri</h1>
+          <h1 className="font-heading text-4xl md:text-5xl font-bold mb-4">Ce Spun Pacientii Noștri</h1>
           <p className="text-xl text-slate-200 max-w-2xl mx-auto">
-            Încrederea pacienților noștri este cea mai mare recompensă. Iată ce spun ei despre experiența la clinica noastră.
+            Încrederea pacientilor noștri este cea mai mare recompensă. Iată ce spun ei despre experienta la clinica noastră.
           </p>
         </div>
       </div>
@@ -115,7 +115,7 @@ export const Testimonials = () => {
               ))}
             </div>
             <blockquote className="text-2xl md:text-3xl font-heading mb-8 leading-relaxed">
-              "Am găsit la CSR Cimișlia exact ce căutam: profesionalism, empatie și rezultate excepționale.
+              "Am găsit la CSR Cimișlia exact ce căutam: profesionalism, empatie și rezultate exceptionale.
               Recomand cu toată încrederea această clinică!"
             </blockquote>
             <div className="flex items-center gap-4">
@@ -166,11 +166,11 @@ export const Testimonials = () => {
           <div className="bg-slate-100 rounded-3xl p-8 md:p-12 max-w-3xl mx-auto">
             <Award className="w-16 h-16 text-medical-blue mx-auto mb-6" />
             <h2 className="font-heading text-3xl font-bold text-slate-900 mb-4">
-              Experiența Ta Contează
+              Experienta Ta Contează
             </h2>
             <p className="text-slate-600 mb-8">
-              Ai fost pacient la clinica noastră? Ne-ar face plăcere să aflăm părerea ta despre experiența avută.
-              Feedback-ul tău ne ajută să ne îmbunătățim constant.
+              Ai fost pacient la clinica noastră? Ne-ar face plăcere să aflăm părerea ta despre experienta avută.
+              Feedback-ul tău ne ajută să ne îmbunătătim constant.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link to="/sugestii">

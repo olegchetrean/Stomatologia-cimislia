@@ -7,28 +7,28 @@ import { GlassServiceCard } from '../components/cards/GlassServiceCard';
 
 const categoryInfo: Record<string, { title: string; description: string; image: string }> = {
   consultatii: {
-    title: 'Consultații Stomatologice',
-    description: 'Consultații profesionale pentru diagnosticarea și planificarea tratamentului stomatologic. Medicii noștri experimentați vă vor evalua starea de sănătate orală și vă vor oferi cele mai bune recomandări.',
+    title: 'Consultatii Stomatologice',
+    description: 'Consultatii profesionale pentru diagnosticarea și planificarea tratamentului stomatologic. Medicii noștri experimentati vă vor evalua starea de sănătate orală și vă vor oferi cele mai bune recomandări.',
     image: 'https://images.unsplash.com/photo-1609840114035-3c981b782dfe?auto=format&fit=crop&q=80&w=800'
   },
   cabinet: {
-    title: 'Activități de Cabinet',
+    title: 'Activităti de Cabinet',
     description: 'Proceduri de cabinet inclusiv amprentare și preparare pentru diverse tratamente stomatologice. Folosim materiale de cea mai înaltă calitate pentru rezultate precise.',
     image: 'https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?auto=format&fit=crop&q=80&w=800'
   },
   anestezie: {
     title: 'Anestezie Stomatologică',
-    description: 'Servicii de anestezie locală pentru tratamente fără durere. Siguranța și confortul pacienților sunt prioritatea noastră.',
+    description: 'Servicii de anestezie locală pentru tratamente fără durere. Siguranta și confortul pacientilor sunt prioritatea noastră.',
     image: 'https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&q=80&w=800'
   },
   terapie: {
     title: 'Stomatologie Terapeutică',
-    description: 'Tratamentul gingivitelor, parodontitelor marginale, igienizarea profesională a cavității bucale, tratamentul cariilor, pulpitelor, periodontitelor, restaurări dentare și restabilirea esteticii dentare prin albire a dinților.',
+    description: 'Tratamentul gingivitelor, parodontitelor marginale, igienizarea profesională a cavitătii bucale, tratamentul cariilor, pulpitelor, periodontitelor, restaurări dentare și restabilirea esteticii dentare prin albire a dintilor.',
     image: 'https://images.unsplash.com/photo-1606811841689-23dfddce3e95?auto=format&fit=crop&q=80&w=800'
   },
   chirurgie: {
     title: 'Chirurgie Dento-Alveolară',
-    description: 'Extracții dentare tipice și atipice, chirurgie de urgență a traumatismelor, tratamentul chirurgical al complicațiilor în urma evoluției avansate a proceselor inflamatorii odontogene.',
+    description: 'Extractii dentare tipice și atipice, chirurgie de urgentă a traumatismelor, tratamentul chirurgical al complicatiilor în urma evolutiei avansate a proceselor inflamatorii odontogene.',
     image: 'https://images.unsplash.com/photo-1551601651-2a8555f1a136?auto=format&fit=crop&q=80&w=800'
   },
   imagistica: {
@@ -38,7 +38,7 @@ const categoryInfo: Record<string, { title: string; description: string; image: 
   },
   cnam: {
     title: 'Servicii CNAM',
-    description: 'Servicii decontate de Compania Națională de Asigurări în Medicină pentru pacienții asigurați.',
+    description: 'Servicii decontate de Compania Natională de Asigurări în Medicină pentru pacientii asigurati.',
     image: 'https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&q=80&w=800'
   }
 };
@@ -88,21 +88,21 @@ export const ServiceDetail = () => {
               <Clock className="w-6 h-6" />
             </div>
             <h3 className="font-heading font-bold text-lg mb-2">Timp de Tratament</h3>
-            <p className="text-slate-600">Variază în funcție de complexitate, de la 30 minute la mai multe ședințe.</p>
+            <p className="text-slate-600">Variază în functie de complexitate, de la 30 minute la mai multe ședinte.</p>
           </div>
           <div className="bg-white p-6 rounded-2xl shadow-sm border border-slate-100">
             <div className="w-12 h-12 bg-trust-green/10 rounded-xl flex items-center justify-center text-trust-green mb-4">
               <Shield className="w-6 h-6" />
             </div>
-            <h3 className="font-heading font-bold text-lg mb-2">Siguranță Garantată</h3>
-            <p className="text-slate-600">Toate procedurile respectă standardele internaționale de siguranță.</p>
+            <h3 className="font-heading font-bold text-lg mb-2">Sigurantă Garantată</h3>
+            <p className="text-slate-600">Toate procedurile respectă standardele internationale de sigurantă.</p>
           </div>
           <div className="bg-white p-6 rounded-2xl shadow-sm border border-slate-100">
             <div className="w-12 h-12 bg-purple-100 rounded-xl flex items-center justify-center text-purple-600 mb-4">
               <Check className="w-6 h-6" />
             </div>
-            <h3 className="font-heading font-bold text-lg mb-2">Garanție</h3>
-            <p className="text-slate-600">Oferim garanție pentru toate lucrările protetice și tratamentele efectuate.</p>
+            <h3 className="font-heading font-bold text-lg mb-2">Garantie</h3>
+            <p className="text-slate-600">Oferim garantie pentru toate lucrările protetice și tratamentele efectuate.</p>
           </div>
         </div>
 
@@ -122,12 +122,12 @@ export const ServiceDetail = () => {
         <div className="bg-gradient-to-r from-medical-blue to-medical-blue-light rounded-3xl p-8 md:p-12 text-white text-center">
           <h2 className="font-heading text-3xl font-bold mb-4">Ai nevoie de acest serviciu?</h2>
           <p className="text-slate-200 mb-8 max-w-2xl mx-auto">
-            Programează o consultație pentru a discuta cu medicul despre opțiunile de tratament.
+            Programează o consultatie pentru a discuta cu medicul despre optiunile de tratament.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link to="/contact">
               <Button size="lg" as="div" className="bg-white text-medical-blue hover:bg-slate-100">
-                <Calendar className="w-5 h-5 mr-2" /> Programează Consultație
+                <Calendar className="w-5 h-5 mr-2" /> Programează Consultatie
               </Button>
             </Link>
             <a href="tel:079772488">

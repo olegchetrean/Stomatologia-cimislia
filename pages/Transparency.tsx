@@ -7,8 +7,8 @@ export const Transparency = () => {
     <div className="min-h-screen bg-slate-50 pt-20">
       <div className="bg-slate-900 text-white py-16">
         <div className="container mx-auto px-4">
-          <h1 className="font-heading text-4xl font-bold mb-4">Transparență și Responsabilitate</h1>
-          <p className="text-xl text-slate-300">Informații publice conform legislației Republicii Moldova.</p>
+          <h1 className="font-heading text-4xl font-bold mb-4">Transparentă și Responsabilitate</h1>
+          <p className="text-xl text-slate-300">Informatii publice conform legislatiei Republicii Moldova.</p>
         </div>
       </div>
 
@@ -17,7 +17,7 @@ export const Transparency = () => {
           {/* General Info */}
           <section>
             <h2 className="font-heading text-2xl font-bold mb-6 flex items-center gap-2">
-              <FileText className="text-medical-blue" /> Informații Generale
+              <FileText className="text-medical-blue" /> Informatii Generale
             </h2>
             <div className="bg-white p-6 rounded-2xl shadow-sm space-y-4">
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -35,7 +35,7 @@ export const Transparency = () => {
                 </div>
                 <div>
                   <p className="text-sm text-slate-500">Statut</p>
-                  <p className="font-medium">Instituție Publică la Autogestiune</p>
+                  <p className="font-medium">Institutie Publică la Autogestiune</p>
                 </div>
               </div>
             </div>
@@ -48,7 +48,7 @@ export const Transparency = () => {
             </h2>
             <div className="bg-white p-6 rounded-2xl shadow-sm space-y-3">
               {[
-                'Statutul Instituției',
+                'Statutul Institutiei',
                 'Regulament de Activitate',
                 'Catalogul Tarifelor Unice',
                 'Raport Activitate 2024'
@@ -64,13 +64,13 @@ export const Transparency = () => {
           {/* Achizitii */}
           <section className="md:col-span-2">
             <h2 className="font-heading text-2xl font-bold mb-6 flex items-center gap-2">
-              <ExternalLink className="text-medical-blue" /> Achiziții Publice
+              <ExternalLink className="text-medical-blue" /> Achizitii Publice
             </h2>
             <div className="bg-white p-8 rounded-2xl shadow-sm border border-slate-100 flex flex-col md:flex-row items-center justify-between gap-6">
               <div>
-                <h3 className="font-bold text-lg mb-2">Monitorizare Achiziții</h3>
+                <h3 className="font-bold text-lg mb-2">Monitorizare Achizitii</h3>
                 <p className="text-slate-600 max-w-xl">
-                  Toate achizițiile publice efectuate de instituția noastră sunt transparente și pot fi verificate pe platforma MTender.
+                  Toate achizitiile publice efectuate de institutia noastră sunt transparente și pot fi verificate pe platforma MTender.
                 </p>
               </div>
               <a href="#" target="_blank" rel="noopener noreferrer">

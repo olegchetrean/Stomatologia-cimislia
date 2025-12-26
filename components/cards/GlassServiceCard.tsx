@@ -1,8 +1,8 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import { Service } from '../../types';
 import { ArrowRight, Stethoscope, Scissors, HeartPulse, Sparkles, Smile, ShieldCheck, Microscope, BriefcaseMedical } from 'lucide-react';
 import { formatPrice } from '../../lib/utils';
+import { Link } from 'react-router-dom';
 
 const getIcon = (category: string) => {
   switch (category) {
@@ -46,7 +46,7 @@ export const GlassServiceCard: React.FC<{ service: Service }> = ({ service }) =>
         <div className="mt-auto pt-4 border-t border-slate-200/50">
           <div className="flex justify-between items-end">
             <div>
-              <p className="text-xs text-slate-500 uppercase tracking-wider font-semibold">Preț</p>
+              <p className="text-xs text-slate-500 uppercase tracking-wider font-semibold">Pret</p>
               <p className="font-mono text-xl font-bold text-medical-blue">
                 {formatPrice(service.price)}
               </p>

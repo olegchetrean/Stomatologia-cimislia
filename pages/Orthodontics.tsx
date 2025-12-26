@@ -8,39 +8,39 @@ const bracketTypes = [
   {
     name: 'Brackets Metalici Ligaturabili',
     price: '5,440 MDL',
-    description: 'Opțiunea clasică și accesibilă. Eficiență dovedită în corectarea tuturor problemelor de aliniere.',
-    pros: ['Cel mai accesibil preț', 'Foarte eficiente', 'Durabile'],
+    description: 'Optiunea clasică și accesibilă. Eficientă dovedită în corectarea tuturor problemelor de aliniere.',
+    pros: ['Cel mai accesibil pret', 'Foarte eficiente', 'Durabile'],
     image: 'https://images.unsplash.com/photo-1606265752439-1f18756aa5fc?auto=format&fit=crop&q=80&w=400'
   },
   {
     name: 'Brackets Ceramici Ligaturabili',
     price: '8,332 MDL',
-    description: 'Discreție maximă cu eficiență similară metalicilor. Ideali pentru cei care doresc estetică.',
+    description: 'Discretie maximă cu eficientă similară metalicilor. Ideali pentru cei care doresc estetică.',
     pros: ['Aproape invizibili', 'Nu se pătează ușor', 'Estetici'],
     image: 'https://images.unsplash.com/photo-1606265752439-1f18756aa5fc?auto=format&fit=crop&q=80&w=400'
   },
   {
     name: 'Brackets Metalici Autoligaturabili',
     price: '7,922 MDL',
-    description: 'Tehnologie avansată care reduce frecvența vizitelor și timpul de tratament.',
-    pros: ['Mai puține vizite', 'Tratament mai rapid', 'Confort crescut'],
+    description: 'Tehnologie avansată care reduce frecventa vizitelor și timpul de tratament.',
+    pros: ['Mai putine vizite', 'Tratament mai rapid', 'Confort crescut'],
     image: 'https://images.unsplash.com/photo-1606265752439-1f18756aa5fc?auto=format&fit=crop&q=80&w=400'
   },
   {
     name: 'Brackets Ceramici Autoligaturabili',
     price: '11,171 MDL',
-    description: 'Combinația perfectă între estetică și tehnologie modernă.',
-    pros: ['Discreți și eficienți', 'Premium', 'Cel mai rapid tratament'],
+    description: 'Combinatia perfectă între estetică și tehnologie modernă.',
+    pros: ['Discreti și eficienti', 'Premium', 'Cel mai rapid tratament'],
     image: 'https://images.unsplash.com/photo-1606265752439-1f18756aa5fc?auto=format&fit=crop&q=80&w=400'
   },
 ];
 
 const problems = [
-  { name: 'Suprapunere', desc: 'Dinți înghesuiți sau suprapuși' },
-  { name: 'Spații', desc: 'Distanțe mari între dinți' },
-  { name: 'Mușcătură adâncă', desc: 'Dinții superiori acoperă prea mult dinții inferiori' },
-  { name: 'Mușcătură deschisă', desc: 'Dinții nu se ating când gura e închisă' },
-  { name: 'Prognatism', desc: 'Maxilarul inferior în față' },
+  { name: 'Suprapunere', desc: 'Dinti înghesuiti sau suprapuși' },
+  { name: 'Spatii', desc: 'Distante mari între dinti' },
+  { name: 'Mușcătură adâncă', desc: 'Dintii superiori acoperă prea mult dintii inferiori' },
+  { name: 'Mușcătură deschisă', desc: 'Dintii nu se ating când gura e închisă' },
+  { name: 'Prognatism', desc: 'Maxilarul inferior în fată' },
   { name: 'Retrognatism', desc: 'Maxilarul inferior în spate' },
 ];
 
@@ -62,20 +62,20 @@ export const Orthodontics = () => {
             <span className="text-sm font-medium">Zâmbete Perfecte</span>
           </div>
           <h1 className="font-heading text-4xl md:text-5xl font-bold mb-4">
-            Ortodonție
+            Ortodontie
           </h1>
           <p className="text-xl text-white/90 max-w-2xl mx-auto mb-8">
-            Corectarea alinierii dinților pentru un zâmbet sănătos și estetic. Soluții pentru copii și adulți.
+            Corectarea alinierii dintilor pentru un zâmbet sănătos și estetic. Solutii pentru copii și adulti.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link to="/programare">
               <Button size="lg" as="div" className="bg-white text-teal-600 hover:bg-teal-50">
-                Consultație Ortodontică
+                Consultatie Ortodontică
               </Button>
             </Link>
             <Link to="/preturi">
               <Button variant="outline" size="lg" as="div" className="border-white/40 hover:bg-white/10">
-                Vezi Prețurile
+                Vezi Preturile
               </Button>
             </Link>
           </div>
@@ -88,7 +88,7 @@ export const Orthodontics = () => {
           <div className="relative">
             <img
               src="https://images.unsplash.com/photo-1606265752439-1f18756aa5fc?auto=format&fit=crop&q=80&w=800"
-              alt="Ortodonție"
+              alt="Ortodontie"
               className="rounded-3xl shadow-2xl"
             />
             <div className="absolute -bottom-6 -right-6 bg-white rounded-2xl p-6 shadow-xl">
@@ -108,14 +108,14 @@ export const Orthodontics = () => {
               De Ce Este Important Tratamentul Ortodontic?
             </h2>
             <p className="text-slate-600 mb-6 leading-relaxed">
-              Ortodonția nu este doar despre estetică. Dinții corect aliniați sunt mai ușor de curățat, reducând riscul de carii și boli gingivale. O mușcătură corectă previne problemele articulației temporo-mandibulare și uzura prematură a dinților.
+              Ortodontia nu este doar despre estetică. Dintii corect aliniati sunt mai ușor de curătat, reducând riscul de carii și boli gingivale. O mușcătură corectă previne problemele articulatiei temporo-mandibulare și uzura prematură a dintilor.
             </p>
             <div className="space-y-4">
               {[
                 'Zâmbet estetic și armonios',
                 'Igienă orală mai ușoară',
                 'Prevenirea uzurii dentare',
-                'Îmbunătățirea masticației',
+                'Îmbunătătirea masticatiei',
                 'Creșterea încrederii în sine'
               ].map((item, i) => (
                 <div key={i} className="flex items-center gap-3">
@@ -152,7 +152,7 @@ export const Orthodontics = () => {
               Tipuri de Aparate Dentare
             </h2>
             <p className="text-slate-600 max-w-2xl mx-auto">
-              Alegem împreună cel mai potrivit tip de aparat în funcție de nevoile și preferințele tale.
+              Alegem împreună cel mai potrivit tip de aparat în functie de nevoile și preferintele tale.
             </p>
           </div>
           <div className="grid md:grid-cols-2 gap-8">
@@ -187,7 +187,7 @@ export const Orthodontics = () => {
                 Cât Durează Tratamentul?
               </h2>
               <p className="text-slate-300 mb-6">
-                Durata tratamentului ortodontic variază în funcție de complexitatea cazului și tipul de aparat ales.
+                Durata tratamentului ortodontic variază în functie de complexitatea cazului și tipul de aparat ales.
               </p>
               <div className="space-y-4">
                 <div className="flex items-center gap-4">
@@ -223,11 +223,11 @@ export const Orthodontics = () => {
               <h3 className="font-heading font-bold text-xl mb-6">Etapele Tratamentului</h3>
               <div className="space-y-6">
                 {[
-                  { step: '1', title: 'Consultație și diagnostic', desc: 'Evaluare, radiografii, amprente' },
+                  { step: '1', title: 'Consultatie și diagnostic', desc: 'Evaluare, radiografii, amprente' },
                   { step: '2', title: 'Plan de tratament', desc: 'Alegerea tipului de aparat' },
-                  { step: '3', title: 'Montarea aparatului', desc: 'Aplicarea brackeților' },
+                  { step: '3', title: 'Montarea aparatului', desc: 'Aplicarea bracketilor' },
                   { step: '4', title: 'Controale lunare', desc: 'Ajustări și monitorizare' },
-                  { step: '5', title: 'Demontare și retenție', desc: 'Aparat de menținere' },
+                  { step: '5', title: 'Demontare și retentie', desc: 'Aparat de mentinere' },
                 ].map((item, i) => (
                   <div key={i} className="flex items-start gap-4">
                     <div className="w-8 h-8 bg-teal-500 rounded-full flex items-center justify-center shrink-0 text-sm font-bold">
@@ -247,14 +247,14 @@ export const Orthodontics = () => {
         {/* All Prices */}
         <div className="mb-20">
           <h2 className="font-heading text-3xl font-bold text-slate-900 mb-8 text-center">
-            Lista Completă de Prețuri
+            Lista Completă de Preturi
           </h2>
           <div className="bg-white rounded-2xl shadow-sm border border-slate-100 overflow-hidden">
             <table className="w-full">
               <thead className="bg-slate-50">
                 <tr>
                   <th className="px-6 py-4 text-left font-bold text-slate-700">Serviciu</th>
-                  <th className="px-6 py-4 text-right font-bold text-slate-700">Preț (MDL)</th>
+                  <th className="px-6 py-4 text-right font-bold text-slate-700">Pret (MDL)</th>
                 </tr>
               </thead>
               <tbody>
@@ -283,7 +283,7 @@ export const Orthodontics = () => {
             Începe Transformarea Zâmbetului Tău
           </h2>
           <p className="text-white/90 mb-8 max-w-2xl mx-auto">
-            Programează o consultație ortodontică pentru a afla care este cel mai potrivit tratament pentru tine.
+            Programează o consultatie ortodontică pentru a afla care este cel mai potrivit tratament pentru tine.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link to="/programare">
