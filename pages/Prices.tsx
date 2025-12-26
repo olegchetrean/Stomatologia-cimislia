@@ -6,8 +6,8 @@ import { ServiceCategory } from '../types';
 import { Link } from 'react-router-dom';
 
 const categoryLabels: Record<ServiceCategory, string> = {
-  consultatii: 'Consultatii',
-  cabinet: 'Activităti Cabinet',
+  consultatii: 'Consultații',
+  cabinet: 'Activități Cabinet',
   anestezie: 'Anestezie',
   terapie: 'Terapie Dentară',
   chirurgie: 'Chirurgie Dento-Alveolară',
@@ -66,9 +66,9 @@ export const Prices = () => {
         <div className="absolute inset-0 noise-overlay" />
         <div className="container mx-auto px-4 relative z-10">
           <div className="text-center mb-8">
-            <h1 className="font-heading text-4xl md:text-5xl font-bold mb-4">Lista de Preturi</h1>
+            <h1 className="font-heading text-4xl md:text-5xl font-bold mb-4">Lista de Prețuri</h1>
             <p className="text-xl text-slate-200 max-w-2xl mx-auto">
-              Preturi transparente conform Catalogului Tarifelor Unice aprobat de Guvernul Republicii Moldova.
+              Prețuri transparente conform Catalogului Tarifelor Unice aprobat de Guvernul Republicii Moldova.
             </p>
           </div>
 
@@ -154,7 +154,7 @@ export const Prices = () => {
                   <tr>
                     <th className="px-6 py-4 text-left text-sm font-bold text-slate-700">Serviciu</th>
                     <th className="px-6 py-4 text-left text-sm font-bold text-slate-700 hidden md:table-cell">Unitate</th>
-                    <th className="px-6 py-4 text-right text-sm font-bold text-slate-700">Pret</th>
+                    <th className="px-6 py-4 text-right text-sm font-bold text-slate-700">Preț</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -197,8 +197,8 @@ export const Prices = () => {
         <div className="mt-12 bg-slate-100 rounded-2xl p-6">
           <h3 className="font-heading font-bold text-slate-900 mb-2">Notă Importantă</h3>
           <p className="text-slate-600 text-sm">
-            Preturile afișate sunt orientative și pot varia în functie de complexitatea cazului.
-            Pentru un cost exact, vă recomandăm o consultatie cu medicul specialist.
+            Prețurile afișate sunt orientative și pot varia în functie de complexitatea cazului.
+            Pentru un cost exact, vă recomandăm o consultație cu medicul specialist.
             Tarifele sunt conforme cu Catalogul Tarifelor Unice aprobat de Guvernul Republicii Moldova.
           </p>
         </div>

@@ -19,7 +19,7 @@ const navItems: NavItem[] = [
     path: '/servicii',
     children: [
       { name: 'Toate Serviciile', path: '/servicii', description: 'Lista completă de servicii' },
-      { name: 'Lista de Preturi', path: '/preturi', description: 'Tarife și costuri' },
+      { name: 'Lista de Prețuri', path: '/preturi', description: 'Tarife și costuri' },
       { name: 'Pediatrie', path: '/pediatrie', description: 'Pentru copii' },
     ]
   },
@@ -32,7 +32,7 @@ const footerLinks = {
   servicii: [
     { name: 'Toate Serviciile', path: '/servicii' },
     { name: 'Pediatrie', path: '/pediatrie' },
-    { name: 'Lista de Preturi', path: '/preturi' },
+    { name: 'Lista de Prețuri', path: '/preturi' },
   ],
   informatii: [
     { name: 'Despre Noi', path: '/despre' },

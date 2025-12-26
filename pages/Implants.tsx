@@ -34,7 +34,7 @@ const benefits = [
 const process = [
   {
     step: 1,
-    title: 'Consultatie și Planificare',
+    title: 'Consultație și Planificare',
     description: 'Evaluare completă, radiografii și CT pentru planificarea implantului.',
     duration: '1-2 vizite'
   },
@@ -61,15 +61,15 @@ const process = [
 const faqs = [
   {
     q: 'Este dureroasă procedura de implant?',
-    a: 'Nu. Procedura se efectuează sub anestezie locală și nu veti simti durere. După interventie, un disconfort ușor este normal și se tratează cu analgezice.'
+    a: 'Nu. Procedura se efectuează sub anestezie locală și nu veti simti durere. După intervenție, un disconfort ușor este normal și se tratează cu analgezice.'
   },
   {
     q: 'Cât durează întreaga procedură?',
-    a: 'De la prima consultatie până la coroana definitivă, procesul durează în medie 4-6 luni, în functie de caz.'
+    a: 'De la prima consultație până la coroana definitivă, procesul durează în medie 4-6 luni, în functie de caz.'
   },
   {
     q: 'Cât costă un implant dentar?',
-    a: 'Pretul variază în functie de tipul implantului și complexitatea cazului. Consultati lista noastră de preturi sau programati o consultatie pentru o evaluare personalizată.'
+    a: 'Prețul variază în functie de tipul implantului și complexitatea cazului. Consultati lista noastră de prețuri sau programati o consultație pentru o evaluare personalizată.'
   },
   {
     q: 'Cât durează un implant?',
@@ -106,12 +106,12 @@ export const Implants = () => {
               <div className="flex flex-col sm:flex-row gap-4">
                 <Link to="/programare">
                   <Button size="lg" as="div" className="bg-white text-medical-blue hover:bg-slate-100">
-                    Consultatie Gratuită
+                    Consultație Gratuită
                   </Button>
                 </Link>
                 <Link to="/preturi">
                   <Button variant="outline" size="lg" as="div" className="border-white/40 hover:bg-white/10">
-                    Vezi Preturile
+                    Vezi Prețurile
                   </Button>
                 </Link>
               </div>
@@ -213,7 +213,7 @@ export const Implants = () => {
         <div className="mb-20">
           <div className="text-center mb-12">
             <h2 className="font-heading text-3xl font-bold text-slate-900 mb-4">
-              Preturi Implantologie
+              Prețuri Implantologie
             </h2>
             <p className="text-slate-600">Tarife conform Catalogului Tarifelor Unice</p>
           </div>
@@ -222,7 +222,7 @@ export const Implants = () => {
               <thead className="bg-slate-50">
                 <tr>
                   <th className="px-6 py-4 text-left font-bold text-slate-700">Serviciu</th>
-                  <th className="px-6 py-4 text-right font-bold text-slate-700">Pret (MDL)</th>
+                  <th className="px-6 py-4 text-right font-bold text-slate-700">Preț (MDL)</th>
                 </tr>
               </thead>
               <tbody>
@@ -238,7 +238,7 @@ export const Implants = () => {
             </table>
           </div>
           <p className="text-slate-500 text-sm mt-4 text-center">
-            * Pretul final poate varia în functie de complexitatea cazului. Programati o consultatie pentru o evaluare personalizată.
+            * Pretul final poate varia în functie de complexitatea cazului. Programati o consultație pentru o evaluare personalizată.
           </p>
         </div>
 
@@ -263,12 +263,12 @@ export const Implants = () => {
             Pregătit să Îti Recuperezi Zâmbetul?
           </h2>
           <p className="text-slate-200 mb-8 max-w-2xl mx-auto">
-            Programează o consultatie pentru a discuta despre optiunile de tratament și a primi un plan personalizat.
+            Programează o consultație pentru a discuta despre optiunile de tratament și a primi un plan personalizat.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link to="/programare">
               <Button size="lg" as="div" className="bg-white text-medical-blue hover:bg-slate-100">
-                <Calendar className="w-5 h-5 mr-2" /> Programează Consultatie
+                <Calendar className="w-5 h-5 mr-2" /> Programează Consultație
               </Button>
             </Link>
             <a href="tel:079772488">

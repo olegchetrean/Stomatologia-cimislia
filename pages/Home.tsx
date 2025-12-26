@@ -38,7 +38,7 @@ export const Home = () => {
 
   const processSteps = [
     { step: '01', title: 'Programare', desc: 'Contactează-ne telefonic sau online pentru o programare la ora dorită.' },
-    { step: '02', title: 'Consultatie', desc: 'Medicul evaluează starea de sănătate orală și stabilește planul de tratament.' },
+    { step: '02', title: 'Consultație', desc: 'Medicul evaluează starea de sănătate orală și stabilește planul de tratament.' },
     { step: '03', title: 'Tratament', desc: 'Efectuăm tratamentele necesare cu cele mai moderne tehnici și materiale.' },
     { step: '04', title: 'Urmărire', desc: 'Monitorizăm evolutia și oferim sfaturi pentru mentinerea sănătătii orale.' },
   ];
@@ -82,7 +82,7 @@ export const Home = () => {
 
             <div className="flex flex-col sm:flex-row gap-4 pt-4">
               <Link to="/contact" className="w-full sm:w-auto">
-                <Button size="lg" as="div" className="w-full sm:w-auto">Programează Consultatie</Button>
+                <Button size="lg" as="div" className="w-full sm:w-auto">Programează Consultație</Button>
               </Link>
               <Link to="/servicii" className="w-full sm:w-auto">
                 <Button variant="outline" size="lg" as="div" className="w-full sm:w-auto">Vezi Tarifele</Button>
@@ -278,7 +278,7 @@ export const Home = () => {
           <div className="mt-16 text-center">
             <Link to="/contact">
               <Button size="lg" as="div" className="bg-white text-medical-blue hover:bg-slate-100">
-                Programează Prima Consultatie
+                Programează Prima Consultație
               </Button>
             </Link>
           </div>
@@ -547,7 +547,7 @@ export const Home = () => {
           <div className="max-w-3xl mx-auto">
             <h2 className="font-heading text-4xl md:text-5xl font-bold mb-6">Pregătit pentru un zâmbet sănătos?</h2>
             <p className="text-xl text-slate-200 mb-10 max-w-2xl mx-auto">
-              Programează o consultatie astăzi și beneficiază de tratamente la standarde europene, într-un mediu modern și prietenos.
+              Programează o consultație astăzi și beneficiază de tratamente la standarde europene, într-un mediu modern și prietenos.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link to="/contact">

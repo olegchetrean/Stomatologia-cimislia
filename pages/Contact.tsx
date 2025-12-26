@@ -103,8 +103,8 @@ export const Contact = () => {
               <div>
                 <label className="block text-sm font-medium text-slate-700 mb-2">Subiect</label>
                 <select className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:border-medical-blue bg-white">
-                  <option>Programare Consultatie</option>
-                  <option>Informatii Preturi</option>
+                  <option>Programare Consultație</option>
+                  <option>Informatii Prețuri</option>
                   <option>Servicii CNAM</option>
                   <option>Altele</option>
                 </select>

@@ -25,7 +25,7 @@ const emergencyTypes = [
   },
   {
     title: 'Sângerare Abundentă',
-    description: 'Sângerare care nu se oprește după extractie sau traumatism.',
+    description: 'Sângerare care nu se oprește după extracție sau traumatism.',
     urgency: 'critical',
     advice: 'Aplicati presiune cu o compresă sterilă. Dacă nu se oprește în 20 de minute, prezentati-vă urgent.'
   },
@@ -36,7 +36,7 @@ const emergencyTypes = [
     advice: 'Necesită tratament urgent pentru a preveni răspândirea infectiei. Nu încercati să spargeti abcesul!'
   },
   {
-    title: 'Coroană/Obturatie Căzută',
+    title: 'Coroană/Obturație Căzută',
     description: 'Lucrare protetică sau plomba s-a desprins de dinte.',
     urgency: 'medium',
     advice: 'Păstrati lucrarea și programati-vă în următoarele zile. Evitati să mestecati pe acea parte.'

@@ -5,17 +5,17 @@ import { Link } from 'react-router-dom';
 import { TEAM } from '../constants';
 
 const services = [
-  'Consultatie Generală',
+  'Consultație Generală',
   'Tratament Carie',
   'Detartraj și Igienizare',
-  'Extractie Dentară',
+  'Extracție Dentară',
   'Tratament de Canal',
   'Proteză Dentară',
   'Implant Dentar',
   'Ortodontie',
   'Albire Dentară',
   'Urgentă Stomatologică',
-  'Consultatie Copii',
+  'Consultație Copii',
   'Altele',
 ];
 
@@ -95,7 +95,7 @@ export const Appointments = () => {
             <Calendar className="w-4 h-4" />
             <span className="text-sm font-medium">Programare Online</span>
           </div>
-          <h1 className="font-heading text-4xl md:text-5xl font-bold mb-4">Programează o Consultatie</h1>
+          <h1 className="font-heading text-4xl md:text-5xl font-bold mb-4">Programează o Consultație</h1>
           <p className="text-xl text-slate-200 max-w-2xl mx-auto">
             Completează formularul de mai jos și te vom contacta pentru confirmare.
           </p>

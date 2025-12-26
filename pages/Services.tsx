@@ -35,16 +35,19 @@ export const Services = () => {
   ];
 
   // Функция для нормализации румынских символов для поиска
+  // Преобразует и ț и t в одно и то же для поиска
   const normalizeForSearch = (text: string): string => {
     return text
       .toLowerCase()
-      .normalize('NFD')
-      .replace(/[\u0300-\u036f]/g, '') // Удаляем диакритические знаки
+      // Заменяем все румынские символы на базовые латинские
       .replace(/ă/g, 'a')
       .replace(/â/g, 'a')
       .replace(/î/g, 'i')
       .replace(/ș/g, 's')
-      .replace(/t/g, 't');
+      .replace(/ț/g, 't') // Преобразуем ț в t для поиска
+      // Нормализуем остальные диакритические знаки
+      .normalize('NFD')
+      .replace(/[\u0300-\u036f]/g, ''); // Удаляем диакритические знаки
   };
 
   const filteredServices = useMemo(() => {
@@ -97,7 +100,7 @@ export const Services = () => {
           <div className="text-center mb-8">
             <h1 className="font-heading text-4xl md:text-5xl font-bold mb-4">Servicii și Tarife</h1>
             <p className="text-xl text-slate-200 max-w-2xl mx-auto mb-6">
-              Preturi transparente conform Catalogului Tarifelor Unice aprobat de Guvernul RM.
+              Prețuri transparente conform Catalogului Tarifelor Unice aprobat de Guvernul RM.
               Peste {SERVICES.length} de servicii disponibile.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -106,7 +109,7 @@ export const Services = () => {
               </Button>
               <Link to="/preturi">
                 <Button as="div" className="gap-2 bg-white text-medical-blue hover:bg-slate-100">
-                  <List className="w-4 h-4" /> Vezi Tabelul de Preturi
+                  <List className="w-4 h-4" /> Vezi Tabelul de Prețuri
                 </Button>
               </Link>
             </div>
@@ -175,7 +178,7 @@ export const Services = () => {
               onChange={(e) => setPriceRange(e.target.value as any)}
               className="px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-medical-blue-lighter/50 bg-white"
             >
-              <option value="all">Toate Preturile</option>
+              <option value="all">Toate Prețurile</option>
               <option value="low">Sub 500 MDL</option>
               <option value="medium">500 - 2000 MDL</option>
               <option value="high">Peste 2000 MDL</option>
@@ -299,7 +302,7 @@ export const Services = () => {
                   <th className="px-6 py-4 text-left text-sm font-bold text-slate-700">Serviciu</th>
                   <th className="px-6 py-4 text-left text-sm font-bold text-slate-700 hidden md:table-cell">Categorie</th>
                   <th className="px-6 py-4 text-left text-sm font-bold text-slate-700 hidden lg:table-cell">Unitate</th>
-                  <th className="px-6 py-4 text-right text-sm font-bold text-slate-700">Pret</th>
+                  <th className="px-6 py-4 text-right text-sm font-bold text-slate-700">Preț</th>
                 </tr>
               </thead>
               <tbody>
@@ -338,12 +341,12 @@ export const Services = () => {
         <div className="mt-16 bg-gradient-to-r from-medical-blue to-medical-blue-light rounded-3xl p-8 md:p-12 text-white text-center">
           <h2 className="font-heading text-3xl font-bold mb-4">Ai nevoie de ajutor?</h2>
           <p className="text-slate-200 mb-8 max-w-2xl mx-auto">
-            Nu ești sigur ce serviciu ai nevoie? Programează o consultatie și medicul nostru te va ghida.
+            Nu ești sigur ce serviciu ai nevoie? Programează o consultație și medicul nostru te va ghida.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link to="/programare">
               <Button size="lg" as="div" className="bg-white text-medical-blue hover:bg-slate-100">
-                <Calendar className="w-5 h-5 mr-2" /> Programează Consultatie
+                <Calendar className="w-5 h-5 mr-2" /> Programează Consultație
               </Button>
             </Link>
             <a href="tel:079772488">

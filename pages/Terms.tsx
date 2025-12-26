@@ -18,7 +18,7 @@ export const Terms = () => {
 
           <h3>2. Servicii Medicale</h3>
           <p>
-            Informatiile prezentate pe site au caracter informativ și nu înlocuiesc consultatia medicală de specialitate. Planul de tratament exact și costurile finale se stabilesc doar în urma unei consultatii în cabinet.
+            Informatiile prezentate pe site au caracter informativ și nu înlocuiesc consultația medicală de specialitate. Planul de tratament exact și costurile finale se stabilesc doar în urma unei consultații în cabinet.
           </p>
 
           <h3>3. Programări</h3>

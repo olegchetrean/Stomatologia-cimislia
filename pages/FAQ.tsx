@@ -20,8 +20,8 @@ const faqData = [
         a: 'Clinica se află pe strada Alexandru cel Bun 135, în orașul Cimișlia, Republica Moldova. Suntem ușor de găsit în centrul orașului.'
       },
       {
-        q: 'Cât timp durează o consultatie?',
-        a: 'O consultatie standard durează aproximativ 30 de minute. În functie de complexitatea cazului, poate dura mai mult sau mai putin.'
+        q: 'Cât timp durează o consultație?',
+        a: 'O consultație standard durează aproximativ 30 de minute. În functie de complexitatea cazului, poate dura mai mult sau mai putin.'
       }
     ]
   },
@@ -72,15 +72,15 @@ const faqData = [
     ]
   },
   {
-    category: 'Preturi și Servicii',
+    category: 'Prețuri și Servicii',
     questions: [
       {
-        q: 'De unde aflu preturile serviciilor?',
-        a: 'Lista completă de preturi este disponibilă pe pagina noastră de Servicii și Preturi. Toate tarifele sunt conforme cu Catalogul Tarifelor Unice aprobat de Guvernul RM.'
+        q: 'De unde aflu prețurile serviciilor?',
+        a: 'Lista completă de prețuri este disponibilă pe pagina noastră de Servicii și Prețuri. Toate tarifele sunt conforme cu Catalogul Tarifelor Unice aprobat de Guvernul RM.'
       },
       {
-        q: 'Sunt incluse materialele în pret?',
-        a: 'Da, preturile afișate includ de obicei materialele standard. Pentru materiale premium sau importate, poate exista un cost suplimentar care va fi comunicat înainte de tratament.'
+        q: 'Sunt incluse materialele în preț?',
+        a: 'Da, prețurile afișate includ de obicei materialele standard. Pentru materiale premium sau importate, poate exista un cost suplimentar care va fi comunicat înainte de tratament.'
       },
       {
         q: 'Oferiti garantie pentru lucrări?',
@@ -96,8 +96,8 @@ const faqData = [
         a: 'Vă rugăm să aveti la dumneavoastră buletinul de identitate (sau adeverinta de naștere pentru minori). Este recomandat să periati dintii înainte de vizită și să mâncati ușor.'
       },
       {
-        q: 'Pot mânca după o extractie?',
-        a: 'După o extractie, evitati să mâncati în primele 2-3 ore. Apoi, consumati alimente moi și evitati zona extractiei. Evitati alimentele fierbinti în prima zi.'
+        q: 'Pot mânca după o extracție?',
+        a: 'După o extracție, evitati să mâncati în primele 2-3 ore. Apoi, consumati alimente moi și evitati zona extracției. Evitati alimentele fierbinti în prima zi.'
       },
       {
         q: 'Ce trebuie să fac după un tratament de canal?',

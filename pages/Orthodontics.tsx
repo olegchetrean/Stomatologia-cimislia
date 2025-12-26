@@ -9,7 +9,7 @@ const bracketTypes = [
     name: 'Brackets Metalici Ligaturabili',
     price: '5,440 MDL',
     description: 'Optiunea clasică și accesibilă. Eficientă dovedită în corectarea tuturor problemelor de aliniere.',
-    pros: ['Cel mai accesibil pret', 'Foarte eficiente', 'Durabile'],
+    pros: ['Cel mai accesibil preț', 'Foarte eficiente', 'Durabile'],
     image: 'https://images.unsplash.com/photo-1606265752439-1f18756aa5fc?auto=format&fit=crop&q=80&w=400'
   },
   {
@@ -70,12 +70,12 @@ export const Orthodontics = () => {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link to="/programare">
               <Button size="lg" as="div" className="bg-white text-teal-600 hover:bg-teal-50">
-                Consultatie Ortodontică
+                Consultație Ortodontică
               </Button>
             </Link>
             <Link to="/preturi">
               <Button variant="outline" size="lg" as="div" className="border-white/40 hover:bg-white/10">
-                Vezi Preturile
+                Vezi Prețurile
               </Button>
             </Link>
           </div>
@@ -223,7 +223,7 @@ export const Orthodontics = () => {
               <h3 className="font-heading font-bold text-xl mb-6">Etapele Tratamentului</h3>
               <div className="space-y-6">
                 {[
-                  { step: '1', title: 'Consultatie și diagnostic', desc: 'Evaluare, radiografii, amprente' },
+                  { step: '1', title: 'Consultație și diagnostic', desc: 'Evaluare, radiografii, amprente' },
                   { step: '2', title: 'Plan de tratament', desc: 'Alegerea tipului de aparat' },
                   { step: '3', title: 'Montarea aparatului', desc: 'Aplicarea bracketilor' },
                   { step: '4', title: 'Controale lunare', desc: 'Ajustări și monitorizare' },
@@ -247,14 +247,14 @@ export const Orthodontics = () => {
         {/* All Prices */}
         <div className="mb-20">
           <h2 className="font-heading text-3xl font-bold text-slate-900 mb-8 text-center">
-            Lista Completă de Preturi
+            Lista Completă de Prețuri
           </h2>
           <div className="bg-white rounded-2xl shadow-sm border border-slate-100 overflow-hidden">
             <table className="w-full">
               <thead className="bg-slate-50">
                 <tr>
                   <th className="px-6 py-4 text-left font-bold text-slate-700">Serviciu</th>
-                  <th className="px-6 py-4 text-right font-bold text-slate-700">Pret (MDL)</th>
+                  <th className="px-6 py-4 text-right font-bold text-slate-700">Preț (MDL)</th>
                 </tr>
               </thead>
               <tbody>
@@ -283,7 +283,7 @@ export const Orthodontics = () => {
             Începe Transformarea Zâmbetului Tău
           </h2>
           <p className="text-white/90 mb-8 max-w-2xl mx-auto">
-            Programează o consultatie ortodontică pentru a afla care este cel mai potrivit tratament pentru tine.
+            Programează o consultație ortodontică pentru a afla care este cel mai potrivit tratament pentru tine.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link to="/programare">

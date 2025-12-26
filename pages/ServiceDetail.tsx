@@ -122,12 +122,12 @@ export const ServiceDetail = () => {
         <div className="bg-gradient-to-r from-medical-blue to-medical-blue-light rounded-3xl p-8 md:p-12 text-white text-center">
           <h2 className="font-heading text-3xl font-bold mb-4">Ai nevoie de acest serviciu?</h2>
           <p className="text-slate-200 mb-8 max-w-2xl mx-auto">
-            Programează o consultatie pentru a discuta cu medicul despre optiunile de tratament.
+            Programează o consultație pentru a discuta cu medicul despre optiunile de tratament.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link to="/contact">
               <Button size="lg" as="div" className="bg-white text-medical-blue hover:bg-slate-100">
-                <Calendar className="w-5 h-5 mr-2" /> Programează Consultatie
+                <Calendar className="w-5 h-5 mr-2" /> Programează Consultație
               </Button>
             </Link>
             <a href="tel:079772488">

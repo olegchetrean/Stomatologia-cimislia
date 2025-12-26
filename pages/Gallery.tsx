@@ -13,7 +13,7 @@ const galleryImages = [
   // { id: 9, src: 'https://images.unsplash.com/photo-1551601651-2a8555f1a136?auto=format&fit=crop&q=80&w=800', category: 'clinic', title: 'Zona de Sterilizare' },
   { id: 9, src: 'images/gallery/radiologic.jpg', category: 'equipment', title: 'Cabinet Radiologic' },
   { id: 10, src: 'https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&q=80&w=800', category: 'team', title: 'Echipa Medicală' },
-  { id: 11, src: 'images/gallery/consult.jpg', category: 'treatment', title: 'Consultatie' },
+  { id: 11, src: 'images/gallery/consult.jpg', category: 'treatment', title: 'Consultație' },
   { id: 12, src: 'https://images.unsplash.com/photo-1598256989800-fe5f95da9787?auto=format&fit=crop&q=80&w=800', category: 'results', title: 'Unit Dentar' },
 ];
 

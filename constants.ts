@@ -87,7 +87,7 @@ export const TESTIMONIALS: Testimonial[] = [
   {
     id: '2',
     name: 'Ion Rusu',
-    content: 'Am făcut tratamentul cariilor și restaurări dentare. Servicii de calitate la preturi corecte. Apreciez transparenta și faptul că acceptă asigurarea CNAM.',
+    content: 'Am făcut tratamentul cariilor și restaurări dentare. Servicii de calitate la prețuri corecte. Apreciez transparenta și faptul că acceptă asigurarea CNAM.',
     rating: 5,
     service: 'Stomatologie Terapeutică'
   },
@@ -135,8 +135,8 @@ export const FAQS: FAQ[] = [
     answer: 'Da, oferim servicii complete de stomatologie pediatrică. Copiii până la 18 ani pot beneficia de servicii decontate de CNAM.'
   },
   {
-    question: 'Cât durează o consultatie?',
-    answer: 'O consultatie standard durează aproximativ 20-30 de minute, timp în care medicul evaluează starea de sănătate orală și stabilește planul de tratament.'
+    question: 'Cât durează o consultație?',
+    answer: 'O consultație standard durează aproximativ 20-30 de minute, timp în care medicul evaluează starea de sănătate orală și stabilește planul de tratament.'
   },
   {
     question: 'Ce documente sunt necesare pentru servicii CNAM?',
@@ -152,9 +152,9 @@ export const SERVICES: Service[] = [
   // ============================================
   // I. CONSULTATII STOMATOLOGICE
   // ============================================
-  { id: '1.1', category: 'consultatii', name: 'Consultatia medicului stomatolog', price: 253, unit: 'vizită' },
-  { id: '1.2', category: 'consultatii', name: 'Consultatia medicului stomatolog, conferentiar-doctor în știinte medicale', price: 320, unit: 'vizită' },
-  { id: '1.3', category: 'consultatii', name: 'Consultatia medicului stomatolog, profesor-doctor habilitat', price: 383, unit: 'vizită' },
+  { id: '1.1', category: 'consultatii', name: 'Consultația medicului stomatolog', price: 253, unit: 'vizită' },
+  { id: '1.2', category: 'consultatii', name: 'Consultația medicului stomatolog, conferentiar-doctor în știinte medicale', price: 320, unit: 'vizită' },
+  { id: '1.3', category: 'consultatii', name: 'Consultația medicului stomatolog, profesor-doctor habilitat', price: 383, unit: 'vizită' },
 
   // ============================================
   // II. ACTIVITĂTI EFECTUATE ÎN CABINETUL STOMATOLOGIC
@@ -163,15 +163,15 @@ export const SERVICES: Service[] = [
   { id: '2.2', category: 'cabinet', name: 'Amprentă în două straturi', price: 270, unit: 'amprentă' },
   { id: '2.3', category: 'cabinet', name: 'Amprentă cu masă amprentară pe bază de alginat', price: 176, unit: 'amprentă' },
   { id: '2.4', category: 'cabinet', name: 'Turnarea modelului de studiu/de lucru/de control în ghips pentru o arcadă dentară', price: 169, unit: 'model' },
-  { id: '2.5', category: 'cabinet', subcategory: 'Imagistică', name: 'Analiza ortopantomogramei', price: 317, unit: 'investigatie' },
-  { id: '2.6', category: 'cabinet', subcategory: 'Imagistică', name: 'Analiza tomografiei totale a maxilei/mandibulei', price: 317, unit: 'investigatie' },
-  { id: '2.7', category: 'cabinet', subcategory: 'Imagistică', name: 'Analiza tomografiei segmentare', price: 211, unit: 'investigatie' },
+  { id: '2.5', category: 'cabinet', subcategory: 'Imagistică', name: 'Analiza ortopantomogramei', price: 317, unit: 'investigație' },
+  { id: '2.6', category: 'cabinet', subcategory: 'Imagistică', name: 'Analiza tomografiei totale a maxilei/mandibulei', price: 317, unit: 'investigație' },
+  { id: '2.7', category: 'cabinet', subcategory: 'Imagistică', name: 'Analiza tomografiei segmentare', price: 211, unit: 'investigație' },
 
   // ============================================
   // III. ANESTEZIE ÎN STOMATOLOGIE
   // ============================================
   // 1. Anestezie locală
-  { id: '3.1', category: 'anestezie', subcategory: 'Locală', name: 'Anestezie locală (infiltratie plexală)', price: 184, unit: 'anestezie' },
+  { id: '3.1', category: 'anestezie', subcategory: 'Locală', name: 'Anestezie locală (infiltrație plexală)', price: 184, unit: 'anestezie' },
   { id: '3.2', category: 'anestezie', subcategory: 'Locală', name: 'Anestezie locală/loco-regională cu carpule', price: 196, unit: 'anestezie' },
   { id: '3.3', category: 'anestezie', subcategory: 'Locală', name: 'Anestezie topică', price: 135, unit: 'anestezie' },
 
@@ -180,13 +180,13 @@ export const SERVICES: Service[] = [
   // ============================================
   // 1. Tratament endodontic
   { id: '4.1', category: 'terapie', subcategory: 'Endodontie', name: 'Tratamentul canalului radicular cu ultrasunet', price: 93, unit: 'ședintă' },
-  { id: '4.2', category: 'terapie', subcategory: 'Endodontie', name: 'Reconstructie perete-pre-endo', price: 140, unit: 'dinte' },
-  { id: '4.3', category: 'terapie', subcategory: 'Endodontie', name: 'Tratament endodontic monocanalar (obturatie temporară de canal)', price: 325, unit: 'ședintă' },
-  { id: '4.4', category: 'terapie', subcategory: 'Endodontie', name: 'Tratament endodontic bicanalar (obturatie temporară de canal)', price: 362, unit: 'ședintă' },
-  { id: '4.5', category: 'terapie', subcategory: 'Endodontie', name: 'Tratament endodontic pluricanalar (obturatie temporară de canal)', price: 445, unit: 'ședintă' },
-  { id: '4.6', category: 'terapie', subcategory: 'Endodontie', name: 'Tratament endodontic monocanalar (obturatie definitivă de canal)', price: 419, unit: 'ședintă' },
-  { id: '4.7', category: 'terapie', subcategory: 'Endodontie', name: 'Tratament endodontic bicanalar (obturatie definitivă de canal)', price: 458, unit: 'ședintă' },
-  { id: '4.8', category: 'terapie', subcategory: 'Endodontie', name: 'Tratament endodontic pluricanalar (obturatie definitivă de canal)', price: 541, unit: 'ședintă' },
+  { id: '4.2', category: 'terapie', subcategory: 'Endodontie', name: 'Reconstrucție perete-pre-endo', price: 140, unit: 'dinte' },
+  { id: '4.3', category: 'terapie', subcategory: 'Endodontie', name: 'Tratament endodontic monocanalar (obturație temporară de canal)', price: 325, unit: 'ședintă' },
+  { id: '4.4', category: 'terapie', subcategory: 'Endodontie', name: 'Tratament endodontic bicanalar (obturație temporară de canal)', price: 362, unit: 'ședintă' },
+  { id: '4.5', category: 'terapie', subcategory: 'Endodontie', name: 'Tratament endodontic pluricanalar (obturație temporară de canal)', price: 445, unit: 'ședintă' },
+  { id: '4.6', category: 'terapie', subcategory: 'Endodontie', name: 'Tratament endodontic monocanalar (obturație definitivă de canal)', price: 419, unit: 'ședintă' },
+  { id: '4.7', category: 'terapie', subcategory: 'Endodontie', name: 'Tratament endodontic bicanalar (obturație definitivă de canal)', price: 458, unit: 'ședintă' },
+  { id: '4.8', category: 'terapie', subcategory: 'Endodontie', name: 'Tratament endodontic pluricanalar (obturație definitivă de canal)', price: 541, unit: 'ședintă' },
   { id: '4.9', category: 'terapie', subcategory: 'Endodontie', name: 'Tratament endodontic asistat de microscop stomatologic al unui canal', price: 743, unit: 'ședintă' },
   { id: '4.10', category: 'terapie', subcategory: 'Endodontie', name: 'Dezobturarea canalului radicular (un canal) / Înlăturare corp străin din canal', price: 419, unit: 'ședintă' },
   { id: '4.11', category: 'terapie', subcategory: 'Endodontie', name: 'Aplicarea pastei devitalizante', price: 159, unit: 'dinte' },
@@ -242,56 +242,56 @@ export const SERVICES: Service[] = [
   // V. CHIRURGIE ORO-MAXILO-FACIALĂ
   // ============================================
   // 1. Activităti în cabinetul chirurgical
-  { id: '5.1', category: 'chirurgie', subcategory: 'Extractii', name: 'Extractia dintelui fără anestezie', price: 262, unit: 'extractie' },
-  { id: '5.2', category: 'chirurgie', subcategory: 'Extractii', name: 'Extractia dintelui cu anestezie', price: 452, unit: 'extractie' },
-  { id: '5.3', category: 'chirurgie', subcategory: 'Extractii', name: 'Extractie dentară atipică', price: 828, unit: 'extractie' },
-  { id: '5.4', category: 'chirurgie', subcategory: 'Extractii', name: 'Extractia dintelui inclus', price: 1434, unit: 'extractie' },
-  { id: '5.5', category: 'chirurgie', subcategory: 'Extractii', name: 'Extractia dintelui inclavat', price: 1593, unit: 'extractie' },
+  { id: '5.1', category: 'chirurgie', subcategory: 'Extractii', name: 'Extractia dintelui fără anestezie', price: 262, unit: 'extracție' },
+  { id: '5.2', category: 'chirurgie', subcategory: 'Extractii', name: 'Extractia dintelui cu anestezie', price: 452, unit: 'extracție' },
+  { id: '5.3', category: 'chirurgie', subcategory: 'Extractii', name: 'Extractie dentară atipică', price: 828, unit: 'extracție' },
+  { id: '5.4', category: 'chirurgie', subcategory: 'Extractii', name: 'Extractia dintelui inclus', price: 1434, unit: 'extracție' },
+  { id: '5.5', category: 'chirurgie', subcategory: 'Extractii', name: 'Extractia dintelui inclavat', price: 1593, unit: 'extracție' },
   { id: '5.6', category: 'chirurgie', subcategory: 'Interventii', name: 'Hemostază', price: 535, unit: 'procedură' },
-  { id: '5.7', category: 'chirurgie', subcategory: 'Interventii', name: 'Alveolotomie', price: 606, unit: 'interventie' },
-  { id: '5.8', category: 'chirurgie', subcategory: 'Tumori', name: 'Înlăturarea tumorii benigne a tesuturilor moi (cu diametrul sub 0,5 cm)', price: 767, unit: 'interventie' },
-  { id: '5.9', category: 'chirurgie', subcategory: 'Tumori', name: 'Înlăturarea tumorii benigne a tesuturilor moi (cu diametrul mai mare de 0,5 cm)', price: 925, unit: 'interventie' },
-  { id: '5.10', category: 'chirurgie', subcategory: 'Interventii', name: 'Rezectie apicală', price: 1009, unit: 'interventie' },
-  { id: '5.11', category: 'chirurgie', subcategory: 'Interventii', name: 'Chistectomie (cu diametrul până la 0,5 cm)', price: 760, unit: 'interventie' },
-  { id: '5.12', category: 'chirurgie', subcategory: 'Interventii', name: 'Chistectomie (cu diametrul mai mare de 0,5 cm)', price: 1238, unit: 'interventie' },
-  { id: '5.13', category: 'chirurgie', subcategory: 'Interventii', name: 'Frenuloplastie', price: 835, unit: 'interventie' },
-  { id: '5.14', category: 'chirurgie', subcategory: 'Interventii', name: 'Gingivectomie', price: 380, unit: 'interventie' },
-  { id: '5.15', category: 'chirurgie', subcategory: 'Interventii', name: 'Tratarea proceselor inflamatorii odontogene cu extractie dentară', price: 1094, unit: 'interventie' },
-  { id: '5.16', category: 'chirurgie', subcategory: 'Interventii', name: 'Tratarea proceselor inflamatorii fără extractie dentară', price: 618, unit: 'interventie' },
-  { id: '5.17', category: 'chirurgie', subcategory: 'Interventii', name: 'Operculectomie (decapisare)', price: 438, unit: 'interventie' },
-  { id: '5.18', category: 'chirurgie', subcategory: 'Interventii', name: 'Sinusotomie', price: 1114, unit: 'interventie' },
-  { id: '5.19', category: 'chirurgie', subcategory: 'Tumori', name: 'Înlăturarea ateromului', price: 835, unit: 'interventie' },
-  { id: '5.20', category: 'chirurgie', subcategory: 'Tumori', name: 'Înlăturarea papilomului', price: 835, unit: 'interventie' },
-  { id: '5.21', category: 'chirurgie', subcategory: 'Tumori', name: 'Înlăturarea lipomului', price: 755, unit: 'interventie' },
-  { id: '5.22', category: 'chirurgie', subcategory: 'Tumori', name: 'Înlăturarea fibromului', price: 755, unit: 'interventie' },
-  { id: '5.23', category: 'chirurgie', subcategory: 'Interventii', name: 'Secvestrectomie', price: 1553, unit: 'interventie' },
-  { id: '5.24', category: 'chirurgie', subcategory: 'Interventii', name: 'Prelucrarea chirurgicală primară a plăgii', price: 982, unit: 'interventie' },
-  { id: '5.25', category: 'chirurgie', subcategory: 'Interventii', name: 'Deschiderea și drenarea furunculului', price: 618, unit: 'interventie' },
-  { id: '5.26', category: 'chirurgie', subcategory: 'Interventii', name: 'Limfadenită acută – deschiderea și drenarea abcesului', price: 618, unit: 'interventie' },
-  { id: '5.27', category: 'chirurgie', subcategory: 'Interventii', name: 'Sialodenită – înlăturarea calculului din ductul salivar', price: 776, unit: 'interventie' },
-  { id: '5.28', category: 'chirurgie', subcategory: 'Parodontologie chirurgicală', name: 'Chiuretaj pe câmp deschis în zona a 2-3 dinti', price: 1066, unit: 'interventie' },
-  { id: '5.29', category: 'chirurgie', subcategory: 'Parodontologie chirurgicală', name: 'Chiuretaj pe câmp deschis în zona a 4-5 dinti', price: 1593, unit: 'interventie' },
-  { id: '5.30', category: 'chirurgie', subcategory: 'Osteoplastie', name: 'Osteoplastia osului cu hidroxiapatită la 2-3 dinti', price: 2154, unit: 'interventie' },
-  { id: '5.31', category: 'chirurgie', subcategory: 'Osteoplastie', name: 'Osteoplastia osului cu hidroxiapatită la 4-5 dinti', price: 2640, unit: 'interventie' },
-  { id: '5.32', category: 'chirurgie', subcategory: 'Osteoplastie', name: 'Osteoplastia osului cu material de augmentare sintetic la 2-3 dinti', price: 2154, unit: 'interventie' },
-  { id: '5.33', category: 'chirurgie', subcategory: 'Osteoplastie', name: 'Osteoplastia osului cu material de augmentare sintetic la 4-5 dinti', price: 2640, unit: 'interventie' },
-  { id: '5.34', category: 'chirurgie', subcategory: 'Osteoplastie', name: 'Osteoplastia osului cu augmentare și membrană în zona a 2-3 dinti', price: 2154, unit: 'interventie' },
-  { id: '5.35', category: 'chirurgie', subcategory: 'Osteoplastie', name: 'Osteoplastia osului cu augmentare și membrană în zona a 4-5 dinti', price: 2640, unit: 'interventie' },
+  { id: '5.7', category: 'chirurgie', subcategory: 'Interventii', name: 'Alveolotomie', price: 606, unit: 'intervenție' },
+  { id: '5.8', category: 'chirurgie', subcategory: 'Tumori', name: 'Înlăturarea tumorii benigne a tesuturilor moi (cu diametrul sub 0,5 cm)', price: 767, unit: 'intervenție' },
+  { id: '5.9', category: 'chirurgie', subcategory: 'Tumori', name: 'Înlăturarea tumorii benigne a tesuturilor moi (cu diametrul mai mare de 0,5 cm)', price: 925, unit: 'intervenție' },
+  { id: '5.10', category: 'chirurgie', subcategory: 'Interventii', name: 'Rezectie apicală', price: 1009, unit: 'intervenție' },
+  { id: '5.11', category: 'chirurgie', subcategory: 'Interventii', name: 'Chistectomie (cu diametrul până la 0,5 cm)', price: 760, unit: 'intervenție' },
+  { id: '5.12', category: 'chirurgie', subcategory: 'Interventii', name: 'Chistectomie (cu diametrul mai mare de 0,5 cm)', price: 1238, unit: 'intervenție' },
+  { id: '5.13', category: 'chirurgie', subcategory: 'Interventii', name: 'Frenuloplastie', price: 835, unit: 'intervenție' },
+  { id: '5.14', category: 'chirurgie', subcategory: 'Interventii', name: 'Gingivectomie', price: 380, unit: 'intervenție' },
+  { id: '5.15', category: 'chirurgie', subcategory: 'Interventii', name: 'Tratarea proceselor inflamatorii odontogene cu extracție dentară', price: 1094, unit: 'intervenție' },
+  { id: '5.16', category: 'chirurgie', subcategory: 'Interventii', name: 'Tratarea proceselor inflamatorii fără extracție dentară', price: 618, unit: 'intervenție' },
+  { id: '5.17', category: 'chirurgie', subcategory: 'Interventii', name: 'Operculectomie (decapisare)', price: 438, unit: 'intervenție' },
+  { id: '5.18', category: 'chirurgie', subcategory: 'Interventii', name: 'Sinusotomie', price: 1114, unit: 'intervenție' },
+  { id: '5.19', category: 'chirurgie', subcategory: 'Tumori', name: 'Înlăturarea ateromului', price: 835, unit: 'intervenție' },
+  { id: '5.20', category: 'chirurgie', subcategory: 'Tumori', name: 'Înlăturarea papilomului', price: 835, unit: 'intervenție' },
+  { id: '5.21', category: 'chirurgie', subcategory: 'Tumori', name: 'Înlăturarea lipomului', price: 755, unit: 'intervenție' },
+  { id: '5.22', category: 'chirurgie', subcategory: 'Tumori', name: 'Înlăturarea fibromului', price: 755, unit: 'intervenție' },
+  { id: '5.23', category: 'chirurgie', subcategory: 'Interventii', name: 'Secvestrectomie', price: 1553, unit: 'intervenție' },
+  { id: '5.24', category: 'chirurgie', subcategory: 'Interventii', name: 'Prelucrarea chirurgicală primară a plăgii', price: 982, unit: 'intervenție' },
+  { id: '5.25', category: 'chirurgie', subcategory: 'Interventii', name: 'Deschiderea și drenarea furunculului', price: 618, unit: 'intervenție' },
+  { id: '5.26', category: 'chirurgie', subcategory: 'Interventii', name: 'Limfadenită acută – deschiderea și drenarea abcesului', price: 618, unit: 'intervenție' },
+  { id: '5.27', category: 'chirurgie', subcategory: 'Interventii', name: 'Sialodenită – înlăturarea calculului din ductul salivar', price: 776, unit: 'intervenție' },
+  { id: '5.28', category: 'chirurgie', subcategory: 'Parodontologie chirurgicală', name: 'Chiuretaj pe câmp deschis în zona a 2-3 dinti', price: 1066, unit: 'intervenție' },
+  { id: '5.29', category: 'chirurgie', subcategory: 'Parodontologie chirurgicală', name: 'Chiuretaj pe câmp deschis în zona a 4-5 dinti', price: 1593, unit: 'intervenție' },
+  { id: '5.30', category: 'chirurgie', subcategory: 'Osteoplastie', name: 'Osteoplastia osului cu hidroxiapatită la 2-3 dinti', price: 2154, unit: 'intervenție' },
+  { id: '5.31', category: 'chirurgie', subcategory: 'Osteoplastie', name: 'Osteoplastia osului cu hidroxiapatită la 4-5 dinti', price: 2640, unit: 'intervenție' },
+  { id: '5.32', category: 'chirurgie', subcategory: 'Osteoplastie', name: 'Osteoplastia osului cu material de augmentare sintetic la 2-3 dinti', price: 2154, unit: 'intervenție' },
+  { id: '5.33', category: 'chirurgie', subcategory: 'Osteoplastie', name: 'Osteoplastia osului cu material de augmentare sintetic la 4-5 dinti', price: 2640, unit: 'intervenție' },
+  { id: '5.34', category: 'chirurgie', subcategory: 'Osteoplastie', name: 'Osteoplastia osului cu augmentare și membrană în zona a 2-3 dinti', price: 2154, unit: 'intervenție' },
+  { id: '5.35', category: 'chirurgie', subcategory: 'Osteoplastie', name: 'Osteoplastia osului cu augmentare și membrană în zona a 4-5 dinti', price: 2640, unit: 'intervenție' },
   { id: '5.36', category: 'chirurgie', subcategory: 'ATM', name: 'Tratamentul afectiunilor articulatiei temporo-mandibulare cu introducerea medicamentelor în cavitatea articulară, prin injectare', price: 513, unit: 'procedură' },
-  { id: '5.37', category: 'chirurgie', subcategory: 'Interventii', name: 'Premolarizare', price: 1096, unit: 'interventie' },
+  { id: '5.37', category: 'chirurgie', subcategory: 'Interventii', name: 'Premolarizare', price: 1096, unit: 'intervenție' },
   { id: '5.38', category: 'chirurgie', subcategory: 'Interventii', name: 'Tratarea alveolitei', price: 275, unit: 'procedură' },
   { id: '5.39', category: 'chirurgie', subcategory: 'Interventii', name: 'Tratarea nevralgiei prin metoda de blocare', price: 275, unit: 'procedură' },
   { id: '5.40', category: 'chirurgie', subcategory: 'ATM', name: 'Repozitionarea luxatiei acute a articulatiei temporo-mandibulare', price: 337, unit: 'procedură' },
   { id: '5.41', category: 'chirurgie', subcategory: 'Traumatologie', name: 'Imobilizarea fracturilor', price: 3003, unit: 'șinare' },
   { id: '5.42', category: 'chirurgie', subcategory: 'Interventii', name: 'Pansament', price: 258, unit: 'procedură' },
-  { id: '5.43', category: 'chirurgie', subcategory: 'Traumatologie', name: 'Înlăturarea atelei la un maxilar după consolidarea fracturii posttraumatice', price: 532, unit: 'interventie' },
+  { id: '5.43', category: 'chirurgie', subcategory: 'Traumatologie', name: 'Înlăturarea atelei la un maxilar după consolidarea fracturii posttraumatice', price: 532, unit: 'intervenție' },
 
   // ============================================
   // VI. IMAGISTICĂ
   // ============================================
   { id: '6.1', category: 'imagistica', name: 'Ortopantomografie', price: 177, unit: 'film' },
   { id: '6.2', category: 'imagistica', name: 'Ortopantomografie sectorială', price: 106, unit: 'film' },
-  { id: '6.3', category: 'imagistica', name: 'Viziografie dentară', price: 82, unit: 'investigatie' },
+  { id: '6.3', category: 'imagistica', name: 'Viziografie dentară', price: 82, unit: 'investigație' },
   { id: '6.4', category: 'imagistica', name: 'Radiografia dintilor (3x4cm)', price: 25, unit: 'film' },
   { id: '6.5', category: 'imagistica', name: 'Teleradiografia maxilarelor', price: 200, unit: 'film' },
 
@@ -299,7 +299,7 @@ export const SERVICES: Service[] = [
   // VII. SERVICII CNAM (Selectie)
   // ============================================
   // 1. Consultatii stomatologice
-  { id: '7.1', category: 'cnam', name: 'Consultatia medicului stomatolog (CNAM)', price: 368, unit: 'consultatie', cnamEligible: true },
+  { id: '7.1', category: 'cnam', name: 'Consultația medicului stomatolog (CNAM)', price: 368, unit: 'consultație', cnamEligible: true },
   
   // 2. Tratamentul dintilor permanenti
   { id: '7.2', category: 'cnam', name: 'Obturatia defectelor coronariene (CNAM)', price: 386, unit: 'caz tratat', cnamEligible: true },
@@ -327,11 +327,11 @@ export const SERVICES: Service[] = [
   { id: '7.20', category: 'cnam', name: 'Plastia comunicării orosinusale (CNAM)', price: 1114, unit: 'caz tratat', cnamEligible: true },
   { id: '7.21', category: 'cnam', name: 'Operatie perioronariană – decapisare (CNAM)', price: 755, unit: 'caz tratat', cnamEligible: true },
   { id: '7.22', category: 'cnam', name: 'Prelucrarea chirurgicală primară a plăgii (CNAM)', price: 982, unit: 'caz tratat', cnamEligible: true },
-  { id: '7.23', category: 'cnam', name: 'Tratamentul chirurgical al abcesului, periostitei fără extractie dentară (CNAM)', price: 1094, unit: 'caz tratat', cnamEligible: true },
-  { id: '7.24', category: 'cnam', name: 'Tratamentul chirurgical al abcesului, periostitei cu extractie dentară (CNAM)', price: 1570, unit: 'caz tratat', cnamEligible: true },
+  { id: '7.23', category: 'cnam', name: 'Tratamentul chirurgical al abcesului, periostitei fără extracție dentară (CNAM)', price: 1094, unit: 'caz tratat', cnamEligible: true },
+  { id: '7.24', category: 'cnam', name: 'Tratamentul chirurgical al abcesului, periostitei cu extracție dentară (CNAM)', price: 1570, unit: 'caz tratat', cnamEligible: true },
   
   // 5. Anestezie în stomatologie
-  { id: '7.25', category: 'cnam', name: 'Anestezie locală (infiltratie plexală) (CNAM)', price: 184, unit: 'anestezie', cnamEligible: true },
+  { id: '7.25', category: 'cnam', name: 'Anestezie locală (infiltrație plexală) (CNAM)', price: 184, unit: 'anestezie', cnamEligible: true },
   { id: '7.26', category: 'cnam', name: 'Anestezie locală/loco-regională cu carpule (CNAM)', price: 196, unit: 'anestezie', cnamEligible: true },
   { id: '7.27', category: 'cnam', name: 'Anestezie topică (CNAM)', price: 135, unit: 'anestezie', cnamEligible: true },
 ];

@@ -9,7 +9,7 @@ const allTestimonials = [
   {
     id: '6',
     name: 'Andrei Moldovan',
-    content: 'Foarte profesionisti! Am făcut o extractie dentară atipică și totul a decurs perfect. Recomand cu încredere această clinică.',
+    content: 'Foarte profesionisti! Am făcut o extracție dentară atipică și totul a decurs perfect. Recomand cu încredere această clinică.',
     rating: 5,
     service: 'Chirurgie Dento-Alveolară'
   },
@@ -46,7 +46,7 @@ const allTestimonials = [
     name: 'Valentina Grosu',
     content: 'Personalul este foarte amabil, iar clinica este foarte curata. Ma simt intotdeauna in siguranta aici.',
     rating: 5,
-    service: 'Consultatie'
+    service: 'Consultație'
   },
   {
     id: '12',
