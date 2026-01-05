@@ -9,7 +9,7 @@ export const About = () => {
         <div className="container mx-auto px-4 relative z-10 text-center">
           <h1 className="font-heading text-4xl md:text-5xl font-bold mb-6">Despre Noi</h1>
           <p className="text-xl text-slate-300 max-w-3xl mx-auto">
-            Întreprinderea Municipală "Centrul Stomatologic Raional Cimișlia" este pilonul sănătătii orale în regiune, combinând traditia cu inovatia.
+            ÎM CSR Cimișlia este pilonul sănătătii orale în regiune, combinând traditia cu inovatia.
           </p>
         </div>
       </div>

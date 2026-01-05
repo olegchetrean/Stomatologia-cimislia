@@ -40,7 +40,7 @@ export const UsefulInfo = () => {
             <div>
               <h2 className="font-heading text-2xl font-bold mb-4">Asigurări Medicale (CNAM)</h2>
               <p className="text-slate-700 mb-4">
-                IM CSR Cimișlia are contract cu Compania Natională de Asigurări în Medicină. Serviciile CNAM sunt disponibile pentru:
+                ÎM CSR Cimișlia are contract cu Compania Natională de Asigurări în Medicină. Serviciile CNAM sunt disponibile pentru:
               </p>
               <div className="bg-slate-50 p-4 rounded-xl border border-slate-200 mb-4">
                 <h3 className="font-bold text-slate-900 mb-2">Cine poate beneficia de servicii CNAM:</h3>

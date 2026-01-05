@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import {
   Check, Shield, Clock, Users, Sparkles, Star,
@@ -10,17 +10,59 @@ import { Button } from '../components/ui/Button';
 import { GlassServiceCard } from '../components/cards/GlassServiceCard';
 import { TeamCard3D } from '../components/cards/TeamCard3D';
 import { SERVICES, TEAM, TESTIMONIALS, FAQS } from '../constants';
+import { Service, TeamMember } from '../types';
 
 export const Home = () => {
   const [activeFaq, setActiveFaq] = useState<number | null>(null);
+  const [services, setServices] = useState<Service[]>(SERVICES);
+  const [team, setTeam] = useState<TeamMember[]>(TEAM);
+
+  useEffect(() => {
+    loadServices();
+    loadTeam();
+  }, []);
+
+  const loadServices = async () => {
+    try {
+      try {
+        const response = await fetch('http://localhost:3001/api/services');
+        if (response.ok) {
+          const data = await response.json();
+          setServices(data.services);
+          return;
+        }
+      } catch (error) {
+        console.log('Сервер недоступен, используем данные из constants');
+      }
+    } catch (error) {
+      console.error('Eroare la încărcarea serviciilor:', error);
+    }
+  };
+
+  const loadTeam = async () => {
+    try {
+      try {
+        const response = await fetch('http://localhost:3001/api/team');
+        if (response.ok) {
+          const data = await response.json();
+          setTeam(data.team);
+          return;
+        }
+      } catch (error) {
+        console.log('Сервер недоступен, используем данные из constants');
+      }
+    } catch (error) {
+      console.error('Eroare la încărcarea echipei:', error);
+    }
+  };
 
   const featuredServices = [
-    SERVICES.find(s => s.id === '1.1'),
-    SERVICES.find(s => s.id === '4.23'),
-    SERVICES.find(s => s.id === '4.13'),
-    SERVICES.find(s => s.id === '5.2'),
-    SERVICES.find(s => s.id === '4.21'),
-    SERVICES.find(s => s.id === '3.2')
+    services.find(s => s.id === '1.1'),
+    services.find(s => s.id === '4.23'),
+    services.find(s => s.id === '4.13'),
+    services.find(s => s.id === '5.2'),
+    services.find(s => s.id === '4.21'),
+    services.find(s => s.id === '3.2')
   ].filter(Boolean);
 
   const stats = [
@@ -44,7 +86,7 @@ export const Home = () => {
   ];
 
   const benefits = [
-    { icon: Clock, title: 'Program Flexibil', desc: 'Luni-Vineri 08:00-17:00' },
+    { icon: Clock, title: 'Program Flexibil', desc: 'Luni-Vineri 08:00-16:00' },
     { icon: Shield, title: 'Sterilizare Totală', desc: 'Standarde europene de igienă' },
     { icon: Award, title: 'Medici Certificati', desc: 'Echipă cu experientă vastă' },
     { icon: FileText, title: 'CNAM Acceptat', desc: 'Servicii decontate de stat' },
@@ -167,7 +209,7 @@ export const Home = () => {
         <div className="container mx-auto px-4">
           <div className="text-center max-w-2xl mx-auto mb-16">
             <span className="text-medical-blue-lighter font-bold tracking-wider uppercase text-sm">Avantajele Noastre</span>
-            <h2 className="font-heading text-4xl font-bold text-slate-900 mt-2 mb-4">De ce să alegi <span className="text-medical-blue-lighter">CSR Cimișlia?</span></h2>
+            <h2 className="font-heading text-4xl font-bold text-slate-900 mt-2 mb-4">De ce să alegi <span className="text-medical-blue-lighter">ÎM CSR Cimișlia?</span></h2>
             <p className="text-slate-600 text-lg">Combinăm expertiza medicală cu tehnologia modernă pentru a oferi cele mai bune rezultate.</p>
           </div>
 
@@ -299,12 +341,12 @@ export const Home = () => {
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {TEAM.filter(member => member.role === 'Medic Stomatolog' || member.role === 'Medic Stomatolog Generalist').map(member => (
+            {team.filter(member => member.role === 'Medic Stomatolog' || member.role === 'Medic Stomatolog Generalist').map(member => (
               <TeamCard3D key={member.id} member={member} />
             ))}
           </div>
 
-          <div className="mt-12 text-center">
+           <div className="mt-12 text-center">
             <Link to="/echipa">
               <Button variant="outline" as="div">Vezi Întreaga Echipă</Button>
             </Link>
@@ -416,7 +458,7 @@ export const Home = () => {
               </div>
               <h2 className="font-heading text-4xl font-bold text-slate-900 mb-6">Acceptăm Asigurări Medicale CNAM</h2>
               <p className="text-slate-600 text-lg mb-8">
-                IM CSR Cimișlia are contract cu Compania Natională de Asigurări în Medicină. Serviciile CNAM sunt disponibile pentru copiii până la 18 ani, femeile gravide și urgentele medicale pentru pacientii care detin polite de asigurare CNAM.
+                ÎM CSR Cimișlia are contract cu Compania Natională de Asigurări în Medicină. Serviciile CNAM sunt disponibile pentru copiii până la 18 ani, femeile gravide și urgentele medicale pentru pacientii care detin polite de asigurare CNAM.
               </p>
 
               <div className="grid sm:grid-cols-2 gap-4 mb-8">
@@ -504,7 +546,7 @@ export const Home = () => {
                   </div>
                   <div>
                     <h3 className="font-heading font-bold text-lg mb-2">Program</h3>
-                    <p className="text-slate-600">Luni - Vineri: 08:00 - 17:00<br/>Sâmbătă - Duminică: Închis</p>
+                    <p className="text-slate-600">Luni - Vineri: 08:00 - 16:00<br/>Sâmbătă - Duminică: Închis</p>
                   </div>
                 </div>
               </div>
@@ -530,7 +572,7 @@ export const Home = () => {
                 style={{border:0}}
                 allowFullScreen={true}
                 loading="lazy"
-                title="Locatia CSR Cimișlia"
+                title="Locatia ÎM CSR Cimișlia"
               />
             </div>
           </div>

@@ -4,6 +4,21 @@ import { Menu, X, Phone, Mail, MapPin, Facebook, Instagram, ChevronUp, ChevronDo
 import { cn } from '../lib/utils';
 import { Button } from './ui/Button';
 import { CookieConsent, openCookieSettings } from './CookieConsent';
+import { TEAM } from '../constants';
+
+const formatPhone = (phone: string | undefined): string => {
+  if (!phone) return '';
+  const cleaned = phone.replace(/\s/g, '');
+  // Formatare pentru numere moldovenești
+  if (cleaned.startsWith('0690')) {
+    return cleaned.replace(/(\d{4})(\d{2})(\d{3})/, '$1 $2 $3');
+  } else if (cleaned.startsWith('0692')) {
+    return cleaned.replace(/(\d{4})(\d{2})(\d{3})/, '$1 $2 $3');
+  } else if (cleaned.length === 9) {
+    return cleaned.replace(/(\d{3})(\d{3})(\d{3})/, '$1 $2 $3');
+  }
+  return phone;
+};
 
 interface NavItem {
   name: string;
@@ -54,6 +69,7 @@ export const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) =>
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [openDropdown, setOpenDropdown] = useState<string | null>(null);
+  const [showAllPhones, setShowAllPhones] = useState(false);
   const location = useLocation();
 
   useEffect(() => {
@@ -73,35 +89,142 @@ export const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) =>
     return location.pathname.startsWith(path);
   };
 
+  // Получаем уникальных врачей с номерами (убираем дубликаты по номеру)
+  const doctorsWithPhones = TEAM.filter(member => 
+    member.phone && 
+    (member.role === 'Medic Stomatolog' || 
+     member.role === 'Medic Stomatolog Generalist' || 
+     member.role === 'Administrator Interimar')
+  ).reduce((acc, member) => {
+    // Если номер уже есть, пропускаем (приоритет врачам перед администратором)
+    if (!acc.find(m => m.phone === member.phone)) {
+      acc.push(member);
+    } else {
+      // Если это врач, заменяем администратора
+      const existingIndex = acc.findIndex(m => m.phone === member.phone);
+      if (member.role !== 'Administrator Interimar' && acc[existingIndex].role === 'Administrator Interimar') {
+        acc[existingIndex] = member;
+      }
+    }
+    return acc;
+  }, [] as typeof TEAM);
+
   return (
     <div className="min-h-screen flex flex-col relative">
       {/* Emergency Banner */}
-      <div className="bg-red-600 text-white py-2 text-sm z-sticky relative">
-        <div className="container mx-auto px-4 flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-4">
+      <div className="bg-gradient-to-r from-red-600 via-red-600 to-red-700 text-white py-2.5 sm:py-3.5 text-sm z-sticky relative shadow-lg">
+        <div className="container mx-auto px-4">
+          <div className="flex flex-col lg:flex-row items-center justify-center gap-2 sm:gap-4 lg:gap-6">
+            <div className="flex items-center gap-2 bg-white/10 backdrop-blur-sm rounded-full px-3 py-1 sm:px-4 sm:py-1.5">
+              <AlertTriangle className="w-3.5 h-3.5 sm:w-4 sm:h-4 animate-pulse shrink-0" />
+              <span className="font-semibold text-xs sm:text-sm">Urgente:</span>
+            </div>
+            {/* Основной номер - всегда виден */}
+            <a 
+              href="tel:069363336"
+              className="group flex items-center gap-2 bg-white text-red-600 hover:bg-red-50 rounded-full px-3 py-1.5 sm:px-5 sm:py-2 transition-all shadow-md hover:shadow-xl hover:scale-105 font-semibold whitespace-nowrap border-2 border-white/20 shrink-0"
+            >
+              <div className="w-6 h-6 sm:w-8 sm:h-8 bg-red-600/10 rounded-full flex items-center justify-center group-hover:bg-red-600/20 transition-colors shrink-0">
+                <Phone className="w-3 h-3 sm:w-4 sm:h-4 text-red-600" />
+              </div>
+              <div className="flex flex-col">
+                <span className="font-bold text-xs sm:text-sm leading-tight">Dr. Galina Godoroja</span>
+                <span className="text-[10px] sm:text-xs font-semibold text-red-700">069 363 336</span>
+              </div>
+            </a>
+            {/* Остальные врачи - скрыты на мобильных, показываются при клике */}
+            <div className="hidden lg:flex flex-wrap items-center justify-center gap-2.5">
+              {doctorsWithPhones.filter(member => member.id !== 'dr-galina-godoroja').map(member => (
+                <a 
+                  key={member.id} 
+                  href={`tel:${member.phone.replace(/\s/g, '')}`}
+                  className="group flex items-center gap-2 bg-white/15 hover:bg-white/25 backdrop-blur-sm rounded-full px-4 py-1.5 transition-all border border-white/20 hover:border-white/40 font-medium text-xs sm:text-sm whitespace-nowrap"
+                >
+                  <Phone className="w-3.5 h-3.5 group-hover:scale-110 transition-transform" />
+                  <span className="font-semibold">{member.name.split(' ').pop()}</span>
+                  <span className="font-bold">{formatPhone(member.phone)}</span>
+                </a>
+              ))}
+            </div>
+            {/* Кнопка показать все на мобильных */}
+            <button
+              onClick={() => setShowAllPhones(!showAllPhones)}
+              className="lg:hidden flex items-center gap-1 text-red-100 hover:text-white text-xs font-medium transition-all"
+            >
+              {showAllPhones ? 'Ascunde' : 'Toți medicii'} 
+              <span className={`transition-transform ${showAllPhones ? 'rotate-180' : ''}`}>▼</span>
+            </button>
+            {/* Выпадающий список на мобильных */}
+            {showAllPhones && (
+              <div className="lg:hidden w-full flex flex-col gap-2 mt-2">
+                {doctorsWithPhones.filter(member => member.id !== 'dr-galina-godoroja').map(member => (
+                  <a 
+                    key={member.id} 
+                    href={`tel:${member.phone.replace(/\s/g, '')}`}
+                    className="group flex items-center justify-between bg-white/15 hover:bg-white/25 backdrop-blur-sm rounded-lg px-4 py-2 transition-all border border-white/20"
+                  >
           <div className="flex items-center gap-2">
-            <AlertTriangle className="w-4 h-4 animate-pulse" />
-            <span className="font-medium">Urgente Stomatologice:</span>
+                      <Phone className="w-4 h-4" />
+                      <span className="font-semibold text-sm">{member.name}</span>
+                    </div>
+                    <span className="font-bold text-sm">{formatPhone(member.phone)}</span>
+                  </a>
+                ))}
+              </div>
+            )}
+            <Link to="/urgente" className="hidden sm:flex text-red-100 hover:text-white text-xs whitespace-nowrap font-medium hover:underline transition-all items-center gap-1">
+              Mai multe info <span>→</span>
+            </Link>
           </div>
-          <a href="tel:079772488" className="font-bold hover:underline">079 772 488</a>
-          <Link to="/urgente" className="text-red-200 hover:text-white text-xs">Mai multe info →</Link>
         </div>
       </div>
 
       {/* Top Bar */}
-      <div className="bg-medical-blue text-white py-2 text-xs md:text-sm z-sticky relative">
-        <div className="container mx-auto px-4 flex justify-between items-center">
-          <div className="flex items-center gap-4">
-            <a href="tel:079772488" className="flex items-center gap-1 hover:text-medical-blue-lighter transition-colors">
-              <Phone className="w-3 h-3" /> 079 772 488
-            </a>
-            <span className="hidden md:flex items-center gap-1">
-              <MapPin className="w-3 h-3" /> Cimișlia, str. Alexandru cel Bun 135
-            </span>
+      <div className="bg-gradient-to-r from-medical-blue via-medical-blue to-medical-blue-light text-white py-2.5 sm:py-3.5 text-xs md:text-sm z-sticky relative shadow-md">
+        <div className="container mx-auto px-4">
+          <div className="flex flex-col lg:flex-row justify-between items-center gap-2 sm:gap-3 lg:gap-6">
+            {/* Левая часть - Номера телефонов и адрес */}
+            <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-3 lg:justify-start w-full lg:w-auto">
+              {/* Основной номер - Galina Godoroja - всегда виден */}
+              <a 
+                href="tel:069363336"
+                className="group flex items-center gap-2 bg-white/15 hover:bg-white/25 backdrop-blur-sm rounded-full px-3 py-1.5 sm:px-4 sm:py-2 transition-all border border-white/25 hover:border-white/40 shadow-sm hover:shadow-md hover:scale-105 font-semibold whitespace-nowrap shrink-0"
+              >
+                <div className="w-6 h-6 sm:w-7 sm:h-7 bg-white/20 rounded-full flex items-center justify-center group-hover:bg-white/30 transition-colors shrink-0">
+                  <Phone className="w-3 h-3 sm:w-3.5 sm:h-3.5" />
+                </div>
+                <div className="flex flex-col leading-tight">
+                  <span className="font-bold text-[10px] sm:text-xs">Dr. Galina Godoroja</span>
+                  <span className="text-[10px] sm:text-xs font-semibold opacity-90">069 363 336</span>
+                </div>
+              </a>
+              {/* Остальные врачи - скрыты на мобильных */}
+              <div className="hidden lg:flex flex-wrap items-center gap-2.5">
+                {doctorsWithPhones.filter(member => member.id !== 'dr-galina-godoroja').map(member => (
+                  <a 
+                    key={member.id} 
+                    href={`tel:${member.phone.replace(/\s/g, '')}`}
+                    className="group flex items-center gap-2 bg-white/10 hover:bg-white/20 backdrop-blur-sm rounded-full px-3.5 py-1.5 transition-all border border-white/15 hover:border-white/30 hover:scale-105 whitespace-nowrap"
+                  >
+                    <Phone className="w-3 h-3 shrink-0 group-hover:scale-110 transition-transform" />
+                    <span className="font-medium text-xs">{member.name.split(' ').pop()}</span>
+                    <span className="font-bold text-xs">{formatPhone(member.phone)}</span>
+                  </a>
+                ))}
+              </div>
+              {/* Адрес - скрыт на мобильных */}
+              <div className="hidden xl:flex items-center gap-2.5 text-medical-blue-lighter/95 ml-2 pl-4 border-l border-white/25 bg-white/5 backdrop-blur-sm rounded-full px-4 py-1.5">
+                <MapPin className="w-3.5 h-3.5 shrink-0" />
+                <span className="whitespace-nowrap text-xs font-medium">Cimișlia, str. Alexandru cel Bun 135</span>
+              </div>
+            </div>
+            {/* Правая часть - Расписание */}
+            <div className="flex items-center gap-4 shrink-0 w-full lg:w-auto justify-center lg:justify-end">
+              <div className="flex items-center gap-2 whitespace-nowrap bg-white/10 backdrop-blur-sm px-3 py-1.5 sm:px-4 sm:py-2 rounded-full border border-white/20 shadow-sm">
+                <Clock className="w-3 h-3 sm:w-3.5 sm:h-3.5 shrink-0" />
+                <span className="font-semibold text-[10px] sm:text-xs">Luni-Vineri: 08:00 - 16:00</span>
+              </div>
           </div>
-          <div className="flex items-center gap-4">
-            <span className="flex items-center gap-1">
-              <Clock className="w-3 h-3" /> Luni-Vineri: 08:00 - 17:00
-            </span>
           </div>
         </div>
       </div>
@@ -119,7 +242,7 @@ export const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) =>
               C
             </div>
             <div className={cn("leading-tight transition-colors", isScrolled ? 'text-slate-900' : 'text-white')}>
-              <h1 className="font-heading font-bold text-lg">CSR Cimișlia</h1>
+              <h1 className="font-heading font-bold text-lg">ÎM CSR Cimișlia</h1>
               <p className="text-xs opacity-80">Centrul Stomatologic Raional</p>
             </div>
           </Link>
@@ -294,7 +417,7 @@ export const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) =>
             <div className="lg:col-span-2">
               <div className="flex items-center gap-2 mb-6">
                 <div className="w-10 h-10 bg-medical-blue-lighter rounded-lg flex items-center justify-center font-bold text-lg">C</div>
-                <span className="font-heading font-bold text-xl">CSR Cimișlia</span>
+                <span className="font-heading font-bold text-xl">ÎM CSR Cimișlia</span>
               </div>
               <p className="text-slate-400 text-sm leading-relaxed mb-6">
                 Excelentă în stomatologie pentru comunitatea din Cimișlia și împrejurimi.
@@ -306,7 +429,7 @@ export const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) =>
               </div>
               <div className="bg-white/5 rounded-xl p-4">
                 <p className="font-bold mb-2">Program de Lucru</p>
-                <p className="text-slate-400 text-sm">Luni - Vineri: 08:00 - 17:00</p>
+                <p className="text-slate-400 text-sm">Luni - Vineri: 08:00 - 16:00</p>
                 <p className="text-slate-400 text-sm">Sâmbătă - Duminică: Închis</p>
               </div>
             </div>
@@ -382,7 +505,7 @@ export const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) =>
           </div>
 
           <div className="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center text-xs text-slate-500">
-            <p>&copy; 2025 IM Centrul Stomatologic Raional Cimișlia. Toate drepturile rezervate.</p>
+            <p>&copy; 2025 ÎM CSR Cimișlia. Toate drepturile rezervate.</p>
             <div className="flex items-center gap-4 mt-2 md:mt-0">
               <button
                 onClick={openCookieSettings}

@@ -15,7 +15,7 @@ export const Feedback = () => {
       <div className="container mx-auto px-4 py-16 max-w-3xl">
         <div className="bg-white p-8 rounded-3xl shadow-xl border border-slate-100">
           <p className="text-slate-600 mb-8 text-center">
-            Centrul Stomatologic Raional Cimișlia pretuiește opinia pacientilor săi. Feedback-ul dumneavoastră constructiv ne ajută să ne îmbunătătim continuu serviciile medicale.
+            ÎM CSR Cimișlia pretuiește opinia pacientilor săi. Feedback-ul dumneavoastră constructiv ne ajută să ne îmbunătătim continuu serviciile medicale.
           </p>
 
           <form className="space-y-8">

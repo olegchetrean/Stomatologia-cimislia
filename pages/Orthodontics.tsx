@@ -1,8 +1,9 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Check, Clock, Phone, Calendar, Star, Sparkles, ArrowRight } from 'lucide-react';
 import { Button } from '../components/ui/Button';
 import { Link } from 'react-router-dom';
 import { SERVICES } from '../constants';
+import { Service } from '../types';
 
 const bracketTypes = [
   {
@@ -45,7 +46,30 @@ const problems = [
 ];
 
 export const Orthodontics = () => {
-  const orthodonticsServices = SERVICES.filter(s => s.category === 'ortodontie');
+  const [services, setServices] = useState<Service[]>(SERVICES);
+
+  useEffect(() => {
+    loadServices();
+  }, []);
+
+  const loadServices = async () => {
+    try {
+      try {
+        const response = await fetch('http://localhost:3001/api/services');
+        if (response.ok) {
+          const data = await response.json();
+          setServices(data.services);
+          return;
+        }
+      } catch (error) {
+        console.log('Сервер недоступен, используем данные из constants');
+      }
+    } catch (error) {
+      console.error('Eroare la încărcarea serviciilor:', error);
+    }
+  };
+
+  const orthodonticsServices = services.filter(s => s.category === 'ortodontie');
 
   return (
     <div className="min-h-screen bg-slate-50 pt-20">

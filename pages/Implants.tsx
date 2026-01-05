@@ -1,8 +1,9 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Check, Shield, Award, Clock, Phone, Calendar, ArrowRight, Star } from 'lucide-react';
 import { Button } from '../components/ui/Button';
 import { Link } from 'react-router-dom';
 import { SERVICES } from '../constants';
+import { Service } from '../types';
 
 const benefits = [
   {
@@ -78,7 +79,30 @@ const faqs = [
 ];
 
 export const Implants = () => {
-  const implantServices = SERVICES.filter(s => s.subcategory === 'Implantologie' || s.id.startsWith('5.2'));
+  const [services, setServices] = useState<Service[]>(SERVICES);
+
+  useEffect(() => {
+    loadServices();
+  }, []);
+
+  const loadServices = async () => {
+    try {
+      try {
+        const response = await fetch('http://localhost:3001/api/services');
+        if (response.ok) {
+          const data = await response.json();
+          setServices(data.services);
+          return;
+        }
+      } catch (error) {
+        console.log('Сервер недоступен, используем данные из constants');
+      }
+    } catch (error) {
+      console.error('Eroare la încărcarea serviciilor:', error);
+    }
+  };
+
+  const implantServices = services.filter(s => s.subcategory === 'Implantologie' || s.id.startsWith('5.2'));
 
   return (
     <div className="min-h-screen bg-slate-50 pt-20">

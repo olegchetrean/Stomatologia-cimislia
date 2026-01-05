@@ -13,7 +13,7 @@ export const Terms = () => {
         <div className="bg-white p-8 md:p-12 rounded-3xl shadow-sm border border-slate-100 prose prose-slate max-w-none">
           <h3>1. Dispozitii Generale</h3>
           <p>
-            Utilizarea acestui site (stomatologiacimislia.md) implică acceptarea acestor termeni și conditii. IM Centrul Stomatologic Raional Cimișlia își rezervă dreptul de a modifica continutul acestor termeni fără notificare prealabilă.
+            Utilizarea acestui site (stomatologiacimislia.md) implică acceptarea acestor termeni și conditii. ÎM CSR Cimișlia își rezervă dreptul de a modifica continutul acestor termeni fără notificare prealabilă.
           </p>
 
           <h3>2. Servicii Medicale</h3>
@@ -28,12 +28,12 @@ export const Terms = () => {
 
           <h3>4. Drepturi de Autor</h3>
           <p>
-            Continutul acestui site (text, imagini, logo) este proprietatea IM CSR Cimișlia și este protejat de legea drepturilor de autor.
+            Continutul acestui site (text, imagini, logo) este proprietatea ÎM CSR Cimișlia și este protejat de legea drepturilor de autor.
           </p>
 
           <h3>5. Limitarea Răspunderii</h3>
           <p>
-            IM CSR Cimișlia nu își asumă responsabilitatea pentru eventualele erori tehnice ale site-ului sau pentru informatiile furnizate de terti prin link-uri externe.
+            ÎM CSR Cimișlia nu își asumă responsabilitatea pentru eventualele erori tehnice ale site-ului sau pentru informatiile furnizate de terti prin link-uri externe.
           </p>
         </div>
       </div>

@@ -23,35 +23,40 @@ import { FAQ } from './pages/FAQ';
 import { Emergency } from './pages/Emergency';
 import { Pediatrics } from './pages/Pediatrics';
 import { Testimonials } from './pages/Testimonials';
+import { AdminPanel } from './pages/AdminPanel';
+
+// Компонент-обертка для страниц с Layout
+const LayoutWrapper = ({ children }: { children: React.ReactNode }) => (
+  <Layout>{children}</Layout>
+);
 
 function App() {
   return (
     <Router>
-      <Layout>
-        <Routes>
-          {/* Main Pages */}
-          <Route path="/" element={<Home />} />
-          <Route path="/despre" element={<About />} />
-          <Route path="/servicii" element={<Services />} />
-          <Route path="/servicii/:category" element={<ServiceDetail />} />
-          <Route path="/echipa" element={<Team />} />
-          <Route path="/contact" element={<Contact />} />
-          <Route path="/transparenta" element={<Transparency />} />
-          <Route path="/informatii-utile" element={<UsefulInfo />} />
-          <Route path="/sugestii" element={<Feedback />} />
-          <Route path="/confidentialitate" element={<PrivacyPolicy />} />
-          <Route path="/termeni" element={<Terms />} />
-
-          {/* New Pages */}
-          <Route path="/galerie" element={<Gallery />} />
-          <Route path="/programare" element={<Appointments />} />
-          <Route path="/preturi" element={<Prices />} />
-          <Route path="/intrebari-frecvente" element={<FAQ />} />
-          <Route path="/urgente" element={<Emergency />} />
-          <Route path="/pediatrie" element={<Pediatrics />} />
-          <Route path="/testimoniale" element={<Testimonials />} />
-        </Routes>
-      </Layout>
+      <Routes>
+        {/* Admin Panel - без Layout */}
+        <Route path="/admin" element={<AdminPanel />} />
+        
+        {/* Все остальные страницы - с Layout */}
+        <Route path="/" element={<LayoutWrapper><Home /></LayoutWrapper>} />
+        <Route path="/despre" element={<LayoutWrapper><About /></LayoutWrapper>} />
+        <Route path="/servicii" element={<LayoutWrapper><Services /></LayoutWrapper>} />
+        <Route path="/servicii/:category" element={<LayoutWrapper><ServiceDetail /></LayoutWrapper>} />
+        <Route path="/echipa" element={<LayoutWrapper><Team /></LayoutWrapper>} />
+        <Route path="/contact" element={<LayoutWrapper><Contact /></LayoutWrapper>} />
+        <Route path="/transparenta" element={<LayoutWrapper><Transparency /></LayoutWrapper>} />
+        <Route path="/informatii-utile" element={<LayoutWrapper><UsefulInfo /></LayoutWrapper>} />
+        <Route path="/sugestii" element={<LayoutWrapper><Feedback /></LayoutWrapper>} />
+        <Route path="/confidentialitate" element={<LayoutWrapper><PrivacyPolicy /></LayoutWrapper>} />
+        <Route path="/termeni" element={<LayoutWrapper><Terms /></LayoutWrapper>} />
+        <Route path="/galerie" element={<LayoutWrapper><Gallery /></LayoutWrapper>} />
+        <Route path="/programare" element={<LayoutWrapper><Appointments /></LayoutWrapper>} />
+        <Route path="/preturi" element={<LayoutWrapper><Prices /></LayoutWrapper>} />
+        <Route path="/intrebari-frecvente" element={<LayoutWrapper><FAQ /></LayoutWrapper>} />
+        <Route path="/urgente" element={<LayoutWrapper><Emergency /></LayoutWrapper>} />
+        <Route path="/pediatrie" element={<LayoutWrapper><Pediatrics /></LayoutWrapper>} />
+        <Route path="/testimoniale" element={<LayoutWrapper><Testimonials /></LayoutWrapper>} />
+      </Routes>
     </Router>
   );
 }

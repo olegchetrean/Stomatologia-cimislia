@@ -9,7 +9,7 @@ const faqData = [
     questions: [
       {
         q: 'Care este programul clinicii?',
-        a: 'Clinica este deschisă de Luni până Vineri, între orele 08:00 și 17:00. În weekend, clinica este închisă, dar pentru urgente ne puteti contacta telefonic.'
+        a: 'Clinica este deschisă de Luni până Vineri, între orele 08:00 și 16:00. În weekend, clinica este închisă, dar pentru urgente ne puteti contacta telefonic.'
       },
       {
         q: 'Cum pot face o programare?',
@@ -30,7 +30,7 @@ const faqData = [
     questions: [
       {
         q: 'Acceptati asigurări medicale CNAM?',
-        a: 'Da, IM CSR Cimișlia are contract cu Compania Natională de Asigurări în Medicină. Serviciile CNAM sunt disponibile pentru: copiii până la 18 ani, femeile gravide și urgentele medicale pentru pacientii care detin polite de asigurare CNAM.'
+        a: 'Da, ÎM CSR Cimișlia are contract cu Compania Natională de Asigurări în Medicină. Serviciile CNAM sunt disponibile pentru: copiii până la 18 ani, femeile gravide și urgentele medicale pentru pacientii care detin polite de asigurare CNAM.'
       },
       {
         q: 'Ce documente am nevoie pentru servicii CNAM?',

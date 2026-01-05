@@ -1,8 +1,9 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Calendar, Clock, User, Phone, Mail, FileText, Check, AlertCircle } from 'lucide-react';
 import { Button } from '../components/ui/Button';
 import { Link } from 'react-router-dom';
 import { TEAM } from '../constants';
+import { TeamMember } from '../types';
 
 const services = [
   'Consultație Generală',
@@ -22,7 +23,7 @@ const services = [
 const timeSlots = [
   '08:00', '08:30', '09:00', '09:30', '10:00', '10:30',
   '11:00', '11:30', '12:00', '13:00', '13:30', '14:00',
-  '14:30', '15:00', '15:30', '16:00', '16:30'
+  '14:30', '15:00', '15:30', '16:00'
 ];
 
 const formatPhone = (phone: string | undefined): string => {
@@ -40,6 +41,49 @@ const formatPhone = (phone: string | undefined): string => {
 };
 
 export const Appointments = () => {
+  const [team, setTeam] = useState<TeamMember[]>(TEAM);
+
+  useEffect(() => {
+    loadTeam();
+  }, []);
+
+  const loadTeam = async () => {
+    try {
+      try {
+        const response = await fetch('http://localhost:3001/api/team');
+        if (response.ok) {
+          const data = await response.json();
+          setTeam(data.team);
+          return;
+        }
+      } catch (error) {
+        console.log('Сервер недоступен, используем данные из constants');
+      }
+    } catch (error) {
+      console.error('Eroare la încărcarea echipei:', error);
+    }
+  };
+
+  // Получаем уникальных врачей с номерами (убираем дубликаты по номеру)
+  const doctorsWithPhones = team.filter(member => 
+    member.phone && 
+    (member.role === 'Medic Stomatolog' || 
+     member.role === 'Medic Stomatolog Generalist' || 
+     member.role === 'Administrator Interimar')
+  ).reduce((acc, member) => {
+    // Если номер уже есть, пропускаем (приоритет врачам перед администратором)
+    if (!acc.find(m => m.phone === member.phone)) {
+      acc.push(member);
+    } else {
+      // Если это врач, заменяем администратора
+      const existingIndex = acc.findIndex(m => m.phone === member.phone);
+      if (member.role !== 'Administrator Interimar' && acc[existingIndex].role === 'Administrator Interimar') {
+        acc[existingIndex] = member;
+      }
+    }
+    return acc;
+  }, [] as TeamMember[]);
+
   const [formData, setFormData] = useState({
     name: '',
     phone: '',
@@ -293,7 +337,7 @@ export const Appointments = () => {
               <div className="space-y-3 text-sm">
                 <div className="flex justify-between">
                   <span className="text-slate-600">Luni - Vineri</span>
-                  <span className="font-bold">08:00 - 17:00</span>
+                  <span className="font-bold">08:00 - 16:00</span>
                 </div>
                 <div className="flex justify-between">
                   <span className="text-slate-600">Sâmbătă</span>
@@ -312,7 +356,7 @@ export const Appointments = () => {
                 Preferi să ne suni? Contactează direct medicul tău pentru programări:
               </p>
               <div className="space-y-3">
-                {TEAM.filter(member => member.role === 'Medic Stomatolog' || member.role === 'Medic Stomatolog Generalist' || (member.role === 'Administrator Interimar' && member.phone)).map(member => (
+                {doctorsWithPhones.map(member => (
                   <a 
                     key={member.id}
                     href={`tel:${member.phone?.replace(/\s/g, '') || ''}`} 

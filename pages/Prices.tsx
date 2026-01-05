@@ -1,8 +1,8 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Search, Download, Filter, Check, Info } from 'lucide-react';
 import { Button } from '../components/ui/Button';
 import { SERVICES } from '../constants';
-import { ServiceCategory } from '../types';
+import { ServiceCategory, Service } from '../types';
 import { Link } from 'react-router-dom';
 
 const categoryLabels: Record<ServiceCategory, string> = {
@@ -16,9 +16,31 @@ const categoryLabels: Record<ServiceCategory, string> = {
 };
 
 export const Prices = () => {
+  const [services, setServices] = useState<Service[]>(SERVICES);
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedCategory, setSelectedCategory] = useState<ServiceCategory | 'all'>('all');
   const [showCnamOnly, setShowCnamOnly] = useState(false);
+
+  useEffect(() => {
+    loadServices();
+  }, []);
+
+  const loadServices = async () => {
+    try {
+      try {
+        const response = await fetch('http://localhost:3001/api/services');
+        if (response.ok) {
+          const data = await response.json();
+          setServices(data.services);
+          return;
+        }
+      } catch (error) {
+        console.log('Сервер недоступен, используем данные из constants');
+      }
+    } catch (error) {
+      console.error('Eroare la încărcarea serviciilor:', error);
+    }
+  };
 
   // Функция для нормализации румынских символов для поиска
   const normalizeForSearch = (text: string): string => {
@@ -35,7 +57,7 @@ export const Prices = () => {
       .replace(/[\u0300-\u036f]/g, ''); // Удаляем диакритические знаки
   };
 
-  const filteredServices = SERVICES.filter(service => {
+  const filteredServices = services.filter(service => {
     const normalizedSearchTerm = normalizeForSearch(searchTerm);
     const normalizedServiceName = normalizeForSearch(service.name);
     const matchesSearch = normalizedServiceName.includes(normalizedSearchTerm);
@@ -51,7 +73,7 @@ export const Prices = () => {
     }
     acc[category].push(service);
     return acc;
-  }, {} as Record<string, typeof SERVICES>);
+  }, {} as Record<string, Service[]>);
 
   const formatPrice = (price: number | string) => {
     if (typeof price === 'string') return price + ' MDL';

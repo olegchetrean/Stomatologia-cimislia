@@ -1,0 +1,777 @@
+{
+  "services": [
+    {
+      "id": "1.1",
+      "category": "consultatii",
+      "name": "Consultația medicului stomatolog",
+      "price": 253,
+      "unit": "vizită",
+      "cnamEligible": false,
+      "subcategory": null
+    },
+    {
+      "id": "2.5",
+      "category": "cabinet",
+      "subcategory": "Imagistică",
+      "name": "Analiza ortopantomogramei",
+      "price": 317,
+      "unit": "investigație",
+      "cnamEligible": false
+    },
+    {
+      "id": "3.1",
+      "category": "anestezie",
+      "subcategory": "Locală",
+      "name": "Anestezie locală (infiltrație plexală)",
+      "price": 184,
+      "unit": "anestezie",
+      "cnamEligible": false
+    },
+    {
+      "id": "3.2",
+      "category": "anestezie",
+      "subcategory": "Locală",
+      "name": "Anestezie locală/loco-regională cu carpule",
+      "price": 196,
+      "unit": "anestezie",
+      "cnamEligible": false
+    },
+    {
+      "id": "3.3",
+      "category": "anestezie",
+      "subcategory": "Locală",
+      "name": "Anestezie topică",
+      "price": 135,
+      "unit": "anestezie",
+      "cnamEligible": false
+    },
+    {
+      "id": "4.1",
+      "category": "terapie",
+      "subcategory": "Endodontie",
+      "name": "Tratamentul canalului radicular cu ultrasunet",
+      "price": 93,
+      "unit": "ședintă",
+      "cnamEligible": false
+    },
+    {
+      "id": "4.2",
+      "category": "terapie",
+      "subcategory": "Endodontie",
+      "name": "Reconstrucție perete-pre-endo",
+      "price": 140,
+      "unit": "dinte",
+      "cnamEligible": false
+    },
+    {
+      "id": "4.3",
+      "category": "terapie",
+      "subcategory": "Endodontie",
+      "name": "Tratament endodontic monocanalar (obturație temporară de canal)",
+      "price": 283,
+      "unit": "ședintă",
+      "cnamEligible": false
+    },
+    {
+      "id": "4.4",
+      "category": "terapie",
+      "subcategory": "Endodontie",
+      "name": "Tratament endodontic bicanalar (obturație temporară de canal)",
+      "price": 362,
+      "unit": "ședintă",
+      "cnamEligible": false
+    },
+    {
+      "id": "4.5",
+      "category": "terapie",
+      "subcategory": "Endodontie",
+      "name": "Tratament endodontic pluricanalar (obturație temporară de canal)",
+      "price": 445,
+      "unit": "ședintă",
+      "cnamEligible": false
+    },
+    {
+      "id": "4.6",
+      "category": "terapie",
+      "subcategory": "Endodontie",
+      "name": "Tratament endodontic monocanalar (obturație definitivă de canal)",
+      "price": 325,
+      "unit": "ședintă",
+      "cnamEligible": false
+    },
+    {
+      "id": "4.7",
+      "category": "terapie",
+      "subcategory": "Endodontie",
+      "name": "Tratament endodontic bicanalar (obturație definitivă de canal)",
+      "price": 458,
+      "unit": "ședintă",
+      "cnamEligible": false
+    },
+    {
+      "id": "4.8",
+      "category": "terapie",
+      "subcategory": "Endodontie",
+      "name": "Tratament endodontic pluricanalar (obturație definitivă de canal)",
+      "price": 541,
+      "unit": "ședintă",
+      "cnamEligible": false
+    },
+    {
+      "id": "4.9",
+      "category": "terapie",
+      "subcategory": "Endodontie",
+      "name": "Tratament endodontic asistat de microscop stomatologic al unui canal",
+      "price": 743,
+      "unit": "ședintă",
+      "cnamEligible": false
+    },
+    {
+      "id": "4.10",
+      "category": "terapie",
+      "subcategory": "Endodontie",
+      "name": "Dezobturarea canalului radicular (un canal) / Înlăturare corp străin din canal",
+      "price": 419,
+      "unit": "ședintă",
+      "cnamEligible": false
+    },
+    {
+      "id": "4.11",
+      "category": "terapie",
+      "subcategory": "Endodontie",
+      "name": "Aplicarea pastei devitalizante",
+      "price": 159,
+      "unit": "dinte",
+      "cnamEligible": false
+    },
+    {
+      "id": "4.12",
+      "category": "terapie",
+      "subcategory": "Endodontie",
+      "name": "Tratament endodontic prin amputarea pulpei coronare (partială/subtotală/totală)",
+      "price": 379,
+      "unit": "dinte",
+      "cnamEligible": false
+    },
+    {
+      "id": "4.14",
+      "category": "terapie",
+      "subcategory": "Coronar",
+      "name": "Tratamentul cariei dentare cu material ciment glassionomer",
+      "price": 355,
+      "unit": "ședintă",
+      "cnamEligible": false
+    },
+    {
+      "id": "4.15",
+      "category": "terapie",
+      "subcategory": "Coronar",
+      "name": "Tratamentul cariei dentare cu material compozit autopolimerizabil",
+      "price": 338,
+      "unit": "ședintă",
+      "cnamEligible": false
+    },
+    {
+      "id": "4.15",
+      "category": "terapie",
+      "subcategory": "Coronar",
+      "name": "Tratamentul cariei dentare cu material compozit fotopolimeric",
+      "price": 409,
+      "unit": "ședintă",
+      "cnamEligible": false
+    },
+    {
+      "id": "4.16",
+      "category": "terapie",
+      "subcategory": "Coronar",
+      "name": "Restaurare coronară dentară din material glassionomer fără pivot",
+      "price": 466,
+      "unit": "ședintă",
+      "cnamEligible": false
+    },
+    {
+      "id": "4.17",
+      "category": "terapie",
+      "subcategory": "Coronar",
+      "name": "Restaurare coronară dentară din material compozit autopolimerizabil fără pivot",
+      "price": 573,
+      "unit": "ședintă",
+      "cnamEligible": false
+    },
+    {
+      "id": "4.18",
+      "category": "terapie",
+      "subcategory": "Coronar",
+      "name": "Restaurare coronară dentară din material compozit fotopolimeric fără pivot",
+      "price": 582,
+      "unit": "ședintă",
+      "cnamEligible": false
+    },
+    {
+      "id": "4.19",
+      "category": "terapie",
+      "subcategory": "Coronar",
+      "name": "Restaurare coronară dentară din material compozit autopolimerizabil cu pivot metalic",
+      "price": 710,
+      "unit": "ședintă",
+      "cnamEligible": false
+    },
+    {
+      "id": "4.20",
+      "category": "terapie",
+      "subcategory": "Coronar",
+      "name": "Restaurare coronară dentară din material compozit fotopolimeric cu pivot metalic",
+      "price": 768,
+      "unit": "ședintă",
+      "cnamEligible": false
+    },
+    {
+      "id": "4.21",
+      "category": "terapie",
+      "subcategory": "Coronar",
+      "name": "Restaurare coronară dentară din material compozit fotopolimeric cu pivot de fibră optică",
+      "price": 935,
+      "unit": "ședintă",
+      "cnamEligible": false
+    },
+    {
+      "id": "4.23",
+      "category": "terapie",
+      "subcategory": "Profilaxie",
+      "name": "Detartraj cu ultrasunet",
+      "price": 435,
+      "unit": "ședintă",
+      "cnamEligible": false
+    },
+    {
+      "id": "4.24",
+      "category": "terapie",
+      "subcategory": "Profilaxie",
+      "name": "Igienizarea cavitătii bucale cu ajutorul air flow-ului",
+      "price": 323,
+      "unit": "ședintă",
+      "cnamEligible": false
+    },
+    {
+      "id": "4.25",
+      "category": "terapie",
+      "subcategory": "Profilaxie",
+      "name": "Periaj dentar profesional",
+      "price": 211,
+      "unit": "ședintă",
+      "cnamEligible": false
+    },
+    {
+      "id": "4.26",
+      "category": "terapie",
+      "subcategory": "Profilaxie",
+      "name": "Sigilarea fisurilor unui dinte cu scop profilactic cu material ciment glassionomer",
+      "price": 176,
+      "unit": "dinte",
+      "cnamEligible": false
+    },
+    {
+      "id": "4.27",
+      "category": "terapie",
+      "subcategory": "Profilaxie",
+      "name": "Sigilarea fisurilor unui dinte cu scop profilactic cu material compozit fotopolimeric",
+      "price": 232,
+      "unit": "ședintă",
+      "cnamEligible": false
+    },
+    {
+      "id": "4.28",
+      "category": "terapie",
+      "subcategory": "Profilaxie",
+      "name": "Profilaxia cariei dentare (prin remineralizare și infiltrare)",
+      "price": 226,
+      "unit": "ședintă",
+      "cnamEligible": false
+    },
+    {
+      "id": "4.29",
+      "category": "terapie",
+      "subcategory": "Profilaxie",
+      "name": "Confectionarea gutierei (bruxism)",
+      "price": 503,
+      "unit": "maxilar",
+      "cnamEligible": false
+    },
+    {
+      "id": "4.30",
+      "category": "terapie",
+      "subcategory": "Profilaxie",
+      "name": "Tratamentul sensibilitătii (1 arcadă), cu aplicarea gutierei individuale",
+      "price": 1508,
+      "unit": "caz tratat",
+      "cnamEligible": false
+    },
+    {
+      "id": "4.31",
+      "category": "terapie",
+      "subcategory": "Parodontologie",
+      "name": "Tratamentul afectiunilor mucoasei cavitătii bucale",
+      "price": 277,
+      "unit": "ședintă",
+      "cnamEligible": false
+    },
+    {
+      "id": "4.32",
+      "category": "terapie",
+      "subcategory": "Parodontologie",
+      "name": "Tratamentul parodontitei",
+      "price": 322,
+      "unit": "ședintă",
+      "cnamEligible": false
+    },
+    {
+      "id": "4.33",
+      "category": "terapie",
+      "subcategory": "Parodontologie",
+      "name": "Chiuretaj subgingival (2-3 dinti) în câmp închis",
+      "price": 345,
+      "unit": "ședintă",
+      "cnamEligible": false
+    },
+    {
+      "id": "4.34",
+      "category": "terapie",
+      "subcategory": "Parodontologie",
+      "name": "Atelizarea (șinarea) dintilor cu fibră optică",
+      "price": 394,
+      "unit": "dinte",
+      "cnamEligible": false
+    },
+    {
+      "id": "4.35",
+      "category": "terapie",
+      "subcategory": "Estetică",
+      "name": "Albirea dintilor în cabinet (1 dinte)",
+      "price": 267,
+      "unit": "ședintă",
+      "cnamEligible": false
+    },
+    {
+      "id": "4.36",
+      "category": "terapie",
+      "subcategory": "Estetică",
+      "name": "Albirea dintilor cu aplicarea gutierei individuale",
+      "price": 1488,
+      "unit": "caz tratat",
+      "cnamEligible": false
+    },
+    {
+      "id": "4.37",
+      "category": "terapie",
+      "subcategory": "Estetică",
+      "name": "Microabraziunea dentară",
+      "price": 388,
+      "unit": "dinte",
+      "cnamEligible": false
+    },
+    {
+      "id": "4.38",
+      "category": "terapie",
+      "subcategory": "Estetică",
+      "name": "Aplicarea coferdamului",
+      "price": 164,
+      "unit": "ședintă",
+      "cnamEligible": false
+    },
+    {
+      "id": "4.39",
+      "category": "terapie",
+      "subcategory": "Estetică",
+      "name": "Albire internă (intracoronară)",
+      "price": 459,
+      "unit": "ședintă",
+      "cnamEligible": false
+    },
+    {
+      "id": "4.40",
+      "category": "terapie",
+      "subcategory": "Estetică",
+      "name": "Aplicarea bijuteriei dentare",
+      "price": 493,
+      "unit": "dinte",
+      "cnamEligible": false
+    },
+    {
+      "id": "4.41",
+      "category": "terapie",
+      "subcategory": "Estetică",
+      "name": "Fatetare directă (din compozit)",
+      "price": 582,
+      "unit": "dinte",
+      "cnamEligible": false
+    },
+    {
+      "id": "4.42",
+      "category": "terapie",
+      "subcategory": "Profilaxie",
+      "name": "Examinare cavitătii bucale cu recomandări privind igiena și profilaxia",
+      "price": 121,
+      "unit": "ședintă",
+      "cnamEligible": false
+    },
+    {
+      "id": "4.43",
+      "category": "terapie",
+      "subcategory": "Profilaxie",
+      "name": "Detartraj cu ultrasunet",
+      "price": 632,
+      "unit": "ședintă",
+      "cnamEligible": false
+    },
+    {
+      "id": "4.44",
+      "category": "terapie",
+      "subcategory": "Profilaxie",
+      "name": "Igienizarea cavității bucale cu ajutorul air flow-ului",
+      "price": 520,
+      "unit": "ședintă",
+      "cnamEligible": false
+    },
+    {
+      "id": "4.45",
+      "category": "terapie",
+      "subcategory": "Profilaxie",
+      "name": "Periaj dentar profesional",
+      "price": 285,
+      "unit": "ședintă",
+      "cnamEligible": false
+    },
+    {
+      "id": "4.46",
+      "category": "terapie",
+      "subcategory": "Profilaxie",
+      "name": "Sigilarea fisurilor unui dinte cu scop profilactic",
+      "price": 200,
+      "unit": "dinte",
+      "cnamEligible": false
+    },
+    {
+      "id": "4.47",
+      "category": "terapie",
+      "subcategory": "Profilaxie",
+      "name": "Profilaxia cariilor dentare (prin remineralizare și infiltrare)",
+      "price": 226,
+      "unit": "ședintă",
+      "cnamEligible": false
+    },
+    {
+      "id": "4.48",
+      "category": "terapie",
+      "subcategory": "Profilaxie",
+      "name": "Prevenirea complicatiilor afectiunilor mucoasei bucale",
+      "price": 162,
+      "unit": "procedură",
+      "cnamEligible": false
+    },
+    {
+      "id": "5.1",
+      "category": "chirurgie",
+      "subcategory": "Extractii",
+      "name": "Extractia dintelui fără anestezie",
+      "price": 262,
+      "unit": "extracție",
+      "cnamEligible": false
+    },
+    {
+      "id": "5.2",
+      "category": "chirurgie",
+      "subcategory": "Extractii",
+      "name": "Extractia dintelui cu anestezie",
+      "price": 452,
+      "unit": "extracție",
+      "cnamEligible": false
+    },
+    {
+      "id": "5.3",
+      "category": "chirurgie",
+      "subcategory": "Extractii",
+      "name": "Extractie dentară atipică",
+      "price": 828,
+      "unit": "extracție",
+      "cnamEligible": false
+    },
+    {
+      "id": "5.4",
+      "category": "chirurgie",
+      "subcategory": "Interventii",
+      "name": "Hemostază",
+      "price": 535,
+      "unit": "procedură",
+      "cnamEligible": false
+    },
+    {
+      "id": "5.5",
+      "category": "chirurgie",
+      "subcategory": "Interventii",
+      "name": "Tratarea proceselor inflamatorii odontogene cu extracție dentară",
+      "price": 1094,
+      "unit": "intervenție",
+      "cnamEligible": false
+    },
+    {
+      "id": "5.6",
+      "category": "chirurgie",
+      "subcategory": "Interventii",
+      "name": "Tratarea proceselor inflamatorii fără extracție dentară",
+      "price": 618,
+      "unit": "intervenție",
+      "cnamEligible": false
+    },
+    {
+      "id": "5.7",
+      "category": "chirurgie",
+      "subcategory": "Interventii",
+      "name": "Operculectomie (decapisare)",
+      "price": 438,
+      "unit": "intervenție",
+      "cnamEligible": false
+    },
+    {
+      "id": "5.8",
+      "category": "chirurgie",
+      "subcategory": "Interventii",
+      "name": "Tratarea alveolitei",
+      "price": 275,
+      "unit": "procedură",
+      "cnamEligible": false
+    },
+    {
+      "id": "5.9",
+      "category": "chirurgie",
+      "subcategory": "Interventii",
+      "name": "Pansament",
+      "price": 258,
+      "unit": "procedură",
+      "cnamEligible": false
+    },
+    {
+      "id": "6.1",
+      "category": "imagistica",
+      "name": "Viziografie dentară",
+      "price": 82,
+      "unit": "investigație",
+      "cnamEligible": false
+    },
+    {
+      "id": "7.1",
+      "category": "cnam",
+      "name": "Consultația medicului stomatolog",
+      "price": 368,
+      "unit": "consultație",
+      "cnamEligible": true
+    },
+    {
+      "id": "7.2",
+      "category": "cnam",
+      "name": "Obturatia defectelor coronariene",
+      "price": 386,
+      "unit": "caz tratat",
+      "cnamEligible": true
+    },
+    {
+      "id": "7.3",
+      "category": "cnam",
+      "name": "Tratarea pulpitei acute a dintelui monoradicular",
+      "price": 734,
+      "unit": "caz tratat",
+      "cnamEligible": true
+    },
+    {
+      "id": "7.4",
+      "category": "cnam",
+      "name": "Tratarea pulpitei acute a dintelui biradicular",
+      "price": 877,
+      "unit": "caz tratat",
+      "cnamEligible": true
+    },
+    {
+      "id": "7.5",
+      "category": "cnam",
+      "name": "Tratarea pulpitei acute a dintelui pluriradicular",
+      "price": 1012,
+      "unit": "caz tratat",
+      "cnamEligible": true
+    },
+    {
+      "id": "7.6",
+      "category": "cnam",
+      "name": "Tratarea periodontitei acute a dintelui monoradicular",
+      "price": 1077,
+      "unit": "caz tratat",
+      "cnamEligible": true
+    },
+    {
+      "id": "7.7",
+      "category": "cnam",
+      "name": "Tratarea periodontitei acute a dintelui biradicular",
+      "price": 1287,
+      "unit": "caz tratat",
+      "cnamEligible": true
+    },
+    {
+      "id": "7.8",
+      "category": "cnam",
+      "name": "Tratarea periodontitei acute a dintelui pluriradicular",
+      "price": 1504,
+      "unit": "caz tratat",
+      "cnamEligible": true
+    },
+    {
+      "id": "7.9",
+      "category": "cnam",
+      "name": "Tratarea periodontitei exacerbate a dintelui monoradicular",
+      "price": 1168,
+      "unit": "caz tratat",
+      "cnamEligible": true
+    },
+    {
+      "id": "7.10",
+      "category": "cnam",
+      "name": "Tratarea periodontitei exacerbate a dintelui biradicular",
+      "price": 1401,
+      "unit": "caz tratat",
+      "cnamEligible": true
+    },
+    {
+      "id": "7.11",
+      "category": "cnam",
+      "name": "Tratarea periodontitei exacerbate a dintelui pluriradicular",
+      "price": 1618,
+      "unit": "caz tratat",
+      "cnamEligible": true
+    },
+    {
+      "id": "7.12",
+      "category": "cnam",
+      "name": "Obturatia defectelor coronariene - dinti temporari",
+      "price": 378,
+      "unit": "caz tratat",
+      "cnamEligible": true
+    },
+    {
+      "id": "7.13",
+      "category": "cnam",
+      "name": "Tratarea pulpitei dintelui monoradicular - dinti temporari",
+      "price": 588,
+      "unit": "caz tratat",
+      "cnamEligible": true
+    },
+    {
+      "id": "7.14",
+      "category": "cnam",
+      "name": "Tratarea pulpitei dintelui biradicular - dinti temporari",
+      "price": 665,
+      "unit": "caz tratat",
+      "cnamEligible": true
+    },
+    {
+      "id": "7.15",
+      "category": "cnam",
+      "name": "Tratarea pulpitei dintelui pluriradicular - dinti temporari",
+      "price": 747,
+      "unit": "caz tratat",
+      "cnamEligible": true
+    },
+    {
+      "id": "7.16",
+      "category": "cnam",
+      "name": "Tratarea periodontitei dintelui monoradicular - dinti temporari",
+      "price": 642,
+      "unit": "caz tratat",
+      "cnamEligible": true
+    },
+    {
+      "id": "7.17",
+      "category": "cnam",
+      "name": "Tratarea periodontitei dintelui pluriradicular - dinti temporari",
+      "price": 720,
+      "unit": "caz tratat",
+      "cnamEligible": true
+    },
+    {
+      "id": "7.18",
+      "category": "cnam",
+      "name": "Tratament endodontic prin metoda amputării (partială/subtotală/totală) - dinti temporari",
+      "price": 429,
+      "unit": "dinte",
+      "cnamEligible": true
+    },
+    {
+      "id": "7.19",
+      "category": "cnam",
+      "name": "Hemostază",
+      "price": 535,
+      "unit": "procedură",
+      "cnamEligible": true
+    },
+    {
+      "id": "7.20",
+      "category": "cnam",
+      "name": "Plastia comunicării orosinusale",
+      "price": 1114,
+      "unit": "caz tratat",
+      "cnamEligible": true
+    },
+    {
+      "id": "7.21",
+      "category": "cnam",
+      "name": "Operatie perioronariană – decapisare",
+      "price": 755,
+      "unit": "caz tratat",
+      "cnamEligible": true
+    },
+    {
+      "id": "7.22",
+      "category": "cnam",
+      "name": "Prelucrarea chirurgicală primară a plăgii",
+      "price": 982,
+      "unit": "caz tratat",
+      "cnamEligible": true
+    },
+    {
+      "id": "7.23",
+      "category": "cnam",
+      "name": "Tratamentul chirurgical al abcesului, periostitei fără extracție dentară",
+      "price": 1094,
+      "unit": "caz tratat",
+      "cnamEligible": true
+    },
+    {
+      "id": "7.24",
+      "category": "cnam",
+      "name": "Tratamentul chirurgical al abcesului, periostitei cu extracție dentară",
+      "price": 1570,
+      "unit": "caz tratat",
+      "cnamEligible": true
+    },
+    {
+      "id": "7.25",
+      "category": "cnam",
+      "name": "Anestezie locală (infiltrație plexală)",
+      "price": 184,
+      "unit": "anestezie",
+      "cnamEligible": true
+    },
+    {
+      "id": "7.26",
+      "category": "cnam",
+      "name": "Anestezie locală/loco-regională cu carpule",
+      "price": 196,
+      "unit": "anestezie",
+      "cnamEligible": true
+    },
+    {
+      "id": "7.27",
+      "category": "cnam",
+      "name": "Anestezie topică",
+      "price": 135,
+      "unit": "anestezie",
+      "cnamEligible": true
+    }
+  ]
+}

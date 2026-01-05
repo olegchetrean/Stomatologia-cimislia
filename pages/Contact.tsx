@@ -59,7 +59,7 @@ export const Contact = () => {
                   <h3 className="font-bold text-lg mb-2">Program de Lucru</h3>
                   <div className="grid grid-cols-2 gap-x-8 gap-y-2 text-sm">
                     <span className="text-slate-600">Luni - Vineri:</span>
-                    <span className="font-bold">08:00 - 17:00</span>
+                    <span className="font-bold">08:00 - 16:00</span>
                     <span className="text-slate-600">Sâmbătă - Duminică:</span>
                     <span className="font-bold text-red-500">Închis</span>
                   </div>

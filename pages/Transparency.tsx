@@ -23,7 +23,7 @@ export const Transparency = () => {
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
                   <p className="text-sm text-slate-500">Denumire Completă</p>
-                  <p className="font-medium">Î.M. Centrul Stomatologic Raional Cimișlia</p>
+                  <p className="font-medium">ÎM CSR Cimișlia</p>
                 </div>
                 <div>
                   <p className="text-sm text-slate-500">Fondator</p>

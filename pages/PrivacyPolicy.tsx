@@ -99,8 +99,8 @@ export const PrivacyPolicy = () => {
                 <section id="introducere">
                   <h2>1. Introducere</h2>
                   <p>
-                    Institutia Medico-Sanitară Publică "Centrul Stomatologic Raional Cimișlia" (denumit în continuare
-                    "CSR Cimișlia", "noi", "clinica") respectă confidentialitatea datelor dumneavoastră cu caracter
+                    ÎM CSR Cimișlia (denumit în continuare
+                    "noi", "clinica") respectă confidentialitatea datelor dumneavoastră cu caracter
                     personal și se angajează să le protejeze în conformitate cu:
                   </p>
                   <ul>
@@ -120,7 +120,7 @@ export const PrivacyPolicy = () => {
                   <h2>2. Operatorul de Date</h2>
                   <p>Operatorul responsabil pentru prelucrarea datelor dumneavoastră cu caracter personal este:</p>
                   <div className="bg-slate-50 p-6 rounded-xl not-prose my-4">
-                    <p className="font-bold text-slate-900 mb-2">IM Centrul Stomatologic Raional Cimișlia</p>
+                    <p className="font-bold text-slate-900 mb-2">ÎM CSR Cimișlia</p>
                     <div className="space-y-2 text-sm text-slate-600">
                       <p className="flex items-center gap-2">
                         <MapPin className="w-4 h-4 text-medical-blue" />
@@ -493,7 +493,7 @@ export const PrivacyPolicy = () => {
                   </p>
 
                   <div className="bg-slate-50 p-6 rounded-xl not-prose my-4">
-                    <h4 className="font-bold text-slate-900 mb-4">IM Centrul Stomatologic Raional Cimișlia</h4>
+                    <h4 className="font-bold text-slate-900 mb-4">ÎM CSR Cimișlia</h4>
                     <div className="space-y-3 text-sm text-slate-600">
                       <p className="flex items-center gap-2">
                         <MapPin className="w-4 h-4 text-medical-blue" />

@@ -1,37 +1,61 @@
-import React, { useState, useMemo } from 'react';
+import React, { useState, useMemo, useEffect } from 'react';
 import { SERVICES } from '../constants';
 import { GlassServiceCard } from '../components/cards/GlassServiceCard';
 import { Button } from '../components/ui/Button';
 import { Download, Search, Check, Filter, Grid, List, ChevronRight, Phone, Calendar } from 'lucide-react';
-import { ServiceCategory } from '../types';
+import { ServiceCategory, Service } from '../types';
 import { Link } from 'react-router-dom';
 
 const categoryInfo: Record<ServiceCategory, { label: string; description: string; color: string }> = {
-  consultatii: { label: 'Consultatii', description: 'Evaluare și diagnostic profesional', color: 'bg-blue-500' },
-  cabinet: { label: 'Activităti Cabinet', description: 'Proceduri și preparare', color: 'bg-indigo-500' },
-  anestezie: { label: 'Anestezie', description: 'Tratamente fără durere', color: 'bg-purple-500' },
-  terapie: { label: 'Stomatologie Terapeutică', description: 'Tratamentul gingivitelor, parodontitelor, cariilor, pulpitelor, restaurări dentare și albire', color: 'bg-pink-500' },
-  chirurgie: { label: 'Chirurgie Dento-Alveolară', description: 'Extractii și interventii', color: 'bg-red-500' },
-  imagistica: { label: 'Imagistică', description: 'Radiografii și diagnostic', color: 'bg-cyan-500' },
-  cnam: { label: 'Program CNAM', description: 'Servicii decontate', color: 'bg-green-500' },
+  consultatii: { label: 'Consultații stomatologice', description: 'Evaluare și diagnostic profesional', color: 'bg-blue-500' },
+  cabinet: { label: 'Activități efectuate în cabinetul stomatologic', description: 'Proceduri și preparare', color: 'bg-indigo-500' },
+  anestezie: { label: 'Anestezie în stomatologie', description: 'Tratamente fără durere', color: 'bg-purple-500' },
+  terapie: { label: 'Tratamentul dinților', description: 'Tratamentul gingivitelor, parodontitelor, cariilor, pulpitelor, restaurări dentare și albire', color: 'bg-pink-500' },
+  chirurgie: { label: 'Chirurgie oro-maxilo-facială', description: 'Extractii și interventii', color: 'bg-red-500' },
+  imagistica: { label: 'Investigații rontgenologice', description: 'Radiografii și diagnostic', color: 'bg-cyan-500' },
+  cnam: { label: 'Servicii stomatologice prestate în cadrul „Programului Unic al Asigurărilor Obligatorii de asistență medicală"', description: 'Servicii decontate', color: 'bg-green-500' },
 };
 
 export const Services = () => {
+  const [services, setServices] = useState<Service[]>(SERVICES);
   const [activeCategory, setActiveCategory] = useState<ServiceCategory | 'all'>('all');
   const [searchTerm, setSearchTerm] = useState('');
   const [viewMode, setViewMode] = useState<'grid' | 'list'>('grid');
   const [showCnamOnly, setShowCnamOnly] = useState(false);
   const [priceRange, setPriceRange] = useState<'all' | 'low' | 'medium' | 'high'>('all');
 
+  useEffect(() => {
+    loadServices();
+  }, []);
+
+  const loadServices = async () => {
+    try {
+      // Сначала пытаемся загрузить с сервера
+      try {
+        const response = await fetch('http://localhost:3001/api/services');
+        if (response.ok) {
+          const data = await response.json();
+          setServices(data.services);
+          return;
+        }
+      } catch (error) {
+        // Сервер недоступен, используем данные из constants
+        console.log('Сервер недоступен, используем данные из constants');
+      }
+    } catch (error) {
+      console.error('Eroare la încărcarea serviciilor:', error);
+    }
+  };
+
   const categories: { id: ServiceCategory | 'all', label: string }[] = [
     { id: 'all', label: 'Toate' },
-    { id: 'consultatii', label: 'Consultatii' },
-    { id: 'cabinet', label: 'Cabinet' },
-    { id: 'terapie', label: 'Stomatologie Terapeutică' },
-    { id: 'chirurgie', label: 'Chirurgie Dento-Alveolară' },
-    { id: 'imagistica', label: 'Imagistică' },
-    { id: 'anestezie', label: 'Anestezie' },
-    { id: 'cnam', label: 'CNAM' },
+    { id: 'consultatii', label: 'Consultații stomatologice' },
+    { id: 'cabinet', label: 'Activități efectuate în cabinetul stomatologic' },
+    { id: 'anestezie', label: 'Anestezie în stomatologie' },
+    { id: 'terapie', label: 'Tratamentul dinților' },
+    { id: 'chirurgie', label: 'Chirurgie oro-maxilo-facială' },
+    { id: 'imagistica', label: 'Investigații rontgenologice' },
+    { id: 'cnam', label: 'Servicii stomatologice prestate în cadrul „Programului Unic al Asigurărilor Obligatorii de asistență medicală"' },
   ];
 
   // Функция для нормализации румынских символов для поиска
@@ -53,7 +77,7 @@ export const Services = () => {
   const filteredServices = useMemo(() => {
     const normalizedSearchTerm = normalizeForSearch(searchTerm);
     
-    return SERVICES.filter(service => {
+    return services.filter(service => {
       const matchesCategory = activeCategory === 'all' || service.category === activeCategory;
       const normalizedServiceName = normalizeForSearch(service.name);
       const matchesSearch = normalizedServiceName.includes(normalizedSearchTerm);
@@ -79,7 +103,7 @@ export const Services = () => {
       }
       acc[service.category].push(service);
       return acc;
-    }, {} as Record<ServiceCategory, typeof SERVICES>);
+    }, {} as Record<ServiceCategory, Service[]>);
   }, [filteredServices, activeCategory]);
 
   const formatPrice = (price: number | string) => {
@@ -88,7 +112,7 @@ export const Services = () => {
   };
 
   const serviceCount = filteredServices.length;
-  const cnamCount = SERVICES.filter(s => s.cnamEligible).length;
+  const cnamCount = services.filter(s => s.cnamEligible).length;
 
   return (
     <div className="min-h-screen bg-slate-50 pt-20 pb-24">
@@ -101,7 +125,7 @@ export const Services = () => {
             <h1 className="font-heading text-4xl md:text-5xl font-bold mb-4">Servicii și Tarife</h1>
             <p className="text-xl text-slate-200 max-w-2xl mx-auto mb-6">
               Prețuri transparente conform Catalogului Tarifelor Unice aprobat de Guvernul RM.
-              Peste {SERVICES.length} de servicii disponibile.
+              Peste {services.length} de servicii disponibile.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button variant="outline" className="gap-2 border-white/40 hover:bg-white/10">
@@ -147,7 +171,7 @@ export const Services = () => {
               className="bg-white rounded-xl p-4 shadow-sm border border-slate-100 hover:shadow-md transition-shadow group"
             >
               <div className={`w-10 h-10 ${info.color} rounded-lg flex items-center justify-center text-white mb-3`}>
-                <span className="font-bold">{SERVICES.filter(s => s.category === key).length}</span>
+                <span className="font-bold">{services.filter(s => s.category === key).length}</span>
               </div>
               <h3 className="font-heading font-bold text-slate-900 group-hover:text-medical-blue transition-colors">
                 {info.label}
@@ -232,7 +256,7 @@ export const Services = () => {
                 {cat.label}
                 {cat.id !== 'all' && (
                   <span className="ml-1 opacity-70">
-                    ({SERVICES.filter(s => s.category === cat.id).length})
+                    ({services.filter(s => s.category === cat.id).length})
                   </span>
                 )}
               </button>

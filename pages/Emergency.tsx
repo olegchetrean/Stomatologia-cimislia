@@ -1,8 +1,9 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { AlertTriangle, Phone, Clock, MapPin, CheckCircle, ArrowRight, User } from 'lucide-react';
 import { Button } from '../components/ui/Button';
 import { Link } from 'react-router-dom';
 import { TEAM } from '../constants';
+import { TeamMember } from '../types';
 
 const emergencyTypes = [
   {
@@ -67,24 +68,102 @@ const formatPhone = (phone: string | undefined): string => {
 };
 
 export const Emergency = () => {
+  const [team, setTeam] = useState<TeamMember[]>(TEAM);
+
+  useEffect(() => {
+    loadTeam();
+  }, []);
+
+  const loadTeam = async () => {
+    try {
+      try {
+        const response = await fetch('http://localhost:3001/api/team');
+        if (response.ok) {
+          const data = await response.json();
+          setTeam(data.team);
+          return;
+        }
+      } catch (error) {
+        console.log('Сервер недоступен, используем данные из constants');
+      }
+    } catch (error) {
+      console.error('Eroare la încărcarea echipei:', error);
+    }
+  };
+
+  // Получаем уникальных врачей с номерами (убираем дубликаты по номеру)
+  const doctorsWithPhones = team.filter(member => 
+    member.phone && 
+    (member.role === 'Medic Stomatolog' || 
+     member.role === 'Medic Stomatolog Generalist' || 
+     member.role === 'Administrator Interimar')
+  ).reduce((acc, member) => {
+    // Если номер уже есть, пропускаем (приоритет врачам перед администратором)
+    if (!acc.find(m => m.phone === member.phone)) {
+      acc.push(member);
+    } else {
+      // Если это врач, заменяем администратора
+      const existingIndex = acc.findIndex(m => m.phone === member.phone);
+      if (member.role !== 'Administrator Interimar' && acc[existingIndex].role === 'Administrator Interimar') {
+        acc[existingIndex] = member;
+      }
+    }
+    return acc;
+  }, [] as TeamMember[]);
+
   return (
     <div className="min-h-screen bg-slate-50 pt-20">
       {/* Emergency Banner */}
-      <div className="bg-red-600 text-white py-6">
-        <div className="container mx-auto px-4">
-          <div className="flex flex-col md:flex-row items-center justify-between gap-4">
-            <div className="flex items-center gap-4">
-              <AlertTriangle className="w-8 h-8 animate-pulse" />
-              <div>
-                <h2 className="font-heading font-bold text-xl">Urgentă Stomatologică?</h2>
-                <p className="text-red-100">Sunati acum pentru asistentă imediată</p>
+      <div className="bg-gradient-to-br from-red-600 via-red-600 to-red-700 text-white py-10 shadow-2xl relative overflow-hidden">
+        <div className="absolute inset-0 opacity-10">
+          <div className="absolute inset-0" style={{ backgroundImage: 'radial-gradient(circle at 2px 2px, white 1px, transparent 0)', backgroundSize: '40px 40px' }}></div>
+        </div>
+        <div className="container mx-auto px-4 relative z-10">
+          <div className="flex flex-col items-center gap-6">
+            <div className="flex items-center gap-4 bg-white/10 backdrop-blur-md rounded-2xl px-6 py-3 border border-white/20">
+              <div className="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center">
+                <AlertTriangle className="w-6 h-6 animate-pulse" />
+              </div>
+              <div className="text-center sm:text-left">
+                <h2 className="font-heading font-bold text-2xl sm:text-3xl">Urgentă Stomatologică?</h2>
+                <p className="text-red-100 text-sm sm:text-base mt-1">Sunati acum pentru asistentă imediată</p>
               </div>
             </div>
-            <a href="tel:079772488">
-              <Button as="div" className="bg-white text-red-600 hover:bg-red-50 font-bold text-lg">
-                <Phone className="w-5 h-5 mr-2" /> 079 772 488
-              </Button>
+            {/* Основной номер для срочных случаев - Galina Godoroja */}
+            <a 
+              href="tel:069363336"
+              className="group bg-white text-red-600 hover:bg-red-50 rounded-2xl px-10 py-5 transition-all border-2 border-white/40 hover:border-white shadow-2xl hover:shadow-3xl hover:scale-105 transform"
+            >
+              <div className="flex items-center gap-5">
+                <div className="w-14 h-14 bg-gradient-to-br from-red-600 to-red-700 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform shadow-lg">
+                  <Phone className="w-7 h-7 text-white" />
+                </div>
+                <div className="text-center">
+                  <div className="font-bold text-xl sm:text-2xl">Dr. Galina Godoroja</div>
+                  <div className="text-lg sm:text-xl font-semibold mt-1.5 text-red-700">069 363 336</div>
+                </div>
+              </div>
             </a>
+            {/* Остальные врачи */}
+            <div className="flex flex-wrap justify-center gap-3 mt-2">
+              {doctorsWithPhones.filter(member => member.id !== 'dr-galina-godoroja').map(member => (
+                <a 
+                  key={member.id} 
+                  href={`tel:${member.phone.replace(/\s/g, '')}`}
+                  className="group bg-white/15 hover:bg-white/25 backdrop-blur-md rounded-xl px-6 py-3 transition-all border border-white/25 hover:border-white/40 hover:scale-105 shadow-lg hover:shadow-xl"
+                >
+                  <div className="flex items-center gap-3">
+                    <div className="w-9 h-9 bg-white/20 rounded-full flex items-center justify-center group-hover:bg-white/30 transition-colors">
+                      <Phone className="w-4 h-4" />
+                    </div>
+                    <div className="flex flex-col">
+                      <span className="font-semibold text-sm">{member.name.split(' ').pop()}</span>
+                      <span className="font-bold text-sm">{formatPhone(member.phone)}</span>
+                    </div>
+                  </div>
+                </a>
+              ))}
+            </div>
           </div>
         </div>
       </div>
@@ -107,11 +186,35 @@ export const Emergency = () => {
             <div className="w-12 h-12 bg-red-100 rounded-xl flex items-center justify-center text-red-600 mb-4">
               <Phone className="w-6 h-6" />
             </div>
-            <h3 className="font-heading font-bold text-lg mb-2">Telefon Urgente</h3>
-            <a href="tel:079772488" className="text-2xl font-bold text-red-600 hover:text-red-700">
-              079 772 488
+            <h3 className="font-heading font-bold text-lg mb-4">Telefon Urgente</h3>
+            {/* Основной номер для срочных случаев - Galina Godoroja */}
+            <a 
+              href="tel:069363336"
+              className="block mb-4 p-4 bg-red-50 rounded-xl border-2 border-red-200 hover:bg-red-100 transition-colors"
+            >
+              <div className="flex items-center justify-between">
+                <div>
+                  <span className="text-sm font-medium text-slate-700">Dr. Galina Godoroja</span>
+                  <span className="block text-xs text-slate-500 mt-1">Pentru urgente</span>
+                </div>
+                <span className="text-xl font-bold text-red-600">069 363 336</span>
+              </div>
             </a>
-            <p className="text-slate-600 text-sm mt-2">Disponibil în orele de program</p>
+            <div className="space-y-3">
+              {doctorsWithPhones.filter(member => member.id !== 'dr-galina-godoroja').map(member => (
+                <a 
+                  key={member.id} 
+                  href={`tel:${member.phone.replace(/\s/g, '')}`}
+                  className="block text-lg font-semibold text-red-600 hover:text-red-700 transition-colors"
+                >
+                  <div className="flex items-center justify-between">
+                    <span className="text-sm text-slate-600">{member.name}</span>
+                    <span className="font-bold">{formatPhone(member.phone)}</span>
+                  </div>
+                </a>
+              ))}
+            </div>
+            <p className="text-slate-600 text-sm mt-4">Disponibil în orele de program</p>
           </div>
 
           <div className="bg-white rounded-2xl p-6 shadow-xl border border-slate-100">
@@ -120,7 +223,7 @@ export const Emergency = () => {
             </div>
             <h3 className="font-heading font-bold text-lg mb-2">Program Urgente</h3>
             <p className="text-xl font-bold text-slate-900">Luni - Vineri</p>
-            <p className="text-slate-600">08:00 - 17:00</p>
+            <p className="text-slate-600">08:00 - 16:00</p>
           </div>
 
           <div className="bg-white rounded-2xl p-6 shadow-xl border border-slate-100">
@@ -140,7 +243,7 @@ export const Emergency = () => {
             În caz de urgentă, puteti contacta direct medicul dvs. pentru a evita întârzierile. Dacă medicul dvs. nu este disponibil, contactati alt medic din echipă.
           </p>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {TEAM.filter(member => member.role === 'Medic Stomatolog' || member.role === 'Medic Stomatolog Generalist' || (member.role === 'Administrator Interimar' && member.phone)).map(member => (
+            {doctorsWithPhones.map(member => (
               <div key={member.id} className="bg-white rounded-2xl p-6 shadow-sm border border-slate-100 hover:shadow-lg transition-shadow">
                 <div className="flex items-start gap-4">
                   <div className="w-12 h-12 bg-medical-blue/10 rounded-xl flex items-center justify-center text-medical-blue shrink-0">
@@ -241,11 +344,21 @@ export const Emergency = () => {
             În caz de urgentă stomatologică, timpul contează. Contactati-ne imediat pentru a primi ajutorul de care aveti nevoie.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a href="tel:079772488">
+            {/* Основной номер для срочных случаев - Galina Godoroja */}
+            <a href="tel:069363336">
               <Button size="lg" as="div" className="bg-white text-red-600 hover:bg-red-50">
-                <Phone className="w-5 h-5 mr-2" /> Sună: 079 772 488
+                <Phone className="w-5 h-5 mr-2" /> Dr. Galina Godoroja: 069 363 336
               </Button>
             </a>
+            <div className="flex flex-wrap justify-center gap-2">
+              {doctorsWithPhones.filter(member => member.id !== 'dr-galina-godoroja').map(member => (
+                <a key={member.id} href={`tel:${member.phone.replace(/\s/g, '')}`}>
+                  <Button size="lg" as="div" className="bg-white/10 text-white hover:bg-white/20 border border-white/30">
+                    <Phone className="w-5 h-5 mr-2" /> {member.name.split(' ').pop()}: {formatPhone(member.phone)}
+                  </Button>
+                </a>
+              ))}
+            </div>
             <Link to="/programare">
               <Button variant="outline" size="lg" as="div" className="border-white/40 hover:bg-white/10">
                 Programare Normală <ArrowRight className="w-5 h-5 ml-2" />

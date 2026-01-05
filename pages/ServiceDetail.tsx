@@ -1,9 +1,10 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { ArrowLeft, Clock, Shield, Check, Phone, Calendar } from 'lucide-react';
 import { Button } from '../components/ui/Button';
 import { SERVICES } from '../constants';
 import { GlassServiceCard } from '../components/cards/GlassServiceCard';
+import { Service } from '../types';
 
 const categoryInfo: Record<string, { title: string; description: string; image: string }> = {
   consultatii: {
@@ -45,9 +46,31 @@ const categoryInfo: Record<string, { title: string; description: string; image: 
 
 export const ServiceDetail = () => {
   const { category } = useParams<{ category: string }>();
+  const [services, setServices] = useState<Service[]>(SERVICES);
+
+  useEffect(() => {
+    loadServices();
+  }, []);
+
+  const loadServices = async () => {
+    try {
+      try {
+        const response = await fetch('http://localhost:3001/api/services');
+        if (response.ok) {
+          const data = await response.json();
+          setServices(data.services);
+          return;
+        }
+      } catch (error) {
+        console.log('Сервер недоступен, используем данные из constants');
+      }
+    } catch (error) {
+      console.error('Eroare la încărcarea serviciilor:', error);
+    }
+  };
 
   const info = category ? categoryInfo[category] : null;
-  const services = SERVICES.filter(s => s.category === category);
+  const categoryServices = services.filter(s => s.category === category);
   const relatedCategories = Object.keys(categoryInfo).filter(c => c !== category).slice(0, 3);
 
   if (!info) {
@@ -109,10 +132,10 @@ export const ServiceDetail = () => {
         {/* Services List */}
         <div className="mb-16">
           <h2 className="font-heading text-3xl font-bold text-slate-900 mb-8">
-            Servicii Disponibile ({services.length})
+            Servicii Disponibile ({categoryServices.length})
           </h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {services.map(service => (
+            {categoryServices.map(service => (
               <GlassServiceCard key={service.id} service={service} />
             ))}
           </div>

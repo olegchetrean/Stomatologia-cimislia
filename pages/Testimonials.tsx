@@ -115,7 +115,7 @@ export const Testimonials = () => {
               ))}
             </div>
             <blockquote className="text-2xl md:text-3xl font-heading mb-8 leading-relaxed">
-              "Am găsit la CSR Cimișlia exact ce căutam: profesionalism, empatie și rezultate exceptionale.
+              "Am găsit la ÎM CSR Cimișlia exact ce căutam: profesionalism, empatie și rezultate exceptionale.
               Recomand cu toată încrederea această clinică!"
             </blockquote>
             <div className="flex items-center gap-4">
