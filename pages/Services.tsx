@@ -276,7 +276,7 @@ export const Services = () => {
         {viewMode === 'grid' ? (
           activeCategory === 'all' && groupedServices ? (
             // Grouped by category
-            Object.entries(groupedServices).map(([category, services]) => (
+            Object.entries(groupedServices).map(([category, services]: [string, Service[]]) => (
               <div key={category} className="mb-12">
                 <div className="flex items-center justify-between mb-6">
                   <div className="flex items-center gap-3">
