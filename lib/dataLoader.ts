@@ -85,8 +85,15 @@ export const loadTeam = async (): Promise<TeamMember[]> => {
 export const saveServices = async (services: Service[]): Promise<void> => {
   try {
     console.log(`📤 Отправляем запрос на сохранение ${services.length} услуг...`);
-    // Используем переменную окружения или localhost для dev
-    const apiUrl = import.meta.env.VITE_API_URL || 'http://localhost:3001/api';
+    // Определяем API URL
+    // В продакшене, если VITE_API_URL не установлен, используем относительный путь /api
+    // В dev режиме используем localhost
+    const isProduction = import.meta.env.PROD;
+    let apiUrl = import.meta.env.VITE_API_URL;
+    if (!apiUrl) {
+      apiUrl = isProduction ? '/api' : 'http://localhost:3001/api';
+    }
+    console.log(`🌐 API URL: ${apiUrl}`);
     const response = await fetch(`${apiUrl}/services`, {
       method: 'POST',
       headers: {
@@ -124,8 +131,15 @@ export const saveServices = async (services: Service[]): Promise<void> => {
 export const saveTeam = async (team: TeamMember[]): Promise<void> => {
   try {
     console.log(`📤 Отправляем запрос на сохранение ${team.length} членов команды...`);
-    // Используем переменную окружения или localhost для dev
-    const apiUrl = import.meta.env.VITE_API_URL || 'http://localhost:3001/api';
+    // Определяем API URL
+    // В продакшене, если VITE_API_URL не установлен, используем относительный путь /api
+    // В dev режиме используем localhost
+    const isProduction = import.meta.env.PROD;
+    let apiUrl = import.meta.env.VITE_API_URL;
+    if (!apiUrl) {
+      apiUrl = isProduction ? '/api' : 'http://localhost:3001/api';
+    }
+    console.log(`🌐 API URL: ${apiUrl}`);
     const response = await fetch(`${apiUrl}/team`, {
       method: 'POST',
       headers: {

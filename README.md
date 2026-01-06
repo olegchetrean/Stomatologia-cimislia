@@ -34,7 +34,9 @@
 2. Создайте файл `.env` с продакшен настройками:
    ```bash
    VITE_ADMIN_PASSWORD=your_secure_password
-   VITE_API_URL=https://your-domain.com/api
+   # VITE_API_URL можно не указывать - будет использоваться относительный путь /api
+   # Или укажите полный URL, если нужно:
+   # VITE_API_URL=https://your-domain.com/api
    ```
 
 3. Соберите проект:
