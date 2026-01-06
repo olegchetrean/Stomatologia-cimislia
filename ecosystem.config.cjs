@@ -1,4 +1,4 @@
-export default {
+module.exports = {
   apps: [
     {
       name: 'stomatologia-api',
@@ -22,4 +22,3 @@ export default {
     }
   ]
 };
-
