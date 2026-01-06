@@ -2,16 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Plus, Trash2, Edit2, Check, X, Loader2 } from 'lucide-react';
 import { Button } from '../../components/ui/Button';
 import { loadTeam, saveTeam } from '../../lib/dataLoader';
-
-interface TeamMember {
-  id: string;
-  name: string;
-  role: string;
-  specialty: string;
-  phone?: string;
-  bio?: string;
-  image?: string;
-}
+import { TeamMember } from '../../types';
 
 const ManageTeam = () => {
   const [team, setTeam] = useState<TeamMember[]>([]);
@@ -48,6 +39,8 @@ const ManageTeam = () => {
     } catch (error) {
       console.error('Eroare la salvare:', error);
       setSaveStatus('error');
+      const errorMessage = error instanceof Error ? error.message : 'Eroare necunoscută la salvare';
+      alert(`Eroare la salvare! ${errorMessage}`);
       setTimeout(() => setSaveStatus('idle'), 3000);
     } finally {
       setSaving(false);
@@ -85,12 +78,12 @@ const ManageTeam = () => {
     let updatedTeam: TeamMember[];
     if (editingId) {
       // При редактировании сохраняем существующий ID
-      updatedTeam = team.map(m => m.id === editingId ? { ...formData as TeamMember, id: editingId } : m);
+      updatedTeam = team.map(m => m.id === editingId ? { ...formData, id: editingId } as TeamMember : m);
       setTeam(updatedTeam);
       setEditingId(null);
     } else {
       // При создании нового члена команды генерируем автоматический ID
-      const newId = generateTeamMemberId(formData.name);
+      const newId = generateTeamMemberId(formData.name || '');
       updatedTeam = [...team, { ...formData, id: newId } as TeamMember];
       setTeam(updatedTeam);
       console.log(`✅ Сгенерирован ID для нового члена команды: ${newId}`);

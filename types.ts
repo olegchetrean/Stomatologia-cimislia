@@ -22,7 +22,7 @@ export interface TeamMember {
   name: string;
   role: string;
   specialty?: string;
-  image: string;
+  image?: string;
   bio?: string;
   phone?: string;
 }

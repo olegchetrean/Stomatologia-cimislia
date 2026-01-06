@@ -2,16 +2,7 @@ import React, { useState, useEffect, useMemo } from 'react';
 import { Plus, Trash2, Edit2, Check, X, ChevronDown, ChevronUp, Save, Loader2 } from 'lucide-react';
 import { Button } from '../../components/ui/Button';
 import { loadServices, saveServices } from '../../lib/dataLoader';
-
-interface Service {
-  id: string;
-  category: string;
-  name: string;
-  price: number;
-  unit: string;
-  cnamEligible: boolean;
-  subcategory?: string;
-}
+import { Service, ServiceCategory } from '../../types';
 
 interface CategoryGroup {
   name: string;
@@ -33,7 +24,7 @@ const ManageServices = () => {
   const [services, setServices] = useState<Service[]>([]);
   const [editingId, setEditingId] = useState<string | null>(null);
   const [showForm, setShowForm] = useState(false);
-  const [selectedCategory, setSelectedCategory] = useState<string>('terapie');
+  const [selectedCategory, setSelectedCategory] = useState<ServiceCategory>('terapie');
   const [expandedCategories, setExpandedCategories] = useState<Set<string>>(new Set(Object.keys(CATEGORIES)));
   const [saving, setSaving] = useState(false);
   const [saveStatus, setSaveStatus] = useState<'idle' | 'success' | 'error'>('idle');
@@ -69,7 +60,8 @@ const ManageServices = () => {
     } catch (error) {
       console.error('❌ Ошибка при сохранении услуг:', error);
       setSaveStatus('error');
-      alert('Eroare la salvare! Verificați că serverul este pornit (npm run dev)');
+      const errorMessage = error instanceof Error ? error.message : 'Eroare necunoscută la salvare';
+      alert(`Eroare la salvare! ${errorMessage}`);
       setTimeout(() => setSaveStatus('idle'), 3000);
     } finally {
       setSaving(false);
@@ -94,9 +86,9 @@ const ManageServices = () => {
   };
 
   // Функция для генерации следующего ID для услуги в категории
-  const generateServiceId = (category: string): string => {
+  const generateServiceId = (category: ServiceCategory): string => {
     // Маппинг категорий на номера
-    const categoryNumbers: Record<string, number> = {
+    const categoryNumbers: Record<ServiceCategory, number> = {
       'consultatii': 1,
       'cabinet': 2,
       'anestezie': 3,
@@ -141,7 +133,7 @@ const ManageServices = () => {
       setEditingId(null);
     } else {
       // При создании новой услуги генерируем автоматический ID
-      const newId = generateServiceId(formData.category);
+      const newId = generateServiceId(formData.category as ServiceCategory);
       updatedServices = [...services, { ...formData, id: newId } as Service];
       setServices(updatedServices);
       console.log(`✅ Сгенерирован ID для новой услуги: ${newId}`);
@@ -246,8 +238,9 @@ const ManageServices = () => {
               <select
                 value={formData.category || 'terapie'}
                 onChange={(e) => {
-                  setFormData({ ...formData, category: e.target.value });
-                  setSelectedCategory(e.target.value);
+                  const category = e.target.value as ServiceCategory;
+                  setFormData({ ...formData, category });
+                  setSelectedCategory(category);
                 }}
                 className="w-full px-3 py-2 text-sm rounded border border-slate-300"
               >
@@ -338,9 +331,10 @@ const ManageServices = () => {
                       <p>Nu sunt servicii în această categorie</p>
                       <Button 
                         onClick={() => {
-                          setSelectedCategory(catKey);
+                          const category = catKey as ServiceCategory;
+                          setSelectedCategory(category);
                           setEditingId(null);
-                          setFormData({ ...formData, category: catKey });
+                          setFormData({ ...formData, category });
                           setShowForm(true);
                         }}
                         className="mt-2 gap-2 text-sm"

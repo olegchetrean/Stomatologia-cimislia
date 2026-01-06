@@ -106,8 +106,10 @@ app.use((req, res) => {
 
 // ============ START SERVER ============
 
-app.listen(PORT, () => {
-  console.log(`🚀 API сервер запущен на http://localhost:${PORT}`);
+const HOST = process.env.HOST || '0.0.0.0';
+
+app.listen(PORT, HOST, () => {
+  console.log(`🚀 API сервер запущен на http://${HOST}:${PORT}`);
   console.log(`💾 POST /api/services  - Сохранить услуги в JSON`);
   console.log(`💾 POST /api/team      - Сохранить команду в JSON`);
   console.log(`❤️  GET  /api/health    - Проверка статуса`);

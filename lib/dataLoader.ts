@@ -85,7 +85,9 @@ export const loadTeam = async (): Promise<TeamMember[]> => {
 export const saveServices = async (services: Service[]): Promise<void> => {
   try {
     console.log(`📤 Отправляем запрос на сохранение ${services.length} услуг...`);
-    const response = await fetch('http://localhost:3001/api/services', {
+    // Используем переменную окружения или localhost для dev
+    const apiUrl = import.meta.env.VITE_API_URL || 'http://localhost:3001/api';
+    const response = await fetch(`${apiUrl}/services`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -105,7 +107,12 @@ export const saveServices = async (services: Service[]): Promise<void> => {
   } catch (error) {
     console.error('❌ Ошибка при сохранении услуг:', error);
     if (error instanceof TypeError && error.message.includes('fetch')) {
-      throw new Error('Не удалось подключиться к серверу. Убедитесь что сервер запущен (npm run dev)');
+      const isProduction = import.meta.env.PROD;
+      throw new Error(
+        isProduction 
+          ? 'Nu s-a putut conecta la server. Asigurați-vă că serverul API este pornit și accesibil.'
+          : 'Nu s-a putut conecta la server. Verificați că serverul este pornit (npm run dev)'
+      );
     }
     throw error;
   }
@@ -117,7 +124,9 @@ export const saveServices = async (services: Service[]): Promise<void> => {
 export const saveTeam = async (team: TeamMember[]): Promise<void> => {
   try {
     console.log(`📤 Отправляем запрос на сохранение ${team.length} членов команды...`);
-    const response = await fetch('http://localhost:3001/api/team', {
+    // Используем переменную окружения или localhost для dev
+    const apiUrl = import.meta.env.VITE_API_URL || 'http://localhost:3001/api';
+    const response = await fetch(`${apiUrl}/team`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -137,7 +146,12 @@ export const saveTeam = async (team: TeamMember[]): Promise<void> => {
   } catch (error) {
     console.error('❌ Ошибка при сохранении команды:', error);
     if (error instanceof TypeError && error.message.includes('fetch')) {
-      throw new Error('Не удалось подключиться к серверу. Убедитесь что сервер запущен (npm run dev)');
+      const isProduction = import.meta.env.PROD;
+      throw new Error(
+        isProduction 
+          ? 'Nu s-a putut conecta la server. Asigurați-vă că serverul API este pornit și accesibil.'
+          : 'Nu s-a putut conecta la server. Verificați că serverul este pornit (npm run dev)'
+      );
     }
     throw error;
   }
