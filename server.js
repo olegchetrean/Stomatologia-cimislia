@@ -15,15 +15,19 @@ app.use(cors());
 app.use(express.json());
 
 // Пути к JSON файлам
-// В продакшене файлы должны быть в dist/public/data/, но если его нет - используем public/data/
+// ВАЖНО: В продакшене файлы должны быть в dist/public/data/
+// Но нужно сохранять в оба места, чтобы при билде не терялись данные
 const distPath = path.join(__dirname, 'dist/public/data/services.json');
 const srcPath = path.join(__dirname, 'public/data/services.json');
-const servicesPath = fs.existsSync(path.dirname(distPath)) ? distPath : srcPath;
-
 const distTeamPath = path.join(__dirname, 'dist/public/data/team.json');
 const srcTeamPath = path.join(__dirname, 'public/data/team.json');
-const teamPath = fs.existsSync(path.dirname(distTeamPath)) ? distTeamPath : srcTeamPath;
 
+// В продакшене приоритет - dist/, в dev - public/
+const isProd = process.env.NODE_ENV === 'production';
+const servicesPath = (isProd && fs.existsSync(path.dirname(distPath))) ? distPath : srcPath;
+const teamPath = (isProd && fs.existsSync(path.dirname(distTeamPath))) ? distTeamPath : srcTeamPath;
+
+console.log(`📁 Режим: ${isProd ? 'PRODUCTION' : 'DEVELOPMENT'}`);
 console.log(`📁 Путь к services.json: ${servicesPath}`);
 console.log(`📁 Путь к team.json: ${teamPath}`);
 
@@ -40,14 +44,35 @@ const ensureDirectoryExists = (filePath) => {
 ensureDirectoryExists(servicesPath);
 ensureDirectoryExists(teamPath);
 
-// Функция для безопасной записи JSON
+// Функция для безопасной записи JSON (сохраняет в оба места в продакшене)
 const writeJSON = (filePath, data) => {
   try {
+    const absolutePath = path.resolve(filePath);
+    
     // Убеждаемся, что директория существует
     ensureDirectoryExists(filePath);
     
+    // В продакшене сохраняем также в исходную директорию, чтобы при билде не терялись данные
+    if (isProd && filePath.includes('dist')) {
+      const srcFilePath = filePath.replace('dist/public', 'public');
+      ensureDirectoryExists(srcFilePath);
+      const jsonString = JSON.stringify(data, null, 2);
+      fs.writeFileSync(srcFilePath, jsonString, 'utf-8');
+      console.log(`💾 Также сохранено в исходный файл: ${srcFilePath}`);
+    }
+    
+    // Проверяем права доступа на директорию
+    try {
+      fs.accessSync(path.dirname(filePath), fs.constants.W_OK);
+      console.log(`✅ Директория доступна для записи: ${path.dirname(filePath)}`);
+    } catch (accessError) {
+      console.error(`❌ Нет прав на запись в директорию: ${path.dirname(filePath)}`);
+      console.error(`   Попробуйте: chmod 755 ${path.dirname(filePath)}`);
+    }
+    
     // Записываем файл
     const jsonString = JSON.stringify(data, null, 2);
+    console.log(`💾 Записываем ${jsonString.length} байт в файл: ${absolutePath}`);
     fs.writeFileSync(filePath, jsonString, 'utf-8');
     
     // Проверяем, что файл действительно записан - читаем его обратно
@@ -56,8 +81,15 @@ const writeJSON = (filePath, data) => {
     const expectedCount = data.services ? data.services.length : (data.team ? data.team.length : 0);
     const actualCount = parsed.services ? parsed.services.length : (parsed.team ? parsed.team.length : 0);
     
+    // Проверяем права на файл
+    const stats = fs.statSync(filePath);
+    console.log(`📊 Файл создан: ${absolutePath}`);
+    console.log(`   Размер: ${stats.size} байт`);
+    console.log(`   Права: ${stats.mode.toString(8)}`);
+    console.log(`   Владелец: ${stats.uid}:${stats.gid}`);
+    
     if (expectedCount === actualCount) {
-      console.log(`✅ Файл успешно записан и проверен: ${filePath}`);
+      console.log(`✅ Файл успешно записан и проверен: ${absolutePath}`);
       console.log(`   Ожидалось элементов: ${expectedCount}, записано: ${actualCount}`);
       return true;
     } else {
@@ -69,6 +101,7 @@ const writeJSON = (filePath, data) => {
     console.error(`   Полный путь: ${path.resolve(filePath)}`);
     console.error(`   Существует ли файл: ${fs.existsSync(filePath)}`);
     console.error(`   Существует ли директория: ${fs.existsSync(path.dirname(filePath))}`);
+    console.error(`   Код ошибки: ${error.code}`);
     console.error(`   Stack: ${error.stack}`);
     return false;
   }
@@ -145,11 +178,33 @@ app.post('/api/team', (req, res) => {
   const success = writeJSON(teamPath, { team });
   
   if (success) {
-    console.log(`✅ Успешно сохранено ${team.length} членов команды в ${teamPath}`);
-    res.json({ 
-      message: 'Команда успешно сохранена в JSON файл',
-      count: team.length
-    });
+    // Проверяем, что файл действительно записан, читая его обратно
+    try {
+      const writtenFile = fs.readFileSync(teamPath, 'utf-8');
+      const writtenData = JSON.parse(writtenFile);
+      const writtenCount = writtenData.team?.length || 0;
+      
+      console.log(`✅ Успешно сохранено ${team.length} членов команды в ${teamPath}`);
+      console.log(`📖 Проверка: в файле сейчас ${writtenCount} членов команды`);
+      
+      if (writtenCount !== team.length) {
+        console.error(`⚠️ ВНИМАНИЕ: Количество не совпадает! Отправлено ${team.length}, в файле ${writtenCount}`);
+      }
+      
+      res.json({ 
+        message: 'Команда успешно сохранена в JSON файл',
+        count: team.length,
+        fileCount: writtenCount,
+        filePath: teamPath
+      });
+    } catch (verifyError) {
+      console.error(`❌ Ошибка при проверке записанного файла:`, verifyError);
+      res.json({ 
+        message: 'Команда сохранена, но проверка не удалась',
+        count: team.length,
+        warning: verifyError.message
+      });
+    }
   } else {
     console.error(`❌ Ошибка при сохранении в ${teamPath}`);
     res.status(500).json({ error: 'Ошибка при сохранении команды' });
