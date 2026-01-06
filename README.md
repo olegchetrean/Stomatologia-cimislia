@@ -107,9 +107,9 @@ server {
         add_header Cache-Control "public, max-age=3600";
     }
 
-    # API проксирование
+    # API проксирование (ВАЖНО: должен быть ДО location /)
     location /api {
-        proxy_pass http://localhost:3001;
+        proxy_pass http://localhost:3001/api;
         proxy_http_version 1.1;
         proxy_set_header Upgrade $http_upgrade;
         proxy_set_header Connection 'upgrade';
@@ -118,6 +118,8 @@ server {
         proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
         proxy_set_header X-Forwarded-Proto $scheme;
         proxy_cache_bypass $http_upgrade;
+        # Отключаем кеширование для API
+        add_header Cache-Control "no-cache, no-store, must-revalidate";
     }
 }
 ```
@@ -146,7 +148,33 @@ sudo certbot --nginx -d your-domain.com
 
 ## Важные заметки
 
+- API сервер должен быть запущен через PM2: `pm2 start ecosystem.config.js`
 - API сервер будет доступен на `http://localhost:3001`
-- Убедитесь, что файлы `public/data/*.json` доступны для записи (chmod 664)
+- Убедитесь, что файлы `public/data/*.json` (в dev) и `dist/public/data/*.json` (в prod) доступны для записи
+- Проверьте, что сервер запущен: `pm2 status` или `curl http://localhost:3001/api/health`
 - PM2 автоматически перезапустит сервер при падении
 - Логи PM2 сохраняются в `./logs/` директории
+
+## Проверка работы API
+
+После настройки проверьте:
+
+```bash
+# Проверить статус PM2
+pm2 status
+
+# Проверить логи API сервера
+pm2 logs stomatologia-api
+
+# Проверить здоровье API (должен вернуть JSON)
+curl http://localhost:3001/api/health
+
+# Проверить через домен (если Nginx настроен)
+curl https://stomatologiacimislia.md/api/health
+```
+
+Если GET запросы возвращают 404:
+1. Убедитесь, что PM2 сервер запущен: `pm2 status`
+2. Проверьте логи: `pm2 logs stomatologia-api`
+3. Проверьте конфигурацию Nginx - блок `location /api` должен быть **перед** `location /`
+4. Перезагрузите Nginx: `sudo nginx -t && sudo systemctl reload nginx`

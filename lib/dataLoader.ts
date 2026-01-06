@@ -9,7 +9,42 @@ let teamCache: TeamMember[] | null = null;
  * Загружает данные из JSON файла с fallback на constants
  */
 export const loadServices = async (): Promise<Service[]> => {
-  // Загружаем из JSON файла (Vite автоматически обслуживает файлы из public/)
+  // Сначала пытаемся загрузить через API (чтобы гарантированно получить актуальные данные)
+  try {
+    const isProduction = import.meta.env.PROD;
+    let baseUrl = import.meta.env.VITE_API_URL;
+    
+    if (!baseUrl) {
+      baseUrl = isProduction ? '' : 'http://localhost:3001';
+    } else {
+      if (baseUrl.endsWith('/api')) {
+        baseUrl = baseUrl.slice(0, -4);
+      }
+    }
+    
+    const apiUrl = `${baseUrl}/api/services`;
+    console.log(`📥 Пытаемся загрузить услуги через API: ${apiUrl}`);
+    
+    const apiResponse = await fetch(apiUrl, {
+      cache: 'no-cache',
+      headers: {
+        'Cache-Control': 'no-cache'
+      }
+    });
+    
+    if (apiResponse.ok) {
+      const data = await apiResponse.json();
+      if (data.services && Array.isArray(data.services) && data.services.length > 0) {
+        console.log(`✅ Загружено ${data.services.length} услуг через API`);
+        servicesCache = data.services;
+        return data.services;
+      }
+    }
+  } catch (apiError) {
+    console.warn('⚠️ Не удалось загрузить через API, пробуем статический файл:', apiError);
+  }
+
+  // Fallback: загружаем из статического JSON файла
   try {
     // Добавляем timestamp для предотвращения кеширования
     const response = await fetch(`/data/services.json?t=${Date.now()}`, {
@@ -26,7 +61,7 @@ export const loadServices = async (): Promise<Service[]> => {
     const data = await response.json();
     
     if (data.services && Array.isArray(data.services) && data.services.length > 0) {
-      console.log(`✅ Загружено ${data.services.length} услуг из JSON файла`);
+      console.log(`✅ Загружено ${data.services.length} услуг из статического JSON файла`);
       servicesCache = data.services;
       return data.services;
     } else {
@@ -85,14 +120,22 @@ export const loadTeam = async (): Promise<TeamMember[]> => {
 export const saveServices = async (services: Service[]): Promise<void> => {
   try {
     console.log(`📤 Отправляем запрос на сохранение ${services.length} услуг...`);
-    // Определяем API URL
-    // В продакшене, если VITE_API_URL не установлен, используем относительный путь /api
-    // В dev режиме используем localhost
+    // Определяем базовый API URL (без /api в конце)
+    // В продакшене, если VITE_API_URL не установлен, используем пустую строку (относительный путь)
+    // В dev режиме используем localhost:3001
     const isProduction = import.meta.env.PROD;
-    let apiUrl = import.meta.env.VITE_API_URL;
-    if (!apiUrl) {
-      apiUrl = isProduction ? '/api' : 'http://localhost:3001/api';
+    let baseUrl = import.meta.env.VITE_API_URL;
+    
+    if (!baseUrl) {
+      baseUrl = isProduction ? '' : 'http://localhost:3001';
+    } else {
+      // Если VITE_API_URL указан и заканчивается на /api, убираем /api
+      if (baseUrl.endsWith('/api')) {
+        baseUrl = baseUrl.slice(0, -4);
+      }
     }
+    
+    const apiUrl = `${baseUrl}/api`;
     console.log(`🌐 API URL: ${apiUrl}`);
     const response = await fetch(`${apiUrl}/services`, {
       method: 'POST',
@@ -131,14 +174,22 @@ export const saveServices = async (services: Service[]): Promise<void> => {
 export const saveTeam = async (team: TeamMember[]): Promise<void> => {
   try {
     console.log(`📤 Отправляем запрос на сохранение ${team.length} членов команды...`);
-    // Определяем API URL
-    // В продакшене, если VITE_API_URL не установлен, используем относительный путь /api
-    // В dev режиме используем localhost
+    // Определяем базовый API URL (без /api в конце)
+    // В продакшене, если VITE_API_URL не установлен, используем пустую строку (относительный путь)
+    // В dev режиме используем localhost:3001
     const isProduction = import.meta.env.PROD;
-    let apiUrl = import.meta.env.VITE_API_URL;
-    if (!apiUrl) {
-      apiUrl = isProduction ? '/api' : 'http://localhost:3001/api';
+    let baseUrl = import.meta.env.VITE_API_URL;
+    
+    if (!baseUrl) {
+      baseUrl = isProduction ? '' : 'http://localhost:3001';
+    } else {
+      // Если VITE_API_URL указан и заканчивается на /api, убираем /api
+      if (baseUrl.endsWith('/api')) {
+        baseUrl = baseUrl.slice(0, -4);
+      }
     }
+    
+    const apiUrl = `${baseUrl}/api`;
     console.log(`🌐 API URL: ${apiUrl}`);
     const response = await fetch(`${apiUrl}/team`, {
       method: 'POST',

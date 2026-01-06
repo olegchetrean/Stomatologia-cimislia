@@ -52,7 +52,19 @@ const ManageServices = () => {
     setSaveStatus('idle');
     try {
       console.log(`💾 Сохраняем ${servicesToSave.length} услуг в JSON файл...`);
+      console.log(`📋 Первые 3 ID:`, servicesToSave.slice(0, 3).map(s => s.id));
       await saveServices(servicesToSave);
+      
+      // После успешного сохранения перезагружаем данные из файла для проверки
+      // Добавляем небольшую задержку, чтобы файл точно записался
+      setTimeout(async () => {
+        const reloaded = await loadServices();
+        console.log(`🔄 Перезагружено после сохранения: ${reloaded.length} услуг`);
+        console.log(`📋 Первые 3 ID после перезагрузки:`, reloaded.slice(0, 3).map(s => s.id));
+        setServices(reloaded);
+      }, 500);
+      
+      // Сразу обновляем локальное состояние
       setServices(servicesToSave);
       console.log(`✅ Успешно сохранено ${servicesToSave.length} услуг в JSON файл`);
       setSaveStatus('success');
@@ -134,9 +146,38 @@ const ManageServices = () => {
     } else {
       // При создании новой услуги генерируем автоматический ID
       const newId = generateServiceId(formData.category as ServiceCategory);
-      updatedServices = [...services, { ...formData, id: newId } as Service];
+      // Проверяем на дубликаты перед добавлением
+      const existingIds = new Set(services.map(s => s.id));
+      if (existingIds.has(newId)) {
+        console.warn(`⚠️ ID ${newId} уже существует, генерируем новый...`);
+        // Находим следующий свободный ID
+        let testId = newId;
+        let counter = 1;
+        const match = newId.match(/^(\d+)\.(\d+)$/);
+        if (match) {
+          const baseNum = parseInt(match[2], 10);
+          while (existingIds.has(testId)) {
+            const nextNum = baseNum + counter;
+            testId = `${match[1]}.${nextNum}`;
+            counter++;
+          }
+        }
+        updatedServices = [...services, { ...formData, id: testId } as Service];
+        console.log(`✅ Использован ID: ${testId} (${newId} был занят)`);
+      } else {
+        updatedServices = [...services, { ...formData, id: newId } as Service];
+        console.log(`✅ Сгенерирован ID для новой услуги: ${newId}`);
+      }
       setServices(updatedServices);
-      console.log(`✅ Сгенерирован ID для новой услуги: ${newId}`);
+    }
+
+    // Проверяем на дублирующиеся ID перед сохранением
+    const ids = updatedServices.map(s => s.id);
+    const duplicates = ids.filter((id, index) => ids.indexOf(id) !== index);
+    if (duplicates.length > 0) {
+      console.error(`❌ Обнаружены дублирующиеся ID: ${[...new Set(duplicates)].join(', ')}`);
+      alert(`Eroare: Există ID-uri duplicate: ${[...new Set(duplicates)].join(', ')}. Vă rugăm să verificați datele.`);
+      return;
     }
 
     // Сохраняем в JSON файл
