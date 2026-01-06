@@ -288,7 +288,7 @@ export const PrivacyPolicy = () => {
                   <ul>
                     <li>Este necesar pentru tratamentul dumneavoastră (de ex. consultatii cu specialiști din străinătate)</li>
                     <li>Ati solicitat explicit acest lucru</li>
-                    <li>Sunt aplicate garantii adecvate conform legislatiei</li>
+                    <li>Sunt respectate standardele de protecție a datelor conform legislației</li>
                   </ul>
                 </section>
 

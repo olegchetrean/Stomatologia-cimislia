@@ -121,7 +121,7 @@ export const Orthodontics = () => {
                   <Star className="w-6 h-6 text-teal-500" />
                 </div>
                 <div>
-                  <p className="font-bold text-slate-900">Rezultate Garantate</p>
+                  <p className="font-bold text-slate-900">Rezultate Optime</p>
                   <p className="text-sm text-slate-500">La finalul tratamentului</p>
                 </div>
               </div>

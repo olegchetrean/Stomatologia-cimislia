@@ -1,33 +1,19 @@
 import React, { useState, useEffect } from 'react';
-import { TEAM } from '../constants';
+import { loadTeam } from '../lib/dataLoader';
 import { TeamCard3D } from '../components/cards/TeamCard3D';
 import { Award, BookOpen, Users } from 'lucide-react';
 import { TeamMember } from '../types';
 
 export const Team = () => {
-  const [team, setTeam] = useState<TeamMember[]>(TEAM);
+  const [team, setTeam] = useState<TeamMember[]>([]);
 
   useEffect(() => {
-    loadTeam();
+    loadData();
   }, []);
 
-  const loadTeam = async () => {
-    try {
-      // Сначала пытаемся загрузить с сервера
-      try {
-        const response = await fetch('http://localhost:3001/api/team');
-        if (response.ok) {
-          const data = await response.json();
-          setTeam(data.team);
-          return;
-        }
-      } catch (error) {
-        // Сервер недоступен, используем данные из constants
-        console.log('Сервер недоступен, используем данные из constants');
-      }
-    } catch (error) {
-      console.error('Eroare la încărcarea echipei:', error);
-    }
+  const loadData = async () => {
+    const data = await loadTeam();
+    setTeam(data);
   };
   return (
     <div className="min-h-screen bg-slate-50 pt-20">

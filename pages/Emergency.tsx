@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { AlertTriangle, Phone, Clock, MapPin, CheckCircle, ArrowRight, User } from 'lucide-react';
 import { Button } from '../components/ui/Button';
 import { Link } from 'react-router-dom';
-import { TEAM } from '../constants';
+import { loadTeam } from '../lib/dataLoader';
 import { TeamMember } from '../types';
 
 const emergencyTypes = [
@@ -68,27 +68,15 @@ const formatPhone = (phone: string | undefined): string => {
 };
 
 export const Emergency = () => {
-  const [team, setTeam] = useState<TeamMember[]>(TEAM);
+  const [team, setTeam] = useState<TeamMember[]>([]);
 
   useEffect(() => {
-    loadTeam();
+    loadTeamData();
   }, []);
 
-  const loadTeam = async () => {
-    try {
-      try {
-        const response = await fetch('http://localhost:3001/api/team');
-        if (response.ok) {
-          const data = await response.json();
-          setTeam(data.team);
-          return;
-        }
-      } catch (error) {
-        console.log('Сервер недоступен, используем данные из constants');
-      }
-    } catch (error) {
-      console.error('Eroare la încărcarea echipei:', error);
-    }
+  const loadTeamData = async () => {
+    const data = await loadTeam();
+    setTeam(data);
   };
 
   // Получаем уникальных врачей с номерами (убираем дубликаты по номеру)

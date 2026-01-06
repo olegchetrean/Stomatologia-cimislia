@@ -1,5 +1,5 @@
 import React, { useState, useMemo, useEffect } from 'react';
-import { SERVICES } from '../constants';
+import { loadServices } from '../lib/dataLoader';
 import { GlassServiceCard } from '../components/cards/GlassServiceCard';
 import { Button } from '../components/ui/Button';
 import { Download, Search, Check, Filter, Grid, List, ChevronRight, Phone, Calendar } from 'lucide-react';
@@ -17,7 +17,8 @@ const categoryInfo: Record<ServiceCategory, { label: string; description: string
 };
 
 export const Services = () => {
-  const [services, setServices] = useState<Service[]>(SERVICES);
+  const [services, setServices] = useState<Service[]>([]);
+  const [loading, setLoading] = useState(true);
   const [activeCategory, setActiveCategory] = useState<ServiceCategory | 'all'>('all');
   const [searchTerm, setSearchTerm] = useState('');
   const [viewMode, setViewMode] = useState<'grid' | 'list'>('grid');
@@ -25,25 +26,29 @@ export const Services = () => {
   const [priceRange, setPriceRange] = useState<'all' | 'low' | 'medium' | 'high'>('all');
 
   useEffect(() => {
-    loadServices();
+    loadData();
+    
+    // Перезагружаем данные при фокусе на окне (если данные были изменены в другой вкладке)
+    const handleFocus = () => {
+      loadData();
+    };
+    window.addEventListener('focus', handleFocus);
+    
+    return () => {
+      window.removeEventListener('focus', handleFocus);
+    };
   }, []);
 
-  const loadServices = async () => {
+  const loadData = async () => {
+    setLoading(true);
     try {
-      // Сначала пытаемся загрузить с сервера
-      try {
-        const response = await fetch('http://localhost:3001/api/services');
-        if (response.ok) {
-          const data = await response.json();
-          setServices(data.services);
-          return;
-        }
-      } catch (error) {
-        // Сервер недоступен, используем данные из constants
-        console.log('Сервер недоступен, используем данные из constants');
-      }
+      const data = await loadServices();
+      setServices(data);
+      console.log(`📊 Services page: загружено ${data.length} услуг`);
     } catch (error) {
-      console.error('Eroare la încărcarea serviciilor:', error);
+      console.error('Ошибка при загрузке услуг:', error);
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -75,6 +80,8 @@ export const Services = () => {
   };
 
   const filteredServices = useMemo(() => {
+    if (services.length === 0) return [];
+    
     const normalizedSearchTerm = normalizeForSearch(searchTerm);
     
     return services.filter(service => {
@@ -92,7 +99,7 @@ export const Services = () => {
 
       return matchesCategory && matchesSearch && matchesCnam && matchesPrice;
     });
-  }, [activeCategory, searchTerm, showCnamOnly, priceRange]);
+  }, [services, activeCategory, searchTerm, showCnamOnly, priceRange]);
 
   const groupedServices = useMemo(() => {
     if (activeCategory !== 'all') return null;
@@ -125,7 +132,11 @@ export const Services = () => {
             <h1 className="font-heading text-4xl md:text-5xl font-bold mb-4">Servicii și Tarife</h1>
             <p className="text-xl text-slate-200 max-w-2xl mx-auto mb-6">
               Prețuri transparente conform Catalogului Tarifelor Unice aprobat de Guvernul RM.
-              Peste {services.length} de servicii disponibile.
+              {loading ? (
+                ' Se încarcă...'
+              ) : (
+                ` Peste ${services.length} de servicii disponibile.`
+              )}
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button variant="outline" className="gap-2 border-white/40 hover:bg-white/10">
@@ -163,8 +174,8 @@ export const Services = () => {
         </div>
 
         {/* Category Cards */}
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 mb-8">
-          {Object.entries(categoryInfo).slice(0, 5).map(([key, info]) => (
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mb-8">
+          {Object.entries(categoryInfo).map(([key, info]) => (
             <Link
               key={key}
               to={`/servicii/${key}`}
@@ -273,8 +284,13 @@ export const Services = () => {
         </div>
 
         {/* Services Display */}
-        {viewMode === 'grid' ? (
-          activeCategory === 'all' && groupedServices ? (
+        {loading ? (
+          <div className="text-center py-20">
+            <div className="inline-block animate-spin rounded-full h-12 w-12 border-b-2 border-medical-blue"></div>
+            <p className="mt-4 text-slate-600">Se încarcă serviciile...</p>
+          </div>
+        ) : viewMode === 'grid' ? (
+          activeCategory === 'all' && groupedServices && Object.keys(groupedServices).length > 0 ? (
             // Grouped by category
             Object.entries(groupedServices).map(([category, services]: [string, Service[]]) => (
               <div key={category} className="mb-12">

@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useMemo } from 'react';
 import { Plus, Trash2, Edit2, Check, X, ChevronDown, ChevronUp, Save, Loader2 } from 'lucide-react';
 import { Button } from '../../components/ui/Button';
+import { loadServices, saveServices } from '../../lib/dataLoader';
 
 interface Service {
   id: string;
@@ -47,54 +48,28 @@ const ManageServices = () => {
   });
 
   useEffect(() => {
-    loadServices();
+    loadData();
   }, []);
 
-  const loadServices = async () => {
-    try {
-      // Сначала пытаемся загрузить с сервера
-      try {
-        const response = await fetch('http://localhost:3001/api/services');
-        if (response.ok) {
-          const data = await response.json();
-          setServices(data.services);
-          return;
-        }
-      } catch (error) {
-        console.log('Сервер недоступен, загружаю из JSON файла');
-      }
-      
-      // Fallback на JSON файл
-      const response = await fetch('/data/services.json');
-      const data = await response.json();
-      setServices(data.services);
-    } catch (error) {
-      console.error('Eroare la încărcarea serviciilor:', error);
-    }
+  const loadData = async () => {
+    const data = await loadServices();
+    setServices(data);
   };
 
-  const saveToServer = async (servicesToSave: Service[]) => {
+  const saveData = async (servicesToSave: Service[]) => {
     setSaving(true);
     setSaveStatus('idle');
     try {
-      const response = await fetch('http://localhost:3001/api/services', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ services: servicesToSave }),
-      });
-
-      if (response.ok) {
-        setSaveStatus('success');
-        setTimeout(() => setSaveStatus('idle'), 3000);
-      } else {
-        setSaveStatus('error');
-        setTimeout(() => setSaveStatus('idle'), 3000);
-      }
+      console.log(`💾 Сохраняем ${servicesToSave.length} услуг в JSON файл...`);
+      await saveServices(servicesToSave);
+      setServices(servicesToSave);
+      console.log(`✅ Успешно сохранено ${servicesToSave.length} услуг в JSON файл`);
+      setSaveStatus('success');
+      setTimeout(() => setSaveStatus('idle'), 3000);
     } catch (error) {
-      console.error('Eroare de conexiune:', error);
+      console.error('❌ Ошибка при сохранении услуг:', error);
       setSaveStatus('error');
+      alert('Eroare la salvare! Verificați că serverul este pornit (npm run dev)');
       setTimeout(() => setSaveStatus('idle'), 3000);
     } finally {
       setSaving(false);
@@ -118,24 +93,62 @@ const ManageServices = () => {
     setExpandedCategories(newSet);
   };
 
+  // Функция для генерации следующего ID для услуги в категории
+  const generateServiceId = (category: string): string => {
+    // Маппинг категорий на номера
+    const categoryNumbers: Record<string, number> = {
+      'consultatii': 1,
+      'cabinet': 2,
+      'anestezie': 3,
+      'terapie': 4,
+      'chirurgie': 5,
+      'imagistica': 6,
+      'cnam': 7,
+    };
+
+    const categoryNum = categoryNumbers[category] || 1;
+    
+    // Находим все услуги в этой категории
+    const categoryServices = services.filter(s => s.category === category);
+    
+    // Извлекаем все номера из ID (формат "X.Y")
+    const numbers: number[] = [];
+    categoryServices.forEach(service => {
+      const match = service.id.match(/^\d+\.(\d+)$/);
+      if (match) {
+        numbers.push(parseInt(match[1], 10));
+      }
+    });
+
+    // Находим максимальный номер и добавляем 1
+    const maxNumber = numbers.length > 0 ? Math.max(...numbers) : 0;
+    const nextNumber = maxNumber + 1;
+
+    return `${categoryNum}.${nextNumber}`;
+  };
+
   const handleAddService = async () => {
-    if (!formData.name || !formData.price || !formData.id) {
-      alert('Completați toate câmpurile obligatorii!');
+    if (!formData.name || !formData.price || !formData.category) {
+      alert('Completați toate câmpurile obligatorii (Nume, Preț, Categorie)!');
       return;
     }
 
     let updatedServices: Service[];
     if (editingId) {
-      updatedServices = services.map(s => s.id === editingId ? { ...formData as Service } : s);
+      // При редактировании сохраняем существующий ID
+      updatedServices = services.map(s => s.id === editingId ? { ...formData as Service, id: editingId } : s);
       setServices(updatedServices);
       setEditingId(null);
     } else {
-      updatedServices = [...services, { ...formData as Service }];
+      // При создании новой услуги генерируем автоматический ID
+      const newId = generateServiceId(formData.category);
+      updatedServices = [...services, { ...formData, id: newId } as Service];
       setServices(updatedServices);
+      console.log(`✅ Сгенерирован ID для новой услуги: ${newId}`);
     }
 
-    // Автоматически сохраняем на сервер
-    await saveToServer(updatedServices);
+    // Сохраняем в JSON файл
+    await saveData(updatedServices);
     resetForm();
   };
 
@@ -149,9 +162,9 @@ const ManageServices = () => {
   const handleDeleteService = async (id: string) => {
     if (confirm('Sigur doriți să ștergeți acest serviciu?')) {
       const updatedServices = services.filter(s => s.id !== id);
-      setServices(updatedServices);
-      // Автоматически сохраняем на сервер
-      await saveToServer(updatedServices);
+      console.log(`🗑️ Удаляем услугу ${id}, останется ${updatedServices.length} услуг`);
+      // Сохраняем в JSON файл (внутри saveData также обновится состояние)
+      await saveData(updatedServices);
     }
   };
 
@@ -208,14 +221,14 @@ const ManageServices = () => {
 
           <div className="grid md:grid-cols-4 gap-3">
             <div>
-              <label className="block text-xs font-semibold mb-1 text-slate-700">ID *</label>
+              <label className="block text-xs font-semibold mb-1 text-slate-700">
+                ID {editingId ? `(Editare)` : '(Auto-generat)'}
+              </label>
               <input
                 type="text"
-                value={formData.id || ''}
-                onChange={(e) => setFormData({ ...formData, id: e.target.value })}
-                placeholder="Ex: 4.23"
-                disabled={!!editingId}
-                className="w-full px-3 py-2 text-sm rounded border border-slate-300 disabled:bg-slate-100 disabled:text-slate-500"
+                value={editingId || (formData.category ? generateServiceId(formData.category) : 'Selectați categoria')}
+                disabled
+                className="w-full px-3 py-2 text-sm rounded border border-slate-300 bg-slate-50 text-slate-500 cursor-not-allowed"
               />
             </div>
             <div className="md:col-span-2">
@@ -388,7 +401,7 @@ const ManageServices = () => {
       <div className="bg-slate-50 border border-slate-200 rounded-lg p-4 text-sm text-slate-600">
         <p><strong>Total:</strong> {services.length} servicii</p>
         <p className="mt-2 text-xs text-slate-500">
-          💡 <strong>Notă:</strong> La fiecare modificare (adăugare/editare/ștergere), datele se salvează automat pe server și se actualizează pe site.
+          💡 <strong>Notă:</strong> La fiecare modificare (adăugare/editare/ștergere), datele se salvează automat în JSON файл и обновляются на сайте автоматически.
         </p>
       </div>
     </div>

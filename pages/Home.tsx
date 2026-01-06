@@ -9,51 +9,26 @@ import {
 import { Button } from '../components/ui/Button';
 import { GlassServiceCard } from '../components/cards/GlassServiceCard';
 import { TeamCard3D } from '../components/cards/TeamCard3D';
-import { SERVICES, TEAM, TESTIMONIALS, FAQS } from '../constants';
+import { loadServices, loadTeam } from '../lib/dataLoader';
+import { TESTIMONIALS, FAQS } from '../constants';
 import { Service, TeamMember } from '../types';
 
 export const Home = () => {
   const [activeFaq, setActiveFaq] = useState<number | null>(null);
-  const [services, setServices] = useState<Service[]>(SERVICES);
-  const [team, setTeam] = useState<TeamMember[]>(TEAM);
+  const [services, setServices] = useState<Service[]>([]);
+  const [team, setTeam] = useState<TeamMember[]>([]);
 
   useEffect(() => {
-    loadServices();
-    loadTeam();
+    loadData();
   }, []);
 
-  const loadServices = async () => {
-    try {
-      try {
-        const response = await fetch('http://localhost:3001/api/services');
-        if (response.ok) {
-          const data = await response.json();
-          setServices(data.services);
-          return;
-        }
-      } catch (error) {
-        console.log('Сервер недоступен, используем данные из constants');
-      }
-    } catch (error) {
-      console.error('Eroare la încărcarea serviciilor:', error);
-    }
-  };
-
-  const loadTeam = async () => {
-    try {
-      try {
-        const response = await fetch('http://localhost:3001/api/team');
-        if (response.ok) {
-          const data = await response.json();
-          setTeam(data.team);
-          return;
-        }
-      } catch (error) {
-        console.log('Сервер недоступен, используем данные из constants');
-      }
-    } catch (error) {
-      console.error('Eroare la încărcarea echipei:', error);
-    }
+  const loadData = async () => {
+    const [servicesData, teamData] = await Promise.all([
+      loadServices(),
+      loadTeam()
+    ]);
+    setServices(servicesData);
+    setTeam(teamData);
   };
 
   const featuredServices = [

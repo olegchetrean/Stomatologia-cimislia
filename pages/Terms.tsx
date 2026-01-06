@@ -23,7 +23,7 @@ export const Terms = () => {
 
           <h3>3. Programări</h3>
           <p>
-            Solicitările de programare transmise online nu sunt garantate până la confirmarea telefonică sau prin email din partea personalului nostru. Ne rezervăm dreptul de a modifica programul medicilor în cazuri de fortă majoră.
+            Solicitările de programare transmise online sunt procesate și confirmate prin telefon sau email de către personalul nostru. Ne rezervăm dreptul de a modifica programul medicilor în cazuri de fortă majoră.
           </p>
 
           <h3>4. Drepturi de Autor</h3>

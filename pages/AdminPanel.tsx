@@ -13,13 +13,15 @@ export const AdminPanel = () => {
 
   const handleLogin = (e: React.FormEvent) => {
     e.preventDefault();
-    // Просто для демонстрации - измените на реальный пароль
-    if (password === 'admin123') {
+    // Пароль берется из переменной окружения .env
+    const adminPassword = import.meta.env.VITE_ADMIN_PASSWORD;
+    
+    if (password === adminPassword) {
       setIsAuthenticated(true);
       localStorage.setItem('adminAuth', 'true');
       setPassword('');
     } else {
-      alert('Пароль неправильный!');
+      alert('Parolă incorectă!');
     }
   };
 

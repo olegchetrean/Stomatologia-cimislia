@@ -18,17 +18,6 @@ app.use(express.json());
 const servicesPath = path.join(__dirname, 'public/data/services.json');
 const teamPath = path.join(__dirname, 'public/data/team.json');
 
-// Функция для безопасного чтения JSON
-const readJSON = (filePath) => {
-  try {
-    const data = fs.readFileSync(filePath, 'utf-8');
-    return JSON.parse(data);
-  } catch (error) {
-    console.error(`Ошибка при чтении ${filePath}:`, error);
-    return null;
-  }
-};
-
 // Функция для безопасной записи JSON
 const writeJSON = (filePath, data) => {
   try {
@@ -42,62 +31,54 @@ const writeJSON = (filePath, data) => {
 
 // ============ API ENDPOINTS ============
 
-// GET /api/services - Получить все услуги
-app.get('/api/services', (req, res) => {
-  const data = readJSON(servicesPath);
-  if (data) {
-    res.json(data);
-  } else {
-    res.status(500).json({ error: 'Ошибка при загрузке услуг' });
-  }
-});
-
-// POST /api/services - Сохранить услуги
+// POST /api/services - Сохранить услуги в JSON файл
 app.post('/api/services', (req, res) => {
   const { services } = req.body;
   
   if (!Array.isArray(services)) {
+    console.error('❌ Неверный формат данных: services не является массивом');
     return res.status(400).json({ error: 'Неверный формат данных' });
   }
 
+  console.log(`💾 Получен запрос на сохранение ${services.length} услуг`);
+  console.log(`📁 Путь к файлу: ${servicesPath}`);
+  
   const success = writeJSON(servicesPath, { services });
   
   if (success) {
+    console.log(`✅ Успешно сохранено ${services.length} услуг в ${servicesPath}`);
     res.json({ 
-      message: 'Услуги успешно сохранены',
+      message: 'Услуги успешно сохранены в JSON файл',
       count: services.length
     });
   } else {
+    console.error(`❌ Ошибка при сохранении в ${servicesPath}`);
     res.status(500).json({ error: 'Ошибка при сохранении услуг' });
   }
 });
 
-// GET /api/team - Получить всю команду
-app.get('/api/team', (req, res) => {
-  const data = readJSON(teamPath);
-  if (data) {
-    res.json(data);
-  } else {
-    res.status(500).json({ error: 'Ошибка при загрузке команды' });
-  }
-});
-
-// POST /api/team - Сохранить команду
+// POST /api/team - Сохранить команду в JSON файл
 app.post('/api/team', (req, res) => {
   const { team } = req.body;
   
   if (!Array.isArray(team)) {
+    console.error('❌ Неверный формат данных: team не является массивом');
     return res.status(400).json({ error: 'Неверный формат данных' });
   }
 
+  console.log(`💾 Получен запрос на сохранение ${team.length} членов команды`);
+  console.log(`📁 Путь к файлу: ${teamPath}`);
+  
   const success = writeJSON(teamPath, { team });
   
   if (success) {
+    console.log(`✅ Успешно сохранено ${team.length} членов команды в ${teamPath}`);
     res.json({ 
-      message: 'Команда успешно сохранена',
+      message: 'Команда успешно сохранена в JSON файл',
       count: team.length
     });
   } else {
+    console.error(`❌ Ошибка при сохранении в ${teamPath}`);
     res.status(500).json({ error: 'Ошибка при сохранении команды' });
   }
 });
@@ -127,9 +108,7 @@ app.use((req, res) => {
 
 app.listen(PORT, () => {
   console.log(`🚀 API сервер запущен на http://localhost:${PORT}`);
-  console.log(`📊 GET  /api/services  - Получить услуги`);
-  console.log(`💾 POST /api/services  - Сохранить услуги`);
-  console.log(`👥 GET  /api/team      - Получить команду`);
-  console.log(`💾 POST /api/team      - Сохранить команду`);
+  console.log(`💾 POST /api/services  - Сохранить услуги в JSON`);
+  console.log(`💾 POST /api/team      - Сохранить команду в JSON`);
   console.log(`❤️  GET  /api/health    - Проверка статуса`);
 });

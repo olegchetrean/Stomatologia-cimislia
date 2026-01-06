@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { ArrowLeft, Clock, Shield, Check, Phone, Calendar } from 'lucide-react';
 import { Button } from '../components/ui/Button';
-import { SERVICES } from '../constants';
+import { loadServices } from '../lib/dataLoader';
 import { GlassServiceCard } from '../components/cards/GlassServiceCard';
 import { Service } from '../types';
 
@@ -46,27 +46,15 @@ const categoryInfo: Record<string, { title: string; description: string; image: 
 
 export const ServiceDetail = () => {
   const { category } = useParams<{ category: string }>();
-  const [services, setServices] = useState<Service[]>(SERVICES);
+  const [services, setServices] = useState<Service[]>([]);
 
   useEffect(() => {
-    loadServices();
+    loadData();
   }, []);
 
-  const loadServices = async () => {
-    try {
-      try {
-        const response = await fetch('http://localhost:3001/api/services');
-        if (response.ok) {
-          const data = await response.json();
-          setServices(data.services);
-          return;
-        }
-      } catch (error) {
-        console.log('Сервер недоступен, используем данные из constants');
-      }
-    } catch (error) {
-      console.error('Eroare la încărcarea serviciilor:', error);
-    }
+  const loadData = async () => {
+    const data = await loadServices();
+    setServices(data);
   };
 
   const info = category ? categoryInfo[category] : null;
@@ -105,7 +93,7 @@ export const ServiceDetail = () => {
 
       <div className="container mx-auto px-4 py-16">
         {/* Info Cards */}
-        <div className="grid md:grid-cols-3 gap-6 mb-16">
+        <div className="grid md:grid-cols-2 gap-6 mb-16 max-w-4xl mx-auto">
           <div className="bg-white p-6 rounded-2xl shadow-sm border border-slate-100">
             <div className="w-12 h-12 bg-medical-blue/10 rounded-xl flex items-center justify-center text-medical-blue mb-4">
               <Clock className="w-6 h-6" />
@@ -117,15 +105,8 @@ export const ServiceDetail = () => {
             <div className="w-12 h-12 bg-trust-green/10 rounded-xl flex items-center justify-center text-trust-green mb-4">
               <Shield className="w-6 h-6" />
             </div>
-            <h3 className="font-heading font-bold text-lg mb-2">Sigurantă Garantată</h3>
-            <p className="text-slate-600">Toate procedurile respectă standardele internationale de sigurantă.</p>
-          </div>
-          <div className="bg-white p-6 rounded-2xl shadow-sm border border-slate-100">
-            <div className="w-12 h-12 bg-purple-100 rounded-xl flex items-center justify-center text-purple-600 mb-4">
-              <Check className="w-6 h-6" />
-            </div>
-            <h3 className="font-heading font-bold text-lg mb-2">Garantie</h3>
-            <p className="text-slate-600">Oferim garantie pentru toate lucrările protetice și tratamentele efectuate.</p>
+            <h3 className="font-heading font-bold text-lg mb-2">Sigurantă</h3>
+            <p className="text-slate-600">Toate procedurile respectă standardele internationale de sigurantă și sunt efectuate cu materiale de cea mai înaltă calitate.</p>
           </div>
         </div>
 

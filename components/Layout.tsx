@@ -4,7 +4,8 @@ import { Menu, X, Phone, Mail, MapPin, Facebook, Instagram, ChevronUp, ChevronDo
 import { cn } from '../lib/utils';
 import { Button } from './ui/Button';
 import { CookieConsent, openCookieSettings } from './CookieConsent';
-import { TEAM } from '../constants';
+import { loadTeam } from '../lib/dataLoader';
+import { TeamMember } from '../types';
 
 const formatPhone = (phone: string | undefined): string => {
   if (!phone) return '';
@@ -70,7 +71,17 @@ export const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) =>
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [openDropdown, setOpenDropdown] = useState<string | null>(null);
   const [showAllPhones, setShowAllPhones] = useState(false);
+  const [team, setTeam] = useState<TeamMember[]>([]);
   const location = useLocation();
+
+  useEffect(() => {
+    loadTeamData();
+  }, []);
+
+  const loadTeamData = async () => {
+    const data = await loadTeam();
+    setTeam(data);
+  };
 
   useEffect(() => {
     const handleScroll = () => setIsScrolled(window.scrollY > 20);
@@ -90,7 +101,7 @@ export const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) =>
   };
 
   // Получаем уникальных врачей с номерами (убираем дубликаты по номеру)
-  const doctorsWithPhones = TEAM.filter(member => 
+  const doctorsWithPhones = team.filter(member => 
     member.phone && 
     (member.role === 'Medic Stomatolog' || 
      member.role === 'Medic Stomatolog Generalist' || 

@@ -81,10 +81,6 @@ const faqData = [
       {
         q: 'Sunt incluse materialele în preț?',
         a: 'Da, prețurile afișate includ de obicei materialele standard. Pentru materiale premium sau importate, poate exista un cost suplimentar care va fi comunicat înainte de tratament.'
-      },
-      {
-        q: 'Oferiti garantie pentru lucrări?',
-        a: 'Da, oferim garantie pentru lucrările protetice și tratamentele efectuate. Perioada de garantie variază în functie de tipul lucrării.'
       }
     ]
   },

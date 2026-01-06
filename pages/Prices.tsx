@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Search, Download, Filter, Check, Info } from 'lucide-react';
 import { Button } from '../components/ui/Button';
-import { SERVICES } from '../constants';
+import { loadServices } from '../lib/dataLoader';
 import { ServiceCategory, Service } from '../types';
 import { Link } from 'react-router-dom';
 
@@ -16,30 +16,18 @@ const categoryLabels: Record<ServiceCategory, string> = {
 };
 
 export const Prices = () => {
-  const [services, setServices] = useState<Service[]>(SERVICES);
+  const [services, setServices] = useState<Service[]>([]);
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedCategory, setSelectedCategory] = useState<ServiceCategory | 'all'>('all');
   const [showCnamOnly, setShowCnamOnly] = useState(false);
 
   useEffect(() => {
-    loadServices();
+    loadData();
   }, []);
 
-  const loadServices = async () => {
-    try {
-      try {
-        const response = await fetch('http://localhost:3001/api/services');
-        if (response.ok) {
-          const data = await response.json();
-          setServices(data.services);
-          return;
-        }
-      } catch (error) {
-        console.log('Сервер недоступен, используем данные из constants');
-      }
-    } catch (error) {
-      console.error('Eroare la încărcarea serviciilor:', error);
-    }
+  const loadData = async () => {
+    const data = await loadServices();
+    setServices(data);
   };
 
   // Функция для нормализации румынских символов для поиска

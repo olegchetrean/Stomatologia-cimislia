@@ -15,8 +15,7 @@
       "role": "Medic Stomatolog",
       "specialty": "Stomatologie Generală",
       "image": "https://picsum.photos/400/500?random=2",
-      "phone": "069363366",
-      "bio": "Doctor cu experienţă în tratamentul comprehensive al pacienţilor"
+      "phone": "069363366"
     },
     {
       "id": "dr-petru-godoroja",
@@ -24,8 +23,7 @@
       "role": "Medic Stomatolog",
       "specialty": "Stomatologie Generală",
       "image": "https://picsum.photos/400/500?random=3",
-      "phone": "069271212",
-      "bio": "Specialist în stomatologia generală și preventivă"
+      "phone": "069271212"
     },
     {
       "id": "dr-veaceslav-cosmariuc",
@@ -33,44 +31,41 @@
       "role": "Medic Stomatolog",
       "specialty": "Stomatologie Generală",
       "image": "https://picsum.photos/400/500?random=4",
-      "phone": "069003408",
-      "bio": "Medic cu certificări internaționale în stomatologie"
+      "phone": "069003408"
     },
     {
       "id": "dr-ion-teaca",
       "name": "Dr. Ion Teaca",
       "role": "Medic Stomatolog",
-      "specialty": "Chirurgie Dentară",
+      "specialty": "Stomatologie Generală",
       "image": "https://picsum.photos/400/500?random=5",
-      "phone": "069271313",
-      "bio": "Specialist cu experiență în proceduri chirurgicale orale"
+      "phone": "069596089"
+    },
+    {
+      "id": "dr-nina-olarescu",
+      "name": "Dr. Nina Olărescu",
+      "role": "Medic Stomatolog Generalist",
+      "specialty": "Stomatologie Generală, Categorie Superioară",
+      "image": "https://picsum.photos/400/500?random=9",
+      "phone": "079772488"
     },
     {
       "id": "angela-covadji",
       "name": "Angela Covadji",
-      "role": "Asistent Medical",
-      "specialty": "Asistență Stomatologică",
-      "image": "https://picsum.photos/400/500?random=6",
-      "phone": "069271414",
-      "bio": "Asistentă cu pregătire specifică în sprijinul procedurilor stomatologice"
+      "role": "Asistent Superior",
+      "image": "https://picsum.photos/400/500?random=6"
     },
     {
       "id": "constantin-lascu",
       "name": "Constantin Lașcu",
       "role": "Asistent Medical",
-      "specialty": "Asistență Stomatologică",
-      "image": "https://picsum.photos/400/500?random=7",
-      "phone": "069271515",
-      "bio": "Asistent dedicat și eficient în cadrul echipei medicale"
+      "image": "https://picsum.photos/400/500?random=7"
     },
     {
       "id": "svetlana-tataru",
       "name": "Svetlana Tataru",
       "role": "Asistent Medical",
-      "specialty": "Asistență Stomatologică",
-      "image": "https://picsum.photos/400/500?random=8",
-      "phone": "069271616",
-      "bio": "Asistentă cu vasta experiență în domeniu"
+      "image": "https://picsum.photos/400/500?random=8"
     }
   ]
 }
