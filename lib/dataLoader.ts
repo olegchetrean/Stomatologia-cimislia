@@ -81,7 +81,42 @@ export const loadServices = async (): Promise<Service[]> => {
  * Загружает данные команды из JSON файла с fallback на constants
  */
 export const loadTeam = async (): Promise<TeamMember[]> => {
-  // Загружаем из JSON файла (Vite автоматически обслуживает файлы из public/)
+  // Сначала пытаемся загрузить через API (чтобы гарантированно получить актуальные данные)
+  try {
+    const isProduction = import.meta.env.PROD;
+    let baseUrl = import.meta.env.VITE_API_URL;
+    
+    if (!baseUrl) {
+      baseUrl = isProduction ? '' : 'http://localhost:3001';
+    } else {
+      if (baseUrl.endsWith('/api')) {
+        baseUrl = baseUrl.slice(0, -4);
+      }
+    }
+    
+    const apiUrl = `${baseUrl}/api/team`;
+    console.log(`📥 Пытаемся загрузить команду через API: ${apiUrl}`);
+    
+    const apiResponse = await fetch(apiUrl, {
+      cache: 'no-cache',
+      headers: {
+        'Cache-Control': 'no-cache'
+      }
+    });
+    
+    if (apiResponse.ok) {
+      const data = await apiResponse.json();
+      if (data.team && Array.isArray(data.team) && data.team.length > 0) {
+        console.log(`✅ Загружено ${data.team.length} членов команды через API`);
+        teamCache = data.team;
+        return data.team;
+      }
+    }
+  } catch (apiError) {
+    console.warn('⚠️ Не удалось загрузить через API, пробуем статический файл:', apiError);
+  }
+
+  // Fallback: загружаем из статического JSON файла
   try {
     // Добавляем timestamp для предотвращения кеширования
     const response = await fetch(`/data/team.json?t=${Date.now()}`, {
@@ -98,7 +133,7 @@ export const loadTeam = async (): Promise<TeamMember[]> => {
     const data = await response.json();
     
     if (data.team && Array.isArray(data.team) && data.team.length > 0) {
-      console.log(`✅ Загружено ${data.team.length} членов команды из JSON файла`);
+      console.log(`✅ Загружено ${data.team.length} членов команды из статического JSON файла`);
       teamCache = data.team;
       return data.team;
     } else {

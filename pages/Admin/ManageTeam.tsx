@@ -32,8 +32,22 @@ const ManageTeam = () => {
     setSaving(true);
     setSaveStatus('idle');
     try {
+      console.log(`💾 Сохраняем ${teamToSave.length} членов команды в JSON файл...`);
+      console.log(`📋 Первые 3 ID:`, teamToSave.slice(0, 3).map(m => m.id));
       await saveTeam(teamToSave);
+      
+      // После успешного сохранения перезагружаем данные из файла для проверки
+      // Добавляем небольшую задержку, чтобы файл точно записался
+      setTimeout(async () => {
+        const reloaded = await loadTeam();
+        console.log(`🔄 Перезагружено после сохранения: ${reloaded.length} членов команды`);
+        console.log(`📋 Первые 3 ID после перезагрузки:`, reloaded.slice(0, 3).map(m => m.id));
+        setTeam(reloaded);
+      }, 500);
+      
+      // Сразу обновляем локальное состояние
       setTeam(teamToSave);
+      console.log(`✅ Успешно сохранено ${teamToSave.length} членов команды в JSON файл`);
       setSaveStatus('success');
       setTimeout(() => setSaveStatus('idle'), 3000);
     } catch (error) {
