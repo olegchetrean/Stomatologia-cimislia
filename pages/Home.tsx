@@ -573,10 +573,10 @@ export const Home = () => {
                   Programează Acum
                 </Button>
               </Link>
-              <a href="tel:079772488">
+              <a href="tel:069363366">
                 <Button variant="outline" size="lg" as="div" className="w-full sm:w-auto border-white/40 hover:bg-white/10">
                   <Phone className="w-5 h-5 mr-2" />
-                  Sună: 079 772 488
+                  Sună: 069 363 366
                 </Button>
               </a>
             </div>
